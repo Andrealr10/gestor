@@ -40,7 +40,6 @@ CREATE TABLE `archivo` (
   `estado` tinyint(1) NOT NULL,
   `descargas` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
   `id_subcategoria` int(11) NOT NULL,
   `id_tipo_archivo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -83,7 +82,9 @@ CREATE TABLE `subcategoria` (
   `id_subcategoria` int(11) NOT NULL,
   `nombre` varchar(64) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `super` int(11) NOT NULL
+  `imagen` varchar(250) NOT NULL,
+  `super` int(11),
+  `id_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -95,7 +96,7 @@ CREATE TABLE `subcategoria` (
 CREATE TABLE `tipo_archivo` (
   `id_tipo_archivo` int(11) NOT NULL,
   `nombre` varchar(12) NOT NULL,
-  `activo` tinyint(1) NOT NULL
+  `activo` tinyint(1) NOT NULL,
   `icono` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -136,7 +137,6 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `archivo`
   ADD PRIMARY KEY (`id_archivo`),
-  ADD KEY `id_categoria` (`id_categoria`),
   ADD KEY `id_subcategoria` (`id_subcategoria`),
   ADD KEY `id_usuario` (`id_usuario`),
   ADD KEY `id_tipo_archivo` (`id_tipo_archivo`);
@@ -160,7 +160,8 @@ ALTER TABLE `solicitud`
 --
 ALTER TABLE `subcategoria`
   ADD PRIMARY KEY (`id_subcategoria`),
-  ADD KEY `super` (`super`);
+  ADD KEY `super` (`super`),
+  ADD KEY `subcategoria_ibfk_1` (`id_categoria`);
 
 --
 -- Indices de la tabla `tipo_archivo`
@@ -234,7 +235,6 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `archivo`
 --
 ALTER TABLE `archivo`
-  ADD CONSTRAINT `archivo_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `archivo_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `archivo_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `archivo_ibfk_4` FOREIGN KEY (`id_tipo_archivo`) REFERENCES `tipo_archivo` (`id_tipo_archivo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -250,6 +250,7 @@ ALTER TABLE `solicitud`
 -- Filtros para la tabla `subcategoria`
 --
 ALTER TABLE `subcategoria`
+  ADD CONSTRAINT `subcategoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `super` FOREIGN KEY (`super`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
