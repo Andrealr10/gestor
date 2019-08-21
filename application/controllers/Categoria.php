@@ -3,16 +3,50 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Categoria extends CI_Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
-        $this->load->model('MainModel');
+        $this->load->model('categoriaModel');
     }
 
-	public function index()
-	{
-        $data=['categorias'=>$this->MainModel->getAll('categoria')];
-        //renderizamos la vista
-        $this->load->view('pages/categoria',$data);
+    public function index()
+    {
+        $data = ['categorias' => $this->categoriaModel->getAll()];
+        $this->load->view('pages/categoria', $data);
+    }
 
-	}
+    public function crear()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $categoria = $_POST['nombre'];
+            $dir = 'home/files/' . $categoria . '/';
+            $ruta = 'home/images/categorias/';
+            $nombre = $categoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
+
+            if (!is_dir($dir)) {
+
+                $this->categoriaModel->insert([
+                    'nombre' => $categoria,
+                    'descripcion' => $_POST['descripcion'],
+                    'imagen' => $ruta . $nombre,
+                    'estado' => 1
+                ]);
+
+                mkdir($dir, 0755, TRUE);
+
+                $config['upload_path'] = $ruta;
+                $config['file_name'] = $nombre;
+                $config['allowed_types'] = "png|jpg|jpeg";
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('imagen')) {
+                    echo $this->upload->display_errors();
+                    return;
+                }
+
+            } else {
+                echo "la categoria ya existe!";
+            }
+            redirect(base_url('categoria'));
+        }
+    }
 }

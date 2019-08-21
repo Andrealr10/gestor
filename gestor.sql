@@ -96,6 +96,7 @@ CREATE TABLE `tipo_archivo` (
   `id_tipo_archivo` int(11) NOT NULL,
   `nombre` varchar(12) NOT NULL,
   `activo` tinyint(1) NOT NULL
+  `icono` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
