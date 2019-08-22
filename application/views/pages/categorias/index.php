@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <form action="<?= base_url('categoria') ?>/crear" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre de la Categoria</label><br>
         <input type="text" name="nombre" id="nombre"><br>
@@ -19,12 +18,11 @@
         <input type="submit" value="Crear">
     </form>
     <br>
-    
+
     <?php
     foreach ($categorias as $categoria) {
-        echo $categoria->nombre .'  <img src="'.$categoria->imagen.'" alt="No se encontro la imagen" style="height: 100px; width: 100px"><br><br>';
+        echo $categoria->nombre . '  <img src="' . $categoria->imagen . '" alt="No se encontro la imagen" style="height: 100px; width: 100px"><br><br>';
     }
-
     ?>
 </body>
 
