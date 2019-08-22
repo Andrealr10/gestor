@@ -13,7 +13,7 @@ class Subcategoria extends CI_Controller
     public function index()
     {
         $data = ['subcategorias' => $this->subcategoriaModel->getAll(),'categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/subbcategorias/index', $data);
+        $this->load->view('pages/subcategorias/index', $data);
     }
 
     public function crear()
