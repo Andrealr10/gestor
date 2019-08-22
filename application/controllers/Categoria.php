@@ -12,7 +12,7 @@ class Categoria extends CI_Controller
     public function index()
     {
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categoria', $data);
+        $this->load->view('pages/categorias/index', $data);
     }
 
     public function crear()
