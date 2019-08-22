@@ -7,12 +7,24 @@ class Categoria extends CI_Controller
     {
         parent::__construct();
         $this->load->model('categoriaModel');
+        $this->load->model('subcategoriaModel');
     }
 
     public function index()
     {
+        
+        $this->load->view('pages/categorias/index');
+    }
+    public function load()
+    {
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categorias/index', $data);
+        $this->load->view('pages/categorias/lista', $data);
+    }
+
+    public function subcategorias($id)
+    {
+        $data = ['subcategorias' => $this->subcategoriaModel->getByCategoria($id)];
+        $this->load->view('pages/categorias/subcategorias', $data);
     }
 
     public function crear()
