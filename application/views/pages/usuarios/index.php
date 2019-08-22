@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
@@ -25,16 +25,11 @@
             <h2 class="text-center"><i class="fas fa-users"></i> Usuarios</h2>
             <ul class="nav nav-tabs justify-content-end">
                 <li class="nav-item pesta">
-                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
-                </li>
-                <li class="nav-item pesta">
-                <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>				   	
-                <li class="nav-item">
                     <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item pesta">
                     <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
-                </li>
+
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
@@ -65,37 +60,10 @@
                 </div>
                 <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
                     <div class="card">
-	                    <div class="card-header">
-		                    <h4>Nuevo Usuario</h4>
-	                    </div>
-	                    <div class="card-body formu col-lg-12 text-center">
-                         <form class="form" role="form" autocomplete="off" id="formu">
-                            <div class="form-group row">
-                                <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
-                                <div class="col-lg-6">
-                                    <input class="form-control" type="text" placeholder="Nombre" name="nombre" id="nombre">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
-                                <div class="col-lg-6">
-                                    <input class="form-control" type="text" placeholder="Apellido" name="apellido" id="apellido">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
-                                <div class="col-lg-6">
-                                    <input class="form-control" type="text" placeholder="Username" name="username" id="username">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-lock"></i></label>
-                                <div class="col-lg-6">
-                                    <input class="form-control" type="password" placeholder="Contraseña" name="password" id="password">
                         <div class="card-header">
                             <h4>Nuevo Usuario</h4>
                         </div>
-                        <div class="card-body formu col-lg-12 justify-content-center">
+                        <div class="card-body formu col-lg-12 text-center">
                             <form class="form" role="form" autocomplete="off" id="formu">
                                 <div class="form-group row">
                                     <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
@@ -115,12 +83,6 @@
                                         <input class="form-control" type="text" placeholder="Username" name="username" id="username">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-12 text-center">
-                                    <div class="col-lg-12">
-                                    <button class="btn btn-primary" id="agregar" onclick="insertar()">Guardar</button>
-                                    <button class="btn btn-danger">Cancelar</button>
                                 <div class="form-group row">
                                     <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-lock"></i></label>
                                     <div class="col-lg-6">
@@ -137,7 +99,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-group row">
                                     <div class="col-lg-12 text-center">
                                         <div class="col-lg-6">
@@ -151,6 +112,7 @@
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -163,4 +125,5 @@
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url(); ?>libs/js/main.js"></script>
 <script src="./assets/js/main.js"></script>
+
 </html>
