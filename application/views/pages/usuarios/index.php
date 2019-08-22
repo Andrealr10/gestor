@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <title>Gestor</title>
@@ -16,10 +16,10 @@
         <div class="mx-auto col-sm-9 main-section" id="myTab" role="tablist">
         <h2 class="text-center"><i class="fas fa-users"></i> Usuarios</h2>
             <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item">
+                <li class="nav-item pesta">
                 <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item pesta">
                 <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>				   	
                 </li>
             </ul>
@@ -56,7 +56,7 @@
 	                    <div class="card-header">
 		                    <h4>Nuevo Usuario</h4>
 	                    </div>
-	                    <div class="card-body formu col-lg-12 justify-content-center">
+	                    <div class="card-body formu col-lg-12 text-center">
                          <form class="form" role="form" autocomplete="off" id="formu">
                             <div class="form-group row">
                                 <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
@@ -104,10 +104,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg-12 text-center">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                     <button class="btn btn-primary" id="agregar" onclick="insertar()">Guardar</button>
-                                    </div>
-                                    <div class="col-lg-6">
                                     <button class="btn btn-danger">Cancelar</button>
                                     </div>
                                 </div>
@@ -120,10 +118,10 @@
         </div>
     </div>
 </body>
-<script src="./assets/js/jquery-3.4.1.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
+<script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
+<script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="<?= base_url(); ?>libs/js/main.js"></script>
 </html>

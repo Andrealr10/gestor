@@ -8,7 +8,7 @@
   <!--CDN BOOSTRAP AND FONT-AWESOME-->
   <link href="<?= base_url(); ?>libs/nav.css">
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?= base_url(); ?>libs/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
   <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
   <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto ">
         <li class="nav-item">
-          <a class="nav-link" href="#">INICIO </a>
+          <a class="nav-link" href="#"><i class="fas fa-home"></i> INICIO </a>
         </li>
         <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
