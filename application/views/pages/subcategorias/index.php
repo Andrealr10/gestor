@@ -16,12 +16,11 @@
         <input type="file" name="imagen" id="imagen"><br>
         <select name="categoria" id="categoria">
             <?php foreach ($categorias as $categoria) { ?>
-                
-                <option value="<?=$categoria->id_categoria?>"><?= $categoria->nombre ?></option>
+            <option value="<?= $categoria->id_categoria ?>"><?= $categoria->nombre ?></option>
             <?php }
             echo $nombre;
             ?>
-            
+
         </select>
         <br>
         <input type="submit" value="Crear">
