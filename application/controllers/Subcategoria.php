@@ -12,7 +12,11 @@ class Subcategoria extends CI_Controller
 
     public function find($id)
     {
-        $data = ['subcategorias' => $this->subcategoriaModel->getByCategoria($id), 'id' => $id];
+        $data = [
+            'subcategorias' => $this->subcategoriaModel->getByCategoria($id), 
+            'id' => $id, 
+            'nombre' => ($this->categoriaModel->getById($id))->nombre
+        ];
         $this->load->view('pages/categorias/subcategorias', $data);
     }
 

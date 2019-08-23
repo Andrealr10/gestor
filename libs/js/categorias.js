@@ -44,26 +44,18 @@ function load() {
         url: 'categoria/load',
         success: function (result) {
             $('#listacat').html(result);
+            $('#listcat-tab').trigger('click');
         }
     });
 }
 
 function subcategorias(id) {
-    alert('hola')
     $.ajax({
         type: 'GET',
         url: 'subcategoria/find/' + id,
         success: function (result) {
-            $('#pills-tabContent2').html(result);
-            $('#listsub-tab').trigger('click');
+            $('#subcategorias').html(result);
+            // $('#listsub-tab').trigger('click');
         }
     });
-    // $.ajax({
-    //     type: 'GET',
-    //     url: 'subcategoria/load/' + id,
-    //     success: function (result) {
-    //         $('#addsub').html(result);
-
-    //     }
-    // });
 }
