@@ -76,7 +76,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-content" id="pills-tabContent2">
                         <div class="tab-pane fade show active" id="listsub" role="tabpanel" aria-labelledby="listsub-tab">
                             <div class="tab-pane" id="listsub-1" role="tabpanel" aria-labelledby="listsub-1-list">
                                 <div id="listasub">
@@ -89,23 +89,10 @@
                         </div>
                         <div class="tab-pane fade" id="addsub" role="tabpanel" aria-labelledby="addsub-tab">
                             <div class="tab-pane" id="listsub-2" role="tabpanel" aria-labelledby="listsub-2-list">
-                                <div id="add">
-                                    <form enctype="multipart/form-data">
-                                        <label for="nombre">Nombre de la SubCategoria</label><br>
-                                        <input type="text" name="nombre" id="nombre"><br>
-                                        <input type="file" name="imagen" id="imagen"><br>
-                                        <select name="categoria" id="categoria">
-                                            <?php foreach ($categorias as $categoria) { ?>
-                                            <option value="<?= $categoria->id_categoria ?>"><?= $categoria->nombre ?></option>
-                                            <?php }
-                                            echo $nombre;
-                                            ?>
-
-                                        </select>
-                                        <br>
-                                        <input type="submit" value="Crear">
-                                    </form>
-
+                                <div id="addsub">
+                                    <div class="alert alert-primary" role="alert">
+                                        Seleccione una categoria.
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -12,19 +12,12 @@ class Categoria extends CI_Controller
 
     public function index()
     {
-        
         $this->load->view('pages/categorias/index');
     }
     public function load()
     {
         $data = ['categorias' => $this->categoriaModel->getAll()];
         $this->load->view('pages/categorias/lista', $data);
-    }
-
-    public function subcategorias($id)
-    {
-        $data = ['subcategorias' => $this->subcategoriaModel->getByCategoria($id)];
-        $this->load->view('pages/categorias/subcategorias', $data);
     }
 
     public function crear()
@@ -58,7 +51,6 @@ class Categoria extends CI_Controller
             } else {
                 echo "la categoria ya existe!";
             }
-            redirect(base_url('categoria'));
         }
     }
 }

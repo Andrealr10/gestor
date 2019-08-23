@@ -2,7 +2,7 @@ $(document).ready(function () {
     load();
 });
 
-$('#myList a').on('click', function(e) {
+$('#myList a').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
 })
@@ -22,6 +22,22 @@ $('#crear').on('click', function () {
     });
 })
 
+function addsubcat() {
+    id = $('#categoria').val();
+    form = new FormData(document.getElementById("frmsub"));
+    $.ajax({
+        type: 'POST',
+        url: 'subcategoria/crear',
+        data: form,
+        processData: false,
+        contentType: false,
+        success: function (result) {
+            console.log(result);
+            subcategorias(id);
+        }
+    });
+}
+
 function load() {
     $.ajax({
         type: 'GET',
@@ -33,11 +49,21 @@ function load() {
 }
 
 function subcategorias(id) {
+    alert('hola')
     $.ajax({
         type: 'GET',
-        url: 'categoria/subcategorias/'+id,
+        url: 'subcategoria/find/' + id,
         success: function (result) {
-            $('#listasub').html(result);
+            $('#pills-tabContent2').html(result);
+            $('#listsub-tab').trigger('click');
         }
     });
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'subcategoria/load/' + id,
+    //     success: function (result) {
+    //         $('#addsub').html(result);
+
+    //     }
+    // });
 }
