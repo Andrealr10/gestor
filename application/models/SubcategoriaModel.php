@@ -14,6 +14,11 @@ class SubcategoriaModel extends CI_Model
         return $this->db->get($this->tabla)->result();
     }
 
+    public function getByCategoria($id)
+    {
+        $this->db->where('id_categoria', $id);
+        return $this->db->get($this->tabla)->result();
+    }
     public function insert($datos)
     {
         $this->db->insert($this->tabla, $datos);
@@ -26,7 +31,6 @@ class SubcategoriaModel extends CI_Model
 
     public function getById($id)
     {
-        echo "esta aqui";
         return $this->db->get_where($this->tabla, [$this->id => $id])->row();
     }
 

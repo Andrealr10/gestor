@@ -7,12 +7,17 @@ class Categoria extends CI_Controller
     {
         parent::__construct();
         $this->load->model('categoriaModel');
+        $this->load->model('subcategoriaModel');
     }
 
     public function index()
     {
+        $this->load->view('pages/categorias/index');
+    }
+    public function load()
+    {
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categorias/index', $data);
+        $this->load->view('pages/categorias/lista', $data);
     }
 
     public function crear()
@@ -46,7 +51,6 @@ class Categoria extends CI_Controller
             } else {
                 echo "la categoria ya existe!";
             }
-            redirect(base_url('categoria'));
         }
     }
 }

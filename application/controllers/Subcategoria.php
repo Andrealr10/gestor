@@ -10,18 +10,24 @@ class Subcategoria extends CI_Controller
         $this->load->model('categoriaModel');
     }
 
-    public function index()
+    public function find($id)
     {
-        $data = ['subcategorias' => $this->subcategoriaModel->getAll(),'categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/subcategorias/index', $data);
+        $data = ['subcategorias' => $this->subcategoriaModel->getByCategoria($id), 'id' => $id];
+        $this->load->view('pages/categorias/subcategorias', $data);
     }
+
+    public function load($id)
+    {
+        $this->load->view('pages/categorias/frmsubcategorias', ['id' => $id]);
+    }
+
 
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $subcategoria = $_POST['nombre'];
             $categoria = ($this->categoriaModel->getById($_POST['categoria']))->nombre;
-            $dir = 'home/files/' . $categoria.'/'.$subcategoria . '/';
+            $dir = 'home/files/' . $categoria . '/' . $subcategoria . '/';
             $ruta = 'home/images/subcategorias/';
             $nombre = $subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
             if (!is_dir($dir)) {
@@ -46,7 +52,6 @@ class Subcategoria extends CI_Controller
             } else {
                 echo "la subcategoria ya existe!";
             }
-            redirect(base_url('subcategoria'));
         }
     }
 }
