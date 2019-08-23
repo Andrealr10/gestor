@@ -21,8 +21,7 @@ foreach ($usuarios as $usuario) {
         <button class="btn btn-warning btn-sm" onclick="obtener('<?= $usuario->id_usuario ?>')" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit"></i></button>
         <?php } else { ?>
         <button class="btn btn-warning btn-sm" onclick="obtener('<?= $usuario->id_usuario ?>')" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit"></i></button>
-        |
-        <?php if ($usuario->estado == '1') { ?>
+        | <?php if ($usuario->estado == '1') { ?>
         <button class="btn btn-danger btn-sm" onclick="eliminar('<?= $usuario->id_usuario ?>')"><i class="fas fa-user-times"></i></button>
         <?php } else { ?>
         <button class="btn btn-primary btn-sm" onclick="activar('<?= $usuario->id_usuario ?>')"><i class="fas fa-user-check"></i></button>
