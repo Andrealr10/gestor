@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:700,600,300");
+.frame {
+  position: relative;
+  top: 0%;
+  left: 65%;
+  width: 300px;
+  height: 300px;
+  /* margin-top: -200px; */
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(to bottom left, #1e1e20, #bbc3c6);
+  background-size: 125% 125%;
+  color: #2d6120;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.card {
+  width: 320px;
+  height: 300px;
+  background: white;
+  box-shadow: 4px 8px 16px 0 black;
+}
+.card .left {
+  position: relative;
+  left: 0;
+  width: 190px;
+  height: 300px;
+  overflow: hidden;
+  background-color: #1e1e20;  /*#273c75*/
+}
+.card .left .avatar {
+  position: absolute;
+  left: 60px;
+  top: 32px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #a4a7a8;
+}
+.card .left .avatar .circle {
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 1.5s ease-in-out;
+  border: 1px solid;
+}
+.card .left .avatar .circle:first-child {
+  left: -3px;
+  top: -3px;
+  width: 76px;
+  height: 76px;
+  border-color: white white white transparent;
+}
+.card .left .avatar .circle:nth-child(2) {
+  left: -6px;
+  top: -6px;
+  width: 82px;
+  height: 82px;
+  border-color: white transparent white white;
+}
+.card .left .avatar:hover .circle:first-child {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.card .left .avatar:hover .circle:nth-child(2) {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+}
+.card .left .avatar img {
+  width: inherit;
+  height: inherit;
+  display: block;
+  border-radius: inherit;
+}
+.card .left .info {
+  position: absolute;
+  text-align: center;
+  top: 122px;
+  width: 100%;
+}
+.card .left .info span {
+  display: block;
+}
+.card .left .info span.small {
+  top: 22px;
+}
+.card .left .botons {
+  position: absolute;
+  text-align: center;
+  bottom: 32px;
+  width: 100%;
+  height: 80px;
+}
+.card .left .botons .boton {
+  padding-top: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #890016;
+  width: 120px;
+  height: 26px;
+  margin: 8px 0;
+  background: white;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 0 0 1px #890016;
+  cursor: pointer;
+}
+.card .left .botons .boton:hover {
+  background: #890016;
+  color: white;
+}
+.card .right {
+  position: absolute;
+  right: 0;
+  width: 130px;
+  height: 300px;
+}
+.card .right .stats {
+  position: relative;
+  height: 100px;
+  background: #890016;
+  box-shadow: 0 -1px white;
+  cursor: pointer;
+  transition: 0.5s; /**/
+}
+.card .right .stats:first-child {
+  box-shadow: none;
+}
+.card .right .stats:hover {
+  background: #c02e47;
+}
+.card .right .stats span.big {
+  top: 30px;
+}
+.card .right .stats span.small {
+  top: 50px;
+}
+span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+}
+span.big {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+span.small {
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+}
+
+.link{
+  text-decoration: none;
+  color: #890016
+}
+.link:hover{
+  text-decoration: none;
+  color: white;
+}
+/**************************************************************/
+/*boton*/
+.buton{
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(77, 76, 76, 0.678);/*IconColor*/
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: solid 2px #b5b5b5;
+}
+.btn .fa {
+  line-height: 80px;
+}
+.btn:active {/*onClick*/
+  background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: none;
+}

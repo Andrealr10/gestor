@@ -10,11 +10,21 @@ class Subcategoria extends CI_Controller
         $this->load->model('categoriaModel');
     }
 
+    public function index()
+    {
+        $id = 1;
+        $data = [
+            'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
+            'categoria' => ($this->categoriaModel->getById($id))->nombre
+        ];
+        $this->load->view('pages/subcategorias/subcategorias', $data);
+    }
+
     public function find($id)
     {
         $data = [
-            'subcategorias' => $this->subcategoriaModel->getByCategoria($id), 
-            'id' => $id, 
+            'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
+            'id' => $id,
             'nombre' => ($this->categoriaModel->getById($id))->nombre
         ];
         $this->load->view('pages/categorias/subcategorias', $data);
@@ -29,11 +39,11 @@ class Subcategoria extends CI_Controller
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $subcategoria = $_POST['nombre'];
+            $subcategoria = str_replace(' ', '_', $_POST['nombre']);
             $categoria = ($this->categoriaModel->getById($_POST['categoria']))->nombre;
             $dir = 'home/files/' . $categoria . '/' . $subcategoria . '/';
             $ruta = 'home/images/subcategorias/';
-            $nombre = $subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
+            $nombre = $categoria.'_'.$subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
             if (!is_dir($dir)) {
 
                 $this->subcategoriaModel->insert([
