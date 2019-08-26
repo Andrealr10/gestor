@@ -19,7 +19,7 @@ class Archivo2 extends CI_Controller
         if (!empty($_FILES['file']['name'])) {
 
             $nombre = str_replace(' ', '_', $_FILES['file']['name']);
-            $config['upload_path'] = 'home/files/uploads';
+            $config['upload_path'] = 'home/uploads';
             $config['allowed_types'] = 'txt|pdf';
             $config['max_size']    = '10240'; // max_size in kb
             $config['file_name'] = $nombre;
@@ -29,7 +29,7 @@ class Archivo2 extends CI_Controller
             if ($this->upload->do_upload('file')) {
                $this->archivoModel->insert([
                    'archivo' => $nombre,
-                   'ruta' => 'home/files/uploads/'.$nombre,
+                   'ruta' => 'home/uploads/'.$nombre,
                    'tamanio' => $_FILES['file']['size'],
                    'estado' => 0,
                    'fecha' => date("Y-m-d H:i:s"),
