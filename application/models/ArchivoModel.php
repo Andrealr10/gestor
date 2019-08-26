@@ -16,7 +16,11 @@ class ArchivoModel extends CI_Model
 
     public function getBySubCategoria($id)
     {
-        $this->db->where('id_subcategoria', $id);
+        $this->db->select('*');
+        $this->db->join('tipo_archivo', 'archivo.id_tipo_archivo = tipo_archivo.id_tipo_archivo');
+        $this->db->join('usuario', 'usuario.id_usuario = archivo.id_usuario');
+        $this->db->where('archivo.id_subcategoria', $id);
+        $this->db->where('archivo.estado', 1);
         return $this->db->get($this->tabla)->result();
     }
     public function insert($datos)

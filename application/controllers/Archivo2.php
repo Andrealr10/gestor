@@ -6,6 +6,7 @@ class Archivo2 extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('archivoModel');
     }
 
     public function index()
@@ -17,19 +18,26 @@ class Archivo2 extends CI_Controller
     {
         if (!empty($_FILES['file']['name'])) {
 
-            // Set preference
-            $config['upload_path'] = 'home/files/';
-            $config['allowed_types'] = 'pdf';
+            $nombre = str_replace(' ', '_', $_FILES['file']['name']);
+            $config['upload_path'] = 'home/files/uploads';
+            $config['allowed_types'] = 'txt|pdf';
             $config['max_size']    = '10240'; // max_size in kb
-            $config['file_name'] = $_FILES['file']['name'];
-
-            //Load upload library
+            $config['file_name'] = $nombre;
+            $config['overwrite'] = TRUE;
             $this->load->library('upload', $config);
-
             // File upload
             if ($this->upload->do_upload('file')) {
-                // Get data about the file
-                $uploadData = $this->upload->data();
+               $this->archivoModel->insert([
+                   'archivo' => $nombre,
+                   'ruta' => 'home/files/uploads/'.$nombre,
+                   'tamanio' => $_FILES['file']['size'],
+                   'estado' => 0,
+                   'fecha' => date("Y-m-d H:i:s"),
+                   'descargas' => 0,
+                   'id_usuario' => 1,
+                   'id_subcategoria' => 1,
+                   'id_tipo_archivo' => 1
+               ]);
             }
         }
     }

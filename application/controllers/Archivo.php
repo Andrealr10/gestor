@@ -11,8 +11,20 @@ class Archivo extends CI_Controller
 
     public function index()
     {
-        $this->load->view('pages/archivos/archivos.php');
+        $data = ['archivos' => $this->archivoModel->getBySubCategoria(1)];
+        $this->load->view('pages/archivos/archivos.php', $data);
     }
+
+    public function download($categoria, $subcategoria, $archivo)
+    {
+        $this->load->helper('download');
+        force_download('home/files/'.$categoria.'/'.$subcategoria.'/'.$archivo, null);
+    }
+
+
+
+
+
     public function load()
     {
         $data = ['archivos' => $this->archivoModel->getAll()];

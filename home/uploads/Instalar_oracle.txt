@@ -1,0 +1,2 @@
+segunda opcion instalar solo servidor de bases de datos
+dB de instancia unica
