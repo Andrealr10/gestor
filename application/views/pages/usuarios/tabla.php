@@ -6,9 +6,10 @@ foreach ($usuarios as $usuario) {
     <td><?= $usuario->nombre ?></td>
     <td><?= $usuario->apellido ?></td>
     <td><?= $usuario->username ?></td>
-    <td><?php if ($usuario->tipo == '1') {
+    <td><?= $usuario->correo ?></td>
+    <td><?php if ($usuario->tipo_usuario == '1') {
                 echo "<span'>Administrador</span>";
-            } elseif ($usuario->tipo == '2') {
+            } elseif ($usuario->tipo_usuario == '2') {
                 echo "<span'>User</span>";
             } ?></td>
     <td><?php if ($usuario->estado == '1') {
@@ -17,7 +18,7 @@ foreach ($usuarios as $usuario) {
                 echo "<span class='btn btn-danger btn-sm'>Inactivo</span>";
             } ?></td>
     <td class="text-center">
-        <?php if ($usuario->tipo == '1') { ?>
+        <?php if ($usuario->tipo_usuario == '1') { ?>
         <button class="btn btn-warning btn-sm" onclick="obtener('<?= $usuario->id_usuario ?>')" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit"></i></button>
         <?php } else { ?>
         <button class="btn btn-warning btn-sm" onclick="obtener('<?= $usuario->id_usuario ?>')" data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit"></i></button>

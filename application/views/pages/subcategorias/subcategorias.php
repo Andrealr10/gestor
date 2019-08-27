@@ -39,7 +39,7 @@
                             </div>
                             <div class="right">
                                 <div class="stats posts">
-                                    <span class="big">523</span><span class="small">Archivos</span>
+                                    <span class="big"><?= $subcategoria->cantidad ?></span><span class="small">Archivos</span>
                                 </div>
                                 <div data-toggle="modal" data-target="#share<?= $subcategoria->id_subcategoria ?>" class="stats likes" style="background-color:rgb(66, 66, 66);" onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='rgb(66, 66, 66)'">
                                     <!-- <button data-toggle="modal" data-target="#modaledit"><i class="fas fa-edit"></i></button>     -->

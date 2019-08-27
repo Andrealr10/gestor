@@ -16,8 +16,13 @@ class SubcategoriaModel extends CI_Model
 
     public function getByCategoria($id)
     {
-        $this->db->where('id_categoria', $id);
-        return $this->db->get($this->tabla)->result();
+        $sql = "SELECT id_subcategoria, nombre, imagen, id_categoria,
+        (SELECT COUNT(archivo.id_archivo) 
+        from archivo WHERE archivo.id_subcategoria = subcategoria.id_subcategoria) as cantidad 
+        from subcategoria where id_categoria = ?";
+        return $this->db->query($sql, $id)->result();
+        // $this->db->where('id_categoria', $id);
+        // return $this->db->get($this->tabla)->result();
     }
     public function insert($datos)
     {

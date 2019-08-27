@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +35,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css" />
     <title>Gestor</title>
 </head>
+
 <body>
     <div class="container">
         <div class="mx-auto col-sm-9 main-section">
@@ -61,6 +63,7 @@
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Apellido</th>
                                             <th scope="col">Username</th>
+                                            <th scope="col">Correo</th>
                                             <th scope="col">Tipo</th>
                                             <th scope="col">Estado</th>
                                             <th>Acciones</th>
@@ -98,6 +101,12 @@
                                     <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
                                     <div class="col-lg-6">
                                         <input class="form-control" type="text" placeholder="Username" name="username" id="username">
+                                    </div>
+                                </div>
+                                <div class="form-group justify-content-center row">
+                                    <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-lock"></i></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="mail" placeholder="correo@ejemplo.com" name="correo" id="correo">
                                     </div>
                                 </div>
                                 <div class="form-group justify-content-center row">
@@ -149,6 +158,7 @@
                             <input type="text" placeholder="Nombre" class="form-control mt-2" id="nombrea" name="nombre">
                             <input type="text" placeholder="Apellido" class="form-control mt-2" id="apellidoa" name="apellido">
                             <input type="text" placeholder="Username" class="form-control mt-2" id="usernamea" name="username">
+                            <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo">
                             <input type="password" placeholder="Contraseña" class="form-control mt-2" id="passworda" name="password">
                             <select class="custom-select my-1 mr-sm-2" name="tipo" id="tipoa">
                                 <option selected>Tipo</option>

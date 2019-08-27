@@ -25,7 +25,7 @@
       <div class="titulo">
         <h2><?= $archivo->archivo ?></h2>
         <hr>
-        <div class="subtitulo">Tipo: <?= $archivo->tipo ?></div>
+        <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
         <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
         <div class="subtitulo">Tamaño: <?= $archivo->tamanio ?> KB</div>
         <div class="subtitulo">Autor: <?= $archivo->username ?></div>

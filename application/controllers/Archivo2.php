@@ -32,11 +32,13 @@ class Archivo2 extends CI_Controller
                    'ruta' => 'home/uploads/'.$nombre,
                    'tamanio' => $_FILES['file']['size'],
                    'estado' => 0,
+                   'tipo_archivo' => 'Documento',
                    'fecha' => date("Y-m-d H:i:s"),
                    'descargas' => 0,
+                   'valoracion' => 0,
+                   'icono' => 'home/images/archivos/txt.png',
                    'id_usuario' => 1,
-                   'id_subcategoria' => 1,
-                   'id_tipo_archivo' => 1
+                   'id_subcategoria' => 1
                ]);
             }
         }

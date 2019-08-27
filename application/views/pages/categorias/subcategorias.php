@@ -35,7 +35,6 @@
                     <form enctype="multipart/form-data" id="frmsub">
                         <label for="nombre">Nombre de la SubCategoria</label><br>
                         <input type="text" name="nombre" id="nombre"><br>
-                        <input type="file" name="imagen" id="imagen"><br>
                         <input type="text" name="categoria" id="categoria" hidden value="<?= $id ?>">
                         <br>
                         <button type="button" id="addsubcategoria" onclick="addsubcat()">Agregar</button>

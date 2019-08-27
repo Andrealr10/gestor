@@ -30,7 +30,8 @@ class Usuario extends CI_Controller
       'apellido' => $_POST['apellido'],
       'username' => $_POST['username'],
       'password ' => $_POST['password'],
-      'tipo' => $_POST['tipo'],
+      'correo ' => $_POST['correo'],
+      'tipo_usuario' => $_POST['tipo'],
       'estado' => 1
     ];
     $this->UsuarioModel->insert($data);
@@ -69,7 +70,8 @@ class Usuario extends CI_Controller
         'apellido' => $_POST['apellido'],
         'username' => $_POST['username'],
         'password ' => $_POST['password'],
-        'tipo' => $_POST['tipo'],
+        'correo ' => $_POST['correo'],
+        'tipo_usuario' => $_POST['tipo'],
         'estado' => $_POST['estado'],
       ];
     }

@@ -150,12 +150,6 @@ ALTER TABLE `subcategoria`
   ADD KEY `subcategoria_ibfk_1` (`id_categoria`);
 
 --
--- Indices de la tabla `tipo_archivo`
---
-ALTER TABLE `tipo_archivo`
-  ADD PRIMARY KEY (`id_tipo_archivo`);
-
---
 -- Indices de la tabla `tipo_solicitud`
 --
 ALTER TABLE `tipo_solicitud`
@@ -194,12 +188,6 @@ ALTER TABLE `solicitud`
 --
 ALTER TABLE `subcategoria`
   MODIFY `id_subcategoria` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tipo_archivo`
---
-ALTER TABLE `tipo_archivo`
-  MODIFY `id_tipo_archivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_solicitud`
