@@ -34,14 +34,17 @@ USE gestor;
 
 CREATE TABLE `archivo` (
   `id_archivo` int(11) NOT NULL,
-  `nombre` varchar(150) NOT NULL,
+  `archivo` varchar(150) NOT NULL,
   `ruta` varchar(250) NOT NULL,
   `tamanio` float NOT NULL,
+  `tipo_archivo` varchar(24) NOT NULL,
   `estado` tinyint(1) NOT NULL,
+  `fecha` date NOT NULL,
   `descargas` int(11) NOT NULL,
+  `valoracion` float NOT NULL,
+  `icono` varchar(250) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `id_subcategoria` int(11) NOT NULL,
-  `id_tipo_archivo` int(11) NOT NULL
+  `id_subcategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -83,21 +86,8 @@ CREATE TABLE `subcategoria` (
   `nombre` varchar(64) NOT NULL,
   `estado` tinyint(1) NOT NULL,
   `imagen` varchar(250) NOT NULL,
-  `super` int(11),
+  `super` int(11) DEFAULT NULL,
   `id_categoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo_archivo`
---
-
-CREATE TABLE `tipo_archivo` (
-  `id_tipo_archivo` int(11) NOT NULL,
-  `nombre` varchar(12) NOT NULL,
-  `activo` tinyint(1) NOT NULL,
-  `icono` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -124,13 +114,10 @@ CREATE TABLE `usuario` (
   `apellido` varchar(50) NOT NULL,
   `username` varchar(8) NOT NULL,
   `password` varchar(128) NOT NULL,
-  `tipo` int(1) NOT NULL,
+  `correo` varchar(128) NOT NULL,
+  `tipo_usuario` int(1) NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Índices para tablas volcadas
---
 
 --
 -- Indices de la tabla `archivo`
@@ -138,8 +125,7 @@ CREATE TABLE `usuario` (
 ALTER TABLE `archivo`
   ADD PRIMARY KEY (`id_archivo`),
   ADD KEY `id_subcategoria` (`id_subcategoria`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_tipo_archivo` (`id_tipo_archivo`);
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `categoria`
@@ -236,8 +222,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `archivo`
   ADD CONSTRAINT `archivo_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `archivo_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `archivo_ibfk_4` FOREIGN KEY (`id_tipo_archivo`) REFERENCES `tipo_archivo` (`id_tipo_archivo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `archivo_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `solicitud`
