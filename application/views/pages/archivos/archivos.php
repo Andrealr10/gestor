@@ -19,29 +19,40 @@
   <div class="container">
     <!-- ******************************************************************* -->
     <?php foreach ($archivos as $archivo) { ?>
-    <div class="tarjeta">
-      <!-- <img src="https://res.cloudinary.com/ddbxzcb7k/image/upload/v1565102528/dp-01_mxstm3.svg"></img> -->
-      <img width="100px" src="<?= $archivo->icono ?>">
-      <div class="titulo">
-        <h2><?= $archivo->archivo ?></h2>
-        <hr>
-        <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
-        <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
-        <div class="subtitulo">Tamaño: <?= $archivo->tamanio ?> KB</div>
-        <div class="subtitulo">Autor: <?= $archivo->username ?></div>
-        <!-- <div class="descripcion">Guía para configurar Codeigniter eficazmente y usarlo como backend de nuestro proyecto (ideal para principiantes).</div> -->
-      </div>
-      <br><br>
-      <div class="acciones">
-        <a href="<?= base_url('archivo') ?>/download/PHP/guias/<?= $archivo->archivo ?>">
-          <button class="descargar">DESCARGAR <i class="fas fa-download"></i></button>
-        </a>
-        <div class="overlay"></div>
-        <div class="iconito">
-          <i class="fas fa-user fa-2x" style="color:white;"></i>
+      <div class="tarjeta">
+        <!-- <img src="https://res.cloudinary.com/ddbxzcb7k/image/upload/v1565102528/dp-01_mxstm3.svg"></img> -->
+        <img width="100px" src="<?= $archivo->icono ?>">  <button class="vistaPrevia"><i class="far fa-eye fa-lg"></i></button> 
+        <div class="titulo">
+          <h2><?= $archivo->archivo ?></h2>
+          <hr>
+          <div class="subtitulo"><small>Tipo: <?= $archivo->tipo_archivo ?></small></div>
+          <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
+          <div class="subtitulo">Tamaño: <?= $archivo->tamanio ?> KB</div>
+          <div class="subtitulo">Autor: <?= $archivo->username ?></div>
+          <!-- <div class="descripcion">Guía para configurar Codeigniter eficazmente y usarlo como backend de nuestro proyecto (ideal para principiantes).</div> -->
+    </div>
+        <div class="acciones mt-2">
+          <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="5 Star">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="4 Star">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="3 Star">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="2 Star">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="1 Star">1 star</label>
+          </div>
+          <a href="<?= base_url('archivo') ?>/download/PHP/guias/<?= $archivo->archivo ?>">
+            <button class="descargar">DESCARGAR <i class="fas fa-download"></i></button>
+          </a>
+          <div class="overlay"></div>
+          <div class="iconito">
+            <i class="fas fa-share-alt fa-3x" style="color:white;"></i>
+          </div>
         </div>
       </div>
-    </div>
     <?php } ?>
     <!-- ******************************************************************* -->
   </div>
