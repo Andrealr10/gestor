@@ -134,7 +134,7 @@ body{
   /* --------Responsive desing------------- */
 
   /* -----------Vista ipad ----------------- */
-  @media (max-width: 768px) {
+  @media only screen and  (max-width: 768px) {
 
     .container{
       height: 50vh;
@@ -174,8 +174,8 @@ body{
 
     
   }
-/* ----------moviles pequeños-------- */
-  @media (max-width: 320px) and (max-width: 568px) {
+/* ----------moviles pequeños horizontal-------- */
+  @media only screen and (max-width: 360px)  {
     .container{
       height: 60vh;
       widows: 10vw;
@@ -272,5 +272,6 @@ body{
   }
 
   }
+
 
    /* vista horizontal moviles pequeños */
