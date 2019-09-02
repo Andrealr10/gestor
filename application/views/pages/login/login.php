@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="container ">
-    <div class="backbox col-12">
+    <div class="backbox col-12 ">
       <div class="loginMsg ">
         <div class="textcontent1 text-center">
           <p class="title"> &#191;A&uacute;n no est&aacute;s registrado&#63;</p>
@@ -37,7 +37,7 @@
     </div>
     <!-- backbox -->
 
-    <div class="frontbox ">
+    <div class="frontbox">
       <div class="login ">
         <h2>INICIAR SESI&Oacute;N</h2>
         <div class="inputbox">
@@ -55,15 +55,15 @@
 
         </div>
         <br>
-        <a class="text-primary" href="">&#191;Olvidaste la contraseña&#63;</a>
+        <a class="text-primary" data-toggle="modal" data-target="#recuperarPass" href="">&#191;Olvidaste la contraseña&#63;</a>
         <br><br>
 
 
-        <button class="btn btn-block btn-dark">Ingresar</button>
+        <!-- <button class="btn btn-block btn-dark">Ingresar</button> -->
       </div>
 
       <div class="signup hide">
-        <h2>REGISTRO</h2>
+        <h2 class="">REGISTRO</h2>
         <div class="inputbox2">
           <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" required>
           <input type="text" class="form-control" name="apellido" placeholder="APELLIDO" required>
@@ -72,11 +72,41 @@
           <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR CONTRASE&#209;A" required>
           <input type="text" class="form-control" name="email" placeholder="EMAIL" >
         </div>
-        <button class="btn btn-block btn-dark">Registrar</button>
+        <!-- <button class="btn btn-block btn-dark">Registrar</button> -->
       </div>
 
     </div>
     <!-- frontbox -->
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="recuperarPass" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title" id="ModalLabel">RESTABLECER CONTRASE&#209;A</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+              <input type="password" class="form-control" name="password" placeholder="CONTRASE&#209;A" required>
+              
+          </div>
+          <div class="input-group">
+             
+              <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR CONTRASE&#209;A" required>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
