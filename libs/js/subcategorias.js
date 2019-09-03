@@ -4,11 +4,12 @@ $(document).ready(function () {
     load();
 });
 
+
 $('#crear').on('click', function () {
     form = new FormData(document.getElementById("form"));
     $.ajax({
         type: 'POST',
-        url: 'categoria/crear',
+        url: 'subcategoria/crear',
         data: form,
         processData: false,
         contentType: false,
@@ -22,9 +23,9 @@ $('#crear').on('click', function () {
 function load() {
     $.ajax({
         type: 'GET',
-        url: uri + 'categoria/load/',
+        url: uri + 'subcategoria/load/',
         success: function (result) {
-            $('#cards').html(result);
+            $('#subcategorias').html(result);
         }
     });
 }

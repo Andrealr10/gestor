@@ -10,22 +10,26 @@ class Categoria extends CI_Controller
         $this->load->model('subcategoriaModel');
     }
 
+    /**
+     * Mostrar todas las categirias existentes y el formulario para agregar nuevas
+     */
     public function index()
-    {
-        $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categorias/categoria', $data);
-    }
-    public function index2()
     {
         $this->load->view('pages/categorias/index');
     }
 
+    /**
+     * Refrescar las categorias que se muestran 
+     */
     public function load()
     {
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categorias/lista', $data);
+        $this->load->view('pages/categorias/categorias', $data);
     }
 
+    /**
+     * Metodo para crear una nueva categoria
+     */
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -50,7 +54,6 @@ class Categoria extends CI_Controller
                     echo $this->upload->display_errors();
                     return;
                 }
-
             } else {
                 echo "la categoria ya existe!";
             }

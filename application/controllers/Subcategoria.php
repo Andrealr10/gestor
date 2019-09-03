@@ -11,30 +11,42 @@ class Subcategoria extends CI_Controller
         $this->load->model('archivoModel');
     }
 
-    public function index()
+    /**
+     * Cargar las subcategorias que dependen de la categoria
+     */
+    public function index($id = null)
     {
-        $id = 1;
-       
-        $data = [
-            'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
-            'categoria' => ($this->categoriaModel->getById($id))->nombre
-        ];
-        $this->load->view('pages/subcategorias/subcategorias', $data);
+        if (isset($id)) {
+            $data = [
+                'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
+                'categoria' => ($this->categoriaModel->getById($id))->nombre,
+                'id_categoria' => $id
+            ];
+            $this->load->view('pages/subcategorias/index', $data);
+        }
     }
 
-    public function find($id)
-    {
-        $data = [
-            'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
-            'id' => $id,
-            'nombre' => ($this->categoriaModel->getById($id))->nombre
-        ];
-        $this->load->view('pages/categorias/subcategorias', $data);
-    }
+    // public function find($id)
+    // {
+    //     $data = [
+    //         'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
+    //         'id' => $id,
+    //         'nombre' => ($this->categoriaModel->getById($id))->nombre
+    //     ];
+    //     $this->load->view('pages/categorias/subcategorias', $data);
+    // }
 
-    public function load($id)
+    public function load($id = null)
     {
-        $this->load->view('pages/categorias/frmsubcategorias', ['id' => $id]);
+        $this->session->set_userdata(['id_categiruia' => $id]);
+        if (isset($id)) {
+            $data = [
+                'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
+                'categoria' => ($this->categoriaModel->getById($id))->nombre,
+                'id_categoria' => $id
+            ];
+            $this->load->view('pages/subcategorias/index', $data);
+        }
     }
 
 
@@ -45,7 +57,7 @@ class Subcategoria extends CI_Controller
             $categoria = ($this->categoriaModel->getById($_POST['categoria']))->nombre;
             $dir = 'home/files/' . $categoria . '/' . $subcategoria . '/';
             $ruta = 'home/images/subcategorias/';
-            $nombre = $categoria.'_'.$subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
+            $nombre = $categoria . '_' . $subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
             if (!is_dir($dir)) {
 
                 $this->subcategoriaModel->insert([

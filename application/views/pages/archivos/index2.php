@@ -19,12 +19,7 @@
 
     <main role="main" class="container">
 
-        <h1>jQuery Ajax File Uploader Widget</h1>
-        <p class="lead mb-4">
-            A very lightweight Plugin for file uploading using ajax(async) and includes support for queues, progress tracking and drag and drop.
-            This page demostrates the default basic setup/config.
-        </p>
-
+        
         <div class="row">
             <div class="col-md-6 col-sm-12">
 
@@ -54,19 +49,7 @@
 
 
 
-        <div class="row">
-            <div class="col-12">
-                <div class="card h-100">
-                    <div class="card-header">
-                        Debug Messages
-                    </div>
-
-                    <ul class="list-group list-group-flush" id="debug">
-                        <li class="list-group-item text-muted empty">Loading plugin....</li>
-                    </ul>
-                </div>
-            </div>
-        </div> <!-- /debug -->
+        
 
     </main> <!-- /container -->
 

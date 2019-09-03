@@ -13,23 +13,19 @@
 </head>
 
 <body>
-  <!--Establecer maxlenght="21" para los titulos, 34 para subtitulos y 200 para la descripcion-->
-  <a href="<?= base_url('subcategoria'); ?>" class="buton"><i class="large material-icons">arrow_back</i></a>
+  <a href="<?= base_url('subcategoria')?>/index/<?= $id_categoria?>" class="buton"><i class="large material-icons">arrow_back</i></a>
 
   <div class="container">
-    <!-- ******************************************************************* -->
     <?php foreach ($archivos as $archivo) { ?>
       <div class="tarjeta">
-        <!-- <img src="https://res.cloudinary.com/ddbxzcb7k/image/upload/v1565102528/dp-01_mxstm3.svg"></img> -->
-        <img width="100px" src="<?= $archivo->icono ?>">  <button class="vistaPrevia"><i class="far fa-eye fa-lg"></i></button> 
+        <img width="100px" src="<?= base_url().'/'.$archivo->icono ?>">  <button class="vistaPrevia"><i class="far fa-eye fa-lg"></i></button> 
         <div class="titulo">
           <h2><?= $archivo->archivo ?></h2>
           <hr>
-          <div class="subtitulo"><small>Tipo: <?= $archivo->tipo_archivo ?></small></div>
+          <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
           <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
-          <div class="subtitulo">Tamaño: <?= $archivo->tamanio ?> KB</div>
+          <div class="subtitulo">Tamaño: <?= ($archivo->tamanio/1024) ?> KB</div>
           <div class="subtitulo">Autor: <?= $archivo->username ?></div>
-          <!-- <div class="descripcion">Guía para configurar Codeigniter eficazmente y usarlo como backend de nuestro proyecto (ideal para principiantes).</div> -->
     </div>
         <div class="acciones mt-2">
           <div class="rate">
