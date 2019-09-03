@@ -60,7 +60,7 @@
       </div>
       <!-- Redirecionando al login  -->
       <div>
-        <a class="nav-link d-lg-inline-block mb-2 mb-md-0 ml-md-2" href="#">Registro &#124; Iniciar Sesión</a>
+        <a class="nav-link d-lg-inline-block mb-2 mb-md-0 ml-md-2" href="<?= base_url(); ?>Login">Registro &#124; Iniciar Sesión</a>
       </div>
 
   </nav>
