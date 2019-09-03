@@ -23,8 +23,7 @@ class Usuario extends CI_Controller
   }
 
 
-  public function insert()
-  {
+  public function insert(){
     $data = [
       'nombre' => $_POST['nombre'],
       'apellido' => $_POST['apellido'],
@@ -59,7 +58,8 @@ class Usuario extends CI_Controller
   {
     echo json_encode($this->UsuarioModel->getById($id));
   }
-
+  
+// actualizar los datos de usuario
   public function actualizar($id)
   {
     if ($id == 1) {

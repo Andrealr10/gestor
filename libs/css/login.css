@@ -41,8 +41,8 @@ body{
 }
 
 .moving{
-  /* right: 41%; */
-  left: 40%;
+  right: 41%;
+  /* left: 40%; */
 }
 
 .loginMsg, .signupMsg{

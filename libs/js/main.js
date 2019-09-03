@@ -27,7 +27,7 @@ function insertar() {
     if (nombre != "" && apellido != "" && username != "" && password != "" && tipo != "") {
         $.ajax({
             type: 'POST',
-            url: 'usuario/insert',
+            url: 'usuario/insert' ,
             data: formu,
             success: function (result) {
                 console.log(result);

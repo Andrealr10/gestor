@@ -65,14 +65,14 @@
       <div class="signup hide">
         <h2 class="">REGISTRO</h2>
         <div class="inputbox2">
-          <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" required>
-          <input type="text" class="form-control" name="apellido" placeholder="APELLIDO" required>
-          <input type="text" class="form-control" name="username" placeholder="USERNAME" required>
-          <input type="password" class="form-control" name="password" placeholder="CONTRASE&#209;A" required>
-          <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR CONTRASE&#209;A" required>
-          <input type="text" class="form-control" name="email" placeholder="EMAIL" >
+          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="NOMBRE" required>
+          <input type="text" class="form-control" name="apellido" id="apellido" placeholder="APELLIDO" required>
+          <input type="text" class="form-control" name="user" id="username" placeholder="USERNAME" required>
+          <input type="password" class="form-control" name="pass1" id="password" placeholder="CONTRASE&#209;A" required>
+          <input type="password" class="form-control" name="pass2" placeholder="CONFIRMAR CONTRASE&#209;A" >
+          <input type="text" class="form-control" name="correo" id="correo" placeholder="CORRE ELECTR&Oacute;NICO" >
         </div>
-        <!-- <button class="btn btn-block btn-dark">Registrar</button> -->
+        <button class="btn btn-block btn-dark" id="agregar" onclick="insertar()">Registrar</button>
       </div>
 
     </div>
@@ -90,19 +90,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="input-group">
-              <input type="password" class="form-control" name="password" placeholder="CONTRASE&#209;A" required>
-              
-          </div>
+         
           <div class="input-group">
              
-              <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR CONTRASE&#209;A" required>
+              <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR NOMBRE DE USUARIO" required>
           </div>
           
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Guardar</button>
+          <button type="button" class="btn btn-danger">Enviar Correo</button>
         </div>
       </div>
     </div>
@@ -115,6 +112,8 @@
 
 
   <script src="<?= base_url(); ?>libs/js/login.js"></script>
+  <!-- Esto es provicional -->
+  <script src="<?= base_url(); ?>libs/js/main.js"></script>
   </body>
 
 </html>
