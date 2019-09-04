@@ -17,8 +17,9 @@
   <title>Inicio Sesi&oacute;n/ Registro</title>
 
 </head>
+
 <body>
-<div class="container ">
+  <div class="container ">
     <div class="backbox col-12 ">
       <div class="loginMsg ">
         <div class="textcontent1 text-center">
@@ -47,10 +48,10 @@
 
           <div class="input-group">
             <input type="password" class="form-control" name="password" placeholder="PASSWORD" required>
-              <div class="input-group-append">
-               <button class="btn btn-danger" type="button"><i class="far fa-eye"></i></button>
-              </div>
-          
+            <div class="input-group-append">
+              <button class="btn btn-danger" type="button"><i class="far fa-eye"></i></button>
+            </div>
+
           </div>
 
         </div>
@@ -69,8 +70,8 @@
           <input type="text" class="form-control" name="apellido" id="apellido" placeholder="APELLIDO" required>
           <input type="text" class="form-control" name="user" id="username" placeholder="USERNAME" required>
           <input type="password" class="form-control" name="pass1" id="password" placeholder="CONTRASE&#209;A" required>
-          <input type="password" class="form-control" name="pass2" placeholder="CONFIRMAR CONTRASE&#209;A" >
-          <input type="text" class="form-control" name="correo" id="correo" placeholder="CORRE ELECTR&Oacute;NICO" >
+          <input type="password" class="form-control" name="pass2" placeholder="CONFIRMAR CONTRASE&#209;A">
+          <input type="text" class="form-control" name="correo" id="correo" placeholder="CORRE ELECTR&Oacute;NICO">
         </div>
         <button class="btn btn-block btn-dark" id="agregar" onclick="insertar()">Registrar</button>
       </div>
@@ -90,17 +91,19 @@
           </button>
         </div>
         <div class="modal-body">
-         
-          <div class="input-group">
-             
-              <input type="password" class="form-control" name="password2" placeholder="CONFIRMAR NOMBRE DE USUARIO" required>
-          </div>
-          
+          <form id="form">
+            <div class="input-group">
+
+              <input type="text" class="form-control" name="correo" id="correo" placeholder="CONFIRMAR CORREO" required>
+            </div>
+          </form>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Enviar Correo</button>
+          <button type="button" class="btn btn-danger" id="cambio">Enviar Correo</button>
         </div>
+
       </div>
     </div>
   </div>
@@ -114,6 +117,23 @@
   <script src="<?= base_url(); ?>libs/js/login.js"></script>
   <!-- Esto es provicional -->
   <script src="<?= base_url(); ?>libs/js/main.js"></script>
-  </body>
+
+  <script>
+    $('#cambio').on('click', function() {
+      form = new FormData(document.getElementById("form"));
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost/gestor/mail/cambio',
+        data: form,
+        processData: false,
+        contentType: false,
+        success: function(result) {
+          console.log(result);
+          // window.location.href = 'http://localhost/gestor';
+        }
+      });
+    })
+  </script>
+</body>
 
 </html>

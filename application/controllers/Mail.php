@@ -3,68 +3,67 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Mail extends CI_Controller
 {
-    public function __construct()
+    function  __construct()
     {
         parent::__construct();
-        $this->load->library('email');
-        // $this->load->library('encrypt');
-
+        $this->load->model('usuarioModel');
     }
 
-    public function send()
+    public function cambio()
     {
-        //Indicamos el protocolo a utilizar
-        $config['protocol'] = 'smtp';
+        $correo = $_POST['correo'];
 
-        //El servidor de correo que utilizaremos
-        $config["smtp_host"] = 'smtp.googlemail.com';
+        if ($correo != null) {
+            $usuario = $this->usuarioModel->getByCorreo($correo);
+            if ($usuario != null) {
 
-        //Nuestro usuario
-        $config["smtp_user"] = 'chavezyovanyy@gmail.com';
+                $this->send($correo, $usuario->hash);
+            }
+        }
+    }
+    function send($correo = null, $hash = null)
+    {
+        // Load PHPMailer library
+        $this->load->library('phpmailer_lib');
 
-        //Nuestra contraseña
-        $config["smtp_pass"] = 'xhwrjdhcvojwqhrv';
-        $config["smtp_crypto"] = 'ssl';
+        // PHPMailer object
+        $mail = $this->phpmailer_lib->load();
 
-        //El puerto que utilizará el servidor smtp
-        $config["smtp_port"] = '465';
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host     = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'chavezyovanyy@gmail.com';
+        $mail->Password = 'ryvfhduipwemteul';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port     = 587;
 
-        //El juego de caracteres a utilizar
-        $config['charset'] = 'utf-8';
+        $mail->setFrom('chavezyovanyy@gmail.com', 'Yovanyy Chavez');
+        // $mail->addReplyTo('chavezyovanyy@gmail.com', 'Yovanyy Chavez');
 
-        //Permitimos que se puedan cortar palabras
-        $config['wordwrap'] = TRUE;
+        // Add a recipient
+        $mail->addAddress($correo);
 
-        //El email debe ser valido 
-        $config['validate'] = true;
+        // Add cc or bcc 
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
 
-        //Establecemos esta configuración
-        $this->email->initialize($config);
+        // Email subject
+        $mail->Subject = 'Cambio de contraseña';
 
-        //Ponemos la dirección de correo que enviará el email y un nombre
-        $this->email->from('chavezyovanyy@gmail.com', 'Yovanyy Chavez');
+        // Set email format to HTML
+        // $mail->isHTML(true);
 
-        /*
-       * Ponemos el o los destinatarios para los que va el email
-       * en este caso al ser un formulario de contacto te lo enviarás a ti
-       * mismo
-       */
-        $this->email->to('yovanych-@hotmail.com', 'Yovany Chavez');
+        // Email body content
+        $mailContent = "Has clic en el siguiente enlace para cambiar la contraseña http://localhost/gestor/usuario/reset/".$hash;
+        $mail->Body = $mailContent;
 
-        //Definimos el asunto del mensaje
-        $this->email->subject("Prueba de envio de correos");
-
-        //Definimos el mensaje a enviar
-        $this->email->message(
-            "Aqui va la prueba de envio de correos"
-        );
-
-        echo $this->email->send();
-        //Enviamos el email y si se produce bien o mal que avise con una flasdata
-        // if ($this->email->send()) {
-        //     echo "Lo envio :)";
-        // } else {
-        //     echo "No lo envio :(";
-        // }
+        // Send email
+        if (!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Message has been sent';
+        }
     }
 }

@@ -117,6 +117,7 @@ CREATE TABLE `usuario` (
   `correo` varchar(128) NOT NULL,
   `tipo_usuario` int(1) NOT NULL,
   `estado` tinyint(1) NOT NULL
+  `hash` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

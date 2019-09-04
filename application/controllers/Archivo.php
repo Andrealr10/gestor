@@ -9,6 +9,7 @@ class Archivo extends CI_Controller
         $this->load->model('archivoModel');
         $this->load->model('categoriaModel');
         $this->load->model('subcategoriaModel');
+        $this->load->model('solicitudModel');
     }
 
 
@@ -75,6 +76,12 @@ class Archivo extends CI_Controller
                     'icono' => 'home/images/archivos/' . $extension . '.png',
                     'id_usuario' => 1,
                     'id_subcategoria' => $id
+                ]);
+                $this->solicitudModel->insert([
+                    'descripcion' => 'Aprobar archivo',
+                    'estado' => 1,
+                    'id_tipo_solicitud' => 1,
+                    'id_usuario' => 1
                 ]);
             }
         }
