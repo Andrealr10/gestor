@@ -8,7 +8,7 @@ $('#crear').on('click', function () {
     form = new FormData(document.getElementById("form"));
     $.ajax({
         type: 'POST',
-        url: 'categoria/crear',
+        url: uri + 'categoria/crear',
         data: form,
         processData: false,
         contentType: false,

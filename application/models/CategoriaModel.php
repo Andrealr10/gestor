@@ -19,6 +19,11 @@ class CategoriaModel extends CI_Model
         $this->db->insert($this->tabla, $datos);
     }
 
+    public function getByName($name)
+    {
+        return $this->db->get_where($this->tabla, ['nombre' => $name])->row();
+    }
+
     public function delete($id)
     {
         $this->db->delete($this->tabla, [$this->id => $id]);

@@ -1,5 +1,5 @@
 <?php foreach ($categorias as $categoria) { ?>
-    <a class="link" href="<?= base_url('subcategoria') ?>/index/<?= $categoria->id_categoria ?>/">
+    <a class="link" href="<?= base_url('subcategoria') ?>/load/<?= $categoria->nombre ?>/">
         <div class="card">
             <div class="card-img-container"><img src="<?= $categoria->imagen ?>" alt="" style="height: 200px; width: 300px"></div>
             <!--por defecto, el div genera imagenes, eso se puede cambiar si se desea-->

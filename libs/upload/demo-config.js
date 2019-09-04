@@ -6,9 +6,9 @@ $(function () {
    * UI functions ui_* can be located in: demo-ui.js
    */
   $('#drag-and-drop-zone').dmUploader({ //
-    url: 'archivo2/fileUpload',
+    url: 'http://localhost/gestor/archivo/fileUpload/'+document.getElementById('subcategoria').value,
     maxFileSize: 3000000, // 3 Megs 
-    extFilter: ["pdf", "docx", "doc", "ppt", "txt"],
+    extFilter: ["pdf", "docx", "doc", "ppt", "txt", "pptx"],
     onDragEnter: function () {
       // Happens when dragging something over the DnD area
       this.addClass('active');

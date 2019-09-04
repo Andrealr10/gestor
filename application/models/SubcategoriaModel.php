@@ -21,8 +21,6 @@ class SubcategoriaModel extends CI_Model
         from archivo WHERE archivo.id_subcategoria = subcategoria.id_subcategoria) as cantidad 
         from subcategoria where id_categoria = ?";
         return $this->db->query($sql, $id)->result();
-        // $this->db->where('id_categoria', $id);
-        // return $this->db->get($this->tabla)->result();
     }
     public function insert($datos)
     {
@@ -32,6 +30,11 @@ class SubcategoriaModel extends CI_Model
     public function delete($id)
     {
         $this->db->delete($this->tabla, [$this->id => $id]);
+    }
+
+    public function getByName($name)
+    {
+        return $this->db->get_where($this->tabla, ['nombre' => $name])->row();
     }
 
     public function getById($id)

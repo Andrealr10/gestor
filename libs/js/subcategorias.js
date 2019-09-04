@@ -1,15 +1,15 @@
 var uri = "http://localhost/gestor/"
 
-$(document).ready(function () {
-    load();
-});
+// $(document).ready(function () {
+//     load();
+// });
 
 
 $('#crear').on('click', function () {
     form = new FormData(document.getElementById("form"));
     $.ajax({
         type: 'POST',
-        url: 'subcategoria/crear',
+        url: uri +'subcategoria/crear',
         data: form,
         processData: false,
         contentType: false,
@@ -26,6 +26,7 @@ function load() {
         url: uri + 'subcategoria/load/',
         success: function (result) {
             $('#subcategorias').html(result);
+            location.reload();
         }
     });
 }

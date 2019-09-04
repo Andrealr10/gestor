@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <a href="<?= base_url('categoria')?>" class="buton"><i class="large material-icons">arrow_back</i></a>
+    <a href="<?= base_url('categoria') ?>" class="buton"><i class="large material-icons">arrow_back</i></a>
     <div class="container-fluid">
         <div class="row">
             <?php foreach ($subcategorias as $subcategoria) { ?>
@@ -25,20 +25,20 @@
                                     <div class="avatar">
                                         <div class="circle"></div>
                                         <div class="circle"></div>
-                                        <img src="<?= base_url().'/'.$subcategoria->imagen ?>">
+                                        <img src="<?= base_url() . '/' . $subcategoria->imagen ?>">
                                     </div>
                                     <div class="info">
                                         <span class="big"><?= $subcategoria->nombre ?></span><span class="small"><?= $categoria ?></span>
                                     </div>
                                     <div class="botons">
-                                        <button class="flw boton"><a class="link" href="<?= base_url('archivo')?>/index/<?= $id_categoria?>/<?= $subcategoria->id_subcategoria ?>">Ver Contenido</a></button>
+                                        <button class="flw boton"><a class="link" href="<?= base_url('archivo') ?>/load/<?= $categoria ?>/<?= $subcategoria->nombre ?>/">Ver Contenido</a></button>
                                     </div>
                                 </div>
                                 <div class="right">
                                     <div class="stats posts">
                                         <span class="big"><?= $subcategoria->cantidad ?></span><span class="small">Archivos</span>
                                     </div>
-                                    <div  data-toggle="modal" data-target="#share<?= $subcategoria->id_subcategoria ?>" class="stats likes" style="background-color:rgb(66, 66, 66);" onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='rgb(66, 66, 66)'">
+                                    <div data-toggle="modal" data-target="#share<?= $subcategoria->id_subcategoria ?>" class="stats likes" style="background-color:rgb(66, 66, 66);" onmouseover="this.style.backgroundColor='gray'" onmouseout="this.style.backgroundColor='rgb(66, 66, 66)'">
                                         <span class="big"><i class="fas fa-user-friends"></i></span><span class="small">Compartir</span>
                                     </div>
                                     <div class="stats flwrs">
@@ -69,11 +69,21 @@
                     </div>
                 </div>
             <?php } ?>
+            <div class="col-sm-6 col-lg-4 mt-5 ">
+                <form id="form">
+                    <label for="nombre">Nombre de la SubCategoria</label><br>
+                    <input type="text" name="nombre" id="nombre"><br>
+                    <input type="text" name="categoria" id="categoria" hidden value="<?= $id_categoria ?>">
+                    <br>
+                    <button type="button" id="crear">Crear</button>
+                </form>
+            </div>
         </div>
     </div>
 
     <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>libs/js/subcategorias.js"></script>
 </body>
 
 </html>

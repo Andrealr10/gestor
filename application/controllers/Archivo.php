@@ -7,20 +7,25 @@ class Archivo extends CI_Controller
     {
         parent::__construct();
         $this->load->model('archivoModel');
+        $this->load->model('categoriaModel');
+        $this->load->model('subcategoriaModel');
     }
+
 
     /**
      * Mostrar todos los archivos aprobados de la categoria
      */
-    public function index($id_categoria = null, $id_subcategoria = null)
+    public function load($categoria, $subcategoria)
     {
-        if (isset($id_subcategoria)) {
+        if (isset($subcategoria) && isset($categoria)) {
+            $categoria = $this->categoriaModel->getByName($categoria);
+            $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
             $data = [
-                'archivos' => $this->archivoModel->getBySubCategoria($id_subcategoria),
-                'id_subcategoria' => $id_subcategoria,
-                'id_categoria' => $id_categoria
+                'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
+                'categoria' => $categoria,
+                'subcategoria' => $subcategoria
             ];
-            $this->load->view('pages/archivos/archivos.php', $data);
+            $this->load->view('pages/archivos/index', $data);
         }
     }
 
@@ -33,61 +38,44 @@ class Archivo extends CI_Controller
         force_download('home/files/' . $categoria . '/' . $subcategoria . '/' . $archivo, null);
     }
 
-    // public function load()
-    // {
-    //     $data = ['archivos' => $this->archivoModel->getAll()];
-    //     $this->load->view('pages/archivos/lista', $data);
-    // }
 
     /**
      * Subir archivos
      */
-    public function fileUpload()
+    public function fileUpload($id)
     {
         if (!empty($_FILES['file']['name'])) {
-
-            $config['upload_path'] = 'home/files/';
-            $config['allowed_types'] = 'pdf';
-            $config['max_size']    = '10240'; // max_size in kb
-            $config['file_name'] = $_FILES['file']['name'];
-
-            $this->load->library('upload', $config);
-
-            if ($this->upload->do_upload('file')) {
-                return true;
-            }
-        }
-    }
-
-    public function crear()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $archivo = $_POST['nombre'];
-            $dir = 'home/files/' . $archivo . '/';
-            $ruta = 'home/images/archivos/';
-            $nombre = $archivo . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
-
-            if (!is_dir($dir)) {
-
-                $this->archivoModel->insert([
-                    'nombre' => $archivo,
-                    'descripcion' => $_POST['descripcion'],
-                    'imagen' => $ruta . $nombre,
-                    'estado' => 1
-                ]);
-
-                mkdir($dir, 0755, TRUE);
-
-                $config['upload_path'] = $ruta;
-                $config['file_name'] = $nombre;
-                $config['allowed_types'] = "png|jpg|jpeg";
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('imagen')) {
-                    echo $this->upload->display_errors();
-                    return;
-                }
+            $extension = (new SplFileInfo($_FILES['file']['name']))->getExtension();
+            if ($extension == 'ppt' || $extension == 'pptx') {
+                $tipo = 'Presentacion';
             } else {
-                echo "la archivo ya existe!";
+                $tipo = 'Documento';
+            }
+            $nombre = str_replace(' ', '_', $_FILES['file']['name']);
+            $config['upload_path'] = 'home/uploads';
+            $config['allowed_types'] = 'txt|pdf|doc|docx|ppt|pptx|odt|';
+            $config['max_size']    = '10240'; // max_size in kb
+            $config['file_name'] = $nombre;
+            $config['overwrite'] = false;
+            $this->load->library('upload', $config);
+            // File upload
+            if ($this->upload->do_upload('file')) {
+
+                $upload_data = $this->upload->data();
+                $nombre =   $upload_data['file_name'];
+                $this->archivoModel->insert([
+                    'archivo' => $nombre,
+                    'ruta' => 'home/uploads/' . $nombre,
+                    'tamanio' => $_FILES['file']['size'],
+                    'estado' => 0,
+                    'tipo_archivo' => $tipo,
+                    'fecha' => date("Y-m-d H:i:s"),
+                    'descargas' => 0,
+                    'valoracion' => 0,
+                    'icono' => 'home/images/archivos/' . $extension . '.png',
+                    'id_usuario' => 1,
+                    'id_subcategoria' => $id
+                ]);
             }
         }
     }

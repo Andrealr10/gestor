@@ -9,16 +9,17 @@ class QR_gen extends CI_Controller
         $this->load->library('qr');
     }
 
-    public function index()
-    {
-        $this->generar('holaaaa');
-    }
-
     public function generar($categoria, $subcategoria)
     {
-        $this->qr->text('http://192.168.1.13/gestor/zip/dir/'.$categoria.'/'.$subcategoria);
+        $this->qr->text('http://192.168.1.13/gestor/zip/dir/' . $categoria . '/' . $subcategoria);
 
         // display QR code image
-        $this->qr->qrCode(); 
+        $this->qr->qrCode();
+    }
+
+    public function archivo($categoria, $subcategoria, $nombre)
+    {
+        $this->qr->text('http://192.168.1.13/gestor/archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
+        $this->qr->qrCode();
     }
 }

@@ -8,7 +8,6 @@ class Subcategoria extends CI_Controller
         parent::__construct();
         $this->load->model('subcategoriaModel');
         $this->load->model('categoriaModel');
-        $this->load->model('archivoModel');
     }
 
     /**
@@ -36,28 +35,32 @@ class Subcategoria extends CI_Controller
     //     $this->load->view('pages/categorias/subcategorias', $data);
     // }
 
-    public function load($id = null)
+    /**
+     * En algun momento tal vez sirve
+     */
+    public function load($nombre = null)
     {
-        $this->session->set_userdata(['id_categiruia' => $id]);
-        if (isset($id)) {
+        $this->session->set_userdata(['nombre' => $nombre]);
+        if (isset($nombre)) {
+            $categoria = $this->categoriaModel->getByName($nombre);
             $data = [
-                'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
-                'categoria' => ($this->categoriaModel->getById($id))->nombre,
-                'id_categoria' => $id
+                'subcategorias' => $this->subcategoriaModel->getByCategoria($categoria->id_categoria),
+                'categoria' => $categoria->nombre,
+                'id_categoria' => $categoria->id_categoria
             ];
             $this->load->view('pages/subcategorias/index', $data);
         }
     }
 
-
+    /**
+     * Funcion para crear la subcategoria
+     */
     public function crear()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $subcategoria = str_replace(' ', '_', $_POST['nombre']);
             $categoria = ($this->categoriaModel->getById($_POST['categoria']))->nombre;
             $dir = 'home/files/' . $categoria . '/' . $subcategoria . '/';
-            $ruta = 'home/images/subcategorias/';
-            $nombre = $categoria . '_' . $subcategoria . '.' . (new SplFileInfo($_FILES['imagen']['name']))->getExtension();
             if (!is_dir($dir)) {
 
                 $this->subcategoriaModel->insert([
@@ -68,15 +71,6 @@ class Subcategoria extends CI_Controller
                 ]);
 
                 mkdir($dir, 0755, TRUE);
-
-                // $config['upload_path'] = $ruta;
-                // $config['file_name'] = $nombre;
-                // $config['allowed_types'] = "png|jpg|jpeg";
-                // $this->load->library('upload', $config);
-                // if (!$this->upload->do_upload('imagen')) {
-                //     echo $this->upload->display_errors();
-                //     return;
-                // }
             } else {
                 echo "la subcategoria ya existe!";
             }
