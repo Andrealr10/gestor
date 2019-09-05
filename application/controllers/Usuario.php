@@ -13,13 +13,13 @@ class Usuario extends CI_Controller
   {
     $data = ['usuarios' => $this->UsuarioModel->getAll('usuario')];
     //renderizamos la vista
-    $this->load->view('pages/usuarios/index', $data);
+    $this->load->view('pages/admin/susuarios/index', $data);
   }
 
   public function cargar()
   {
     $data = ['usuarios' => $this->UsuarioModel->getAll('usuario')];
-    $this->load->view('pages/usuarios/tabla', $data);
+    $this->load->view('pages/admin/usuarios/tabla', $data);
   }
 
 
@@ -86,7 +86,7 @@ class Usuario extends CI_Controller
       $user = $this->UsuarioModel->getByHash($hash);
       $data = ['usuario' => $user];
       if ($user != null){
-        $this->load->view('pages/usuarios/reset', $data);
+        $this->load->view('pages/admin/usuarios/reset', $data);
       }else{
         echo "este enlace ya no es valido :V";
       }
