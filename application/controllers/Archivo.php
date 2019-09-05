@@ -26,7 +26,7 @@ class Archivo extends CI_Controller
                 'categoria' => $categoria,
                 'subcategoria' => $subcategoria
             ];
-            $this->load->view('pages/archivos/index', $data);
+            $this->load->view('pages/admin/archivos/index', $data);
         }
     }
 

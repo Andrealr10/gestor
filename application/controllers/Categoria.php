@@ -15,7 +15,7 @@ class Categoria extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('pages/categorias/index');
+        $this->load->view('pages/admin/categorias/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class Categoria extends CI_Controller
     public function load()
     {
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('pages/categorias/categorias', $data);
+        $this->load->view('pages/admin/categorias/categorias', $data);
     }
 
     /**

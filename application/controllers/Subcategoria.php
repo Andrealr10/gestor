@@ -21,7 +21,7 @@ class Subcategoria extends CI_Controller
                 'categoria' => ($this->categoriaModel->getById($id))->nombre,
                 'id_categoria' => $id
             ];
-            $this->load->view('pages/subcategorias/index', $data);
+            $this->load->view('pages/admin/subcategorias/index', $data);
         }
     }
 
@@ -48,7 +48,7 @@ class Subcategoria extends CI_Controller
                 'categoria' => $categoria->nombre,
                 'id_categoria' => $categoria->id_categoria
             ];
-            $this->load->view('pages/subcategorias/index', $data);
+            $this->load->view('pages/admin/subcategorias/index', $data);
         }
     }
 
