@@ -33,13 +33,12 @@ class Mail extends CI_Controller
         $mail->isSMTP();
         $mail->Host     = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'chavezyovanyy@gmail.com';
-        $mail->Password = 'ryvfhduipwemteul';
+        $mail->Username = 'cloudcat.inc@gmail.com';
+        $mail->Password = 'ykrzrqwxzfixpibp';
         $mail->SMTPSecure = 'tls';
         $mail->Port     = 587;
 
-        $mail->setFrom('chavezyovanyy@gmail.com', 'Yovanyy Chavez');
-        // $mail->addReplyTo('chavezyovanyy@gmail.com', 'Yovanyy Chavez');
+        $mail->setFrom('cloudcat.inc@gmail.com', 'CloudCat');
 
         // Add a recipient
         $mail->addAddress($correo);
