@@ -117,8 +117,24 @@ CREATE TABLE `usuario` (
   `correo` varchar(128) NOT NULL,
   `tipo_usuario` int(1) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `hash` varchar(256) NOT NULL
+  `hash` varchar(256) NOT NULL,
+  `code` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valoracion`
+--
+
+CREATE TABLE `valoracion` (
+  `id_valoracion` int(11) NOT NULL,
+  `valoracion` int(2) NOT NULL,
+  `comentario` varchar(256) DEFAULT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_archivo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indices de la tabla `archivo`
@@ -163,6 +179,14 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
+-- Indices de la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  ADD PRIMARY KEY (`id_valoracion`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_archivo` (`id_archivo`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -203,6 +227,13 @@ ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
+
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -226,6 +257,14 @@ ALTER TABLE `solicitud`
 ALTER TABLE `subcategoria`
   ADD CONSTRAINT `subcategoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `super` FOREIGN KEY (`super`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+--
+-- Filtros para la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `valoracion_ibfk_2` FOREIGN KEY (`id_archivo`) REFERENCES `archivo` (`id_archivo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
