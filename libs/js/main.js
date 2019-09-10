@@ -1,6 +1,7 @@
 // $(document).ready(function() {
 //      $('#lista').DataTable();
 // } );
+var uri = 'http://localhost/gestor/'
 
 $(document).ready(function () {
     cargar();
@@ -21,24 +22,39 @@ function insertar() {
     var nombre = $('#nombre').val();
     var apellido = $('#apellido').val();
     var username = $('#username').val();
+    var correo = $('#correo').val();
     var password = $('#password').val();
     var tipo = $('#tipo').val();
     formu = $('#formu').serialize();
-    if (nombre != "" && apellido != "" && username != "" && password != "" && tipo != "") {
+    if (nombre != "" && apellido != "" && username != "" && password != "" && tipo != "" && correo != "") {
         $.ajax({
             type: 'POST',
             url: 'usuario/insert' ,
             data: formu,
             success: function (result) {
                 console.log(result);
+                registrar(correo)
                 cargar();
                 cancelar();
             }
         });
+        
     } else {
         alert('Debe Agregar Registros');
     }
 }
+
+function registrar(correo){
+    $.ajax({
+        type: 'POST',
+        url: uri+'mail/registro' ,
+        data: {'correo':correo},
+        success: function (result) {
+            console.log(result);
+        }
+    });
+}
+
 
 function limpiar() {
     $('#nombre').val('');

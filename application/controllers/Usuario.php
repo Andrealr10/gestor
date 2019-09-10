@@ -7,13 +7,14 @@ class Usuario extends CI_Controller
   {
     parent::__construct();
     $this->load->model('UsuarioModel');
+    $this->load->model('UsuarioModel');
   }
 
   public function index()
   {
     $data = ['usuarios' => $this->UsuarioModel->getAll('usuario')];
     //renderizamos la vista
-    $this->load->view('pages/admin/susuarios/index', $data);
+    $this->load->view('pages/admin/usuarios/index', $data);
   }
 
   public function cargar()
@@ -33,7 +34,24 @@ class Usuario extends CI_Controller
       'correo ' => $_POST['correo'],
       'tipo_usuario' => $_POST['tipo'],
       'estado' => 1,
-      'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false)
+      'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false),
+      'code' => rand(10000, 99999)
+    ];
+    $this->UsuarioModel->insert($data);
+  }
+
+  public function registrar()
+  {
+    $data = [
+      'nombre' => $_POST['nombre'],
+      'apellido' => $_POST['apellido'],
+      'username' => $_POST['username'],
+      'password ' => $_POST['password'],
+      'correo ' => $_POST['correo'],
+      'tipo_usuario' => $_POST['tipo'],
+      'estado' => 0,
+      'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false),
+      'code' => rand(10000, 99999)
     ];
     $this->UsuarioModel->insert($data);
   }

@@ -55,12 +55,12 @@
                             <i class="fas fa-folder"></i>&nbsp;<span>Tecnologias </span>
                         </a>
                         <ul class="collapse list-unstyled show" id="sidebar-link-mycomponents">
-                            <li>
-                                <a href="#">PHP</a>
-                            </li>
-                            <li>
-                                <a href="#">XAMARIN</a>
-                            </li>
+                            <?php foreach ($categorias as $categoria) { ?>
+                                <li>
+                                    <a href="<?= base_url('subcategoria') ?>/load/<?= $categoria->nombre ?>"><?= strtoupper($categoria->nombre) ?></a>
+                                </li>
+
+                            <?php } ?>
                         </ul>
                     </li>
                     <li class="">

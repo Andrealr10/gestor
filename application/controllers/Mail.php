@@ -16,18 +16,35 @@ class Mail extends CI_Controller
         if ($correo != null) {
             $usuario = $this->usuarioModel->getByCorreo($correo);
             if ($usuario != null) {
-
-                $this->send($correo, $usuario->hash);
+                $asunto = 'Cambio de contraseña';
+                $cuerpo = "Has clic en el siguiente enlace para cambiar la contraseña http://localhost/gestor/usuario/reset/" . $usuario->hash;
+                $this->send($correo, $asunto, $cuerpo);
             }
         }
     }
-    function send($correo = null, $hash = null)
+
+    public function registro()
+    {
+        $correo = $_POST['correo'];
+
+        if ($correo != null) {
+            $usuario = $this->usuarioModel->getByCorreo($correo);
+            if ($usuario != null) {
+                $asunto = 'Bienvenido a CloudCat';
+                $cuerpo = "Bienvenido a CloudCat " . $usuario->username . "! Ahora podras compartit archivos en la plataforma.\nTu codigo de verificacion es: " . $usuario->code;
+                $this->send($correo, $asunto, $cuerpo);
+            }
+        }
+    }
+
+
+    function send($correo = null, $asunto = null, $cuerpo = null)
     {
         // Load PHPMailer library
-        $this->load->library('phpmailer_lib');
+        $this->load->library('mailer');
 
         // PHPMailer object
-        $mail = $this->phpmailer_lib->load();
+        $mail = $this->mailer->load();
 
         // SMTP configuration
         $mail->isSMTP();
@@ -48,14 +65,13 @@ class Mail extends CI_Controller
         // $mail->addBCC('bcc@example.com');
 
         // Email subject
-        $mail->Subject = 'Cambio de contraseña';
+        $mail->Subject = $asunto;
 
         // Set email format to HTML
         // $mail->isHTML(true);
 
         // Email body content
-        $mailContent = "Has clic en el siguiente enlace para cambiar la contraseña http://localhost/gestor/usuario/reset/".$hash;
-        $mail->Body = $mailContent;
+        $mail->Body = $cuerpo;
 
         // Send email
         if (!$mail->send()) {
