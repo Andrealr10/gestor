@@ -32,7 +32,7 @@
 
             </a>
             <div class="col-lg-10 text-right">
-                <a class="nav-link d-lg-inline-block " href="<?= base_url(); ?> Login">
+                <a class="nav-link d-lg-inline-block " href="<?= base_url(); ?>Login">
                     <i class="fas fa-sign-in-alt"> <span>Registro &#124; Iniciar Sesión</span> </i>
                 </a>
             </div>

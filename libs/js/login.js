@@ -1,35 +1,16 @@
-var $loginMsg = $('.loginMsg'),
-  $login = $('.login'),
-  $signupMsg = $('.signupMsg'),
-  $signup = $('.signup'),
-  $frontbox = $('.frontbox');
+jQuery(document).ready(function($) {
+	tab = $('.tabs h3 a');
 
-$('#switch1').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.addClass("moving");
-  $signupMsg.toggleClass("visibility");
+	tab.on('click', function(event) {
+		event.preventDefault();
+		tab.removeClass('active');
+		$(this).addClass('active');
 
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-$('#switch2').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.removeClass("moving");
-  $signupMsg.toggleClass("visibility");
-
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-setTimeout(function(){
-  $('#switch1').click()
-},2000)
-
-setTimeout(function(){
-  $('#switch2').click()
-},2000)
-
+		tab_content = $(this).attr('href');
+		$('div[id$="tab-content"]').removeClass('active');
+		$(tab_content).addClass('active');
+	});
+});
 
 
 
