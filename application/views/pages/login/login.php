@@ -14,7 +14,7 @@
     <title>Inicio&#47; Registro</title>
 </head>
 
-<body>
+<body class="body">
     <div class="container-fluid">
         <div class="title-box">
             <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1>
@@ -23,10 +23,10 @@
         <div class="form-wrap">
             <div class="tabs">
                 <div class=" ">
-                    <h3 class="signup-tab text-uppercase"><a class="text-light text-decoration-none " href="#signup-tab-content">Reg&iacute;strate ahora</a></h3>
+                    <h3 class="signup-tab "><a class="text-dark text-decoration-none " href="#signup-tab-content">Reg&iacute;strate ahora</a></h3>
                 </div>
                 <div class="">
-                    <h3 class="login-tab  text-uppercase"><a class="active text-light text-decoration-none " href="#login-tab-content">Ya tengo cuenta</a></h3>
+                    <h3 class="login-tab  "><a class="active text-dark text-decoration-none " href="#login-tab-content">Ya tengo una cuenta</a></h3>
                 </div>
             </div>
             <!--.tabs-->
@@ -36,20 +36,20 @@
                 <div id="signup-tab-content" class="">
                     <form class="signup-form  ">
                         <div class="form-group">
-                            <input type="text" class=" form-control" id="name" autocomplete="off" placeholder="NOMBRE" required>
-                            <input type="text" class=" form-control" id="lastname" autocomplete="off" placeholder="APELLIDO" required>
-                            <input type="text" class=" form-control" id="username" autocomplete="off" placeholder="USERNAME" required>
-                            <input type="email" class="form-control" id="useremail" autocomplete="off" placeholder="CORREO ELECTR&Oacute;NICO" required>
-                            <input type="password" class=" form-control" id="userpass" autocomplete="off" placeholder="CONTRASE&#209;A" required>
-                            <input type="password" class=" form-control" id="userpass2" autocomplete="off" placeholder=" CONFIRMAR CONTRASE&#209;A">
+                            <input type="text" class=" form-control" id="name" autocomplete="off" placeholder="Nombre" required>
+                            <input type="text" class=" form-control" id="lastname" autocomplete="off" placeholder="Apellido" required>
+                            <input type="text" class=" form-control" id="username" autocomplete="off" placeholder="Nombre de usuario" required>
+                            <input type="email" class="form-control" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required>
+                            <input type="password" class=" form-control" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
+                            <input type="password" class=" form-control" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a">
                         </div>
-                        <button class="btn btn-info btn-block" id="registrar">REGISTRARME</button>
+                        <button class="btn btn-info btn-block" id="registrar">Registrarme</button>
                     </form>
                     <!--.login-form-->
 
                     <div class="help-text">
                         <p class="text-light">Al inscribirte aceptas colaborar a la comunidad.</p>
-                        <p><a href="#">T&eacute;rminos del servicio.</a></p>
+                        <p ><a class="text-danger" href="#">T&eacute;rminos del servicio.</a></p>
                     </div>
                     <!--.help-text-->
                 </div>
@@ -59,20 +59,22 @@
                     <form class="login-form">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="user_login" autocomplete="off" placeholder="USUARIO">
+                                <input type="text" class="form-control" id="user_login" autocomplete="off" placeholder="Nombre de usuario">
                             </div>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="pass_login" autocomplete="off" placeholder="CONTRASE&#209;A">
+                                <input type="password" class="form-control" id="pass_login" autocomplete="off" placeholder="Contrase&ntilde;a">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" "><i class=" far fa-eye"></i></button>
+                                    <button class="btn btn-secondary" ><i class=" far fa-eye"></i></button>
                                 </div>
                             </div>
-                            <button class="btn btn-info btn-block" id="iniciar">INICIAR SESI&Oacute;N</button>
+                            
+                            <br>
+                            <button class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
                     </form>
                     <!--.login-form-->
                     <div class="help-text">
                         <br>
-                        <p><a class="text-primary passmodal" data-toggle="modal" data-target="#recuperarPass" href="">&#191;Olvidaste la
+                        <p><a class="text-danger" data-toggle="modal" data-target="#recuperarPass" href="">&#191;Olvidaste la
                                 contrase&ntilde;a&#63;</a></p>
                     </div>
                     <!--.help-text-->
@@ -89,7 +91,7 @@
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
                     <div class="modal-header ">
-                        <h4 class="modal-title text-center" id="ModalLabel">RESTABLECER CONTRASE&#209;A</h4>
+                        <h4 class="modal-title text-center" id="ModalLabel">Restablecer contrase&ntilde;a.</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="x" aria-hidden="true">&times;</span>
                         </button>
@@ -98,17 +100,17 @@
                     <div class="modal-body">
                         <form id="form">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="correo" id="correo" placeholder="CONFIRMAR CORREO ELECTR&Oacute;NICO" required>
+                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Confirmar correo electr&oacute;nico" required>
                             </div>
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert alert-danger" role="alert">
                                 <p class="text-center">Al momento de presionar &quot;Enviar Informaci&oacute;n&quot;&#44; autom&aacute;ticamente se le estar&aacute; enviando un correo electr&oacute;nico, si no aparece en su bandeja de entrada, por favor revisar la bandeja de correos no deseados.</p>
                             </div>
                         </form>
                     </div>
                     <!--Modal-body-->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger" id="cambio">Enviar Informaci&oacute;n</button>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-info" id="cambio">Enviar Informaci&oacute;n</button>
                     </div>
                     <!--Modal-footer-->
                 </div>

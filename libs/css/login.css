@@ -3,22 +3,20 @@
   padding: 0;
 }
 
-.body {
-  background-color: #BEBEBE;
-}
+
 
 .title-box {
   margin: 3% 0;
 }
 
 .form-wrap {
-  background-color: #151515;
+  background-color: #313534;
   width: 320px;
   margin: auto;
   border-radius: 10px;
-  box-shadow: 0px 1px 8px #BEBEBE;
+  /* box-shadow: 0px 1px 8px #BEBEBE;
   -webkit-box-shadow: 0px 1px 8px #BEBEBE;
-  -moz-box-shadow: 0px 1px 8px #BEBEBE;
+  -moz-box-shadow: 0px 1px 8px #BEBEBE; */
 }
 
 .form-wrap .tabs {
@@ -35,14 +33,15 @@
   padding: 0.6em 0.3em;
   text-align: center;
   font-weight: 400;
-  background-color: #913535;
+  background-color: #B1B1B1;
   display: block;
-  border-bottom: 2.5px solid #17a2b8;
+  border-bottom: 2.5px solid #189AB4;
 }
 
 .form-wrap .tabs h3 a.active {
-  background-color: #151515;
-  border-bottom: 2px solid #151515;
+  background-color: #313534;
+  border-bottom: 2px solid #313534;
+  color: #ffffff !important;
 }
 
 .form-wrap .tabs-content {
@@ -56,9 +55,6 @@
 .form-wrap .tabs-content .active {
   display: block !important;
 }
-
-
-
 
 .form-wrap .help-text {
   margin-top: .8em;
@@ -87,7 +83,7 @@ h3 {
 .form-control {
   margin-bottom: 4% !important;
   font-size: 1rem !important;
-  color: #151515ca;
+  color: #151515;
 }
 
 .input-group-append {
@@ -96,7 +92,11 @@ h3 {
 
 
 .btn-info {
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
+}
+
+.text-danger {
+  color: #A83D32 !important;
 }
 
 
@@ -105,18 +105,18 @@ h3 {
 .modal-content {
   margin-top: 30%;
   
-  background-color: #151515d8 !important;
+  background-color: #B1B1B1 !important;
 }
 
 .fade {
-  background-color: #777777c4;
+  background-color: #252930b6 !important;
 }
 
 .modal-title {
-  color: #17a2b8 !important;
+  color: #000000 !important;
 }
 .x{
-  color: #BEBEBE;
+  color: #000000;
 }
 
 /* --------------------responsive-------------------------- */
