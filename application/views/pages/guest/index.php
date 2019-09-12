@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/guest.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:300,700,300italic">
     <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="<?= base_url(); ?>libs/js/guest.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -41,8 +41,8 @@
                         Contenido
                         </a>
                         <div class="dropdown-menu w-100 bandeja px-2" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item raise" href="#">Categorías</a>
-                            <a class="dropdown-item raise mt-2" href="#">Sub-Categorías</a>
+                            <a class="dropdown-item raise" href="#" onclick="ver_categorias();">Categorías</a>
+                            <a class="dropdown-item raise mt-2" href="#" onclick="ver_subcategorias();">Sub-Categorías</a>
                         </div>
                     </li>
                     <li class="nav-item active">
@@ -58,7 +58,7 @@
 
     <div class="container-fluid mt-4 mb-4">
         <div class="row">
-            <div class="col-md-12 col-lg-4">
+            <div class="col-md-12 col-lg-4" id="por_defecto">
                 <h2>¿Que es CloudCat?</h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus cum blanditiis omnis deserunt, laudantium corporis laborum eveniet quia quos recusandae minima ea, quidem mollitia. Accusamus cupiditate voluptate libero facilis!
                 Quibusdam facilis tenetur modi sunt soluta, nulla quis tempora quo porro suscipit dicta enim corrupti error pariatur, ullam consequuntur nostrum. Aperiam consectetur maxime expedita dolore. Doloremque sequi non libero temporibus?
@@ -66,92 +66,335 @@
                 Expedita quas voluptatibus incidunt nam laborum officiis sed, tenetur cumque soluta, sunt recusandae eaque. Omnis libero eos eligendi ex minima obcaecati atque voluptatum beatae, rerum veniam repudiandae id pariatur eaque!
                 Minus, saepe repellendus. Architecto sit ullam repellat eos et ab, molestias officia facere aspernatur quia aut similique possimus, eius placeat voluptatem nihil. Laborum earum neque adipisci sit quasi facilis natus.
             </div>
-            <!-- <div class="col-md-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus cum blanditiis omnis deserunt, laudantium corporis laborum eveniet quia quos recusandae minima ea, quidem mollitia. Accusamus cupiditate voluptate libero facilis!
-                Quibusdam facilis tenetur modi sunt soluta, nulla quis tempora quo porro suscipit dicta enim corrupti error pariatur, ullam consequuntur nostrum. Aperiam consectetur maxime expedita dolore. Doloremque sequi non libero temporibus?
-                Expedita quas voluptatibus incidunt nam laborum officiis sed, tenetur cumque soluta, sunt recusandae eaque. Omnis libero eos eligendi ex minima obcaecati atque voluptatum beatae, rerum veniam repudiandae id pariatur eaque!
-                Minus, saepe repellendus. Architecto sit ullam repellat eos et ab, molestias officia facere aspernatur quia aut similique possimus, eius placeat voluptatem nihil. Laborum earum neque adipisci sit quasi facilis natus.
-            </div>
-            <div class="col-md-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus cum blanditiis omnis deserunt, laudantium corporis laborum eveniet quia quos recusandae minima ea, quidem mollitia. Accusamus cupiditate voluptate libero facilis!
-                Quibusdam facilis tenetur modi sunt soluta, nulla quis tempora quo porro suscipit dicta enim corrupti error pariatur, ullam consequuntur nostrum. Aperiam consectetur maxime expedita dolore. Doloremque sequi non libero temporibus?
-                Expedita quas voluptatibus incidunt nam laborum officiis sed, tenetur cumque soluta, sunt recusandae eaque. Omnis libero eos eligendi ex minima obcaecati atque voluptatum beatae, rerum veniam repudiandae id pariatur eaque!
-                Minus, saepe repellendus. Architecto sit ullam repellat eos et ab, molestias officia facere aspernatur quia aut similique possimus, eius placeat voluptatem nihil. Laborum earum neque adipisci sit quasi facilis natus.
-            </div> -->
 
-            <!-- *********************Carousel*********************** -->
-            <!-- <div class="col-md-12 col-lg-8">
-                <div class="csslider infinity" id="slider1">
-                    <input type="radio" name="slides" checked="checked" id="slides_1"/>
-                    <input type="radio" name="slides" id="slides_2"/>
-                    <input type="radio" name="slides" id="slides_3"/>
-                    <input type="radio" name="slides" id="slides_4"/>
-                    <input type="radio" name="slides" id="slides_5"/>
-                    <input type="radio" name="slides" id="slides_6"/>
-                    <ul class="carousel_ul">
-                        <li style="text-align:center;">
-                            <h1>CloudCat <i class="fas fa-paw"></i></h1>
-                            <p>La Mejor opción para guardar y compartir de forma segura tus archivos y documentos</p>
-                        </li>
-                        <li><img src="https://rawgithub.com/drygiel/csslider/master/examples/themes/stones.jpg"/>
-                        </li>
-                        <li>
-                            <div id="bg">
-                                <div>
-                                    <div>
-                                        <h1>¿Como Surgió?</h1>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus deserunt alias repudiandae aliquam aut amet asperiores delectus pariatur odio officia ipsum voluptatum ad, quidem quo, ratione repellat earum! Minima, earum?</p>
-                                    </div>
+<!-- ***************************** div que sustituye al anterior cuando hacemos click en categorias *********************************-->
+
+            <div class="col-md-12 col-lg-4 contenedor px-2" id="categorias" style="display:none;">
+                <a style="float:right;" onclick="ver_categorias();"><i class="fas fa-times-circle"></i></a>
+                <h1 class="titulo_categoria mt-4">Categorias Disponibles</h1>
+                <ul class="lista">
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">HTML <i class="fab fa-html5"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
                                 </div>
                             </div>
-                        </li>
-                        <li class="scrollable">
-                            <h1>¿Como funciona CloudCat? <i class="fas fa-paw"></i></h1>
-                            <h2 class="subtitulos_carousel">Sus funciones y atributos</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi,
-                                semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                            </p>
-                        </li>
-                        <li>
-                            <div id="center"><a class="nice-link" href="#">Acerca del equipo de desarrollo</a></div>
-                        </li>
-                        <li>
-                            <div id="center"><a class="play" id="dex-sign" href="http://drygiel.com" target="_blank"></a></div>
-                        </li>
-                    </ul class="carousel_ul">
-                    <div class="arrows">
-                        <label for="slides_1"></label>
-                        <label for="slides_2"></label>
-                        <label for="slides_3"></label>
-                        <label for="slides_4"></label>
-                        <label for="slides_5"></label>
-                        <label for="slides_6"></label>
-                        <label class="goto-first" for="slides_1"></label>
-                        <label class="goto-last" for="slides_6"></label>
-                    </div>
-                    <div class="navigation"> 
-                        <div>
-                        <label for="slides_1"></label>
-                        <label for="slides_2"></label>
-                        <label for="slides_3"></label>
-                        <label for="slides_4"></label>
-                        <label for="slides_5"></label>
-                        <label for="slides_6"></label>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div><a href="#" target="_blank"></a>
-            </div> -->
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">JavaScript <i class="fab fa-js-square"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">PHP <i class="fab fa-php"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">Java <i class="fab fa-java"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">GIT <i class="fab fa-git-square"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">Node <i class="fab fa-node"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">Laravel <i class="fab fa-laravel"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">Laravel <i class="fab fa-laravel"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lista2">
+                        <input class="chequiado" type="checkbox" checked>
+                        <i class="flechita"></i>
+                        <h2 class="subt_categoria">Laravel <i class="fab fa-laravel"></i></h2>
+                        <div class="desplega_subcategorias">
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck1">
+                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck2">
+                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck3">
+                                <label class="tab-label" for="chck3">Subcategoria 3</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+
+                            <div class="tab">
+                                <input class="input_tab" type="checkbox" id="chck4">
+                                <label class="tab-label" for="chck4">Subcategoria 4</label>
+                                <div class="tab-content">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- *********************Carousel*********************** -->
             <div class="col-lg-8">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -187,6 +430,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </div>
 
