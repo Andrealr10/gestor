@@ -14,7 +14,7 @@
     <title>Inicio&#47; Registro</title>
 </head>
 
-<body class="body">
+<body class="">
     <div class="container-fluid">
         <div class="title-box">
             <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1>
@@ -49,7 +49,7 @@
 
                     <div class="help-text">
                         <p class="text-light">Al inscribirte aceptas colaborar a la comunidad.</p>
-                        <p ><a class="text-danger" href="#">T&eacute;rminos del servicio.</a></p>
+                        <p><a class="text-danger" href="#">T&eacute;rminos del servicio.</a></p>
                     </div>
                     <!--.help-text-->
                 </div>
@@ -64,10 +64,10 @@
                             <div class="input-group">
                                 <input type="password" class="form-control" id="pass_login" autocomplete="off" placeholder="Contrase&ntilde;a">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" ><i class=" far fa-eye"></i></button>
+                                    <button class="btn btn-secondary"><i class=" far fa-eye"></i></button>
                                 </div>
                             </div>
-                            
+
                             <br>
                             <button class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
                     </form>
@@ -82,43 +82,42 @@
                 <!--.login-tab-content-->
             </div>
             <!--.tabs-content-->
+            <!-- MODAL -->
+            <div class="modal fade" id="recuperarPass" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h4 class="modal-title text-center" id="ModalLabel">Restablecer contrase&ntilde;a.</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="x" aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--Modal-header-->
+                        <div class="modal-body">
+                            <form id="form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="correo" id="correo" placeholder="Confirmar correo electr&oacute;nico" required>
+                                </div>
+                                <div class="alert alert-info" role="alert">
+                                    <p class="text-center">Al momento de presionar &quot;Enviar Informaci&oacute;n&quot;&#44; autom&aacute;ticamente se le estar&aacute; enviando un correo electr&oacute;nico, si no aparece en su bandeja de entrada, por favor revisar la bandeja de correos no deseados.</p>
+                                </div>
+                            </form>
+                        </div>
+                        <!--Modal-body-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="cambio">Enviar Informaci&oacute;n</button>
+                        </div>
+                        <!--Modal-footer-->
+                    </div>
+                    <!--Modal-content-->
+                </div>
+                <!--Modal-dialog-->
+            </div>
+            <!--Modal-->
         </div>
         <!--.form-wrap-->
 
-
-        <!-- MODAL -->
-        <div class="modal fade" id="recuperarPass" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog " role="document">
-                <div class="modal-content">
-                    <div class="modal-header ">
-                        <h4 class="modal-title text-center" id="ModalLabel">Restablecer contrase&ntilde;a.</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="x" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!--Modal-header-->
-                    <div class="modal-body">
-                        <form id="form">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Confirmar correo electr&oacute;nico" required>
-                            </div>
-                            <div class="alert alert-danger" role="alert">
-                                <p class="text-center">Al momento de presionar &quot;Enviar Informaci&oacute;n&quot;&#44; autom&aacute;ticamente se le estar&aacute; enviando un correo electr&oacute;nico, si no aparece en su bandeja de entrada, por favor revisar la bandeja de correos no deseados.</p>
-                            </div>
-                        </form>
-                    </div>
-                    <!--Modal-body-->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-info" id="cambio">Enviar Informaci&oacute;n</button>
-                    </div>
-                    <!--Modal-footer-->
-                </div>
-                <!--Modal-content-->
-            </div>
-            <!--Modal-dialog-->
-        </div>
-        <!--Modal-->
     </div>
     <!--Content-fluid-->
 
@@ -132,21 +131,21 @@
     <!-- ----------------------------------Personalizado--------------------------------- -->
     <script src="<?= base_url(); ?>libs/js/login.js"></script>
     <script>
-    $('#cambio').on('click', function() {
-      form = new FormData(document.getElementById("form"));
-      $.ajax({
-        type: 'POST',
-        url: 'http://localhost/gestor/mail/cambio',
-        data: form,
-        processData: false,
-        contentType: false,
-        success: function(result) {
-          console.log(result);
-          // window.location.href = 'http://localhost/gestor';
-        }
-      });
-    })
-  </script>
+        $('#cambio').on('click', function() {
+            form = new FormData(document.getElementById("form"));
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/gestor/mail/cambio',
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    console.log(result);
+                    // window.location.href = 'http://localhost/gestor';
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>

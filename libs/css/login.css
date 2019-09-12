@@ -1,7 +1,7 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
-}
+} */
 
 
 
@@ -10,7 +10,7 @@
 }
 
 .form-wrap {
-  background-color: #313534;
+  background-color: #1E1E20;
   width: 320px;
   margin: auto;
   border-radius: 10px;
@@ -39,8 +39,8 @@
 }
 
 .form-wrap .tabs h3 a.active {
-  background-color: #313534;
-  border-bottom: 2px solid #313534;
+  background-color: #1E1E20;
+  border-bottom: 2px solid #1E1E20;
   color: #ffffff !important;
 }
 
@@ -83,7 +83,7 @@ h3 {
 .form-control {
   margin-bottom: 4% !important;
   font-size: 1rem !important;
-  color: #151515;
+  color: #1E1E20;
 }
 
 .input-group-append {
@@ -98,6 +98,12 @@ h3 {
 .text-danger {
   color: #A83D32 !important;
 }
+.container-fluid{
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
 
 
 /* --------------------modal-------------------------- */
@@ -105,18 +111,18 @@ h3 {
 .modal-content {
   margin-top: 30%;
   
-  background-color: #B1B1B1 !important;
+  background-color: #252930 !important;
 }
 
 .fade {
-  background-color: #252930b6 !important;
+  background-color: #B1B1B1b6 !important;
 }
 
 .modal-title {
-  color: #000000 !important;
+  color: #FFFFFF !important;
 }
 .x{
-  color: #000000;
+  color: #FFFFFF;
 }
 
 /* --------------------responsive-------------------------- */

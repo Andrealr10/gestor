@@ -18,6 +18,8 @@ class Archivo extends CI_Controller
      */
     public function load($categoria, $subcategoria)
     {
+        $data = ['categorias' => $this->categoriaModel->getAll()];
+        $this->load->view('includes/navUser',$data); 
         if (isset($subcategoria) && isset($categoria)) {
             $categoria = $this->categoriaModel->getByName($categoria);
             $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
