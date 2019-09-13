@@ -666,7 +666,7 @@ html {
   max-height: 0;
   padding: 0 1em;
   color: #3f3f3f;
-  background: white;
+  background: rgb(233, 233, 233);
   transition: all .35s;
 }
 .tab-close {
@@ -682,7 +682,7 @@ html {
 }
 
 .input_tab:checked + .tab-label {
-  background: #1a252f;
+  background: rgb(56, 126, 3);
 }
 .input_tab:checked + .tab-label::after {
   -webkit-transform: rotate(90deg);
@@ -691,4 +691,9 @@ html {
 .input_tab:checked ~ .tab-content {
   max-height: 100vh;
   padding: 1em;
+}
+
+/*************************************************Div que contendra los archivos*******************************************************/
+.contenido_subcategorias{
+  background-color: #444444;
 }

@@ -11,7 +11,6 @@
     <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
-    <script src="<?= base_url(); ?>libs/js/guest.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -36,7 +35,7 @@
                     <li class="nav-item active">
                         <a class="nav-link botonNavbar" href="#">Link</a>
                     </li>
-                    <li class="nav-item dropdown active">
+                    <!-- <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle botonNavbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Contenido
                         </a>
@@ -44,6 +43,9 @@
                             <a class="dropdown-item raise" href="#" onclick="ver_categorias();">Categorías</a>
                             <a class="dropdown-item raise mt-2" href="#" onclick="ver_subcategorias();">Sub-Categorías</a>
                         </div>
+                    </li> -->
+                    <li class="nav-item active">
+                        <a class="nav-link botonNavbar" href="#" id="contenido">Contenido</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link botonNavbar pulse sign">Sign In <i class="fas fa-sign-in-alt"></i></a>
@@ -82,7 +84,7 @@
                                 <input class="input_tab" type="checkbox" id="chck1">
                                 <label class="tab-label" for="chck1">Subcategoria 1</label>                                
                                 <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                                    <a type="button" class="btn ver_contenido" id="boton_ver">Ver contenido <i class="fas fa-folder-open"></i></a>
                                 </div>
                             </div>
 
@@ -395,7 +397,12 @@
             </div>
 
             <!-- *********************Carousel*********************** -->
-            <div class="col-lg-8">
+            <div class="col-lg-8 contenido_subcategorias px-5" id="contenido_subcategorias" style="display:none;">
+                hola
+            </div>
+
+
+            <div class="col-lg-8" id="carousel_div">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -524,5 +531,7 @@
             </div>
         </div>
     </footer>
+    
+<script src="<?= base_url(); ?>libs/js/guest.js"></script>
 </body>
 </html>
