@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--CDN BOOSTRAP AND FONT-AWESOME-->
+    <!-- ----------------------------------Pezonalizado-------------------------------- -->
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/simplesidebar.css">
     <link rel="stylesheet" href="<?= base_url() ?>libs/fonts/css/all.css">
     <link rel="stylesheet" href="<?= base_url() ?>libs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/simplesidebar.css">
+
     <script src="<?= base_url() ?>libs/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url() ?>libs/js/popper.min.js"></script>
     <script src="<?= base_url() ?>libs/js/bootstrap.min.js"></script>
+    <!-- ----------------------------------Pezonalizado-------------------------------- -->
     <script src="<?= base_url() ?>libs/js/simplesidebar.js"></script>
 
 
@@ -20,23 +22,32 @@
 
 <body>
     <div id="my-sidebar-context" class="widget-sidebar-context">
-        <header id="this-header" class="navbar justify-content-start align-items-center navbar-dark bg-dark page-header">
-
-            <a href="#" class="navbar-toggler widget-sidebar-toggler">
+        <!-- <header id="this-header" class="navbar  page-header">
+            <a href="#" class="navbar-toggler widget-sidebar-toggler text-light">
                 <i class="fas fa-bars"></i>
-            </a> &nbsp; &nbsp;
-
-            <a class="navbar-brand" href="#">
-
-                <span>&nbsp;CloudCat</span>&nbsp;<i class="fas fa-cat"></i>
-
             </a>
+            <h3 class="navbar-brand text-left text-light" href="#">
+                Cloudcat&nbsp;<i class="fas fa-cat"></i>
+            </h3>
             <div class="col-lg-10 text-right">
-                <a class="nav-link d-lg-inline-block " href="<?= base_url(); ?>Login">
-                    <i class="fas fa-sign-in-alt"> <span>Registro &#124; Iniciar Sesión</span> </i>
+                <a class="text-danger d-lg-inline-block " href="<?= base_url(); ?>Login">
+                    <i class="fas fa-sign-in-alt"></i>&nbsp; Registro &#124; Iniciar Sesión
                 </a>
             </div>
-        </header>
+
+
+        </header> -->
+        <nav id="this-header" class="navbar page-header">
+            <a class="navbar-brand navbar-toggler widget-sidebar-toggler text-light" href="#">
+                <i class="fas fa-bars width=" 30" height="30" class="d-inline-block align-top"></i>
+            </a>
+            <h4 class=" text-light" >&nbsp;Cloudcat&nbsp;<i class="fas fa-cat"></i></h4>
+
+            <a class=" navbar-brand text-danger d-lg-inline-block " href="<?= base_url(); ?>Login">
+                <i class="fas fa-sign-in-alt"></i>&nbsp; Registro &#124; Iniciar Sesión
+            </a>
+
+        </nav>
         <div class="page-body">
             <nav class="widget-sidebar">
                 <ul class="list-unstyled mt-2">
@@ -44,10 +55,10 @@
 
                         <div class="input-group mb-2 col-sm-12">
                             <div class="input-group-prepend ">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <span class="input-group-text "><i class="fas text-center fa-search"></i></span>
 
                             </div>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon1">
                         </div>
                     </li>
                     <li>
