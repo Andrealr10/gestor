@@ -1,4 +1,5 @@
 document.getElementById('contenido').addEventListener("click", ver_categorias);
+document.getElementById('c_contenido').addEventListener("click", ver_categorias);
 function ver_categorias(){
     var por_defecto = document.getElementById('por_defecto'); /* Id que se muestra por defecto */
     var categorias = document.getElementById('categorias'); /* Id que se muestra al hacer click en el boton asignado */
@@ -12,6 +13,7 @@ function ver_categorias(){
 }
 
 document.getElementById('boton_ver').addEventListener("click", content);
+document.getElementById('cerrar_div').addEventListener("click", content);
 function content(e){
     e.preventDefault();
     var carousel = document.getElementById('carousel_div');
