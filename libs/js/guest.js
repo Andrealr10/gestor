@@ -26,3 +26,16 @@ function content(e){
         carousel.style.display = "none";
       }
 }
+
+/******************************************Funcion para configurar/ocultar los pop-over***********************************************/
+/*************************************************************************************************************************************/
+$(function(){
+    $('[data-toggle="popover"]').popover({
+        title: "Opciones <i class='fas fa-user-cog'></i>",
+        content: '<a class="btn share mx-1" href="#" type="button"><i class="fas fa-share-alt"></i></a><a class="btn download mx-1" href="#" type="button"><i class="fas fa-download"></i></a>',
+        html:true
+    }),
+    $('.popover-dismiss').popover({
+      trigger: 'focus'
+    })
+})

@@ -16,6 +16,8 @@
     <title>Document</title>
 </head>
 <body>
+<!-- ********************************************************NavBar*******************************************************************-->
+<!-- *********************************************************************************************************************************-->
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#"><img width="50px" src="<?= base_url(); ?>libs/images/cat.png"></a>
@@ -29,23 +31,20 @@
                         <a class="nav-link botonNavbar" href="#">Conocenos <span class="sr-only">(current)</span></a>
                     </li>
                     <a class="nav-link botonBuscar">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
                         </form>
                     </a>
                     <li class="nav-item active">
                         <a class="nav-link botonNavbar" href="#">Link</a>
                     </li>
-                    <!-- <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle botonNavbar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Contenido
-                        </a>
-                        <div class="dropdown-menu w-100 bandeja px-2" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item raise" href="#" onclick="ver_categorias();">Categorías</a>
-                            <a class="dropdown-item raise mt-2" href="#" onclick="ver_subcategorias();">Sub-Categorías</a>
-                        </div>
-                    </li> -->
                     <li class="nav-item active">
                         <a class="nav-link botonNavbar" href="#" id="contenido">Contenido</a>
                     </li>
@@ -59,7 +58,8 @@
             </div>
         </nav>
     </header>
-
+<!-- ******************************************************Div de informacion******************************************************** -->
+<!-- *********************************************************************************************************************************-->
     <div class="container-fluid mt-4 mb-4">
         <div class="row">
             <div class="col-md-12 col-lg-4" id="por_defecto">
@@ -71,10 +71,11 @@
                 Minus, saepe repellendus. Architecto sit ullam repellat eos et ab, molestias officia facere aspernatur quia aut similique possimus, eius placeat voluptatem nihil. Laborum earum neque adipisci sit quasi facilis natus.
             </div>
 
-<!-- ***************************** div que sustituye al anterior cuando hacemos click en categorias *********************************-->
+<!-- ************************** div que sustituye al de informacion cuando hacemos click en categorias *******************************-->
+<!-- *********************************************************************************************************************************-->
 
             <div class="col-md-12 col-lg-4 contenedor px-2" id="categorias" style="display:none;">
-                <a style="float:right;" id="c_contenido"><i class="fas fa-times-circle"></i></a><!--**icomo de cerrar en el div**-->
+                <a style="float:right;" id="c_contenido"><i class="fas fa-times-circle"></i></a><!--**icono de cerrar en el div**-->
                 <h1 class="titulo_categoria mt-4">Categorias Disponibles</h1>
                 <ul class="lista">
                     <li class="lista2">
@@ -84,7 +85,7 @@
                         <div class="desplega_subcategorias">
                             <div class="tab">
                                 <input class="input_tab" type="checkbox" id="chck1">
-                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
+                                <label class="tab-label"><p for="chck1">Subcategoria 1 <a class="pop_over" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="right"><i class="fas fa-info-circle"></i></a></p></label>
                                 <div class="tab-content">
                                     <button type="btn" class="btn ver_contenido" id="boton_ver">Ver contenido <i class="fas fa-folder-open"></i></button>
                                 </div>
@@ -92,7 +93,7 @@
 
                             <div class="tab">
                                 <input class="input_tab" type="checkbox" id="chck2">
-                                <label class="tab-label" for="chck2">Subcategoria 2</label>
+                                <label class="tab-label"><p for="chck2">Subcategoria 2 <a class="pop_over" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="right"><i class="fas fa-info-circle"></i></a></p></label>
                                 <div class="tab-content">
                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
                                 </div>
@@ -319,94 +320,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="lista2">
-                        <input class="chequiado" type="checkbox" checked>
-                        <i class="flechita"></i>
-                        <h2 class="subt_categoria">Laravel <i class="fab fa-laravel"></i></h2>
-                        <div class="desplega_subcategorias">
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck1">
-                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck2">
-                                <label class="tab-label" for="chck2">Subcategoria 2</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck3">
-                                <label class="tab-label" for="chck3">Subcategoria 3</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck4">
-                                <label class="tab-label" for="chck4">Subcategoria 4</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="lista2">
-                        <input class="chequiado" type="checkbox" checked>
-                        <i class="flechita"></i>
-                        <h2 class="subt_categoria">Laravel <i class="fab fa-laravel"></i></h2>
-                        <div class="desplega_subcategorias">
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck1">
-                                <label class="tab-label" for="chck1">Subcategoria 1</label>                                
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck2">
-                                <label class="tab-label" for="chck2">Subcategoria 2</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck3">
-                                <label class="tab-label" for="chck3">Subcategoria 3</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-
-                            <div class="tab">
-                                <input class="input_tab" type="checkbox" id="chck4">
-                                <label class="tab-label" for="chck4">Subcategoria 4</label>
-                                <div class="tab-content">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
 
-            <!-- *********************div que sustituye al carousel*********************** -->
+<!-- ************************************************div que sustituye al carousel*************************************************** -->
+<!-- *********************************************************************************************************************************-->
             <div class="col-lg-8 contenido_subcategorias" id="contenido_subcategorias" style="display:none;">
-                <a style="float:right;" id="cerrar_div"><i class="fas fa-times-circle"></i></a><!--**icomo de cerrar en el div**-->
+                <a style="float:right;" id="cerrar_div"><i class="fas fa-times-circle"></i></a><!--**icono de cerrar en el div**-->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#suscripcion">
                     Prueba de modal
                 </button>
             </div>
 
-            <!-- *********************Carousel*********************** -->
+<!-- **********************************************************Carousel************************************************************** -->
+<!-- *********************************************************************************************************************************-->
             <div class="col-lg-8" id="carousel_div">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -445,7 +372,8 @@
 
         </div>
     </div>
-
+<!-- ***********************************************************Footer*************************************************************** -->
+<!-- *********************************************************************************************************************************-->
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
@@ -535,8 +463,8 @@
         </div>
     </footer>
 
-
-    <!-- Modal -->
+<!-- **********************************************************Modal***************************************************************** -->
+<!-- *********************************************************************************************************************************-->
 <div class="modal fade" id="suscripcion" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
