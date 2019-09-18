@@ -1,0 +1,14 @@
+.nav-link {
+    display: block;
+    padding: .5rem 6rem;
+}
+
+button{
+    background-color: #086d8b;
+    border:#086d8b;
+    border-radius: 7px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #086d8b;
+}

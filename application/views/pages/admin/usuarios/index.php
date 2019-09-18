@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/style.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"> -->
@@ -38,26 +36,26 @@
 
 <body>
     <div class="container">
-        <div class="mx-auto col-sm-9 main-section">
-            <h2 class="text-center"><i class="fas fa-users"></i> Usuarios</h2>
+        <div class="mx-auto col-sm-11 main-section">
+            <h2 class="text-center"><i class="fas fa-users" style="font-size:25px;"></i> Usuarios</h2>
             <ul class="nav nav-tabs justify-content-end">
                 <li class="nav-item pesta">
-                    <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
+                    <a class="nav-link active bg-fondo" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
                 </li>
                 <li class="nav-item pesta">
-                    <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
+                    <a class="nav-link bg-fondo" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
                     <!--Lista-->
                     <div class="card text-center">
                         <div class="card-header">
-                            <h4 class="text-center">Lista de Usuarios</h4>
+                            <h4 class="text-center">Lista de Usuarios <i class="fas fa-list-alt" style="font-size:20px;"></i></h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="lista" class="table table-bordered table-hover table-striped">
-                                    <thead class="thead-dark text-center">
+                                <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
+                                    <thead class="thead text-center">
                                         <tr>
                                             <th scope="col">Id</th>
                                             <th scope="col">Nombre</th>
@@ -81,13 +79,13 @@
                     <!--Formulario-->
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="text-center">Nuevo Usuario</h4>
+                            <h4 class="text-center text-dark">Nuevo Usuario <i class="fas fa-user-plus" style="font-size:20px;"></i></h4>
                         </div>
                         <div class="card-body">
                             <form class="form" role="form" autocomplete="off" id="formu">
                                 <div class="form-group justify-content-center row">
-                                    <label class="col-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
-                                    <div class="col-6">
+                                    <label class="col-lg-1 col-form-label form-control-label"><i class="fas fa-user"></i></label>
+                                    <div class="col-lg-6">
                                         <input class="form-control" type="text" placeholder="Nombre" name="nombre" id="nombre">
                                     </div>
                                 </div>
@@ -180,9 +178,6 @@
             </div>
         </div>
 </body>
-<script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
-<script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
-<script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
 <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> -->
 <script src="<?= base_url(); ?>libs/js/main.js"></script>
