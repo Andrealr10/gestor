@@ -17,7 +17,7 @@ class Categoria extends CI_Controller
     {
         $this->load->view('pages/admin/home/index');
         $data = ['categorias' => $this->categoriaModel->getAll()];
-        $this->load->view('includes/navUser',$data); 
+        // $this->load->view('includes/navUser',$data); 
         $this->load->view('pages/admin/categorias/index');
     }
 
