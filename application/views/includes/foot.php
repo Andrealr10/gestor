@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?=base_url(); ?>libs/css/bootstrap.min.css" >
 <link rel="stylesheet" href="<?=base_url(); ?>libs/footer.css" >
-<body class="d-flex flex-column">
+<!-- <body class="d-flex flex-column">
   <div id="page-content">
     <div class="container text-center">
       <div class="row justify-content-center">
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">
       <small>Copyright &copy; Your Website</small>

@@ -157,7 +157,7 @@
                             <input type="text" placeholder="Apellido" class="form-control mt-2" id="apellidoa" name="apellido">
                             <input type="text" placeholder="Username" class="form-control mt-2" id="usernamea" name="username">
                             <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo">
-                            <input type="password" placeholder="Contraseña" class="form-control mt-2" id="passworda" name="password">
+                            <!-- <input type="password" placeholder="Contraseña" class="form-control mt-2" id="passworda" name="password"> -->
                             <select class="custom-select my-1 mr-sm-2" name="tipo" id="tipoa">
                                 <option selected>Tipo</option>
                                 <option value="1">Administrador</option>

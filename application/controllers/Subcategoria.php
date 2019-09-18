@@ -15,6 +15,7 @@ class Subcategoria extends CI_Controller
      */
     public function index($id = null)
     {
+    
         if (isset($id)) {
             $data = [
                 'subcategorias' => $this->subcategoriaModel->getByCategoria($id),
@@ -40,6 +41,7 @@ class Subcategoria extends CI_Controller
      */
     public function load($nombre = null)
     {
+       
         $this->session->set_userdata(['nombre' => $nombre]);
         if (isset($nombre)) {
             $categoria = $this->categoriaModel->getByName($nombre);
