@@ -10,55 +10,20 @@
 </head>
 
 <body>
-<div class="container">
-   <div class="row">
-        <div class="col-md-11">
-            <h2 class="text-center"><i class="fas fa-th-list" style="font-size:25px;"></i>&nbsp&nbspCategorías</h2>
-            <div id="accordion"> <!--Categoria-->
-                <div class="card">
-                    <div class="card-header" id="headingOne"> <!--header-->
-                    <h5 class="mb-0">
-                        <button class="btn btn-editar"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-default" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                PHP
-                            </button>
-                    </h5>
-                </div><!--header-->
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion"><!--cuerpo-->
-                        <div class="card-body text-center">
-                            <table class="table table-sm text-center table-bordered">
-                                <h5>Subcategorías</h5>
-                                    <thead>
-                                    <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                    <th scope="row">Php</th>
-                                    <td>Ejemplos</td>
-                                    <td>
-                                            <button class="btn btn-info btn-md"><i class="fas fa-download"></i></button>
-                                            <button class="btn btn-warning btn-md"><i class="fas fa-share"></i></button>
-                                            <button class="btn btn-danger btn-md"><i class="fas fa-file-upload"></i></button>
-                                            <button class="btn btn-primary btn-md"><i class="fas fa-folder-open"></i></button>
-                                    </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                    </div>
-                </div><!--cuerpo-->
+    <div class="container-fluid content-container filter-container">
+        <div class="row">
+            <div class="col-sm-11 text-center filtered-cards">
+                <div id="card-placeholder">
+                    <div id="cards"></div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <!-- Botón que despliega el modal -->
+                <a class="botton circle" style="color:white;" data-toggle="modal" data-target="#modelId">Crear <i class="fas fa-plus-square fa-lg"></i></a>
             </div>
         </div>
-     </div>
-     <div class="col-md-1 text-start">
-        <a class="botton circle" style="color:white;" data-toggle="modal" data-target="#modelId">Crear <i class="fas fa-plus-square fa-lg"></i></a>
-     </div>
-  </div> 
-</div>
-  
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

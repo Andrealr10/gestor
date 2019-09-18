@@ -4,14 +4,20 @@
 }*/
 .main-section{
     margin:0 auto;
-    margin-top:5%;
+    margin-top:1%;
+    width: 90%;
 }
 .card{
 	opacity: .95;
 }
 .card-body{
-    background-color: #d1d3d6;
-    box-shadow: 0px 0px 3px #848484;
+    background-color: #b1afaf;
+    box-shadow: 0px 0px 3px #999797;
+}
+
+.bg-fondo{
+    background-color: #086d8b !important;
+    color: #ffffff !important;
 }
 
 label{
@@ -19,7 +25,7 @@ label{
 }
 
 .nav-tabs .nav-item a:not(.active){
-	background-color: #d1d3d6;
+	background-color: #d1d5d6;
 }
 
 .nav-tabs{
@@ -30,4 +36,9 @@ label{
 }
 .pesta{
     width: 90px;
+}
+
+.nav-link {
+    display: block !important;
+    padding: .5rem 2rem !important;
 }

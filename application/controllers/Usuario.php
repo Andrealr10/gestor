@@ -13,7 +13,8 @@ class Usuario extends CI_Controller
   {
     $data = ['usuarios' => $this->UsuarioModel->getAll('usuario')];
     //renderizamos la vista
-    $this->load->view('pages/admin/susuarios/index', $data);
+    $this->load->view('pages/admin/home/index');
+    $this->load->view('pages/admin/usuarios/index', $data);
   }
 
   public function cargar()
