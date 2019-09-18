@@ -30,14 +30,28 @@
                     <li class="nav-item active">
                         <a class="nav-link botonNavbar" href="#">Conocenos <span class="sr-only">(current)</span></a>
                     </li>
-                    <a class="nav-link botonBuscar">
-                        <form>
+                    <a class="">
+                        <!-- <form>
                             <div class="row">
                                 <div class="col">
                                     <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
                                 </div>
                                 <div class="col">
                                     <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form> -->
+                        <form class="mt-3">
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <div class="buscador_c" tabindex='1'>
+                                        <div class="int_buscador" tabindex='1'>
+                                            <input class="barra-buscar" placeholder='buscar...' type='text'>
+                                            <a class='iconito'>
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -374,94 +388,94 @@
     </div>
 <!-- ***********************************************************Footer*************************************************************** -->
 <!-- *********************************************************************************************************************************-->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 footer__addr">
-                    <h1 class="footer__logo">CloudCat <i class="fas fa-paw"></i></h1>
-                        
-                    <h2>Contactanos</h2>
-                    
-                    <address>
-                        &nbsp;<i class="fas fa-phone-alt"></i>  Av. Ricardo Milos, casa #4, Santa Ana<br>
-                        <a class="btn sugerencias" type="button" href="#">@ Sugerencias</a>
-                    </address>
-                </div>
+<footer class="footer">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-4 footer__addr">
+              <h1 class="footer__logo">CloudCat <i class="fas fa-paw"></i></h1>
+                  
+              <h2>Contactanos</h2>
+              
+              <address>
+                  &nbsp;<i class="fas fa-phone-alt"></i>  Av. Ricardo Milos, casa #4, Santa Ana<br>
+                  <a class="btn sugerencias" type="button" href="#">@ Sugerencias</a>
+              </address>
+          </div>
 
-                <div class="col-md-8">
-                    <ul class="footer__nav">
-                        
-                        <li class="nav__item">
-                            <h2 class="nav__title">Comentanos</h2>
-                            <hr class="subrayado mb-4 mt-0 d-inline-block" style="width: 60px;">
-                
-                            <ul class="nav__ul">
-                                <li>
-                                    <a href="#">Online</a>
-                                </li>
-                
-                                <li>
-                                    <a href="#">Print</a>
-                                </li>
-                                    
-                                <li>
-                                    <a href="#">Alternative Ads</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <li class="nav__item"> <!--nav__item--extra-->
-                            <h2 class="nav__title">Ayuda</h2>
-                            <hr class="subrayado mb-4 mt-0 d-inline-block" style="width: 60px;">
-                            
-                            <ul class="nav__ul">  <!--nav__ul--extra-->
-                                <li>
-                                    <a href="#">¿Olvidaste tu contraseña?</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">Recuperar Usuarios</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">No puedo iniciar sesion con mi usuario</a>
-                                </li>
-                                
-                            </ul>
-                        </li>
-                        
-                        <li class="nav__item">
-                            <ul class="nav__ul pl-3">
-                                <div class="hover">
-                                    <span>Redes Sociales</span>
-                                    <a class="social-link" href="#" target="_blank"><i class="fas fa-phone-alt"></i></a>
-                                    <a class="social-link" href="#" target="_blank"><i class="fas fa-envelope"></i></a>
-                                    <a class="social-link" href="#" target="_blank"><i class="fab fa-github"></i></a>
-                                    <a class="social-link" href="#" target="_blank"><i class="fas fa-cog"></i></a>
-                                </div>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-        
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="legal">
-                        <p style="margin-bottom:0;">&copy; 2019 CloudCat. All Right Reserved</p>
-                        
-                        <span class="legal__links">
-                        <a href="#">Privacy Policy</a>
-                        
-                        <span></span>
-                        
-                        <a href="#">Terms of Use</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+          <div class="col-md-8">
+              <ul class="footer__nav">
+                  
+                  <li class="nav__item">
+                      <h2 class="nav__title">Comentanos</h2>
+                      <hr class="subrayado mb-4 mt-0 d-inline-block" style="width: 60px;">
+          
+                      <ul class="nav__ul">
+                          <li>
+                              <a href="#">Online</a>
+                          </li>
+          
+                          <li>
+                              <a href="#">Print</a>
+                          </li>
+                              
+                          <li>
+                              <a href="#">Alternative Ads</a>
+                          </li>
+                      </ul>
+                  </li>
+                  
+                  <li class="nav__item"> <!--nav__item--extra-->
+                      <h2 class="nav__title">Ayuda</h2>
+                      <hr class="subrayado mb-4 mt-0 d-inline-block" style="width: 60px;">
+                      
+                      <ul class="nav__ul">  <!--nav__ul--extra-->
+                          <li>
+                              <a href="#">¿Olvidaste tu contraseña?</a>
+                          </li>
+                          
+                          <li>
+                              <a href="#">Recuperar Usuarios</a>
+                          </li>
+                          
+                          <li>
+                              <a href="#">No puedo iniciar sesion con mi usuario</a>
+                          </li>
+                          
+                      </ul>
+                  </li>
+                  
+                  <li class="nav__item">
+                      <ul class="nav__ul pl-3">
+                          <div class="hover">
+                              <span>Redes Sociales</span>
+                              <a class="social-link" href="#" target="_blank"><i class="fas fa-phone-alt"></i></a>
+                              <a class="social-link" href="#" target="_blank"><i class="fas fa-envelope"></i></a>
+                              <a class="social-link" href="#" target="_blank"><i class="fab fa-github"></i></a>
+                              <a class="social-link" href="#" target="_blank"><i class="fas fa-cog"></i></a>
+                          </div>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+  
+      </div>
+      <div class="row">
+          <div class="col-12">
+              <div class="legal">
+                  <p style="margin-bottom:0;">&copy; 2019 CloudCat. All Right Reserved</p>
+                  
+                  <span class="legal__links">
+                  <a href="#">Privacy Policy</a>
+                  
+                  <span></span>
+                  
+                  <a href="#">Terms of Use</a>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
 
 <!-- **********************************************************Modal***************************************************************** -->
 <!-- *********************************************************************************************************************************-->
