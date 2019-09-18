@@ -50,7 +50,8 @@ class Subcategoria extends CI_Controller
                 'categoria' => $categoria->nombre,
                 'id_categoria' => $categoria->id_categoria
             ];
-            $this->load->view('pages/admin/subcategorias/index', $data);
+            // $this->load->view('pages/admin/subcategorias/index', $data);
+            $this->load->view('pages/admin/categorias/subcategoria', $data);
         }
     }
 
