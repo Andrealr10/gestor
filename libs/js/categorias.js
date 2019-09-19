@@ -38,6 +38,7 @@ function crearsub(categoria) {
 // })
 
 function load() {
+    $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
         url: uri + 'categoria/load/',

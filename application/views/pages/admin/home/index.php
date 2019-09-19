@@ -78,7 +78,7 @@
 	    <div class="row">
 		  <div class="col-md-12 text-center">
 			<ol class="breadcrumb">
-			  <li class="active">Panel de Control</li>
+			  <li class="active" id="ruta">Panel de Control</li>
 			</ol>
 		  </div>
 	  </div>   <!--Barra de Navegación-->

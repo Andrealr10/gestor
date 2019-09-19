@@ -155,5 +155,8 @@
         </div>
     </div>
 </div> 
+<script>
+$('#ruta').html('Panel de Control / Notificaciones')
+</script>
 </body>
 </html>
