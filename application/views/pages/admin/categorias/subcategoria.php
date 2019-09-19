@@ -1,7 +1,6 @@
 <?php if (sizeof($subcategorias) > 0) { ?>
     <div class="">
         <table class="table">
-            <h5>Subcategorías Existentes</h5>
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
@@ -12,13 +11,13 @@
 
                 <?php foreach ($subcategorias as $subcategoria) { ?>
                     <tr>
-                        <td class="text-left d-flex align-items-center"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></td>
+                        <td class="text-left d-flex align-items-center"><a href="#"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></a></td>
                         <td style="width: 250px">
                             <button class="btn btn-info btn-md"><a href="<?= base_url('zip') ?>/dir/<?= $categoria ?>/<?= $subcategoria->nombre ?>">
                                     <i class="fas fa-download"></i></a></button>
                             <button class="btn btn-warning btn-md" data-toggle="modal" data-target="#share<?= $subcategoria->id_subcategoria ?>"><i class="fas fa-share"></i></button>
-                            <button class="btn btn-danger btn-md"><i class="fas fa-file-upload"></i></button>
-                            <button class="btn btn-primary btn-md"><i class="fas fa-folder-open"></i></button>
+                            <!-- <button class="btn btn-danger btn-md"><i class="fas fa-file-upload"></i></button>
+                            <button class="btn btn-primary btn-md"><i class="fas fa-folder-open"></i></button> -->
                         </td>
                     </tr>
                     <div class="modal fade" id="share<?= $subcategoria->id_subcategoria ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

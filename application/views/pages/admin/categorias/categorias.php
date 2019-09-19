@@ -4,7 +4,7 @@
             <!--header-->
             <h5 class="mb-0">
                 <button class="btn btn-editar"><i class="fas fa-edit"></i></button>
-                <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
+                <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default " data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
                     <?= $categoria->nombre ?>
                 </button>
             </h5>
@@ -14,6 +14,11 @@
             <!--cuerpo-->
             <!-- <input type="text" value="<?= $categoria->nombre ?>" hidden> -->
             <div class="card-body text-center">
+                <div id="<?= $categoria->nombre ?>">
+                    <!-- Aqui va la tabla con el form para agregar las subcategorias -->
+                </div>
+                <br>
+                <h5>Agregar Nueva</h5>
                 <form id="form<?= $categoria->nombre ?>">
                     <div class="row">
                         <div class="col-md-10">
@@ -30,11 +35,9 @@
                         </div>
                     </div>
                 </form>
-<br>
+                <br>
 
-                <div id="<?= $categoria->nombre ?>">
-                    <!-- Aqui va la tabla con el form para agregar las subcategorias -->
-                </div>
+
 
             </div>
         </div>
