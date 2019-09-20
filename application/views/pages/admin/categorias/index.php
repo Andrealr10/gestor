@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-md-1 text-start">
-                <a class="botton circle" style="color:white;" data-toggle="modal" data-target="#modelId">Crear <i class="fas fa-plus-square fa-lg"></i></a>
+                <a class="botton circle" style="color:white;" data-toggle="modal" data-target="#modelId">Agregar <i class="fas fa-plus-square fa-lg"></i></a>
             </div>
         </div>
     </div>

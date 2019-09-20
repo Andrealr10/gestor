@@ -71,6 +71,7 @@ CREATE TABLE `solicitud` (
   `id_solicitud` int(11) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
   `estado` tinyint(1) NOT NULL,
+  `fecha` date NOT NULL,
   `id_tipo_solicitud` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

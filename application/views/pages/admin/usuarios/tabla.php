@@ -2,7 +2,6 @@
 foreach ($usuarios as $usuario) {
     ?>
 <tr>
-    <td><?= $usuario->id_usuario ?></td>
     <td><?= $usuario->nombre ?></td>
     <td><?= $usuario->apellido ?></td>
     <td><?= $usuario->username ?></td>

@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="col-md-1">
-                            <button type="button" onclick="crearsub('<?= $categoria->nombre ?>')" class="btn btn-success">Crear</button>
+                            <button type="button" onclick="crearsub('<?= $categoria->nombre ?>')" class="btn btn-success">Agregar</button>
                         </div>
                     </div>
                 </form>

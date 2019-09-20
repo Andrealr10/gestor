@@ -57,7 +57,6 @@
                                 <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
                                     <thead class="thead text-center">
                                         <tr>
-                                            <th scope="col">Id</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Apellido</th>
                                             <th scope="col">Username</th>

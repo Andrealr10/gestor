@@ -55,9 +55,8 @@
 			<!--Contenido-->
 			<nav class="navbar navbar-expand-lg text-light bg-colorcito">
 				<!--Cloucat nav-->
-
 				<button type="button" id="sidebarCollapse" class="btn btn-default text-light">
-					<i class="fas fa-bars"></i>
+					<i class="fas fa-bars" id="boton"></i>
 				</button>
 
 				<a class="navbar-brand" href="#"> CloudCat Admin <i class="fas fa-cog"></i></a>
