@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!-- ----------------------------------Pezonalizado-------------------------------- -->
      <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage.css">
+     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/guest.css">
      <link rel="stylesheet" href="<?= base_url() ?>libs/fonts/css/all.css">
     <link rel="stylesheet" href="<?= base_url() ?>libs/css/bootstrap.min.css">
     <title>Cloudcat</title>
@@ -34,9 +35,60 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </header>
 
   <div class="main">
-     <p>Bacon ipsum dolor amet pork chop filet mignon jerky kielbasa. Tri-tip cow boudin shank flank, venison meatloaf capicola beef doner kielbasa rump. Pastrami meatloaf chicken, spare ribs cupim pork tri-tip. Pancetta beef ribs alcatra, filet mignon tri-tip tongue bacon. Kevin meatloaf tri-tip spare ribs sausage, frankfurter t-bone ham cow pastrami shankle. Chicken turducken corned beef bresaola porchetta kevin ribeye drumstick cupim kielbasa pork belly jerky biltong hamburger.</p> 
+  <div class="container-fluid mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-12 col-lg-4" id="por_defecto">
+                <h2>¿Que es CloudCat?</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatibus cum blanditiis omnis deserunt, laudantium corporis laborum eveniet quia quos recusandae minima ea, quidem mollitia. Accusamus cupiditate voluptate libero facilis!
+                Quibusdam facilis tenetur modi sunt soluta, nulla quis tempora quo porro suscipit dicta enim corrupti error pariatur, ullam consequuntur nostrum. Aperiam consectetur maxime expedita dolore. Doloremque sequi non libero temporibus?
+                <h2 class="mt-2">¿Como surgió?</h2>
+                Expedita quas voluptatibus incidunt nam laborum officiis sed, tenetur cumque soluta, sunt recusandae eaque. Omnis libero eos eligendi ex minima obcaecati atque voluptatum beatae, rerum veniam repudiandae id pariatur eaque!
+                Minus, saepe repellendus. Architecto sit ullam repellat eos et ab, molestias officia facere aspernatur quia aut similique possimus, eius placeat voluptatem nihil. Laborum earum neque adipisci sit quasi facilis natus.
+            </div>
+  <div class="col-lg-8" id="carousel_div">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active slide1">
+                            <h2 class="line anim-typewriter">¿Como usar CloudCat? <i class="fas fa-paw"></i></h2>
+                        </div>
+                        <div class="carousel-item slide2">
+                            <div class="container mt-5">
+                                <h3 style="text-align:left; color:#000;">Crear cuenta CloudCat</h3>
+                                <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magni fugiat minima voluptate similique dolorum exercitationem cum assumenda id qui ratione dolor reiciendis aperiam, laudantium optio, facilis quidem corporis? Tempore.</p><br>
+                                <h3 style="text-align:left; color:#000;">Iniciar Sesion</h3>
+                                <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magni fugiat minima voluptate similique dolorum exercitationem cum assumenda id qui ratione dolor reiciendis aperiam, laudantium optio, facilis quidem corporis? Tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum debitis ullam dolore dolor blanditiis aut nihil, at earum nobis sapiente, fugit modi reiciendis eos iure. Dolore sed minima soluta magni.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item slide">
+                            <div class="container mt-5">
+
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
   </div>
   <script src="<?= base_url() ?>libs/js/jquery-3.4.1.min.js"></script>
+  <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
+    <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
+    <script src="<?= base_url(); ?>libs/js/morph.js"></script>
+    <script src="<?= base_url(); ?>libs/js/tween.js"></script>
   <!-- ----------------------------------Pezonalizado-------------------------------- -->
   <script src="<?= base_url() ?>libs/js/homepage.js"></script>
 </body>
