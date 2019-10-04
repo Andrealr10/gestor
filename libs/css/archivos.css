@@ -1,0 +1,25 @@
+body{
+	 background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));
+	}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #086d8b;
+    border-color: #086d8b;
+} 
+
+.miga {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .50rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+	background-color: #161616;
+	color: #fff;
+	border-radius: .25rem;
+}
+
+
