@@ -1,0 +1,22 @@
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #086d8b;
+    border-color: #086d8b;
+} 
+
+.miga {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .50rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+	background-color: #161616;
+	color: #fff;
+	border-radius: .25rem;
+}
+
+

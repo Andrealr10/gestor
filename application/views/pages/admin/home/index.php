@@ -18,22 +18,23 @@
 			<!--Sidebar-->
 			<div class="sidebar-header">
 				<!--Header Sidebar-->
-				<h3>CloudCat <i class="fas fa-cat"></i></h3>
+				<!-- <h3>CloudCat <i class="fas fa-cat"></i></h3> -->
+				<h4 class="text-center">Menú <i class="fas fa-cog"></i></h4>
 			</div>
 			<!--Header Sidebar-->
 			<ul class="list-unstyled components">
 				<p class="text-center">User 01 <i class="fas fa-user-circle"></i></p>
 				<li class="active">
-					<a href="<?= base_url('categoria') ?>">Categorías</a>
+					<a href="<?= base_url('categoria') ?>"><i class="fas fa-th-list" style="font-size:15px;"></i>&nbsp&nbspCategorías</a>
 				</li>
 				<li>
-					<a href="<?= base_url('archivo') ?>">Archivos</a>
+					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder" style="font-size:15px;"></i>&nbsp&nbspArchivos</a>
 				</li>
 				<li>
-					<a href="<?= base_url('usuario') ?>">Usuarios</a>
+					<a href="<?= base_url('usuario') ?>"><i class="fas fa-user" style="font-size:15px;"></i>&nbsp&nbspUsuarios</a>
 				</li>
 				<li>
-					<a href="<?= base_url('notificaciones') ?>">Notificaciones</a>
+					<a href="<?= base_url('notificaciones') ?>"><i class="fas fa-inbox" style="font-size:15px;"></i>&nbsp&nbspNotificaciones</a>
 				</li>
 				<!-- <li>
    				<a href="#">Salir <i class="fas fa-sign-out-alt"></i></a>
@@ -59,7 +60,8 @@
 					<i class="fas fa-bars" id="boton"></i>
 				</button>
 
-				<a class="navbar-brand" href="#"> CloudCat Admin <i class="fas fa-cog"></i></a>
+				<!-- <a class="navbar-brand" href="#"> CloudCat Admin </a> -->
+				<a class="navbar-brand" href="#"><h3><i class="fas fa-cat"></i> CloudCat</h3></a>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ml-auto">
 
