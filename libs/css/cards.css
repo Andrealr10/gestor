@@ -49,13 +49,12 @@ img {
   width: 100%;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  /* background: #086d8b; */
-  background-color: #0000 !important;
+  background: #1E1E20;
 }
 
 .btn:hover {
-  /* background-color: rgba(255, 255, 255, 0.12); */
-  background-color: #0000;
+  background-color: rgba(167, 165, 165, 0.918);
+  /* background-color: #0000; */
 }
 
 .cards {
@@ -70,7 +69,6 @@ img {
 .cards_item {
   display: flex;
   padding: 1rem;
-  /* background-color: transparent !important; */
 }
 
 @media (min-width: 40rem) {
@@ -96,8 +94,7 @@ img {
 
 .card_content {
   padding: 1rem;
-  /* background: linear-gradient(90deg,#727171de 40%, #086d8b 60%,#5c5b5bde 20% ); */
-  background: #086d8b ;
+  background: linear-gradient(45deg,#444343de 25%, #312c2cde 60%, #086d8b 85% );
   color: black !important;
 }
 
