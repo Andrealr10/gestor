@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <header>
     <div class="header_logo">
         <!-- <img src="<?= base_url(); ?>libs/images/blackcat.png" "> -->
-        <h1 class="display-4 text-light text-center"> Cloudcat</h1>
+        <h1 class="display-4 text-info text-center"> Cloudcat</h1>
         
     </div>
     <div>
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li><a href="#">ACERCA DE</a></il>
         <li><a href="#">TECNOLOGIAS</a></il>
         <li><a href="#">DESAROLLADORES</a></il>
-        <li><a href="#">REGISTRO &#124; INICIO DE SESI&Oacute;N</a></il>  
+        <li><a href="<?= base_url(); ?>Login">REGISTRO &#124; INICIO DE SESI&Oacute;N</a></il>  
       </ul>
       <a href="#" id="pull">&#9776;</a>        
     </nav>

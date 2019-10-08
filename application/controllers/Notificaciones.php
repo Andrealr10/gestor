@@ -12,7 +12,7 @@ class Notificaciones extends CI_Controller
 	public function index()
 	{
 		$data = ['notificaciones' => $this->notificacionModel->getAll()];
-		$this->load->view('pages/admin/home/index.php'); // Menu
+		$this->load->view('pages/admin/inicio/navbar'); // Menu
 		$this->load->view('pages/admin/notificaciones/index', $data);
 	}
 
