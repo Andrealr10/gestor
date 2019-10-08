@@ -3,7 +3,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Nombre</th>
+                    <th scope="col" class="text-left">Subcategor&iacute;as</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>

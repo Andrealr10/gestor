@@ -1,13 +1,16 @@
 <?php foreach ($categorias as $categoria) { ?>
     <div class="card">
+        
         <div class="card-header" id="heading<?= $categoria->nombre ?>">
+        
             <!--header-->
-            <h5 class="mb-0">
-                <button class="btn btn-editar"><i class="fas fa-edit"></i></button>
-                <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default " data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
+            
+                <!-- <button class="btn-editar"><i class="fas fa-edit"></i></button> -->
+                <i class="fas fa-edit"></i>
+                <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-block btnhover" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
                     <?= $categoria->nombre ?>
                 </button>
-            </h5>
+            
         </div>
         <!--header-->
         <div id="collapse<?= $categoria->nombre ?>" class="collapse" aria-labelledby="heading<?= $categoria->nombre ?>" data-parent="#accordion">

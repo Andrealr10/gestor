@@ -48,3 +48,19 @@
   background: #0b4d58;
   padding: -2px;
 }
+
+/* Efecto de boton de categorias */
+
+/* .btn:focus{
+  box-shadow: 0 0 0 0.1rem rgba(255,255,255,.25) !important;
+} */
+.btnhover{
+  box-shadow: 0 0px 10px 2px rgba(0, 200, 200, 0.3);
+	background: rgba(0, 200, 200, 0);
+  color: #086d8b;
+}
+/* .btnhover:hover{
+ 
+} */
+
+
