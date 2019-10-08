@@ -12,6 +12,11 @@ class Archivo extends CI_Controller
         $this->load->model('solicitudModel');
     }
 
+    public function index()
+    {
+        $this->load->view('pages/admin/home/index');
+        $this->load->view('pages/admin/archivos/index');
+    }
 
     /**
      * Mostrar todos los archivos aprobados de la categoria

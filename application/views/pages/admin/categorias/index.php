@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/categoria.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/sweetalert/bootstrap-4.min.css">
     <title>Document</title>
 </head>
 
@@ -69,6 +70,7 @@
     </div>
 
     <script src="<?= base_url(); ?>libs/js/categorias.js"></script>
+    <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
 
     <script>
         $(document).on('change', 'input[type=file]', function(e) {
