@@ -5,8 +5,11 @@ class Guest extends CI_Controller
 {
     public function __construct(){
         parent::__construct();
+        $this->load->model('categoriaModel');
     }
     public function index(){
-        $this->load->view('pages/guest/index.php');
+        $data = ['categorias' => $this->categoriaModel->getAll()];
+        // $this->load->view('pages/guest/nav.php');
+        $this->load->view('pages/guest/index.php',$data);
     }
 }
