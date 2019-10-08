@@ -27,20 +27,11 @@
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item">
-          <a href="<?= base_url('guest') ?>" class="nav-link">Inicio</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contactanos</a>
-        </li>
       </ul>
-
-
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li><a href="<?= base_url('login') ?>">Iniciar Sesión</a>
-
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -559,87 +550,9 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-          <!-- Info boxes -->
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-                <div class="info-box-content">
-                  <p>Mas de 10 categorias</p>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Likes</span>
-                  <span class="info-box-number">41,410</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!-- fix for small devices only -->
-            <div class="clearfix hidden-md-up"></div>
-
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Sales</span>
-                  <span class="info-box-number">760</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">New Members</span>
-                  <span class="info-box-number">2,000</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-          <div class="row">
-            <div class="col-sm-4 text-center filtered-cards">
-              <div id="card-placeholder">
-                
-                <?php foreach ($categorias as $categoria) { ?>
-                  <a class="link" href="<?= base_url('subcategoria') ?>/load/<?= $categoria->nombre ?>/">
-                    <div class="card">
-                      <div class="card-img-container"><img src="<?= $categoria->imagen ?>" alt="" style="height: 200px; width: 300px"></div>
-                      <!--por defecto, el div genera imagenes, eso se puede cambiar si se desea-->
-                      <div class="card-text-container">
-                        <h2 class="card-title"><?= $categoria->nombre ?> </i></h2>
-                        <p class="card-body"><?= $categoria->descripcion ?></p>
-                      </div>
-                      <div class="card-link-container">
-
-                      </div>
-                    </div>
-                  </a>
-                <?php } ?>
-              </div>
-            </div>
-
+          <div id="contenido">
+            
+          <!-- Aqui va todo el contenido -->
 
           </div>
         </div>
@@ -656,7 +569,7 @@
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer bg-dark">
       <strong>Copyright &copy; 2019 Nombre de la app.</strong>
       <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> Beta 1.1
@@ -674,6 +587,7 @@
   <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
+  <script src="<?= base_url(); ?>libs/js/visitante.js"></script>
 
 </body>
 
