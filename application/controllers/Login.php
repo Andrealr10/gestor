@@ -16,8 +16,12 @@ class Login extends CI_Controller
 		if (isset($this->session->login)) {
 			redirect(base_url('user'));
 		} else {
-			$this->load->view('pages/login/login');
-			$this->login();
+			if (isset($_POST['nombre'])) {
+				$this->registrar();
+			} else {
+				$this->load->view('pages/login/login');
+				$this->login();
+			}
 		}
 	}
 
@@ -48,18 +52,20 @@ class Login extends CI_Controller
 		redireccionar('main');
 	}
 
-	public function registroUsuario()
+	public function registrar()
 	{
 		$data = [
 			'nombre' => $_POST['nombre'],
 			'apellido' => $_POST['apellido'],
-			'username' => $_POST['user'],
-			'password ' => $_POST['pass1'],
+			'username' => $_POST['username'],
+			'password ' => $_POST['password'],
 			'correo ' => $_POST['correo'],
 			'tipo_usuario' => 2,
-			'estado' => 1
+			'estado' => 0,
+			'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
+			'code' => rand(10000, 99999)
 		];
-		$this->UsuarioModel->insert($data);
+		$this->usuarioModel->insert($data);
 	}
 }
 

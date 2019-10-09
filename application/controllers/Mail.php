@@ -31,7 +31,7 @@ class Mail extends CI_Controller
             $usuario = $this->usuarioModel->getByCorreo($correo);
             if ($usuario != null) {
                 $asunto = 'Bienvenido a CloudCat';
-                $cuerpo = "Bienvenido a CloudCat " . $usuario->username . "! Ahora podras compartit archivos en la plataforma.\nTu codigo de verificacion es: " . $usuario->code;
+                $cuerpo = "Bienvenido a CloudCat " . $usuario->username . "! Ahora podras compartir archivos en la plataforma.\nTu codigo de verificacion es: " . $usuario->code;
                 $this->send($correo, $asunto, $cuerpo);
             }
         }
