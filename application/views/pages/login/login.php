@@ -49,7 +49,7 @@
 
                     <div class="help-text">
                         <p class="text-light">Al inscribirte aceptas colaborar a la comunidad.</p>
-                        <p><a class="text-danger" href="#">T&eacute;rminos del servicio.</a></p>
+                        <p><a class="text-log" href="#">T&eacute;rminos del servicio.</a></p>
                     </div>
                     <!--.help-text-->
                 </div>
@@ -74,7 +74,7 @@
                     <!--.login-form-->
                     <div class="help-text">
                         <br>
-                        <p><a class="text-danger" data-toggle="modal" data-target="#recuperarPass" href="">&#191;Olvidaste la
+                        <p><a class="text-log" data-toggle="modal" data-target="#recuperarPass" href="">&#191;Olvidaste la
                                 contrase&ntilde;a&#63;</a></p>
                     </div>
                     <!--.help-text-->
