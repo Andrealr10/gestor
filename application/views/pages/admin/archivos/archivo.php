@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/archivos.css">
-  <title>Archivos</title>
+ 
 </head>
 
 <body>

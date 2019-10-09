@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style-xlarge.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
 
-    <title>SuDocs</title>
+    <title>SUDOCS</title>
 </head>
 
 <body id="top">

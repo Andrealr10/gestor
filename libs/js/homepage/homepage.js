@@ -1,4 +1,4 @@
-consoleText(['¡Hola Mundo!', 'Este es Sudocs', 'Bienvenidos'], 'text',['#000000','#000000','#000000']);
+consoleText(['¡Hola Mundo!', 'Este es Sudocs', 'Bienvenidos'], 'text',['#FF7C7C','#008DD5','#FAC05E']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
