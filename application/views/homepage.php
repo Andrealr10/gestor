@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/skel.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style-xlarge.css">
-    <link rel="stylesheet" href="<?= base_url() ?>libs/fonts/css/all.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
 
     <title>SuDocs</title>
 </head>
@@ -37,8 +37,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <!-- <p>Documentos de soporte para desarrolladores.</p> -->
                
                 <ul class="actions">
-                    <li><a href="#content" class="button big special">Iniciar Sesi&oacute;n</a></li>
-                    <li><a href="#elements" class="button big alt">Empezar ahora</a></li>
+                    <li><a href="<?=base_url(); ?>Login" class="button big special">Iniciar Sesi&oacute;n</a></li>
+                    <li><a href="<?=base_url(); ?>Guest" class="button big alt">Empezar ahora</a></li>
                 </ul>
             </div>
         </section>
@@ -46,29 +46,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <!-- One -->
         <section id="one" class="wrapper style1">
             <header class="major">
-                <h2>Ipsum feugiat consequat</h2>
-                <p>Tempus adipiscing commodo ut aliquam blandit</p>
+                <h2>Documentos de Soporte para Desarrolladores</h2>
+              
             </header>
             <div class="container">
                 <div class="row">
                     <div class="4u">
                         <section class="special box">
                             <i class="icon fas fa-folder-open major"></i>
-                            <h3>Justo placerat</h3>
+                            <h3>Gestor de Archivos</h3>
                             <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
                         </section>
                     </div>
                     <div class="4u">
                         <section class="special box">
-                            <i class="icon fas fa-cloud-upload-alt major"></i>
-                            <h3>Blandit quis curae</h3>
+                            <i class="icon fas fa-cloud-download-alt major"></i>
+                            <h3>Subir y descargar </h3>
                             <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
                         </section>
                     </div>
                     <div class="4u">
                         <section class="special box">
                             <i class="icon fas fa-user-friends major"></i>
-                            <h3>Amet sed accumsan</h3>
+                            <h3>Comunidad</h3>
                             <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
                         </section>
                     </div>
@@ -79,28 +79,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <!-- Two -->
         <section id="two" class="wrapper style2">
             <header class="major">
-                <h2>Commodo accumsan aliquam</h2>
-                <p>Amet nisi nunc lorem accumsan</p>
+                <h2>¿Qu&eacute; es SuDocs?</h2>
+                
             </header>
             <div class="container">
                 <div class="row">
                     <div class="6u">
                         <section class="special">
-                            <a href="#" class="image fit"><img src="<?= base_url(); ?>libs/images/mini-banner.jpeg" alt="" /></a>
-                            <h3>Mollis adipiscing nisl</h3>
+                            <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini-banner.jpeg" alt="" /></a>
+                            <h3>Acerca de SuDocs</h3>
                             <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
                             <ul class="actions">
-                                <li><a href="#" class="button alt">Learn More</a></li>
+                                <li><a href="#" class="button alt">Leer mas</a></li>
                             </ul>
                         </section>
                     </div>
                     <div class="6u">
                         <section class="special">
-                            <a href="#" class="image fit"><img src="<?= base_url(); ?>libs/images/mini1-banner.jpeg" alt="" /></a>
-                            <h3>Neque ornare adipiscing</h3>
+                            <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini1-banner.jpeg" alt="" /></a>
+                            <h3>Desarrolladores</h3>
                             <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
                             <ul class="actions">
-                                <li><a href="#" class="button alt">Learn More</a></li>
+                                <li><a href="#" class="button alt">Leer mas</a></li>
                             </ul>
                         </section>
                     </div>
