@@ -17,9 +17,9 @@
         </div> -->
 
         <div class="col-12 col-sm-6 col-md-3">
-            
+
             <div class="info-box" onclick="loadSub('<?= $categoria->nombre ?>')">
-                <span class="info-box-icon bg-info elevation-1"><img src="<?= $categoria->imagen ?>" alt="IMG" ></span>
+                <span class="info-box-icon bg-info elevation-1"><img src="<?= $categoria->imagen ?>" alt="IMG"></span>
 
                 <div class="info-box-content">
                     <p> </p>
@@ -30,4 +30,6 @@
             <!-- /.info-box -->
         </div>
     <?php } ?>
+    
+    
 </div>
