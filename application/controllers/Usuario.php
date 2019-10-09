@@ -7,7 +7,6 @@ class Usuario extends CI_Controller
   {
     parent::__construct();
     $this->load->model('UsuarioModel');
-    $this->load->model('UsuarioModel');
   }
 
   public function index()
@@ -35,7 +34,7 @@ class Usuario extends CI_Controller
       'correo ' => $_POST['correo'],
       'tipo_usuario' => $_POST['tipo'],
       'estado' => 1,
-      'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false),
+      'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
       'code' => rand(10000, 99999)
     ];
     $this->UsuarioModel->insert($data);
@@ -49,12 +48,13 @@ class Usuario extends CI_Controller
       'username' => $_POST['username'],
       'password ' => $_POST['password'],
       'correo ' => $_POST['correo'],
-      'tipo_usuario' => $_POST['tipo'],
+      'tipo_usuario' => 2,
       'estado' => 0,
-      'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false),
+      'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
       'code' => rand(10000, 99999)
     ];
     $this->UsuarioModel->insert($data);
+    
   }
 
   public function delete($id)
@@ -104,9 +104,9 @@ class Usuario extends CI_Controller
     if ($hash != null) {
       $user = $this->UsuarioModel->getByHash($hash);
       $data = ['usuario' => $user];
-      if ($user != null){
+      if ($user != null) {
         $this->load->view('pages/admin/usuarios/reset', $data);
-      }else{
+      } else {
         echo "este enlace ya no es valido :V";
       }
     }
@@ -118,11 +118,20 @@ class Usuario extends CI_Controller
     if ($id != null) {
       $data = [
         'password ' => $_POST['password'],
-        'hash' => hash('sha256',$_POST['username'] . date("Y-m-d H:i:s"),false)
+        'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false)
       ];
-    } else {
-      
-    }
+    } else { }
     $this->UsuarioModel->update($data, $id);
+  }
+
+  public function validar()
+  {
+    $correo = $_POST['correo'];
+    $usuario = $this->UsuarioModel->getByCorreo($correo);
+    if ($usuario->code == $_POST['codigo']) {
+      $this->activar($usuario->id_usuario);
+      echo 1;
+    }
+    echo 0;
   }
 }

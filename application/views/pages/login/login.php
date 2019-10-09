@@ -17,7 +17,7 @@
 <body class="">
     <div class="container-fluid">
         <div class="title-box">
-            <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1>
+            <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
         </div>
         <!--title-box-->
         <div class="form-wrap">
@@ -34,16 +34,18 @@
             <!-- Contenedor de formularios -->
             <div class="tabs-content ">
                 <div id="signup-tab-content" class="">
-                    <form class="signup-form  ">
+                    <form class="signup-form" method="POST" id="reg">
                         <div class="form-group">
-                            <input type="text" class=" form-control" id="name" autocomplete="off" placeholder="Nombre" required>
-                            <input type="text" class=" form-control" id="lastname" autocomplete="off" placeholder="Apellido" required>
-                            <input type="text" class=" form-control" id="username" autocomplete="off" placeholder="Nombre de usuario" required>
-                            <input type="email" class="form-control" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required>
-                            <input type="password" class=" form-control" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
-                            <input type="password" class=" form-control" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a">
+                            <input type="text" class=" form-control" name="nombre" id="name" autocomplete="off" placeholder="Nombre" required>
+                            <input type="text" class=" form-control" name="apellido" id="lastname" autocomplete="off" placeholder="Apellido" required>
+                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Nombre de usuario" required>
+                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required>
+                            <input type="password" class=" form-control" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
+                            <input type="password" class=" form-control" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a">
                         </div>
-                        <button class="btn btn-info btn-block" id="registrar">Registrarme</button>
+                        <button class="btn btn-secondary btn-block" id="registrar" type="button">Verificar datos</button>
+                        <br><input type="number" class=" form-control" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar codigo">
+                        <button class="btn btn-info btn-block" id="conf" type="button">Registrarme</button>
                     </form>
                     <!--.login-form-->
 
@@ -142,6 +144,54 @@
                 success: function(result) {
                     console.log(result);
                     // window.location.href = 'http://localhost/gestor';
+                }
+            });
+        })
+    </script>
+    <script>
+        $('#registrar').on('click', function() {
+            correo = document.getElementById('useremail').value;
+            form = new FormData(document.getElementById("reg"));
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/gestor/usuario/registrar',
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    console.log(result);
+                    // window.location.href = 'http://localhost/gestor';
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/gestor/mail/registro',
+                data: {
+                    'correo': correo
+                },
+                success: function(result) {
+                    console.log(result);
+                    
+                }
+            });
+
+        })
+    </script>
+    <script>
+        $('#conf').on('click', function() {
+            codigo = document.getElementById('codigo').value;
+            correo = document.getElementById('useremail').value;
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/gestor/usuario/validar',
+                data: {
+                    'codigo': codigo,
+                    'correo': correo,
+                },
+                success: function(result) {
+                    if (result) {
+                        location.reload();
+                    }
                 }
             });
         })
