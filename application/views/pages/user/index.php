@@ -15,6 +15,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>libs/lte/css/adminlte.min.css">
   <!-- <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css"> -->
+  <link href="<?= base_url() ?>libs/upload/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
+  <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
+  <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -582,7 +585,7 @@
 
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
-  <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
+
   <!-- Bootstrap -->
   <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
   <!-- overlayScrollbars -->
@@ -590,6 +593,9 @@
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
   <script src="<?= base_url(); ?>libs/js/user.js"></script>
+  <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
+  <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
+
 
 </body>
 
