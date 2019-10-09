@@ -49,4 +49,11 @@ class UsuarioModel extends CI_Model
         return $this->db->get_where($this->tabla, ['correo' => $correo])->row();
     }
 
+    public function login($username, $password)
+    {
+        $this->db->where('username', $username);
+        $this->db->where('password', $password);
+        return $this->db->get($this->tabla)->row();
+    }
+
 }

@@ -56,13 +56,13 @@
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form">
+                    <form class="login-form" method="POST">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="user_login" autocomplete="off" placeholder="Nombre de usuario">
+                                <input type="text" class="form-control" name="user" id="user" autocomplete="off" placeholder="Nombre de usuario">
                             </div>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="pass_login" autocomplete="off" placeholder="Contrase&ntilde;a">
+                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary"><i class=" far fa-eye"></i></button>
                                 </div>
