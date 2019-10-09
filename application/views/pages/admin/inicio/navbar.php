@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/sidebar.css">
-	<title>Cloudcat</title>
+	<title>SUDOCS</title>
 </head>
 
 <body>

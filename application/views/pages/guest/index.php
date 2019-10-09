@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Visitante</title>
+  <title>SUDOCS</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
@@ -33,7 +33,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesión</a>
+        <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesi&oacute;n</a>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -45,7 +45,7 @@
         <!-- <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
         <a data-widget="pushmenu" href="#" class="brand-link">
           <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">Nombre</span>
+          <span class="brand-text font-weight-light">SUDOCS</span>
         </a>
 
         <!-- Sidebar -->
@@ -235,10 +235,13 @@
 
     <!-- Main Footer -->
     <footer class="main-footer bg-dark">
-      <strong>Copyright &copy; 2019 Nombre de la app.</strong>
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> Beta 1.1
+        <div class="float-right d-none d-sm-inline-block">
+         &copy;Todos los derechos reservados 2019. 
       </div>
+      <!-- <strong>Copyright &copy; 2019 Nombre de la app.</strong> -->
+      <!-- <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> Beta 1.1
+      </div> -->
     </footer>
   </div>
   <!-- ./wrapper -->

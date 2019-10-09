@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
     <!-- ----------------------------------FontAwesome--------------------------------- -->
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
-    <title>Inicio&#47; Registro</title>
+    <title>SUDOCS</title>
 </head>
 
 <body class="">
