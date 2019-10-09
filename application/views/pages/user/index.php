@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +13,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>libs/lte/css/adminlte.min.css">
-  <!-- <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css"> -->
+  <link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
   <link href="<?= base_url() ?>libs/upload/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
   <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
@@ -36,7 +35,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <li><a href="<?= base_url('login') ?>">Iniciar Sesión</a>
+        <li><a href="<?= base_url('login') ?>" class="iniciar">Cerrar Sesión&nbsp<i class="fas fa-door-open"></i></a></li>
       </ul>
     </nav>
     <!-- /.navbar -->
