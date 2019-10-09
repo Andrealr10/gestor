@@ -24,7 +24,7 @@
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="1 Star">1 star</label>
                 </div>
-                <a href="<?= base_url('archivo') ?>/download/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+                <a href="<?= base_url('archivo') ?>/download/<?=$archivo->id_archivo?>/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
                     <button class="descargar">DESCARGAR <i class="fas fa-download"></i></button>
                 </a>
                 <div data-toggle="modal" data-target="#share<?= $archivo->id_archivo ?>">
