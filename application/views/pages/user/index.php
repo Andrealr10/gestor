@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>libs/lte/css/adminlte.min.css">
-  <link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
+  <!-- <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css"> -->
+  <link href="<?= base_url() ?>libs/upload/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
+  <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
+  <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -33,7 +36,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesión</a>
+        <li><a href="<?= base_url('login') ?>">Iniciar Sesión</a>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -41,13 +44,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-<<<<<<< HEAD
-      <a href="<?= base_url('guest') ?>" class="brand-link">
-        <!-- <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-=======
       <a data-widget="pushmenu" href="#" class="brand-link">
         <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
->>>>>>> 3d98e93f054f296563a350bc2033822055dc4831
         <span class="brand-text font-weight-light">Nombre</span>
       </a>
 
@@ -68,100 +66,55 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>Categorías</p>
-              </a>
-            </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
+                <i class="nav-icon fas fa-copy"></i>
                 <p>
-                  Pages
+                  Layout Options
                   <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info right">6</span>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/examples/invoice.html" class="nav-link">
+                  <a href="pages/layout/top-nav.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Invoice</p>
+                    <p>Top Navigation</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/profile.html" class="nav-link">
+                  <a href="pages/layout/boxed.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Profile</p>
+                    <p>Boxed</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/e_commerce.html" class="nav-link">
+                  <a href="pages/layout/fixed-sidebar.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>E-commerce</p>
+                    <p>Fixed Sidebar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/projects.html" class="nav-link">
+                  <a href="pages/layout/fixed-topnav.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Projects</p>
+                    <p>Fixed Navbar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/project_add.html" class="nav-link">
+                  <a href="pages/layout/fixed-footer.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Project Add</p>
+                    <p>Fixed Footer</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/project_edit.html" class="nav-link">
+                  <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Project Edit</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/examples/project_detail.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Project Detail</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/examples/contacts.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Contacts</p>
+                    <p>Collapsed Sidebar</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon far fa-envelope"></i>
-                <p>
-                  Mailbox
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/mailbox/mailbox.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Inbox</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/mailbox/compose.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Compose</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/mailbox/read-mail.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Read</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+
             <!-- hasta aca llega un elemento de la cosa esta -->
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
@@ -251,7 +204,7 @@
                 </li>
               </ul>
             </li>
-            <!-- <li class="nav-item has-treeview">
+            <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -279,8 +232,8 @@
                   </a>
                 </li>
               </ul>
-            </li> -->
-            <!-- <li class="nav-item has-treeview">
+            </li>
+            <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
@@ -308,9 +261,9 @@
                   </a>
                 </li>
               </ul>
-            </li> -->
-            <li class="nav-header">CONTENIDO</li>
-            <!-- <li class="nav-item">
+            </li>
+            <li class="nav-header">EXAMPLES</li>
+            <li class="nav-item">
               <a href="pages/calendar.html" class="nav-link">
                 <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
@@ -318,59 +271,99 @@
                   <span class="badge badge-info right">2</span>
                 </p>
               </a>
-            </li> -->
-            <!-- <li class="nav-item">
+            </li>
+            <li class="nav-item">
               <a href="pages/gallery.html" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
                 <p>
                   Gallery
                 </p>
               </a>
-            </li> -->
+            </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="nav-icon far fa-envelope"></i>
                 <p>
-                  Categorías
+                  Mailbox
                   <i class="fas fa-angle-left right"></i>
-                  <!-- <span class="badge badge-info right">6</span> -->
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/layout/top-nav.html" class="nav-link">
+                  <a href="pages/mailbox/mailbox.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Php</p>
+                    <p>Inbox</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/layout/boxed.html" class="nav-link">
+                  <a href="pages/mailbox/compose.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Xamarin</p>
+                    <p>Compose</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                  <a href="pages/mailbox/read-mail.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Laravel</p>
+                    <p>Read</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Pages
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="pages/examples/invoice.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Invoice</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                  <a href="pages/examples/profile.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Jquery</p>
+                    <p>Profile</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/layout/fixed-footer.html" class="nav-link">
+                  <a href="pages/examples/e_commerce.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Java</p>
+                    <p>E-commerce</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                  <a href="pages/examples/projects.html" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Prueba</p>
+                    <p>Projects</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/examples/project_add.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Project Add</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/examples/project_edit.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Project Edit</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/examples/project_detail.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Project Detail</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/examples/contacts.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Contacts</p>
                   </a>
                 </li>
               </ul>
@@ -446,25 +439,25 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-header">ACERCA DE</li>
+            <li class="nav-header">MISCELLANEOUS</li>
             <li class="nav-item">
               <a href="https://adminlte.io/docs/3.0" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Documentation</p>
               </a>
             </li>
-            <li class="nav-header">ABOUT</li>
+            <li class="nav-header">MULTI LEVEL EXAMPLE</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-              <i class="fas fa-comment-alt"></i>&nbsp
-                <p>Contáctanos</p>
+                <i class="fas fa-circle nav-icon"></i>
+                <p>Level 1</p>
               </a>
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-circle"></i>
                 <p>
-                  Desarrolladores
+                  Level 1
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -512,13 +505,13 @@
                 </li>
               </ul>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fas fa-circle nav-icon"></i>
                 <p>Level 1</p>
               </a>
-            </li> -->
-            <!-- <li class="nav-header">LABELS</li>
+            </li>
+            <li class="nav-header">LABELS</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>
@@ -536,7 +529,7 @@
                 <i class="nav-icon far fa-circle text-info"></i>
                 <p>Informational</p>
               </a>
-            </li> -->
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -592,14 +585,17 @@
 
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
-  <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
+
   <!-- Bootstrap -->
   <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
   <!-- overlayScrollbars -->
   <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
-  <script src="<?= base_url(); ?>libs/js/visitante.js"></script>
+  <script src="<?= base_url(); ?>libs/js/user.js"></script>
+  <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
+  <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
+
 
 </body>
 
