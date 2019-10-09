@@ -8,6 +8,7 @@ class Guest extends CI_Controller
         parent::__construct();
         $this->load->model('categoriaModel');
         $this->load->model('subcategoriaModel');
+        $this->load->model('archivoModel');
     }
     public function index()
     {
@@ -32,6 +33,22 @@ class Guest extends CI_Controller
             ];
             // $this->load->view('pages/admin/subcategorias/index', $data);
             $this->load->view('pages/guest/subcategorias', $data);
+        }
+    }
+
+    public function loadAr($categoria, $subcategoria)
+    {
+        $data = ['categorias' => $this->categoriaModel->getAll()];
+        // $this->load->view('includes/navUser',$data); 
+        if (isset($subcategoria) && isset($categoria)) {
+            $categoria = $this->categoriaModel->getByName($categoria);
+            $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
+            $data = [
+                'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
+                'categoria' => $categoria,
+                'subcategoria' => $subcategoria
+            ];
+            $this->load->view('pages/guest/archivos', $data);
         }
     }
 }

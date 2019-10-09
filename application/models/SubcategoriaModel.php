@@ -18,7 +18,7 @@ class SubcategoriaModel extends CI_Model
     {
         $sql = "SELECT id_subcategoria, nombre, imagen, id_categoria,
         (SELECT COUNT(archivo.id_archivo) 
-        from archivo WHERE archivo.id_subcategoria = subcategoria.id_subcategoria) as cantidad 
+        from archivo WHERE archivo.id_subcategoria = subcategoria.id_subcategoria AND archivo.estado = 1) as cantidad 
         from subcategoria where id_categoria = ?";
         return $this->db->query($sql, $id)->result();
     }

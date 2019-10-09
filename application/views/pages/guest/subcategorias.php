@@ -3,7 +3,7 @@
 
         <div class="col-sm-3" style="margin: 2.5%;">
             <!-- Widget: user widget style 2 -->
-            <div class="card card-widget widget-user-2" >
+            <div class="card card-widget widget-user-2">
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header bg-info">
                     <div class="widget-user-image">
@@ -15,7 +15,7 @@
                 <div class="card-footer p-0">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('archivo') ?>/index/<?= $id_categoria ?>/<?= $subcategoria->id_subcategoria ?>">Ver contenido
+                            <a class="nav-link" href="#" onclick="loadAr('<?= $categoria ?>','<?= $subcategoria->nombre ?>')">Ver contenido
                                 <span class="float-right badge bg-primary"><?= $subcategoria->cantidad ?></span>
                             </a>
                         </li>
@@ -29,7 +29,7 @@
                                 Descargar <span class="float-right badge bg-success"><i class="fas fa-download"></i></span>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>

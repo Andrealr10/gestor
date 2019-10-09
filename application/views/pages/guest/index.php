@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>libs/lte/css/adminlte.min.css">
+  <!-- <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css"> -->
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -551,8 +553,8 @@
       <section class="content">
         <div class="container-fluid">
           <div id="contenido">
-            
-          <!-- Aqui va todo el contenido -->
+
+            <!-- Aqui va todo el contenido -->
 
           </div>
         </div>

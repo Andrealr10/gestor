@@ -19,6 +19,8 @@
 
   <div class="container">
     <input type="text" name="subcategoria" id="subcategoria" hidden value="<?= $subcategoria->id_subcategoria ?>">
+    <input type="text" name="categoria" id="categoria" hidden value="<?= $categoria->nombre ?>">
+    <input type="text" name="sub" id="sub" hidden value="<?= $subcategoria->nombre ?>">
     <div class="row">
       <div class="col-md-6 col-sm-12">
 

@@ -15,7 +15,7 @@ class Archivo extends CI_Controller
     public function index()
     {
         $this->load->view('pages/admin/inicio/navbar');
-        $this->load->view('pages/admin/archivos/archivo');
+        $this->load->view('pages/porsiacaso/archivos/index');
     }
 
     /**
@@ -23,7 +23,6 @@ class Archivo extends CI_Controller
      */
     public function load($categoria, $subcategoria)
     {
-        $this->load->view('pages/admin/home/index');
         $data = ['categorias' => $this->categoriaModel->getAll()];
         // $this->load->view('includes/navUser',$data); 
         if (isset($subcategoria) && isset($categoria)) {
@@ -34,7 +33,7 @@ class Archivo extends CI_Controller
                 'categoria' => $categoria,
                 'subcategoria' => $subcategoria
             ];
-            $this->load->view('pages/admin/archivos/index', $data);
+            $this->load->view('pages/porsiacaso/archivos/index', $data);
         }
     }
 
@@ -47,12 +46,12 @@ class Archivo extends CI_Controller
         force_download('home/files/' . $categoria . '/' . $subcategoria . '/' . $archivo, null);
     }
 
-
     /**
      * Subir archivos
      */
-    public function fileUpload($id)
+    public function fileUpload($id, $categoria, $subcategoria)
     {
+
         if (!empty($_FILES['file']['name'])) {
             $extension = (new SplFileInfo($_FILES['file']['name']))->getExtension();
             if ($extension == 'ppt' || $extension == 'pptx') {
@@ -61,7 +60,7 @@ class Archivo extends CI_Controller
                 $tipo = 'Documento';
             }
             $nombre = str_replace(' ', '_', $_FILES['file']['name']);
-            $config['upload_path'] = 'home/uploads';
+            $config['upload_path'] = 'home/files/' . $categoria . '/' . $subcategoria . '_temp';
             $config['allowed_types'] = 'txt|pdf|doc|docx|ppt|pptx|odt|';
             $config['max_size']    = '10240'; // max_size in kb
             $config['file_name'] = $nombre;
@@ -74,7 +73,7 @@ class Archivo extends CI_Controller
                 $nombre =   $upload_data['file_name'];
                 $this->archivoModel->insert([
                     'archivo' => $nombre,
-                    'ruta' => 'home/uploads/' . $nombre,
+                    'ruta' => 'home/files/' . $categoria . '/' . $subcategoria,
                     'tamanio' => $_FILES['file']['size'],
                     'estado' => 0,
                     'tipo_archivo' => $tipo,
@@ -88,10 +87,18 @@ class Archivo extends CI_Controller
                 $this->solicitudModel->insert([
                     'descripcion' => 'Aprobar archivo',
                     'estado' => 1,
+                    'fecha' =>  date("Y-m-d H:i:s"),
                     'id_tipo_solicitud' => 1,
                     'id_usuario' => 1
                 ]);
             }
         }
+    }
+
+    public function aprobar($id)
+    {
+        $archivo = $this->archivoModel->getById($id);
+        rename($archivo->ruta . '_temp/' . $archivo->archivo, $archivo->ruta . '/' . $archivo->archivo);
+        $this->archivoModel->update(['estado' => 1], $id);
     }
 }

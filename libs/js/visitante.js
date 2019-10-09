@@ -20,7 +20,18 @@ function loadSub(categoria) {
     // $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
-        url: uri + 'guest/loadSub/'+categoria,
+        url: uri + 'guest/loadSub/' + categoria,
+        success: function (result) {
+            $('#contenido').html(result);
+        }
+    });
+}
+
+function loadAr(categoria, sub) {
+    // $('#ruta').html('Panel de Control / Categorías')
+    $.ajax({
+        type: 'GET',
+        url: uri + 'guest/loadAr/' + categoria + '/' + sub,
         success: function (result) {
             $('#contenido').html(result);
         }

@@ -63,6 +63,7 @@ class Subcategoria extends CI_Controller
             $subcategoria = str_replace(' ', '_', $_POST['nombre']);
             $categoria = ($this->categoriaModel->getById($_POST['categoria']))->nombre;
             $dir = 'home/files/' . $categoria . '/' . $subcategoria . '/';
+            $dir2 = 'home/files/' . $categoria . '/' . $subcategoria . '_temp/';
             if (!is_dir($dir)) {
 
                 $this->subcategoriaModel->insert([
@@ -73,6 +74,7 @@ class Subcategoria extends CI_Controller
                 ]);
 
                 mkdir($dir, 0755, TRUE);
+                mkdir($dir2, 0755, TRUE);
             } else {
                 echo "la subcategoria ya existe!";
             }

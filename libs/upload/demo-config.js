@@ -6,7 +6,7 @@ $(function () {
    * UI functions ui_* can be located in: demo-ui.js
    */
   $('#drag-and-drop-zone').dmUploader({ //
-    url: 'http://localhost/gestor/archivo/fileUpload/'+document.getElementById('subcategoria').value,
+    url: 'http://localhost/gestor/archivo/fileUpload/' + document.getElementById('subcategoria').value + '/' + document.getElementById('categoria').value + '/' + document.getElementById('sub').value,
     maxFileSize: 3000000, // 3 Megs 
     extFilter: ["pdf", "docx", "doc", "ppt", "txt", "pptx"],
     onDragEnter: function () {
