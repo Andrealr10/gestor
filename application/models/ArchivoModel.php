@@ -24,6 +24,16 @@ class ArchivoModel extends CI_Model
         return $this->db->get($this->tabla)->result();
     }
 
+    public function getByUsuario($subcategoria, $usuario)
+    {
+        $this->db->select('*');
+        $this->db->join('usuario', 'usuario.id_usuario = archivo.id_usuario');
+        $this->db->where('archivo.id_subcategoria', $subcategoria);
+        $this->db->where('archivo.id_usuario', $usuario);
+        // $this->db->where('archivo.estado', 1);
+        return $this->db->get($this->tabla)->result();
+    }
+
     public function countBySubcategoria($subcategoria)
     {
         $this->db->from('archivo');

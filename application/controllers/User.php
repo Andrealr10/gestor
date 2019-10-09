@@ -45,6 +45,7 @@ class User extends CI_Controller
             $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
             $data = [
                 'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
+                'archivos2' => $this->archivoModel->getByUsuario($subcategoria->id_subcategoria,1),
                 'categoria' => $categoria,
                 'subcategoria' => $subcategoria
             ];

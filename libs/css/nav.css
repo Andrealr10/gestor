@@ -1,0 +1,15 @@
+.iniciar {
+    margin-right: 15px;
+    color: #ebf0f5;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.iniciar:hover{
+    color: #0393be;
+}
+
+.sidebar-dark-color{
+background: #000000;
+}
