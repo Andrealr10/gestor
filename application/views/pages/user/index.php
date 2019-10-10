@@ -36,7 +36,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto iniciar">
-      <li><a href="<?= base_url('login') ?>">
+      <li><a href="<?= base_url('login') ?>/logout">
       <span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
       </ul>
       </nav>
