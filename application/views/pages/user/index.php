@@ -35,18 +35,19 @@
       </ul>
 
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-        <button class="btn_salir"><li><a href="<?= base_url('login') ?>/logout" class="iniciar">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li></button>
+      <ul class="navbar-nav ml-auto iniciar">
+      <li><a href="<?= base_url('login') ?>">
+      <span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
       </ul>
-    </nav>
+      </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a data-widget="pushmenu" href="#" class="brand-link">
-        <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Nombre</span>
+      <img src="<?= base_url() ?>libs/images/carita.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">SUDOCS</span>
       </a>
 
       <!-- Sidebar -->
@@ -54,10 +55,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="<?= base_url() ?>home/images/subcategorias/carpeta.png" class="img-circle elevation-2" alt="img">
+          <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-            <a href="#" class="d-block">CATEGORIAS</a>
+          <a href="#" class="d-block">BIENVENIDO</a>
           </div>
         </div>
 
@@ -66,54 +67,25 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <li class="nav-header">CONFIGURACI&Oacute;N</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>Categorías</p>
-              </a>
-            </li>
-            <!-- hasta aca llega un elemento de la cosa esta -->
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
-                <p>
-                  Descargas
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>ChartJS</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Flot</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Inline</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user-circle"></i>
-                <p>Perfil</p>
+              <i class="nav-icon fas fa-user-circle"></i>
+              <p>Mi perfil</p>
               </a>
             </li>
             <li class="nav-header">CONTENIDO</li>
+            <li class="nav-item">
+                <a href="<?= base_url() ?>homepage" class="nav-link">
+                  <i class="fas fa-home nav-icon"></i>
+                  <p>Inicio</p>
+                </a>
+              </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
-                  Categorías
+                Tecnolog&iacute;as
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -134,26 +106,27 @@
                   <?php } ?>
               </ul>
             </li>
-          <li class="nav-header">ACERCA DE</li>
+            <li class="nav-header">INFORMACI&Oacute;N</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
-              <i class="nav-icon fas fa-book-open"></i>
-              <p>Guía Rápida</p>
+          <a href="" class="nav-link">
+          <i class="nav-icon fas fa-info-circle"></i>
+          <p>Acerca de</p>
             </a>
           </li>
-          <li class="nav-header">ABOUT</li>
+          <li class="nav-item">
+          <a href="#" class="nav-link">
+          <i class="fas fa-user-friends nav-icon"></i>
+          <p>Desarrolladores</p>
+          </a>
+          </li>
+          <li class="nav-header">NOTIFICACIONES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-comment-alt nav-icon"></i>
               <p>Contáctanos</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-address-book nav-icon"></i>
-              <p>Desarrolladores</p>
-            </a>
-          </li>
+         
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -199,12 +172,11 @@
 
     <!-- Main Footer -->
     <footer class="main-footer bg-dark">
-      <strong>Copyright &copy; 2019 Nombre de la app.</strong>
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> Beta 1.1
-      </div>
-    </footer>
+    <div class="float-right d-none d-sm-inline-block text-secundary">
+    &copy;Todos los derechos reservados 2019
   </div>
+  </div>
+  </footer>
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->

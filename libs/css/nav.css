@@ -2,9 +2,7 @@
     margin-right: 15px;
     color: #fff;
     font-size: 17px;
-    margin-right: 12px;
-    color: #ebf0f5;
-    font-size: 20px;
+    
     text-decoration: none;
     background-color: transparent;
 }
@@ -24,7 +22,8 @@ background: #000000 !important;
   }
   .iniciar a {
     padding: 0 0.7em;
-    color: rgba(255, 255, 255, 0.3);
+    /* color: rgba(255, 255, 255, 0.3); */
+    color: #fff;
     position: relative;
     text-decoration: none;
     display: inline-block;
@@ -62,28 +61,6 @@ background: #000000 !important;
 	
 
 }
-.iniciar:hover{
-    color: #635e5e;
-}
 
-.sidebar-dark-color{
-background: #000000;
-}
 
-.btn_salir{
-background: #086d8b;
-border: 1px solid #086d8b;
-border-radius: 4px;
-}
 
-.bg-cat{
-    background: #086d8b;
-    color: #ffffff
-}
-
-.salir{
-    margin-right: 12px;
-    color: #ebf0f5;
-    font-size: 16px;
-    text-decoration: none;
-}
