@@ -15,7 +15,7 @@ class Archivo extends CI_Controller
     public function index()
     {
         $this->load->view('pages/admin/inicio/navbar');
-        $this->load->view('pages/porsiacaso/archivos/index');
+        $this->load->view('pages/admin/archivos/archivo');
     }
 
     /**

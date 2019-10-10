@@ -57,9 +57,6 @@ function crearsub(categoria) {
         }
     });
 }
-// $('#crearsub').on('click', function () {
-
-// })
 
 function load() {
     $('#ruta').html('Panel de Control / Categorías')

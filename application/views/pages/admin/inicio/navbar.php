@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/sidebar.css">
+	
 	<title>SUDOCS</title>
 </head>
 
@@ -43,7 +44,7 @@
 
 			<ul class="list-unstyled CTAs">
 				<li>
-					<a href="#" class="download">Salir <i class="fas fa-sign-out-alt"></i></a>
+					<a href="<?= base_url('login') ?>/logout" class="download">Salir <i class="fas fa-sign-out-alt"></i></a>
 				</li>
 				<!-- <li>
    				<a href="#" class="article">article</a>
