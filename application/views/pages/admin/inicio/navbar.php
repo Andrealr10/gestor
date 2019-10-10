@@ -20,22 +20,22 @@
 			<div class="sidebar-header">
 				<!--Header Sidebar-->
 				<!-- <h3>CloudCat <i class="fas fa-cat"></i></h3> -->
-				<h4 class="text-center">Menú <i class="fas fa-cog"></i></h4>
+				<h5 style="letter-spacing: 2px;" class="text-center">MEN&Uacute;</i></h5>
 			</div>
 			<!--Header Sidebar-->
 			<ul class="list-unstyled components">
-				<p class="text-center">User 01 <i class="fas fa-user-circle"></i></p>
+				<p class="text-center"><i class="fas fa-user-circle mr-2"></i>USUARIO</p>
 				<li class="active">
-					<a href="<?= base_url('categoria') ?>"><i class="fas fa-th-list" style="font-size:15px;"></i>&nbsp&nbspCategorías</a>
+					<a href="<?= base_url('categoria') ?>"><i class="fas fa-copy mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspCategorías</a>
 				</li>
 				<li>
-					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder" style="font-size:15px;"></i>&nbsp&nbspArchivos</a>
+					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspArchivos</a>
 				</li>
 				<li>
-					<a href="<?= base_url('usuario') ?>"><i class="fas fa-user" style="font-size:15px;"></i>&nbsp&nbspUsuarios</a>
+					<a href="<?= base_url('usuario') ?>"><i class="fas fa-user-friends mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspUsuarios</a>
 				</li>
 				<li>
-					<a href="<?= base_url('notificaciones') ?>"><i class="fas fa-inbox" style="font-size:15px;"></i>&nbsp&nbspNotificaciones</a>
+					<a href="<?= base_url('notificaciones') ?>"><i class="fas fa-comment-alt mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspNotificaciones</a>
 				</li>
 				<!-- <li>
    				<a href="#">Salir <i class="fas fa-sign-out-alt"></i></a>
@@ -57,12 +57,12 @@
 			<!--Contenido-->
 			<nav class="navbar navbar-expand-lg text-light bg-colorcito">
 				<!--Cloucat nav-->
-				<button type="button" id="sidebarCollapse" class="btn btn-default text-light">
+				<button type="button" id="sidebarCollapse" class="btn btn-default text-light mr-3">
 					<i class="fas fa-bars" id="boton"></i>
 				</button>
 
 				<!-- <a class="navbar-brand" href="#"> CloudCat Admin </a> -->
-				<a class="navbar-brand" href="#"><h3><i class="fas fa-cat"></i> CloudCat</h3></a>
+				<a class="navbar-brand border border-light" href="#"><h3 class="m-auto pl-2 pr-2"><i class="fas fa-copy"></i>&nbsp&nbsp SUDOCS</h3></a>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ml-auto">
 

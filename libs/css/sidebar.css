@@ -52,7 +52,7 @@ a:focus{
 }
 #sidebar {
     min-width: 250px;
-    max-width: 250px;
+   
     background: rgb(31, 30, 30);
     color: #fff;
     transition: all 0.3s;
@@ -64,7 +64,7 @@ a:focus{
 #sidebar .sidebar-header{
 	padding: 20px;
 	background: #1E1E20;
-	height: 70px;
+	height: 66px;
 	border-bottom: 1px solid #4c4e4e;
 
 }
