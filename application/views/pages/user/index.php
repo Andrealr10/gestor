@@ -35,17 +35,11 @@
       </ul>
 
       <!-- Right navbar links -->
-
-      <ul class="navbar-nav ml-auto iniciar">
-        <li><a href="<?= base_url('login') ?>">
-        <span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
-
       <ul class="navbar-nav ml-auto">
         <button class="btn_salir">
           <li><a href="<?= base_url('login') ?>" class="salir">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li>
         </button>
         <button class="btn_salir"><li><a href="<?= base_url('login') ?>/logout" class="iniciar">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li></button>
-
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -54,8 +48,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a data-widget="pushmenu" href="#" class="brand-link">
-        <img src="<?= base_url() ?>libs/images/carita.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">SUDOCS</span>
+        <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Nombre</span>
       </a>
 
       <!-- Sidebar -->
@@ -63,10 +57,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
+            <img src="<?= base_url() ?>home/images/subcategorias/carpeta.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-            <a href="#" class="d-block">BIENVENIDO</a>
+            <a href="#" class="d-block">CATEGORIAS</a>
           </div>
         </div>
 
@@ -75,62 +69,6 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-               
-              <!-- hasta aca llega un elemento de la cosa esta -->
-              <li class="nav-header">CONFIGURACI&Oacute;N</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-user-circle"></i>
-                  <p>Mi perfil</p>
-                </a>
-              </li>
-              <li class="nav-header">CONTENIDO</li>
-              <li class="nav-item">
-                <a href="<?= base_url() ?>homepage" class="nav-link">
-                  <i class="fas fa-home nav-icon"></i>
-                  <p>Inicio</p>
-                </a>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-copy"></i>
-                  <p>
-                    Tecnolog&iacute;as
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Php
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejemplos</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejercicios</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Prueba</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
@@ -184,7 +122,6 @@
               </a>
               <ul class="nav nav-treeview">
                 <?php foreach ($categorias as $categoria) { ?>
-
                   <li class="nav-item has-treeview">
                     <a onclick="loadSubcat('<?= $categoria->nombre ?>')" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
@@ -197,33 +134,6 @@
                         
                     </ul>
                   </li>
-
-                </ul>
-              </li>
-              <li class="nav-header">INFORMACI&Oacute;N</li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="nav-icon fas fa-info-circle"></i>
-                  <p>Acerca de</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-friends nav-icon"></i>
-                  <p>Desarrolladores</p>
-                </a>
-              </li>
-              <li class="nav-header">NOTIFICACIONES</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-comment-alt nav-icon"></i>
-                  <p>Contáctanos</p>
-                </a>
-              </li>
-            
-            </ul>
-          </nav>
-
                   <?php } ?>
               </ul>
             </li>
@@ -249,7 +159,6 @@
           </li>
           </ul>
         </nav>
-
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
@@ -293,13 +202,10 @@
 
     <!-- Main Footer -->
     <footer class="main-footer bg-dark">
-        <div class="float-right d-none d-sm-inline-block text-secundary">
-         &copy;Todos los derechos reservados 2019. 
-      </div>
-      <!-- <strong>Copyright &copy; 2019 Nombre de la app.</strong> -->
-      <!-- <div class="float-right d-none d-sm-inline-block">
+      <strong>Copyright &copy; 2019 Nombre de la app.</strong>
+      <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> Beta 1.1
-      </div> -->
+      </div>
     </footer>
   </div>
   <!-- ./wrapper -->
