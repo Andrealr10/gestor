@@ -75,12 +75,7 @@
               </a>
             </li>
             <li class="nav-header">CONTENIDO</li>
-            <li class="nav-item">
-                <a href="<?= base_url() ?>homepage" class="nav-link">
-                  <i class="fas fa-home nav-icon"></i>
-                  <p>Inicio</p>
-                </a>
-              </li>
+           
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
@@ -100,7 +95,7 @@
                       </p>
                     </a>
                     <ul class="nav nav-treeview" id="<?= $categoria->nombre ?>">
-                        
+                        <a href=""></a>
                     </ul>
                   </li>
                   <?php } ?>
@@ -113,12 +108,7 @@
           <p>Acerca de</p>
             </a>
           </li>
-          <li class="nav-item">
-          <a href="#" class="nav-link">
-          <i class="fas fa-user-friends nav-icon"></i>
-          <p>Desarrolladores</p>
-          </a>
-          </li>
+    
           <li class="nav-header">NOTIFICACIONES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
