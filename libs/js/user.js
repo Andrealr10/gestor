@@ -55,7 +55,7 @@ function loadSubcat(categoria) {
         type: 'GET',
         url: uri + 'user/loadSubcat/' + categoria,
         success: function (result) {
-            $('#sub').html(result);
+            $('#' + categoria).html(result);
         }
     });
 }

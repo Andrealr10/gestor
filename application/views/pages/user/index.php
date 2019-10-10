@@ -130,7 +130,7 @@
                         <i class="right fas fa-angle-left"></i>
                       </p>
                     </a>
-                    <ul class="nav nav-treeview" id="sub">
+                    <ul class="nav nav-treeview" id="<?= $categoria->nombre ?>">
                         
                     </ul>
                   </li>
