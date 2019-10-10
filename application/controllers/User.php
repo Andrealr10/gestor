@@ -12,8 +12,9 @@ class User extends CI_Controller
     }
     public function index()
     {
+        $data = ['categorias' => $this->categoriaModel->getAll()];
         // $this->load->view('pages/user/nav.php');
-        $this->load->view('pages/user/index');
+        $this->load->view('pages/user/index',$data);
     }
 
     public function loadCat()
@@ -33,6 +34,19 @@ class User extends CI_Controller
             ];
             // $this->load->view('pages/admin/subcategorias/index', $data);
             $this->load->view('pages/user/subcategorias', $data);
+        }
+    }
+    public function loadSubcat($nombre)
+    {
+        if (isset($nombre)) {
+            $categoria = $this->categoriaModel->getByName($nombre);
+            $data = [
+                'subcategorias' => $this->subcategoriaModel->getByCategoria($categoria->id_categoria),
+                'categoria' => $categoria->nombre,
+                'id_categoria' => $categoria->id_categoria
+            ];
+            // $this->load->view('pages/admin/subcategorias/index', $data);
+            $this->load->view('pages/user/subcat', $data);
         }
     }
 

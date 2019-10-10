@@ -15,7 +15,7 @@ class Archivo extends CI_Controller
     public function index()
     {
         $this->load->view('pages/admin/inicio/navbar');
-        $this->load->view('pages/porsiacaso/archivos/index');
+        $this->load->view('pages/admin/archivos/archivo');
     }
 
     /**
@@ -40,10 +40,16 @@ class Archivo extends CI_Controller
     /**
      * Descargar el archivo seleccionado
      */
-    public function download($categoria, $subcategoria, $archivo)
+    public function download($id, $categoria, $subcategoria, $archivo)
     {
+        $archiv = $this->archivoModel->getById($id);
+        $this->archivoModel->update([
+            'descargas' => ($archiv->descargas + 1)
+        ], $id);
         $this->load->helper('download');
         force_download('home/files/' . $categoria . '/' . $subcategoria . '/' . $archivo, null);
+
+        
     }
 
     /**

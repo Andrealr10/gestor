@@ -38,7 +38,7 @@
                 <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
                 <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
                 <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
-                <div class="subtitulo">Autor: <?= $archivo->username ?></div>
+                <div class="subtitulo">Autor: <?= $archivo->id_archivo ?></div>
             </div>
             <div class="acciones mt-2">
                 <div class="rate">
@@ -53,7 +53,8 @@
                     <input type="radio" id="star1" name="rate" value="1" />
                     <label for="star1" title="1 Star">1 star</label>
                 </div>
-                <a href="<?= base_url('archivo') ?>/download/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+                <?=$archivo->id_archivo?>
+                <a href="<?= base_url('archivo') ?>/download/<?=$archivo->id_archivo?>/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
                     <button class="descargar">DESCARGAR <i class="fas fa-download"></i></button>
                 </a>
                 <div data-toggle="modal" data-target="#share<?= $archivo->id_archivo ?>">
