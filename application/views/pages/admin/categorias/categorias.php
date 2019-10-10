@@ -18,7 +18,7 @@
             <!-- <input type="text" value="<?= $categoria->nombre ?>" hidden> -->
             <div class="card-body text-center">
                 <div id="<?= $categoria->nombre ?>">
-                    <!-- Aqui va la tabla con el form para agregar las subcategorias -->
+                    <!-- Aqui va la tabla sin el form para agregar las subcategorias -->
                 </div>
                 <br>
                 <h5>Agregar Nueva</h5>

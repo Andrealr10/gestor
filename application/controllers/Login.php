@@ -14,7 +14,11 @@ class Login extends CI_Controller
 	public function index()
 	{
 		if (isset($this->session->login)) {
-			redirect(base_url('user'));
+			if ($this->session->login->tipo_usuario == 1){
+				redirect(base_url('admin'));
+			}else {
+				redirect(base_url('user'));
+			}
 		} else {
 			if (isset($_POST['nombre'])) {
 				$this->registrar();
@@ -46,10 +50,8 @@ class Login extends CI_Controller
 
 	public function logout()
 	{
-		session_start();
-		session_unset();
-		session_destroy();
-		redireccionar('main');
+		$this->session->unset_userdata('login');
+		redirect(base_url());
 	}
 
 	public function registrar()

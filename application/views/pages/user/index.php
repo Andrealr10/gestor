@@ -39,6 +39,7 @@
         <button class="btn_salir">
           <li><a href="<?= base_url('login') ?>" class="salir">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li>
         </button>
+        <button class="btn_salir"><li><a href="<?= base_url('login') ?>/logout" class="iniciar">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li></button>
       </ul>
     </nav>
     <!-- /.navbar -->
