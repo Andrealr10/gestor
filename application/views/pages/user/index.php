@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +36,9 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <button class="btn_salir"><li><a href="<?= base_url('login') ?>" class="iniciar">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li></button>
+        <button class="btn_salir">
+          <li><a href="<?= base_url('login') ?>" class="salir">Cerrar Sesión&nbsp<i class="fas fa-sign-out-alt"></i></a></li>
+        </button>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -65,140 +68,96 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
-                  <p>Categorías</p>
-                </a>
-              </li>
-              <!-- hasta aca llega un elemento de la cosa esta -->
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-chart-pie"></i>
-                  <p>
-                    Descargas
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/charts/chartjs.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>ChartJS</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/charts/flot.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Flot</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/charts/inline.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Inline</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-user-circle"></i>
-                  <p>Perfil</p>
-                </a>
-              </li>
-              <li class="nav-header">CONTENIDO</li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-copy"></i>
-                  <p>
-                    Categorías
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>Categorías</p>
+              </a>
+            </li>
+            <!-- hasta aca llega un elemento de la cosa esta -->
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Descargas
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="pages/charts/chartjs.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ChartJS</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/flot.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Flot</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/charts/inline.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Inline</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user-circle"></i>
+                <p>Perfil</p>
+              </a>
+            </li>
+            <li class="nav-header">CONTENIDO</li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                  Categorías
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <?php foreach ($categorias as $categoria) { ?>
                   <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a onclick="loadSubcat('<?= $categoria->nombre ?>')" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Php
+                      <p id="nomb">
+                        <?= $categoria->nombre ?>
                         <i class="right fas fa-angle-left"></i>
                       </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejemplos</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejercicios</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Prueba</p>
-                        </a>
-                      </li>
+                    <ul class="nav nav-treeview" id="sub">
+                        
                     </ul>
                   </li>
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Java
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejemplos</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejercicios</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Prueba</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-header">ACERCA DE</li>
-              <li class="nav-item">
-                <a href="https://adminlte.io/docs/3.0" class="nav-link">
-                  <i class="nav-icon fas fa-book-open"></i>
-                  <p>Guía Rápida</p>
-                </a>
-              </li>
-              <li class="nav-header">ABOUT</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-comment-alt nav-icon"></i>
-                  <p>Contáctanos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-address-book nav-icon"></i>
-                  <p>Desarrolladores</p>
-                </a>
-              </li>
-            </ul>
-          </nav>
+                  <?php } ?>
+              </ul>
+            </li>
+          <li class="nav-header">ACERCA DE</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p>Guía Rápida</p>
+            </a>
+          </li>
+          <li class="nav-header">ABOUT</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-comment-alt nav-icon"></i>
+              <p>Contáctanos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-address-book nav-icon"></i>
+              <p>Desarrolladores</p>
+            </a>
+          </li>
+          </ul>
+        </nav>
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
