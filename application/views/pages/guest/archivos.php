@@ -30,7 +30,7 @@
                 <div data-toggle="modal" data-target="#share<?= $archivo->id_archivo ?>">
                     <div class="overlay"></div>
                     <div class="iconito">
-                        <i class="fas fa-share-alt fa-3x" style="color:white;"></i>
+                        <i class="fas fa-qrcode fa-3x" style="color:white;"></i>
                     </div>
                 </div>
             </div>
