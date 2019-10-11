@@ -16,12 +16,12 @@ class ArchivoModel extends CI_Model
 
     public function getBySubCategoria($id)
     {
-        $this->db->select('*');
-        $this->db->join('usuario', 'usuario.id_usuario = archivo.id_usuario');
-        $this->db->where('archivo.id_subcategoria', $id);
-        $this->db->where('archivo.estado', 1);
-        // $this->db->where('archivo.estado', 1);
-        return $this->db->get($this->tabla)->result();
+
+        $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+        FROM archivo
+        JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+        WHERE archivo.id_subcategoria = ?";
+        return $this->db->query($sql, $id)->result();
     }
 
     public function getByUsuario($subcategoria, $usuario)

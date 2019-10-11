@@ -58,4 +58,5 @@ function loadSubcat(categoria) {
             $('#' + categoria).html(result);
         }
     });
+    loadSub(categoria);
 }

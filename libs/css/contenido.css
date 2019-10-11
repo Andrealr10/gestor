@@ -48,6 +48,8 @@ h2 {
 }
 .tarjeta .titulo {
   height: 35%;
+  margin-top: -20px !important;
+  padding-top: -10%;
 }
 .tarjeta .titulo .subtitulo {
   color: #969db8;
@@ -71,6 +73,7 @@ h2 {
   letter-spacing: 0.44px;
   color: #525252;
 }
+
 .tarjeta .descargar {
   cursor: pointer;
   background: transparent;

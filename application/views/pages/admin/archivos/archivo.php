@@ -3,7 +3,6 @@
 
 <head>
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/archivos.css">
-
 </head>
 
 <body>
@@ -22,7 +21,6 @@
           <a href="" class="list-group-item">Prueba</a>
           <a href="" class="list-group-item">Prueba</a>
           <a href="" class="list-group-item">Prueba</a>
-
         </div>
       </aside>
       <section class="archivos col-md-10 d-none d-sm-block">
@@ -38,10 +36,8 @@
         <div id="archivos">
           <div class="row">
             <div class="col-12 col-sm-6 col-md-3">
-
               <div class="info-box ">
                 <span class="info-box-icon elevation-1"><img src="" alt="IMG"></span>
-
                 <div class="info-box-content bg-info ">
                   <p> </p>
                   <span class="info-box-text">Nombrecito</span>
@@ -53,10 +49,8 @@
           </div>
         </div>
       </section>
-
     </div>
   </section>
-
 </body>
 
 </html>
