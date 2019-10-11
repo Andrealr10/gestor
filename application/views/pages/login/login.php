@@ -15,10 +15,10 @@
 </head>
 
 <body class="">
-    <div class="container-fluid">
-        <div class="title-box">
+    <div class="cont container-fluid">
+        <div class="title-box border border-light">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-            <a class="navbar-brand border border-light" href="#"><h3 class="m-auto pl-2 pr-2"><i class="fas fa-copy"></i>&nbsp&nbsp SUDOCS</h3></a>
+          <h2 class="text-light text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
         </div>
         <!--title-box-->
         <div class="form-wrap">
