@@ -32,7 +32,7 @@
       </ul>
 
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto iniciar">
         <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesi&oacute;n</a>
       </ul>
     </nav>

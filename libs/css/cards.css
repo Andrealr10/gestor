@@ -52,7 +52,8 @@ img {
 }
 
 .btn:hover {
-  background-color: rgba(56, 56, 56, 0.918);
+  color:#ffff !important;
+  background-color: #1e6277;
 }
 
 .cards {
@@ -92,7 +93,8 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: #c7c0c0;
+  /* background: #bbc3c6; */
+  background: #f1eeee;
 }
 
 .card_title {
