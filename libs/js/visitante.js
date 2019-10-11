@@ -37,7 +37,6 @@ function loadAr(categoria, sub) {
         }
     });
 
-    
 }
 
 function loadCate() {
@@ -58,6 +57,7 @@ function loadSubcat(categoria) {
         url: uri + 'user/loadSubcat/' + categoria,
         success: function (result) {
             $('#' + categoria).html(result);
+            loadSub(categoria);
         }
     });
 }
