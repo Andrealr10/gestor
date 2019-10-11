@@ -77,7 +77,7 @@
             <li class="nav-header">CONTENIDO</li>
            
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
+              <a onclick="loadCat()" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                 Tecnolog&iacute;as
@@ -181,6 +181,7 @@
   <script src="<?= base_url(); ?>libs/js/user.js"></script>
   <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
   <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
+  <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
 
 
 </body>

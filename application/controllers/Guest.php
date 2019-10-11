@@ -12,8 +12,9 @@ class Guest extends CI_Controller
     }
     public function index()
     {
+        $data = ['categorias' => $this->categoriaModel->getAll()];
         // $this->load->view('pages/guest/nav.php');
-        $this->load->view('pages/guest/index');
+        $this->load->view('pages/guest/index',$data);
     }
 
     public function loadCat()
