@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?= base_url(); ?>libs/css/contenido.css">
 <div class="row">
     <?php foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
