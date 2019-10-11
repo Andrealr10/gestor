@@ -21,7 +21,7 @@
             <div class="info-box " onclick="loadSub('<?= $categoria->nombre ?>')">
                 <span class="info-box-icon elevation-1"><img src="<?= $categoria->imagen ?>" alt="IMG"></span>
 
-                <div class="info-box-content bg-cat">
+                <div class="info-box-content">
                     <p> </p>
                     <span class="info-box-text"><?= $categoria->nombre ?></span>
                 </div>

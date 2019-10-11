@@ -1,16 +1,9 @@
-/* .iniciar {
-    margin-right: 15px;
-    color: #fff;
-    font-size: 17px;
-    
-    text-decoration: none;
-    background-color: transparent;
-} */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+ 
+body{
+  font-family: 'Quicksand', serif;
 
-/* .iniciar:hover{
-    color: #0393be;
-} */
-
+}
 .sidebar-dark-color{
 background: #000000 !important;
 }

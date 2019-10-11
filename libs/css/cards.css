@@ -14,7 +14,7 @@ html {
 
 body {
   color: #272727;
-  font-family: 'Quicksand', serif;
+  font-family: 'Quicksand', serif !important;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0;
