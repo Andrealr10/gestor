@@ -111,64 +111,20 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Php
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejemplos</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejercicios</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Prueba</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Java
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejemplos</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Ejercicios</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="far fa-dot-circle nav-icon"></i>
-                          <p>Prueba</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+                  <?php foreach ($categorias as $categoria) { ?>
+                    <li class="nav-item has-treeview">
+                      <a onclick="loadSubcat('<?= $categoria->nombre ?>')" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p id="nomb">
+                          <?= $categoria->nombre ?>
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview" id="<?= $categoria->nombre ?>">
+                        <a href=""></a>
+                      </ul>
+                    </li>
+                  <?php } ?>
                 </ul>
               </li>
               <li class="nav-header">ACERCA DE</li>
@@ -236,8 +192,8 @@
 
     <!-- Main Footer -->
     <footer class="main-footer bg-dark">
-        <div class="float-right d-none d-sm-inline-block">
-         &copy;Todos los derechos reservados 2019. 
+      <div class="float-right d-none d-sm-inline-block">
+        &copy;Todos los derechos reservados 2019.
       </div>
       <!-- <strong>Copyright &copy; 2019 Nombre de la app.</strong> -->
       <!-- <div class="float-right d-none d-sm-inline-block">

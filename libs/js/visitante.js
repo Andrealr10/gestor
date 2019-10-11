@@ -36,4 +36,28 @@ function loadAr(categoria, sub) {
             $('#contenido').html(result);
         }
     });
+
+    
+}
+
+function loadCate() {
+    // $('#ruta').html('Panel de Control / Categorías')
+    $.ajax({
+        type: 'GET',
+        url: uri + 'user/loadCate/',
+        success: function (result) {
+            $('#nomb').html(result);
+        }
+    });
+}
+
+function loadSubcat(categoria) {
+    // $('#ruta').html('Panel de Control / Categorías')
+    $.ajax({
+        type: 'GET',
+        url: uri + 'user/loadSubcat/' + categoria,
+        success: function (result) {
+            $('#' + categoria).html(result);
+        }
+    });
 }
