@@ -13,6 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style-xlarge.css">
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
+    
 
     <title>SUDOCS</title>
 </head>
@@ -21,7 +22,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <header>
         <!-- Header -->
         <header id="header" class="skel-layers-fixed">
-            <h1><a href="#">SuDocs</a></h1>
+            <h1 ><a href="#">SuDocs</a></h1>
 
         </header>
 
@@ -54,22 +55,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="4u">
                         <section class="special box">
                             <i class="icon fas fa-folder-open major"></i>
-                            <h3>Gestor de Archivos</h3>
-                            <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                            <h3 style="color:#fff;">Gestor de Archivos</h3>
+                            <p style="color:#000;">En este lugar puedes encontrar gu&iacute;as&#44; ejemplos y cualquier otro documento de texto relacionado al aprendizaje o pr&aacute;ctica de framework o lenguajes de programaci&oacute;n&#46;</p>
                         </section>
                     </div>
                     <div class="4u">
                         <section class="special box">
                             <i class="icon fas fa-cloud-download-alt major"></i>
-                            <h3>Subir y descargar </h3>
-                            <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                            <h3 style="color:#fff;">Subir y descargar </h3>
+                            <p style="color:#000;">Todos  pueden ver y descargar los archivos que quieran. Estos archivos pueden ser evaluados y denunciados. <u>Si tu quieres subir archivos debes estar registrado</u>.</p>
                         </section>
                     </div>
                     <div class="4u">
                         <section class="special box">
                             <i class="icon fas fa-user-friends major"></i>
-                            <h3>Comunidad</h3>
-                            <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                            <h3 style="color:#fff;">Comunidad</h3>
+                            <p style="color:#000;">Diseñado para ayudar a programadores por medio de diferentes recursos proporcionados por múltiples colaboradores y que puedes compartir.</p>
                         </section>
                     </div>
                 </div>
@@ -87,18 +88,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="6u">
                         <section class="special">
                             <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini-banner.jpeg" alt="" /></a>
-                            <h3>Acerca de SuDocs</h3>
-                            <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
-                            <ul class="actions">
-                                <li><a href="#" class="button alt">Leer mas</a></li>
-                            </ul>
+                            <h2 style="color:#086d8b;">Acerca de SuDocs</h2>
+                            <p>Su nombre proviene del ingl&eacute;s "Support  Documents" Documentos de soporte o ayuda para programadores.</p>
+                            <p>Cuenta con 2 niveles de usuarios, visitantes (todos los usuarios) y colaboradores (todos los usuarios registrados), estos últimos tienen en privilegio de aportar a la comunidad.</p>
+                            <p>Los archivos están divididos por lenguaje o frameworks y sub divididos en diferentes categorías.</p>
+  
                         </section>
                     </div>
                     <div class="6u">
                         <section class="special">
                             <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini1-banner.jpeg" alt="" /></a>
-                            <h3>Desarrolladores</h3>
-                            <p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>
+                            <h2 style="color:#086d8b;" >Desarrolladores</h2>
+                            <p>Este proyecto,</p>
                             <ul class="actions">
                                 <li><a href="#" class="button alt">Leer mas</a></li>
                             </ul>
