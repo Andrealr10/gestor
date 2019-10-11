@@ -4,6 +4,11 @@ body{
   font-family: 'Quicksand', serif;
 
 }
+
+.bg-sub{
+  color: #fff !important;
+  background: #086d8b;
+}
 .sidebar-dark-color{
 background: #000000 !important;
 }
