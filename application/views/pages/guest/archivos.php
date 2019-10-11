@@ -1,28 +1,26 @@
 <div class="row">
     <?php foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
-            <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>"> <button class="vistaPrevia"><i class="fas fa-ellipsis-v  fa-lg"></i></button>
+            <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
             <div class="titulo">
-                <h2><?= $archivo->archivo ?></h2>
+                <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
                 <hr>
                 <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
                 <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
                 <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024)/1024), 2).' MB':round(($archivo->tamanio / 1024), 2).' KB'  ?></div>
-                <div class="subtitulo">Autor: <?= $archivo->username ?></div>
+                <div class="subtitulo text-truncate">Autor: <?= $archivo->username ?></div>
             </div>
             <div class="acciones mt-2">
-                <div class="rate">
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="5 Star">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="4 Star">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="3 Star">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="2 Star">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="1 Star">1 star</label>
+            <div class="rate">
+                    <?php for ($i = 5; $i >= 1; $i--) {
+                            if ($i <= $archivo->valoracion) { ?>
+                            <label style="color: #ffc700;">stars</label>
+                        <?php } else { ?>
+                            <label style="color: #ccc;">stars</label>
+                    <?php }
+                        } ?>
                 </div>
+                <br><br>
                 <a href="<?= base_url('archivo') ?>/download/<?=$archivo->id_archivo?>/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
                     <button class="descargar">DESCARGAR <i class="fas fa-download"></i></button>
                 </a>
@@ -42,7 +40,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <h6><?= $archivo->archivo ?></h6>
+                        <h6 class="text-truncate"><?= $archivo->archivo ?></h6>
                         <img src="<?= base_url('qr_gen') . '/archivo/' . $categoria->nombre . "/" . $subcategoria->nombre . "/" . $archivo->archivo ?>" alt="" style="height: 100%; width: 100%">
                     </div>
                     <div class="modal-footer">
