@@ -18,6 +18,7 @@
     <div class="container-fluid">
         <div class="title-box">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
+            <a class="navbar-brand border border-light" href="#"><h3 class="m-auto pl-2 pr-2"><i class="fas fa-copy"></i>&nbsp&nbsp SUDOCS</h3></a>
         </div>
         <!--title-box-->
         <div class="form-wrap">
