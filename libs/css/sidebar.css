@@ -71,7 +71,7 @@ a:focus{
 
 #sidebar ul.components{
 	padding: 20px 0px;
-	border-bottom: 1px solid #086d8b;
+	/* border-bottom: 1px solid #086d8b; */
 }
 
 #sidebar ul p{

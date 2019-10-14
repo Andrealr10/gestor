@@ -37,20 +37,20 @@
 <body>
     <div class="container">
         <div class="mx-auto col-sm-11 main-section">
-            <h2 class="text-center"><i class="fas fa-users" style="font-size:25px;"></i> Usuarios</h2>
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item pesta">
-                    <a class="nav-link active bg-fondo" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
-                </li>
-                <li class="nav-item pesta">
-                    <a class="nav-link bg-fondo" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+            <!-- <h2 class="text-center"><i class="fas fa-users" style="font-size:25px;"></i> Usuarios</h2> -->
+                <!-- <ul class="nav nav-tabs justify-content-end">
+                    <li class="nav-item pesta bg-secundary">
+                        <a class="nav-link active bg-info text-light" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
+                    </li>
+                    <li class="nav-item pesta bg-secundary">
+                        <a class="nav-link bg-info text-light" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab"> -->
                     <!--Lista-->
                     <div class="card text-center">
-                        <div class="card-header">
-                            <h4 class="text-center">Lista de Usuarios <i class="fas fa-list-alt" style="font-size:20px;"></i></h4>
+                        <div class="card-header bg-fondo">
+                            <h4 class="text-center "><i class="fas fa-list-alt mr-2" style="font-size:20px;"></i>Lista de Usuarios </h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -59,7 +59,7 @@
                                         <tr>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Apellido</th>
-                                            <th scope="col">Username</th>
+                                            <th scope="col">Nombre de Usuario</th>
                                             <th scope="col">Correo</th>
                                             <th scope="col">Tipo</th>
                                             <th scope="col">Estado</th>
@@ -74,9 +74,9 @@
                     </div>
                 </div>
                 <!--Lista-->
-                <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                <!-- <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab"> -->
                     <!--Formulario-->
-                    <div class="card">
+                    <!-- <div class="card">
                         <div class="card-header">
                             <h4 class="text-center text-dark">Nuevo Usuario <i class="fas fa-user-plus" style="font-size:20px;"></i></h4>
                         </div>
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -140,22 +140,22 @@
         </div>
         <!--Div principal-->
         <!--Modal para editar-->
-        <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+       <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Actualizar Usuario</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="modal-header bg-dark">
+                        <h4 class="modal-title text-light "><i class="fas fa-user ml-5"></i>&nbsp;&nbsp;&nbsp; Actualizar Usuario</h4>
+                        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body ">
                         <form id="formua">
                             <input type="hidden" name="id_usuario" id="id_usuario">
-                            <input type="text" placeholder="Nombre" class="form-control mt-2" id="nombrea" name="nombre">
-                            <input type="text" placeholder="Apellido" class="form-control mt-2" id="apellidoa" name="apellido">
+                            <input type="text" placeholder="Nombre" class="form-control mt-2 " id="nombrea" name="nombre">
+                            <input type="text" placeholder="Apellido" class="form-control mt-2 " id="apellidoa" name="apellido">
                             <input type="text" placeholder="Username" class="form-control mt-2" id="usernamea" name="username">
-                            <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo">
+                            <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo"> 
                             <!-- <input type="password" placeholder="Contraseña" class="form-control mt-2" id="passworda" name="password"> -->
                             <select class="custom-select my-1 mr-sm-2" name="tipo" id="tipoa">
                                 <option selected>Tipo</option>
@@ -169,9 +169,9 @@
                             </select>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" id='aniadir_cancion' data-dismiss="modal" onclick="actualizar()">Actualizar</button>
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary bg-fondo" id='aniadir_cancion' data-dismiss="modal" onclick="actualizar()">Actualizar</button>
                     </div>
                 </div>
             </div>
