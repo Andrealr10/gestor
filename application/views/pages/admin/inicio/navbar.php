@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
 	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/sidebar.css">
+	<link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
 	
 	<title>SUDOCS</title>
 </head>
@@ -42,14 +43,7 @@
    			</li> -->
 			</ul>
 
-			<ul class="list-unstyled CTAs">
-				<li>
-					<a href="<?= base_url('login') ?>/logout" class="download">Salir <i class="fas fa-sign-out-alt"></i></a>
-				</li>
-				<!-- <li>
-   				<a href="#" class="article">article</a>
-   			</li> -->
-			</ul>
+			
 		</nav>
 		<!--Sidebar-->
 
@@ -64,7 +58,9 @@
 				<!-- <a class="navbar-brand" href="#"> CloudCat Admin </a> -->
 				<a class="navbar-brand border border-light" href="#"><h3 class="m-auto pl-2 pr-2"><i class="fas fa-copy"></i>&nbsp&nbsp SUDOCS</h3></a>
 				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
+					<ul class="navbar-nav ml-auto iniciar">
+					<li><a href="<?= base_url('login') ?>/logout">
+      				<span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
 
 					</ul>
 				</div>
