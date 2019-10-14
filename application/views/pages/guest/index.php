@@ -215,7 +215,7 @@
   <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
-  <script src="<?= base_url(); ?>libs/js/visitante.js"></script>
+  <script src="<?= base_url(); ?>libs/js/util.js"></script>
 
 </body>
 

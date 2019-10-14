@@ -14,11 +14,7 @@ class Login extends CI_Controller
 	public function index()
 	{
 		if (isset($this->session->login)) {
-			if ($this->session->login->tipo_usuario == 1){
-				redirect(base_url('admin'));
-			}else {
-				redirect(base_url('user'));
-			}
+			redirect(base_url('categoria'));
 		} else {
 			if (isset($_POST['nombre'])) {
 				$this->registrar();

@@ -17,7 +17,7 @@ class Mail extends CI_Controller
             $usuario = $this->usuarioModel->getByCorreo($correo);
             if ($usuario != null) {
                 $asunto = 'Cambio de contraseña';
-                $cuerpo = "Has clic en el siguiente enlace para cambiar la contraseña http://localhost/gestor/usuario/reset/" . $usuario->hash;
+                $cuerpo = "Has clic en el siguiente enlace para cambiar la contraseña ".base_url()."usuario/reset/" . $usuario->hash;
                 $this->send($correo, $asunto, $cuerpo);
             }
         }

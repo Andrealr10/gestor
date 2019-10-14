@@ -3,7 +3,7 @@
         <div class="tarjeta">
             <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
             <div class="titulo">
-                <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
+                <a target="blank" href="https://docs.google.com/viewer?url=<?=base_url()?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>"><h2 class="text-truncate"><?= $archivo->archivo ?></h2></a>
                 <hr>
                 <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
                 <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>

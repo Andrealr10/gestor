@@ -15,7 +15,7 @@
                 <div class="card-footer p-0">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadAr('<?= $categoria ?>','<?= $subcategoria->nombre ?>')">Ver contenido
+                            <a class="nav-link" href="#" onclick="loadArchivos('<?= $categoria ?>','<?= $subcategoria->nombre ?>')">Ver contenido
                                 <span class="float-right badge bg-primary"><?= $subcategoria->cantidad ?></span>
                             </a>
                         </li>

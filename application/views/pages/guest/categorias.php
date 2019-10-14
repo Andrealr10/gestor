@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css">
-
-
 <div class="row">
     <ul class="cards">
         <?php foreach ($categorias as $categoria) { ?>
@@ -21,12 +19,12 @@
             </div> -->
             <li class="cards_item">
                 <div class="card">
-                    <div class="card_image"><img src="<?= $categoria->imagen ?>" style="height: 200px; width: 100%"></div>
+                    <div class="card_image"><img src="<?= base_url().$categoria->imagen ?>" style="height: 200px; width: 100%"></div>
                     <div class="card_content">
                         <h3 class="card_title"><?= $categoria->nombre ?></h3>
                         <p class="card_text"><?= $categoria->descripcion ?></p>
                         <!-- <button class="btn card_btn">Read More</button> -->
-                        <a class="btn card_btn" onclick="loadSub('<?= $categoria->nombre ?>')">Ver contenido</a>
+                        <a onclick="loadSubcategorias('<?= $categoria->nombre ?>')" class="btn card_btn" >Ver contenido</a>
                     </div>
                 </div>
             </li>

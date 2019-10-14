@@ -11,7 +11,7 @@ class QR_gen extends CI_Controller
 
     public function generar($categoria, $subcategoria)
     {
-        $this->qr->text('http://192.168.1.13/gestor/zip/dir/' . $categoria . '/' . $subcategoria);
+        $this->qr->text(base_url().'zip/dir/' . $categoria . '/' . $subcategoria);
 
         // display QR code image
         $this->qr->qrCode();
@@ -19,7 +19,7 @@ class QR_gen extends CI_Controller
 
     public function archivo($categoria, $subcategoria, $nombre)
     {
-        $this->qr->text('http://192.168.1.13/gestor/archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
+        $this->qr->text(base_url().'archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
         $this->qr->qrCode();
     }
 }
