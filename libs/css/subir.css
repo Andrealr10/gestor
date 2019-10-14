@@ -1,0 +1,45 @@
+.dm-uploader {
+    border: 0.15rem dashed rgb(64, 64, 66);
+    text-align: center;
+}
+
+h3{
+    color : rgb(64, 64, 66);
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgb(247, 244, 244);
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-header {
+    /* background-color: transparent; */
+    /* background-color: #ffffff; */
+    text-align: center;
+    background-color: #086d8b;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: .75rem 1.25rem;
+    position: relative;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.btn-subir{
+    color:#ffffff;
+    background: #141414;
+}
+
+.btn-subir:hover{
+    color:#ffffff;
+    background: #474747;
+}
