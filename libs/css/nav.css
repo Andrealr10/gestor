@@ -36,12 +36,12 @@ background: #000000 !important;
     right: 15%;
     top: 0;
     bottom: 0;
-    border-left: 3px solid #086d8b;
-    border-right: 3px solid #086d8b;
+    border-left: 3px solid #5bc0de;
+    border-right: 3px solid #5bc0de;
   }
   .iniciar a:hover,
   .iniciar .current a {
-    color: #086d8b;
+    color: #5bc0de;
   }
   .iniciar a:hover:before,
   .iniciar .current a:before {

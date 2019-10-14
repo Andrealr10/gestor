@@ -51,6 +51,11 @@
       </section>
     </div>
   </section>
+  <script>
+    $('#ruta').html('Panel de Control / Archivos')
+
+    
+  </script>
 </body>
 
 </html>

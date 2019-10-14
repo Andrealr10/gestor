@@ -46,7 +46,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a data-widget="pushmenu" href="#" class="brand-link">
-      <img src="<?= base_url() ?>libs/images/carita.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">SUDOCS</span>
       </a>
 
@@ -58,7 +58,7 @@
           <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-          <a href="#" class="d-block">BIENVENIDO</a>
+          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
           </div>
         </div>
 
@@ -113,7 +113,7 @@
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-comment-alt nav-icon"></i>
-              <p>Contáctanos</p>
+              <p>Cont&aacute;ctanos</p>
             </a>
           </li>
          

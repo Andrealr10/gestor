@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11">
-                <h2 class="text-center"><i class="fas fa-th-list" style="font-size:25px;"></i>&nbsp&nbspCategorías</h2>
+                <h2 class="text-center"><i class="fas fa-th-list" style="font-size:25px;"></i>&nbsp;&nbsp;Tecnolog&iacute;as</h2>
                 <div id="accordion">
                     <!-- Aqui van las card del acordion -->
                 </div>
@@ -99,6 +99,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

@@ -59,7 +59,7 @@ function crearsub(categoria) {
 }
 
 function load() {
-    $('#ruta').html('Panel de Control / Categorías')
+    $('#ruta').html('Panel de Control / Tecnologías')
     $.ajax({
         type: 'GET',
         url: uri + 'categoria/load/',

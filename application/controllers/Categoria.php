@@ -15,6 +15,9 @@ class Categoria extends CI_Controller
      */
     public function index()
     {
+        // $this->load->view('pages/admin/inicio/navbar');
+        // $data = ['categorias' => $this->categoriaModel->getAll()];
+        // $this->load->view('pages/admin/categorias/index', $data);
         $data = ['categorias' => $this->categoriaModel->getAll()];
         if (isset($this->session->login)) {
 
@@ -37,6 +40,8 @@ class Categoria extends CI_Controller
     //  */
     public function load()
     {
+        // $data = ['categorias' => $this->categoriaModel->getAll()];
+        // $this->load->view('pages/admin/categorias/categorias', $data);
         $data = ['categorias' => $this->categoriaModel->getAll()];
         if (isset($this->session->login)) {
 

@@ -1,11 +1,16 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"; */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
-body{font-family: 'Poppins', sans-serif;
+body{
+	font-family: 'Quicksand', serif !important;
+	/* font-family: 'Poppins', sans-serif; */
 	 /* background: #fafafa; */
 	 background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));
 	}
 	 
-p{font-family: 'Poppins', sans-serif;
+p{
+	/* font-family: 'Poppins', sans-serif; */
+	font-family: 'Quicksand', serif !important;
   font-size: 1.1em;
 	font-weight: 300;
 	line-height: 1.7em;

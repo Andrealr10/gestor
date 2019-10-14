@@ -27,16 +27,16 @@
 			<ul class="list-unstyled components">
 				<p class="text-center"><i class="fas fa-user-circle mr-2"></i>USUARIO</p>
 				<li class="active">
-					<a href="<?= base_url('categoria') ?>"><i class="fas fa-copy mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspCategorías</a>
+					<a href="<?= base_url('categoria') ?>"><i class="fas fa-copy mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Tecnolog&iacute;as</a>
 				</li>
 				<li>
-					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspArchivos</a>
+					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Archivos</a>
 				</li>
 				<li>
-					<a href="<?= base_url('usuario') ?>"><i class="fas fa-user-friends mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspUsuarios</a>
+					<a href="<?= base_url('usuario') ?>"><i class="fas fa-user-friends mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Usuarios</a>
 				</li>
 				<li>
-					<a href="<?= base_url('notificaciones') ?>"><i class="fas fa-comment-alt mr-2 ml-2" style="font-size:15px;"></i>&nbsp&nbspNotificaciones</a>
+					<a href="<?= base_url('notificaciones') ?>"><i class="fas fa-comment-alt mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Notificaciones</a>
 				</li>
 				<!-- <li>
    				<a href="#">Salir <i class="fas fa-sign-out-alt"></i></a>
