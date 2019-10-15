@@ -46,6 +46,7 @@ function crearsub(categoria) {
         contentType: false,
         success: function (result) {
             console.log(result);
+            $('#form' + categoria).trigger("reset");
             loadsubs(categoria);
             Toast.fire({
                 type: 'success',
@@ -53,7 +54,6 @@ function crearsub(categoria) {
                 background: '#FFFF',
                 padding: '10%'
             })
-            $('#nombre').val('')
         }
     });
 }

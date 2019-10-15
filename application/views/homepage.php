@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                
                 <ul class="actions">
                     <li><a href="<?=base_url(); ?>Login" class="button big special">Iniciar Sesi&oacute;n</a></li>
-                    <li><a href="<?=base_url(); ?>Guest" class="button big alt">Empezar ahora</a></li>
+                    <li><a href="<?=base_url(); ?>contenido" class="button big alt">Empezar ahora</a></li>
                 </ul>
             </div>
         </section>

@@ -6,20 +6,25 @@ class QR_gen extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('qr');
+        $this->load->library('ciqrcode');
     }
 
     public function generar($categoria, $subcategoria)
     {
-        $this->qr->text(base_url().'zip/dir/' . $categoria . '/' . $subcategoria);
-
-        // display QR code image
-        $this->qr->qrCode();
+        $this->qr(base_url() . 'zip/dir/' . $categoria . '/' . $subcategoria);
     }
 
     public function archivo($categoria, $subcategoria, $nombre)
     {
-        $this->qr->text(base_url().'archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
-        $this->qr->qrCode();
+        $this->qr(base_url() . 'archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
+    }
+
+    public function qr($data)
+    {
+        header("Content-Type: image/png");
+        $params['data'] = $data;
+        $params['level'] = 'H';
+        $params['size'] = 10;
+        $this->ciqrcode->generate($params);
     }
 }

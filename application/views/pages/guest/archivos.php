@@ -5,7 +5,7 @@
             <div class="titulo">
                 <a target="blank" href="https://docs.google.com/viewer?url=<?=base_url()?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>"><h2 class="text-truncate"><?= $archivo->archivo ?></h2></a>
                 <hr>
-                <div class="subtitulo">Tipo: <?= $archivo->tipo_archivo ?></div>
+                <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
                 <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
                 <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024)/1024), 2).' MB':round(($archivo->tamanio / 1024), 2).' KB'  ?></div>
                 <div class="subtitulo text-truncate">Autor: <?= $archivo->username ?></div>

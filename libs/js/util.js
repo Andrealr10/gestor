@@ -1,8 +1,16 @@
 var uri = "http://localhost/gestor/"
 
-
+var Toast;
 $(document).ready(function () {
     loadCategorias();
+
+    Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 6000
+    });
+
 });
 
 function loadCategorias() {

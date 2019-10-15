@@ -30,7 +30,7 @@
                                 <div class="input-group-prepend">
                                     <span style="position:relative;" class="input-group-text" id="basic-addon1"><i class="fas fa-pen"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de subcategoria" aria-label="nombre" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" name="nombre" id="categ" placeholder="Nombre de subcategoria" aria-label="nombre" aria-describedby="basic-addon1">
                                 <input type="text" name="categoria" id="categoria" hidden value="<?= $categoria->id_categoria ?>">
                             </div>
                         </div>
