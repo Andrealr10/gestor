@@ -1,15 +1,26 @@
 <?php foreach ($categorias as $categoria) { ?>
     <div class="card">
         
-        <div class="card-header" id="heading<?= $categoria->nombre ?>">
+        <div class="card-header ca-menu" id="heading<?= $categoria->nombre ?>">
+        <div class="set">
+    <a href="#">
+    <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn  btn-block " data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
+                    <?= $categoria->nombre ?>
+                </button>
+            
+      <i class="fa fa-plus"></i>
+    </a>
+</div>
+          
+
         
             <!--header-->
             
                 <!-- <button class="btn-editar"><i class="fas fa-edit"></i></button> -->
-                <i class="fas fa-edit"></i>
+                <!-- <i class="fas fa-laptop-code"></i>
                 <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-block btnhover" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
                     <?= $categoria->nombre ?>
-                </button>
+                </button> -->
             
         </div>
         <!--header-->
@@ -50,4 +61,5 @@
         </div>
         <!--cuerpo-->
     </div>
+    
 <?php } ?>
