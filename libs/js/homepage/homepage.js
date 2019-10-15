@@ -1,5 +1,5 @@
 consoleText(['¡Hola Mundo!', 'Este es Sudocs', 'Bienvenidos'], 'text',['#FF7C7C','#008DD5','#FAC05E']);
-
+sessionStorage.clear();
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
   var visible = true;

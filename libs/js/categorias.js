@@ -23,8 +23,6 @@ $('#crear').on('click', function () {
         success: function (result) {
             console.log(result);
             load();
-            
-
             Toast.fire({
                 type: 'success',
                 title: '¡Categoria creada con éxito!',

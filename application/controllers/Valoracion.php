@@ -13,18 +13,16 @@ class Valoracion extends CI_Controller
 
     public function valorar()
     {
-
         $existe = $this->valoracionModel->getByUser($_POST['id_usuario'],$_POST['id_archivo']);
 
         if ($existe != null) {
             $this->valoracionModel->update([
                 'valoracion' => $_POST['rate'],
             ],$existe->id_valoracion);
-            echo $existe->id_valoracion;
         } else {
             $this->valoracionModel->insert([
                 'valoracion' => $_POST['rate'],
-                'comentario' => $_POST['comentario'],
+                'comentario' => '',
                 'id_usuario' => $_POST['id_usuario'],
                 'id_archivo' => $_POST['id_archivo'],
             ]);

@@ -1,8 +1,12 @@
 var uri = "http://localhost/gestor/"
 
-var Toast;
 $(document).ready(function () {
-    loadCategorias();
+
+    if (sessionStorage.getItem('location')) {
+        $('#contenido').html(sessionStorage.getItem('location'));
+    } else {
+        loadCategorias();
+    }
 
     Toast = Swal.mixin({
         toast: true,
@@ -14,41 +18,46 @@ $(document).ready(function () {
 });
 
 function loadCategorias() {
-    // $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
         url: uri + 'categoria/load/',
         success: function (result) {
             $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            
         }
     });
 }
 
 function loadSubcategorias(categoria) {
-    // $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
         url: uri + 'subcategoria/load/' + categoria,
         success: function (result) {
             $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            sessionStorage.setItem('cat', categoria)
+            
         }
     });
 }
 
 function loadArchivos(categoria, sub) {
-    // $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
         url: uri + 'archivo/load/' + categoria + '/' + sub,
         success: function (result) {
             $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            sessionStorage.setItem('cat', categoria)
+            sessionStorage.setItem('sub', sub)
+            
         }
     });
 }
 
 
 function loadSubcat(categoria) {
-    // $('#ruta').html('Panel de Control / Categorías')
     $.ajax({
         type: 'GET',
         url: uri + 'contenido/subcategorias/' + categoria,
