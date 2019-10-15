@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <ol class="breadcrumb">
-            <i class="fa fa-igloo" style="font-size: 20px; margin-right: 15px;"></i>
+            <i class="fa fa-home" style="font-size: 20px; margin-right: 15px;"></i>
             <li class="active" id="ruta">SUDOCS / Categorias</li>
         </ol>
     </div>
