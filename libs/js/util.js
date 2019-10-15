@@ -67,3 +67,16 @@ function loadSubcat(categoria) {
     });
     loadSubcategorias(categoria);
 }
+
+function subir(categoria, sub) {
+    $.ajax({
+        type: 'GET',
+        url: uri + 'archivo/vista/' + categoria + '/' + sub,
+        success: function (result) {
+            $('#contenido').html(result);
+        }
+    });
+}
+
+
+

@@ -18,6 +18,19 @@ class Archivo extends CI_Controller
         $this->load->view('pages/admin/archivos/archivo');
     }
 
+
+    public function vista($categoria, $subcategoria)
+    {
+        $categoria = $this->categoriaModel->getByName($categoria);
+        $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
+        $data = [
+            'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
+            'categoria' => $categoria,
+            'subcategoria' => $subcategoria
+        ];
+        $this->load->view('pages/user/subir',$data);
+    }
+
     /**
      * Mostrar todos los archivos aprobados de la categoria
      */

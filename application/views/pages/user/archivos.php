@@ -1,36 +1,13 @@
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/contenido.css">
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/subir.css">
 <div class="row">
+<div class="col-md-3"></div><div class="col-md-6"><button onclick="subir('<?= $categoria->nombre ?>','<?= $subcategoria->nombre ?>')" class="btn btn-sub btn-block"><a class="sub">Subir Archivos</a></button></div><div class="col-md-3"></div>
     <input type="text" name="subcategoria" id="subcategoria" hidden value="<?= $subcategoria->id_subcategoria ?>">
     <input type="text" name="categoria" id="categoria" hidden value="<?= $categoria->nombre ?>">
     <input type="text" name="sub" id="sub" hidden value="<?= $subcategoria->nombre ?>">
     <div class="row">
-        <div class="col-md-6 col-sm-12">
 
-            <!-- Our markup, the important part here! -->
-            <div id="drag-and-drop-zone" class="dm-uploader p-5">
-                <!-- <h3 class="mb-5 mt-5 text-muted">Drag &amp; drop files here</h3> -->
-                <h3 class="mb-5 mt-5 ">Arrastra los archivos aqu&iacute;</h3><br><br>
-                
-                <div class="btn btn-subir btn-block mb-5">
-                    <!-- <span>Open the file Browser</span> -->
-                    <span>Seleccionar el archivo</span>
-                    <input type="file" title='Click to add Files' />
-                </div>
-            </div><!-- /uploader -->
-
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <div class="card h-100">
-                <div class="card-header">
-                    Lista de Archivos
-                </div>
-
-                <ul class="list-unstyled p-2 d-flex flex-column col" id="files">
-                    <li class="text-muted text-center empty">No hay archivos cargados</li>
-                </ul>
-            </div>
-        </div>
+      <!-- Aquí iria para subir archivos -->
     </div>
     <?php foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
@@ -124,9 +101,7 @@
         </div>
     <?php } ?>
     <!-- ******************************************************************* -->
-    <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
-    <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
-    <script src="<?= base_url() ?>libs/upload/demo-config.js"></script>
+  
     <script src="<?= base_url() ?>libs/js/valoraciones.js"></script>
 
     <!-- File item template -->
