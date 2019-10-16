@@ -54,7 +54,6 @@ class Usuario extends CI_Controller
       'code' => rand(10000, 99999)
     ];
     $this->UsuarioModel->insert($data);
-    
   }
 
   public function delete($id)
@@ -133,5 +132,23 @@ class Usuario extends CI_Controller
       echo 1;
     }
     echo 0;
+  }
+
+  public function validarUser()
+  {
+    $correo = $_POST['username'];
+    $usuario = $this->UsuarioModel->getByUsername($correo);
+    if ($usuario != null) {
+      echo 1;
+    }
+  }
+
+  public function validarCorreo()
+  {
+    $correo = $_POST['correo'];
+    $usuario = $this->UsuarioModel->getByCorreo($correo);
+    if ($usuario != null) {
+      echo 1;
+    }
   }
 }
