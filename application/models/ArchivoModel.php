@@ -16,22 +16,20 @@ class ArchivoModel extends CI_Model
 
     public function getBySubCategoria($id)
     {
-
         $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
         FROM archivo
         JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
-        WHERE archivo.id_subcategoria = ?";
-        return $this->db->query($sql, $id)->result();
+        WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 1";
+        return $this->db->query($sql, [$id])->result();
     }
 
     public function getByUsuario($subcategoria, $usuario)
     {
-        $this->db->select('*');
-        $this->db->join('usuario', 'usuario.id_usuario = archivo.id_usuario');
-        $this->db->where('archivo.id_subcategoria', $subcategoria);
-        $this->db->where('archivo.id_usuario', $usuario);
-        // $this->db->where('archivo.estado', 1);
-        return $this->db->get($this->tabla)->result();
+        $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+        FROM archivo
+        JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+        WHERE archivo.id_subcategoria = ? and archivo.id_usuario = ?";
+        return $this->db->query($sql, [$subcategoria, $usuario])->result();
     }
 
     public function countBySubcategoria($subcategoria)
@@ -39,7 +37,7 @@ class ArchivoModel extends CI_Model
         $this->db->from('archivo');
         $this->db->where('id_subcategoria', $subcategoria);
         $this->db->where('estado', 1);
-        return $this->db->count_all_results(); 
+        return $this->db->count_all_results();
     }
 
     public function insert($datos)

@@ -74,7 +74,7 @@ class Contenido extends CI_Controller
             ];
             if (isset($this->session->login)) {
                 if ($this->session->login->tipo_usuario == 1) {
-                    $this->load->view('pages/admin/categorias/subcategoria', $data);
+                    $this->load->view('pages/admin/categorias/subcat', $data);
                 } else {
 
                     $this->load->view('pages/user/subcat', $data);

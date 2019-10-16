@@ -11,7 +11,7 @@
 
                 <?php foreach ($subcategorias as $subcategoria) { ?>
                     <tr>
-                        <td class="text-left d-flex align-items-center"><a href="#"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></a></td>
+                        <td class="text-left d-flex align-items-center"><a href="#" onclick="loadArchivos('<?= $categoria ?>','<?= $subcategoria->nombre ?>')"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></a></td>
                         <td style="width: 250px">
                             <button class="btn btn-info btn-md"><a href="<?= base_url('zip') ?>/dir/<?= $categoria ?>/<?= $subcategoria->nombre ?>">
                                     <i class="fas fa-download"></i></a></button>

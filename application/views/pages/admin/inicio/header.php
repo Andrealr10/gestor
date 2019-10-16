@@ -76,13 +76,19 @@
               <p>Mi perfil</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="<?=base_url('categoria')?>" class="nav-link" onclick="sessionStorage.clear()">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>Categorias</p>
+              </a>
+            </li>
             <li class="nav-header">CONTENIDO</li>
            
-            <li class="nav-item has-treeview">
-              <a onclick="loadCategorias()" class="nav-link">
+            <li class="nav-item has-treeview" style="color: #ffff;">
+              <a class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
-                <p>
-                Tecnolog&iacute;as
+                <p >
+                Archivos
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -137,48 +143,3 @@
       <section class="content">
         <div class="container-fluid">
           <div id="contenido">
-
-            <!-- Aqui va todo el contenido -->
-
-          </div>
-        </div>
-        <!--/. container-fluid -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer bg-dark">
-    <div class="float-right d-none d-sm-inline-block text-secundary">
-    &copy;Todos los derechos reservados 2019
-  </div>
-  </div>
-  </footer>
-  <!-- ./wrapper -->
-
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-
-  <!-- Bootstrap -->
-  <script src="<?= base_url(); ?>libs/js/bootstrap.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
-  <script src="<?= base_url(); ?>libs/js/util.js"></script>
-  <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
-  <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
-  <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
-  <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
-
-
-</body>
-
-</html>

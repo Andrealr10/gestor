@@ -76,13 +76,19 @@
               <p>Mi perfil</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="<?=base_url('categoria')?>" class="nav-link" onclick="sessionStorage.clear()">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>Categorias</p>
+              </a>
+            </li>
             <li class="nav-header">CONTENIDO</li>
            
-            <li class="nav-item has-treeview">
-              <a onclick="loadCategorias()" class="nav-link">
+            <li class="nav-item has-treeview" style="color: #ffff;">
+              <a class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
-                <p>
-                Tecnolog&iacute;as
+                <p >
+                Archivos
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -172,7 +178,7 @@
   <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
-  <script src="<?= base_url(); ?>libs/js/util.js"></script>
+  <script src="<?= base_url(); ?>libs/js/admin.js"></script>
   <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
   <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>

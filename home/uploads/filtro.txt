@@ -1,7 +1,0 @@
-!(ether host 01:00:0c:cc:cc:cc and ether[16:4] = 0x0300000C and ether[20:2] == 0x2000 && stp)
-
-netsh interface ip set address "Description" static %adresse% %netmask% %gateway% %metric%
-netsh interface ip set address "Red local" static 192.168.0.3 255.255.255.0 192.168.0.1 1
-
-
-not ether host 01:00:0c:cc:cc:cc and not stp

@@ -18,17 +18,16 @@ class Archivo extends CI_Controller
         $this->load->view('pages/admin/archivos/archivo');
     }
 
-
     public function vista($categoria, $subcategoria)
     {
         $categoria = $this->categoriaModel->getByName($categoria);
         $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
         $data = [
-            'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
+            'archivos' => $this->archivoModel->getByUsuario($subcategoria->id_subcategoria, $this->session->login->id_usuario),
             'categoria' => $categoria,
             'subcategoria' => $subcategoria
         ];
-        $this->load->view('pages/user/subir',$data);
+        $this->load->view('pages/user/subir', $data);
     }
 
     /**
@@ -36,10 +35,10 @@ class Archivo extends CI_Controller
      */
     public function load($categoria, $subcategoria)
     {
-        $data = ['categorias' => $this->categoriaModel->getAll()];
+        // $data = ['categorias' => $this->categoriaModel->getAll()];
         if (isset($subcategoria) && isset($categoria)) {
             $categoria = $this->categoriaModel->getByName($categoria);
-            $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
+            $subcategoria = $this->subcategoriaModel->getByName($categoria->id_categoria, $subcategoria);
             $data = [
                 'archivos' => $this->archivoModel->getBySubCategoria($subcategoria->id_subcategoria),
                 'categoria' => $categoria,
@@ -47,9 +46,31 @@ class Archivo extends CI_Controller
             ];
             if (isset($this->session->login)) {
                 if ($this->session->login->tipo_usuario == 1) {
-                    $this->load->view('pages/porsiacaso/archivos/index', $data);
+                    $this->load->view('pages/admin/archivos/archivo', $data);
                 } else {
                     $this->load->view('pages/user/archivos', $data);
+                }
+            } else {
+                $this->load->view('pages/guest/archivos', $data);
+            }
+        }
+    }
+
+    public function loadByUser($categoria, $subcategoria, $user)
+    {
+        if (isset($subcategoria) && isset($categoria) && isset($user)) {
+            $categoria = $this->categoriaModel->getByName($categoria);
+            $subcategoria = $this->subcategoriaModel->getByName($subcategoria);
+            $data = [
+                'archivos' => $this->archivoModel->getByUsuario($subcategoria->id_subcategoria, $this->session->login->id_usuario),
+                'categoria' => $categoria,
+                'subcategoria' => $subcategoria
+            ];
+            if (isset($this->session->login)) {
+                if ($this->session->login->tipo_usuario == 1) {
+                    $this->load->view('pages/porsiacaso/archivos/index', $data);
+                } else {
+                    $this->load->view('pages/user/subir', $data);
                 }
             } else {
                 $this->load->view('pages/guest/archivos', $data);
@@ -85,7 +106,7 @@ class Archivo extends CI_Controller
                 }
                 $nombre = str_replace(' ', '_', $this->tildes($_FILES['file']['name']));
                 $config['upload_path'] = 'home/files/' . $categoria . '/' . $subcategoria . '_temp';
-                $config['allowed_types'] = 'txt|pdf|doc|docx|ppt|pptx|odt|';
+                $config['allowed_types'] = 'txt|pdf|doc|docx|ppt|pptx';
                 $config['max_size']    = '10240'; // max_size in kb
                 $config['file_name'] = $nombre;
                 $config['overwrite'] = false;
@@ -99,13 +120,13 @@ class Archivo extends CI_Controller
                         'archivo' => $nombre,
                         'ruta' => 'home/files/' . $categoria . '/' . $subcategoria,
                         'tamanio' => $_FILES['file']['size'],
-                        'estado' => 0,
+                        'estado_archivo' => 0,
                         'tipo_archivo' => $tipo,
                         'fecha' => date("Y-m-d H:i:s"),
                         'descargas' => 0,
                         'valoracion' => 0,
                         'icono' => 'home/images/archivos/' . $extension . '.png',
-                        'id_usuario' => 1,
+                        'id_usuario' => $this->session->login->id_usuario,
                         'id_subcategoria' => $id
                     ]);
                     $this->solicitudModel->insert([
@@ -113,7 +134,7 @@ class Archivo extends CI_Controller
                         'estado' => 1,
                         'fecha' =>  date("Y-m-d H:i:s"),
                         'id_tipo_solicitud' => 1,
-                        'id_usuario' => 1
+                        'id_usuario' => $this->session->login->id_usuario
                     ]);
                 }
             }
@@ -125,7 +146,20 @@ class Archivo extends CI_Controller
         if (isset($this->session->login) && $this->session->login->tipo_usuario == 1) {
             $archivo = $this->archivoModel->getById($id);
             rename($archivo->ruta . '_temp/' . $archivo->archivo, $archivo->ruta . '/' . $archivo->archivo);
-            $this->archivoModel->update(['estado' => 1], $id);
+            $this->archivoModel->update(['estado_archivo' => 1], $id);
+        }
+    }
+
+    public function eliminar($id)
+    {
+        if (isset($this->session->login)) {
+            $archivo = $this->archivoModel->getById($id);
+            if ($archivo->estado == 1) {
+                unlink($archivo->ruta . '/' . $archivo->archivo);
+            } else {
+                unlink($archivo->ruta . '_temp/' . $archivo->archivo);
+            }
+            $this->archivoModel->delete($id);
         }
     }
 
@@ -142,6 +176,11 @@ class Archivo extends CI_Controller
         $cadena = str_replace(
             array('É', 'È', 'Ê', 'Ë', 'é', 'è', 'ë', 'ê'),
             array('E', 'E', 'E', 'E', 'e', 'e', 'e', 'e'),
+            $cadena
+        );
+        $cadena = str_replace(
+            array('(', ')', '/', '=', ']', '[', '{', '}'),
+            array('', '', '', '', '', '', '', ''),
             $cadena
         );
 

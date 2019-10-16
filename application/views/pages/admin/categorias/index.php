@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="<?= base_url(); ?>libs/css/categoria.css">
+<link rel="stylesheet" href="<?= base_url(); ?>libs/sweetalert/bootstrap-4.min.css">
+<div class="row">
+    <div class="container">
+        <!--Barra de Navegación-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ol class="breadcrumb">
+                    <li class="active" id="ruta">Panel de Control</li>
+                </ol>
+            </div>
+        </div>
+        <!--Barra de Navegación-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/categoria.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>libs/sweetalert/bootstrap-4.min.css">
-    
-</head>
-
-<body>
+    </div>
+</div>
+<div class="row">
     <div class="container">
         <div class="row">
             <div class="col-md-11">
@@ -36,6 +40,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <div id="add">
                         <form id="form" enctype="multipart/form-data">
@@ -68,38 +73,34 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script src="<?= base_url(); ?>libs/js/categorias.js"></script>
-    <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
+<script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
 
-    <script>
-        $(document).on('change', 'input[type=file]', function(e) {
-            var fileName = document.getElementById("imagen").value;
-            var idxDot = fileName.lastIndexOf(".") + 1;
-            var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-            if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
-                var TmpPath = URL.createObjectURL(e.target.files[0]);
-                $('#algo').attr('src', TmpPath);
-            }
+<script>
+    $(document).on('change', 'input[type=file]', function(e) {
+        var fileName = document.getElementById("imagen").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+            var TmpPath = URL.createObjectURL(e.target.files[0]);
+            $('#algo').attr('src', TmpPath);
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#limpiar').click(function() {
+            $('input[type="text"]').val('');
+            $('textarea').val('');
+            jQuery('#algo').attr('src', '')
+            jQuery('#algo').show();
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#limpiar').click(function() {
-                $('input[type="text"]').val('');
-                $('textarea').val('');
-                jQuery('#algo').attr('src', '')
-                jQuery('#algo').show();
-            });
-            $('#crear').click(function() {
-                $('input[type="text"]').val('');
-                $('textarea').val('');
-                jQuery('#algo').attr('src', '')
-                jQuery('#algo').show();
-            });
+        $('#crear').click(function() {
+            $('input[type="text"]').val('');
+            $('textarea').val('');
+            jQuery('#algo').attr('src', '')
+            jQuery('#algo').show();
         });
-    </script>
-
-</body>
-
-</html>
+    });
+</script>

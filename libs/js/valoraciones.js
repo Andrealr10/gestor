@@ -32,8 +32,6 @@ function valorar(archivo) {
         success: function (result) {
             console.log(result);
             loadArchivos(sessionStorage.getItem('cat'), sessionStorage.getItem('sub'))
-            // window.location.reload();
-
             Toast.fire({
                 type: 'success',
                 title: 'Archivo valorado con éxito.',

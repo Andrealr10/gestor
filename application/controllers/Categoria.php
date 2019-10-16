@@ -25,8 +25,9 @@ class Categoria extends CI_Controller
                 /**
                  * Para que cargue las cosas del admin
                  */
-                $this->load->view('pages/admin/inicio/navbar');
+                $this->load->view('pages/admin/inicio/header', $data);
                 $this->load->view('pages/admin/categorias/index', $data);
+                $this->load->view('pages/admin/inicio/footer', $data);
             } else {
                 $this->load->view('pages/user/index', $data);
             }

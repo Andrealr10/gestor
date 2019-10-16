@@ -47,12 +47,25 @@ $(function () {
     },
     onUploadSuccess: function (id, data) {
       // A file was successfully uploaded
+      Toast.fire({
+        type: 'success',
+        title: 'Archivo agregado con éxito.',
+        background: '#FFFF',
+        padding: '10%'
+      })
+      subir(document.getElementById('categoria').value, document.getElementById('sub').value);
       ui_add_log('Server Response for file #' + id + ': ' + JSON.stringify(data));
       ui_add_log('Upload of file #' + id + ' COMPLETED', 'success');
       ui_multi_update_file_status(id, 'success', 'Upload Complete');
       ui_multi_update_file_progress(id, 100, 'success', false);
     },
     onUploadError: function (id, xhr, status, message) {
+      Toast.fire({
+        type: 'error',
+        title: 'Error al subir archivo',
+        background: '#FFFF',
+        padding: '10%'
+      })
       ui_multi_update_file_status(id, 'danger', message);
       ui_multi_update_file_progress(id, 0, 'danger', false);
     },
@@ -61,6 +74,12 @@ $(function () {
       ui_add_log('Plugin cant be used here, running Fallback callback', 'danger');
     },
     onFileSizeError: function (file) {
+      Toast.fire({
+        type: 'error',
+        title: 'Error al subir archivo',
+        background: '#FFFF',
+        padding: '10%'
+      })
       ui_add_log('File \'' + file.name + '\' cannot be added: size excess limit', 'danger');
     }
   });
