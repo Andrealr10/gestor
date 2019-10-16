@@ -16,18 +16,18 @@
 
 <body class="">
     <div class="cont container-fluid">
-        <div class="title-box border border-light">
+        <div class="title-box border border-dark">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-            <h2 class="text-light text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
+            <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
         </div>
         <!--title-box-->
         <div class="form-wrap">
             <div class="tabs">
                 <div class=" ">
-                    <h3 class="signup-tab "><a class="text-dark text-decoration-none " href="#signup-tab-content">Reg&iacute;strate ahora</a></h3>
+                    <h3 class="signup-tab "><a class="text-light text-decoration-none " href="#signup-tab-content">Reg&iacute;strate ahora</a></h3>
                 </div>
                 <div class="">
-                    <h3 class="login-tab  "><a class="active text-dark text-decoration-none " href="#login-tab-content">Ya tengo una cuenta</a></h3>
+                    <h3 class="login-tab  "><a class="active text-light text-decoration-none " href="#login-tab-content">Ya tengo una cuenta</a></h3>
                 </div>
             </div>
             <!--.tabs-->
@@ -37,14 +37,14 @@
                 <div id="signup-tab-content" class="">
                     <form class="signup-form" method="POST" id="reg">
                         <div class="form-group">
-                            <input type="text" class=" form-control" name="nombre" id="name" autocomplete="off" placeholder="Nombre" required>
-                            <input type="text" class=" form-control" name="apellido" id="lastname" autocomplete="off" placeholder="Apellido" required>
-                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Nombre de usuario" required onkeyup="validaruser()">
-                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required onkeyup="validarmail()">
-                            <input type="password" class=" form-control" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
-                            <input type="password" class=" form-control" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a">
+                            <input type="text" class=" form-control" name="nombre" id="name" autocomplete="off" maxlength="20" placeholder="Escriba su nombre" required>
+                            <input type="text" class=" form-control" name="apellido" id="lastname" autocomplete="off" maxlength="20" placeholder="Escriba su apellido" required>
+                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 16" required onkeyup="validaruser()">
+                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" title="Debe incluir @" required onkeyup="validarmail()">
+                            <input type="password" class=" form-control" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" title="Letras y números, tamaño máximo: 16" required>
+                            <input type="password" class=" form-control" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a" title="Debe confirmar su contrase&ntilde;a" required>
                         </div>
-                        <button class="btn btn-secondary btn-block" id="registrar" type="button">Verificar datos</button>
+                        <button class="btn btn-secondary btn-block" id="registrar" >Verificar datos</button>
                         <br><input type="number" class=" form-control" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar codigo">
                         <button class="btn btn-info btn-block" id="conf" type="button">Registrarme</button>
                     </form>
@@ -62,12 +62,13 @@
                     <form class="login-form" method="POST">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="user" id="user" autocomplete="off" placeholder="Nombre de usuario">
+                                <input type="text" class="form-control" name="user" id="user" autocomplete="off" placeholder="Nombre de usuario" required>
                             </div>
                             <div class="input-group">
-                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a">
+                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary"><i class=" far fa-eye"></i></button>
+                                    <button class="btn btn-secondary" id="show"><i class=" far fa-eye" id="eye"></i></button>
+                                    <!-- <div class="input-group-text"><i class=" far fa-eye"></div> -->
                                 </div>
                             </div>
 

@@ -6,11 +6,11 @@
 
 body{
   font-family:'Quicksand', serif !important;
-/* background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));  */
+background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692)); 
 /* background-image: url(http://localhost/gestor/libs/images/fondo1.jpg); */
 /* background-size: cover;  */
 /* min-height: 100vh; */
-background-image: url(http://localhost/gestor/libs/images/fondo5.jpg);
+/* background-image: url(http://localhost/gestor/libs/images/fondo5.jpg); */
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
@@ -18,19 +18,19 @@ background-attachment: fixed;
 
 }
 
-body:before{
+/* body:before{
   content:"";
   width: 100%;
   height: 100%;
   position:absolute;
   top:0;
-  left:0;
+  left:0; */
   /* background: linear-gradient(45deg,#1E1E20,#5799ad); */
-  background: #1a1919;
+  /* background: #1a1919;
   opacity: 0.6;
   z-index: -1;
   background-attachment: fixed;
-}
+} */
 /* .cont:before{
   content:"";
   width: -100%;
@@ -71,9 +71,9 @@ body:before{
   padding: 0.6em 0.3em;
   text-align: center;
   font-weight: 400;
-  background-color: #B1B1B1;
+  background-color: #086d8b;
   display: block;
-  border-bottom: 2.5px solid #189AB4;
+  border-bottom: 2.5px solid #B1B1B1;
 }
 
 .form-wrap .tabs h3 a.active {
@@ -170,6 +170,13 @@ h3 {
 .text-log:hover{
 color:#ffffff;
 }
+/* -------------- validacion----------------- */
+/* input:valid {
+  border-bottom:4px solid #086d8b;;
+} */
+/* input:invalid{
+  border-bottom:3px solid #A83D32;
+} */
 
 /* --------------------responsive-------------------------- */
 @media screen and (min-width:320px) {
