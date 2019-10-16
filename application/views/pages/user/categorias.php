@@ -1,4 +1,12 @@
 <div class="row">
+    <div class="col-md-12 text-center">
+        <ol class="breadcrumb">
+            <i class="fa fa-home" style="font-size: 20px; margin-right: 15px;"></i>
+            <li class="active" id="ruta">SUDOCS / Categorias</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
     <?php foreach ($categorias as $categoria) { ?>
         <!-- <div class="col-sm-3">
             <a class="link" href="<?= base_url('subcategoria') ?>/load/<?= $categoria->nombre ?>/">

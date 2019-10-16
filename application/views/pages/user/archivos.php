@@ -1,6 +1,18 @@
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/contenido.css">
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/subir.css">
 <div class="row">
+    <div class="col-md-12 text-center">
+        <ol class="breadcrumb">
+            <li class="active" id="ruta">
+                <i onclick="loadSubcategorias('<?= $categoria->nombre ?>')" class="fa fa-arrow-circle-left" style="font-size: 20px; margin-right: 10px;"></i>
+                <a onclick="loadCategorias()">SUDOCS / Categorias /</a>
+                <a onclick="loadSubcategorias('<?= $categoria->nombre ?>')"><?= $categoria->nombre ?> /</a>
+                <a><?= $subcategoria->nombre ?> </a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
 <div class="col-md-3"></div><div class="col-md-6"><button onclick="subir('<?= $categoria->nombre ?>','<?= $subcategoria->nombre ?>')" class="btn btn-sub btn-block"><a class="sub">Subir Archivos</a></button></div><div class="col-md-3"></div>
     <input type="text" name="subcategoria" id="subcategoria" hidden value="<?= $subcategoria->id_subcategoria ?>">
     <input type="text" name="categoria" id="categoria" hidden value="<?= $categoria->nombre ?>">

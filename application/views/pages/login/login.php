@@ -18,7 +18,7 @@
     <div class="cont container-fluid">
         <div class="title-box border border-light">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-          <h2 class="text-light text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
+            <h2 class="text-light text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
         </div>
         <!--title-box-->
         <div class="form-wrap">
@@ -39,8 +39,8 @@
                         <div class="form-group">
                             <input type="text" class=" form-control" name="nombre" id="name" autocomplete="off" placeholder="Nombre" required>
                             <input type="text" class=" form-control" name="apellido" id="lastname" autocomplete="off" placeholder="Apellido" required>
-                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Nombre de usuario" required>
-                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required>
+                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Nombre de usuario" required onkeyup="validaruser()">
+                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" required onkeyup="validarmail()">
                             <input type="password" class=" form-control" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
                             <input type="password" class=" form-control" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a">
                         </div>
@@ -133,70 +133,7 @@
     <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
     <!-- ----------------------------------Personalizado--------------------------------- -->
     <script src="<?= base_url(); ?>libs/js/login.js"></script>
-    <script>
-        $('#cambio').on('click', function() {
-            form = new FormData(document.getElementById("form"));
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost/gestor/mail/cambio',
-                data: form,
-                processData: false,
-                contentType: false,
-                success: function(result) {
-                    console.log(result);
-                    // window.location.href = 'http://localhost/gestor';
-                }
-            });
-        })
-    </script>
-    <script>
-        $('#registrar').on('click', function() {
-            correo = document.getElementById('useremail').value;
-            form = new FormData(document.getElementById("reg"));
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost/gestor/usuario/registrar',
-                data: form,
-                processData: false,
-                contentType: false,
-                success: function(result) {
-                    console.log(result);
-                    // window.location.href = 'http://localhost/gestor';
-                }
-            });
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost/gestor/mail/registro',
-                data: {
-                    'correo': correo
-                },
-                success: function(result) {
-                    console.log(result);
-                    
-                }
-            });
 
-        })
-    </script>
-    <script>
-        $('#conf').on('click', function() {
-            codigo = document.getElementById('codigo').value;
-            correo = document.getElementById('useremail').value;
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost/gestor/usuario/validar',
-                data: {
-                    'codigo': codigo,
-                    'correo': correo,
-                },
-                success: function(result) {
-                    if (result) {
-                        location.reload();
-                    }
-                }
-            });
-        })
-    </script>
 </body>
 
 </html>
