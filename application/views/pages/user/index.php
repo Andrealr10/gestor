@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
   <link href="<?= base_url() ?>libs/upload/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= base_url(); ?>libs/sweetalert/bootstrap-4.min.css">
   <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
@@ -128,15 +129,7 @@
     <div class="content-wrapper" style="background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));
 }">
       <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Inicio</h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
+      <br>
       <!-- /.content-header -->
 
       <!-- Main content -->
@@ -182,6 +175,7 @@
   <script src="<?= base_url() ?>libs/upload/dist/js/jquery.dm-uploader.min.js"></script>
   <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
+  <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
 
 
 </body>

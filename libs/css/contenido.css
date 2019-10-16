@@ -224,3 +224,22 @@ img {
 .vistaPrevia:hover{
   color: #6e0a0a;
 }
+
+
+.btn-sub{
+  background: #086d8b;
+}
+
+.sub{
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+.btn-sub:hover{
+  background: #218fb1;
+}
+
+.sub:hover{
+  text-decoration: none;
+  color: #ffffff !important;
+}

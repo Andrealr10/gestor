@@ -1,15 +1,4 @@
-var uri = "http://localhost/gestor/"
 
-// var Toast;
-
-$(document).ready(function () {
-    // Toast = Swal.mixin({
-    //     toast: true,
-    //     position: 'top-end',
-    //     showConfirmButton: false,
-    //     timer: 6000
-    // });
-});
 
 $('#denunciar').on('click', function () {
     form = new FormData(document.getElementById("form"));
@@ -21,18 +10,18 @@ $('#denunciar').on('click', function () {
         contentType: false,
         success: function (result) {
             console.log(result);
-            // Toast.fire({
-            //     type: 'success',
-            //     title: '¡Categoria creada con éxito!',
-            //     background: '#FFFF',
-            //     padding: '10%'
-            // })
+            Toast.fire({
+                type: 'success',
+                title: '¡Categoria creada con éxito!',
+                background: '#FFFF',
+                padding: '10%'
+            })
         }
     });
 })
 
 function valorar(archivo) {
-    id = 'form'+archivo;
+    id = 'form' + archivo;
     form = new FormData(document.getElementById(id));
     $.ajax({
         type: 'POST',
@@ -42,7 +31,18 @@ function valorar(archivo) {
         contentType: false,
         success: function (result) {
             console.log(result);
-            alert('El archivo fue valorado exitosamente :D')
+            loadArchivos(sessionStorage.getItem('cat'), sessionStorage.getItem('sub'))
+            // window.location.reload();
+
+            Toast.fire({
+                type: 'success',
+                title: 'Archivo valorado con éxito.',
+                background: '#FFFF',
+                padding: '10%'
+            })
+            $(".modal-backdrop").modal('hide');//ocultamos el modal
+            $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+            $('.modal-backdrop').remove();//eliminamos el backdrop del modal
         }
     });
 }

@@ -1,4 +1,15 @@
 <div class="row">
+    <div class="col-md-12 text-center">
+        <ol class="breadcrumb">
+            <li class="active" id="ruta">
+                <i onclick="loadCategorias()" class="fa fa-arrow-circle-left" style="font-size: 20px; margin-right: 10px;"></i>
+                <a onclick="loadCategorias()">SUDOCS / Categorias /</a>
+                <a><?= $categoria ?> </a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
     <?php foreach ($subcategorias as $subcategoria) { ?>
 
         <div class="col-sm-3" style="margin: 2.5%;">

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/contenido.css">
 
-  
+
 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -68,7 +68,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-           
+
               <li class="nav-header">CONTENIDO</li>
               <li class="nav-item has-treeview">
                 <a onclick="loadCategorias()" class="nav-link">
@@ -123,19 +123,15 @@
     </aside>
 
     <!-- Aqui va todo el cuerpo de la pagina -->
-    <div class="content-wrapper" style="background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));
-}">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Inicio</h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
+    <div class="content-wrapper" style="background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692));}">
+     <br>
       <!-- /.content-header -->
+      <div class="container-fluid">
+        <!--Barra de Navegación-->
+       
+        <!--Barra de Navegación-->
+
+      </div>
 
       <!-- Main content -->
       <section class="content">
