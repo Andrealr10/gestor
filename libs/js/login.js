@@ -60,7 +60,7 @@ $('#registrar').on('click', function () {
 
 })
 
-$('#cambio').on('click', function() {
+$('#cambio').on('click', function () {
 	form = new FormData(document.getElementById("form"));
 	$.ajax({
 		type: 'POST',
@@ -68,7 +68,7 @@ $('#cambio').on('click', function() {
 		data: form,
 		processData: false,
 		contentType: false,
-		success: function(result) {
+		success: function (result) {
 			console.log(result);
 			// window.location.href = 'http://localhost/gestor';
 		}
@@ -76,7 +76,7 @@ $('#cambio').on('click', function() {
 })
 
 
-function validaruser(){
+function validaruser() {
 	correo = document.getElementById('username').value;
 	$.ajax({
 		type: 'POST',
@@ -92,7 +92,7 @@ function validaruser(){
 	});
 }
 
-function validarmail(){
+function validarmail() {
 	correo = document.getElementById('useremail').value;
 	$.ajax({
 		type: 'POST',
@@ -108,3 +108,20 @@ function validarmail(){
 	});
 }
 
+// validando ojo
+
+$('#eye').on('click', function () {
+	event.preventDefault();
+	var input = $($(this).attr("#pass"))
+	if ($(this).hasClass('fa-eye-slash')) {
+		$(this).removeClass('fa-eye-slash');
+		$(this).addClass('fa-eye')
+		$('#pass').attr('type', 'password');
+
+	} else {
+		$(this).removeClass('fa-eye');
+		$(this).addClass('fa-eye-slash');
+		$('#pass').attr('type', 'text');
+	}
+
+})

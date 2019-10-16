@@ -27,7 +27,7 @@
 			<ul class="list-unstyled components">
 				<p class="text-center"><i class="fas fa-user-circle mr-2"></i>USUARIO</p>
 				<li class="active">
-					<a href="<?= base_url('categoria') ?>"><i class="fas fa-copy mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Tecnolog&iacute;as</a>
+					<a href="<?= base_url('categoria') ?>"><i class="fas fa-laptop-code mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Tecnolog&iacute;as</a>
 				</li>
 				<li>
 					<a href="<?= base_url('archivo') ?>"><i class="fas fa-folder mr-2 ml-2" style="font-size:15px;"></i>&nbsp;&nbsp;Archivos</a>
@@ -84,6 +84,7 @@
 			<script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
 			<script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
 			<script src="<?= base_url(); ?>libs/js/sidebar.js"></script>
+
 </body>
 
 </html>
