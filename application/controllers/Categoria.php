@@ -30,6 +30,9 @@ class Categoria extends CI_Controller
                 $this->load->view('pages/admin/inicio/footer', $data);
             } else {
                 $this->load->view('pages/user/index', $data);
+                $this->load->view('pages/user/header', $data);
+                $this->load->view('pages/user/categorias', $data);
+                $this->load->view('pages/user/footer', $data);
             }
         } else {
             $this->load->view('pages/guest/index', $data);
