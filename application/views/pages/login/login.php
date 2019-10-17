@@ -22,7 +22,7 @@
             <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
         </div>
         <!--title-box-->
-        
+
         <div class="form-wrap">
             <div class="tabs">
                 <div class=" ">
@@ -47,7 +47,7 @@
                             <input type="password" class=" form-control mt-2 mb-2" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a*" title="Letras y números, tamaño máximo: 16" required>
                             <input type="password" class=" form-control mt-2 mb-2" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a*" title="Debe confirmar su contrase&ntilde;a" required>
                         </div>
-                        <button class="btn btn-secondary btn-block" id="registrar" >Verificar datos</button>
+                        <button class="btn btn-secondary btn-block" id="registrar">Verificar datos</button>
                         <input type="number" class=" form-control mt-3 mb-3" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar c&oacute;digo">
                         <button class="btn btn-info btn-block" id="conf" type="button">Registrarme</button>
                     </form>
@@ -62,23 +62,23 @@
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form " method="POST" >
-                    <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
+                    <form class="login-form " method="POST" action="<?=base_url('login')?>/login">
+                        <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
                             <div class="input-group mt-3 mb-2">
                                 <input type="text" class="form-control border " name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
-                              
+
                             </div>
                             <p id="msm1" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
-        
+
                             <div class="input-group mt-3">
                                 <input type="password" class="form-control border" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" ><i class=" far fa-eye" id="eye"></i></button>
+                                    <button class="btn btn-secondary"><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
                             <p id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
-                            
+
                             <br>
                             <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
                     </form>
@@ -141,7 +141,7 @@
     <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
     <!-- ----------------------------------Personalizado--------------------------------- -->
     <script src="<?= base_url(); ?>libs/js/login.js"></script>
-    
+
 
 </body>
 

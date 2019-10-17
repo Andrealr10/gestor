@@ -18,7 +18,6 @@ class Login extends CI_Controller
 		} else {
 
 			$this->load->view('pages/login/login');
-			$this->login();
 		}
 	}
 

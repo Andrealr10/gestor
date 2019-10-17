@@ -112,7 +112,7 @@ function validarmail() {
 
 $('#eye').on('click', function () {
 	event.preventDefault();
-	
+
 	if ($(this).hasClass('fa-eye-slash')) {
 		$(this).removeClass('fa-eye-slash');
 		$(this).addClass('fa-eye')
@@ -130,34 +130,52 @@ $('#eye').on('click', function () {
 
 // $('#iniciar').on('click', function () {
 // 	event.preventDefault();
-	// var username = document.getElementById('#user').value;
-	// var pass = document.getElementById('#pass').value;
-	// if ($(("user").val()).lenght < 1){
-		// $(this).css("border", "2px solid #A83D32");
+// var username = document.getElementById('#user').value;
+// var pass = document.getElementById('#pass').value;
+// if ($(("user").val()).lenght < 1){
+// $(this).css("border", "2px solid #A83D32");
 // 		$('#msm1').removeClass('d-lg-none');
-		
+
 // 	}else{
 // 		$(this).css("border", "2px solid #086d8b");
 // 	}
 
 // })
-$(document).ready(function(){
-	
-	$("#iniciar").click(function(){
-		event.preventDefault();
-		var user = $("#user").val();
-		var pass = $("#pass").val();
-		if(user.length == ""){
-			$("#msm1").text("Complete el siguiente campo");
-			$("#user").addClass('border-danger');
-			$("#user").focus();
-			return false;
-		}else if (pass.length == ""){
-			$("#msm2").text("Complete el siguiente campo");
-			$("#pass").addClass('border-danger');
-			$("#pass").focus();
-			return false;
-		}
 
-	})
-	})
+$('#user').on('keyup',function(){
+	if (($('#user').val()).length == 0){
+		$("#msm1").text("Complete el siguiente campo");
+		$("#user").addClass('border-danger');
+	}else{
+		$("#msm1").text("");
+		$("#user").removeClass('border-danger');
+	}
+})
+$('#pass').on('keyup',function(){
+	if (($('#pass').val()).length == 0){
+		$("#msm2").text("Complete el siguiente campo");
+		$("#user").addClass('border-danger');
+	}else{
+		$("#msm2").text("");
+		$("#pass").removeClass('border-danger');
+	}
+})
+
+$("#iniciar").click(function () {
+	event.preventDefault();
+	var user = $("#user").val();
+	var pass = $("#pass").val();
+	if (user.length == "") {
+		$("#msm1").text("Complete el siguiente campo");
+		$("#user").addClass('border-danger');
+		$("#user").focus();
+		return false;
+	} else if (pass.length == "") {
+		$("#msm2").text("Complete el siguiente campo");
+		$("#pass").addClass('border-danger');
+		$("#pass").focus();
+		return false;
+	}
+
+})
+
