@@ -38,13 +38,14 @@ CREATE TABLE `archivo` (
   `ruta` varchar(250) NOT NULL,
   `tamanio` float NOT NULL,
   `tipo_archivo` varchar(24) NOT NULL,
-  `estado` tinyint(1) NOT NULL,
+  `estado_archivo` tinyint(1) NOT NULL,
   `fecha` date NOT NULL,
   `descargas` int(11) NOT NULL,
   `valoracion` float NOT NULL,
   `icono` varchar(250) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `id_subcategoria` int(11) NOT NULL
+  `id_subcategoria` int(11) NOT NULL,
+  `comentario_archivo` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,6 +104,15 @@ CREATE TABLE `tipo_solicitud` (
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tipo_solicitud`
+--
+
+INSERT INTO `tipo_solicitud` (`id_tipo_solicitud`, `nombre`, `estado`) VALUES
+(1, 'solicitud', 1),
+(2, 'Denuncia', 1),
+(3, 'Sugerencia', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -113,7 +123,7 @@ CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `username` varchar(8) NOT NULL,
+  `username` varchar(16) NOT NULL,
   `password` varchar(128) NOT NULL,
   `correo` varchar(128) NOT NULL,
   `tipo_usuario` int(1) NOT NULL,
@@ -122,6 +132,11 @@ CREATE TABLE `usuario` (
   `code` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `username`, `password`, `correo`, `tipo_usuario`, `estado`, `hash`, `code`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', 'admin@cloudcat.org', 1, 1, '', 0),
+(2, 'user', 'user', 'user', '1234', 'yovanych-@hotmail.com', 2, 1, 'b6a6f6de0952e7a65a7f0a46cd5d44dc95eb4ad27ac823a0693a348e488803e7', 75959),
+(3, 'user1', 'user1', 'user1', '1234', 'yov.chmas-@gmail.com', 2, 1, 'b6a6f6de0952e7a65a7f0a46cd5d44dc95eb4ad27ac823a0693a348e488803e7', 75959);
 
 -- --------------------------------------------------------
 
@@ -136,6 +151,10 @@ CREATE TABLE `valoracion` (
   `id_usuario` int(11) NOT NULL,
   `id_archivo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Índices para tablas volcadas
+--
 
 --
 -- Indices de la tabla `archivo`
@@ -184,8 +203,8 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `valoracion`
   ADD PRIMARY KEY (`id_valoracion`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_archivo` (`id_archivo`);
+  ADD KEY `valoracion_ibfk_1` (`id_usuario`),
+  ADD KEY `valoracion_ibfk_2` (`id_archivo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -219,7 +238,7 @@ ALTER TABLE `subcategoria`
 -- AUTO_INCREMENT de la tabla `tipo_solicitud`
 --
 ALTER TABLE `tipo_solicitud`
-  MODIFY `id_tipo_solicitud` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tipo_solicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -233,7 +252,6 @@ ALTER TABLE `usuario`
 ALTER TABLE `valoracion`
   MODIFY `id_valoracion` int(11) NOT NULL AUTO_INCREMENT;
 
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -242,30 +260,29 @@ ALTER TABLE `valoracion`
 -- Filtros para la tabla `archivo`
 --
 ALTER TABLE `archivo`
-  ADD CONSTRAINT `archivo_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `archivo_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `archivo_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `archivo_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  ADD CONSTRAINT `solicitud_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `solicitud_ibfk_2` FOREIGN KEY (`id_tipo_solicitud`) REFERENCES `tipo_solicitud` (`id_tipo_solicitud`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `solicitud_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `solicitud_ibfk_2` FOREIGN KEY (`id_tipo_solicitud`) REFERENCES `tipo_solicitud` (`id_tipo_solicitud`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `subcategoria`
 --
 ALTER TABLE `subcategoria`
-  ADD CONSTRAINT `subcategoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `super` FOREIGN KEY (`super`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  ADD CONSTRAINT `subcategoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `super` FOREIGN KEY (`super`) REFERENCES `subcategoria` (`id_subcategoria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `valoracion_ibfk_2` FOREIGN KEY (`id_archivo`) REFERENCES `archivo` (`id_archivo`);
+  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `valoracion_ibfk_2` FOREIGN KEY (`id_archivo`) REFERENCES `archivo` (`id_archivo`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
