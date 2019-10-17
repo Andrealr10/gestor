@@ -12,8 +12,6 @@ jQuery(document).ready(function ($) {
 	});
 });
 sessionStorage.clear();
-
-
 $('#conf').on('click', function () {
 	codigo = document.getElementById('codigo').value;
 	correo = document.getElementById('useremail').value;
@@ -76,37 +74,37 @@ $('#cambio').on('click', function () {
 })
 
 
-function validaruser() {
-	correo = document.getElementById('username').value;
-	$.ajax({
-		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarUser',
-		data: {
-			'username': correo,
-		},
-		success: function (result) {
-			if (result) {
-				alert("no valido")
-			}
-		}
-	});
-}
+// function validaruser() {
+// 	correo = document.getElementById('username').value;
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: 'http://localhost/gestor/usuario/validarUser',
+// 		data: {
+// 			'username': correo,
+// 		},
+// 		success: function (result) {
+// 			if (result) {
+// 				alert("no valido")
+// 			}
+// 		}
+// 	});
+// }
 
-function validarmail() {
-	correo = document.getElementById('useremail').value;
-	$.ajax({
-		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarCorreo',
-		data: {
-			'correo': correo,
-		},
-		success: function (result) {
-			if (result) {
-				alert("no valido")
-			}
-		}
-	});
-}
+// function validarmail() {
+// 	correo = document.getElementById('useremail').value;
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: 'http://localhost/gestor/usuario/validarCorreo',
+// 		data: {
+// 			'correo': correo,
+// 		},
+// 		success: function (result) {
+// 			if (result) {
+// 				alert("no valido")
+// 			}
+// 		}
+// 	});
+// }
 
 // validando ojo
 
