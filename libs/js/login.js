@@ -112,7 +112,7 @@ function validarmail() {
 
 $('#eye').on('click', function () {
 	event.preventDefault();
-	var input = $($(this).attr("#pass"))
+	
 	if ($(this).hasClass('fa-eye-slash')) {
 		$(this).removeClass('fa-eye-slash');
 		$(this).addClass('fa-eye')
@@ -122,6 +122,21 @@ $('#eye').on('click', function () {
 		$(this).removeClass('fa-eye');
 		$(this).addClass('fa-eye-slash');
 		$('#pass').attr('type', 'text');
+	}
+
+})
+
+// validando campos de login 
+$('#iniciar').on('click', function () {
+	event.preventDefault();
+	// var username = document.getElementById('#user').value;
+	// var pass = document.getElementById('#pass').value;
+	if ($(("user").val()).lenght < 1){
+		// $(this).css("border", "2px solid #A83D32");
+		$('#msm1').removeClass('d-lg-none');
+		
+	}else{
+		$(this).css("border", "2px solid #086d8b");
 	}
 
 })

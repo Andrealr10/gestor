@@ -16,11 +16,13 @@
 
 <body class="">
     <div class="cont container-fluid">
-        <div class="title-box border border-dark">
+        <div style="border-bottom: 2px solid #000; width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
+            <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-            <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2>
+            <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
         </div>
         <!--title-box-->
+        
         <div class="form-wrap">
             <div class="tabs">
                 <div class=" ">
@@ -36,44 +38,49 @@
             <div class="tabs-content ">
                 <div id="signup-tab-content" class="">
                     <form class="signup-form" method="POST" id="reg">
-                        <div class="form-group">
-                            <input type="text" class=" form-control" name="nombre" id="name" autocomplete="off" maxlength="20" placeholder="Escriba su nombre" required>
-                            <input type="text" class=" form-control" name="apellido" id="lastname" autocomplete="off" maxlength="20" placeholder="Escriba su apellido" required>
-                            <input type="text" class=" form-control" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 16" required onkeyup="validaruser()">
-                            <input type="email" class="form-control" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico" title="Debe incluir @" required onkeyup="validarmail()">
-                            <input type="password" class=" form-control" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a" title="Letras y números, tamaño máximo: 16" required>
-                            <input type="password" class=" form-control" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a" title="Debe confirmar su contrase&ntilde;a" required>
+                        <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
+                        <div class="form-group ">
+                            <input type="text" class=" form-control mt-2 mb-2" name="nombre" id="name" autocomplete="off" maxlength="20" placeholder="Escriba su nombre*" required>
+                            <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" maxlength="20" placeholder="Escriba su apellido*" required>
+                            <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required onkeyup="validaruser()">
+                            <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Debe incluir @" required onkeyup="validarmail()">
+                            <input type="password" class=" form-control mt-2 mb-2" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a*" title="Letras y números, tamaño máximo: 16" required>
+                            <input type="password" class=" form-control mt-2 mb-2" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a*" title="Debe confirmar su contrase&ntilde;a" required>
                         </div>
                         <button class="btn btn-secondary btn-block" id="registrar" >Verificar datos</button>
-                        <br><input type="number" class=" form-control" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar codigo">
+                        <input type="number" class=" form-control mt-3 mb-3" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar c&oacute;digo">
                         <button class="btn btn-info btn-block" id="conf" type="button">Registrarme</button>
                     </form>
                     <!--.login-form-->
 
                     <div class="help-text">
-                        <p class="text-light">Al inscribirte aceptas colaborar a la comunidad.</p>
-                        <p><a class="text-log" href="#">T&eacute;rminos del servicio.</a></p>
+                        <p class="text-light">Al registrarte aceptas colaborar a la comunidad.</p>
+                        <!-- <p><a class="text-log" href="#">T&eacute;rminos del servicio.</a></p> -->
                     </div>
                     <!--.help-text-->
                 </div>
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form" method="POST">
+                    <form class="login-form " method="POST" >
+                    <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="user" id="user" autocomplete="off" placeholder="Nombre de usuario" required>
+                            <div class="input-group mt-3 mb-2">
+                                <input type="text" class="form-control " name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
+                              
                             </div>
-                            <div class="input-group">
-                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a" required>
+                            <div id="msm1" class="small pt-0 pb-0 mb-0 mt-0 text-danger d-lg-none">Ingrese su nombre de usuario</div>
+        
+                            <div class="input-group mt-3">
+                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary" id="show"><i class=" far fa-eye" id="eye"></i></button>
-                                    <!-- <div class="input-group-text"><i class=" far fa-eye"></div> -->
+                                    <button class="btn btn-secondary" ><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
-
+                            <div id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger d-lg-none">Debe ingresar su contrase&ntilde;a</div>
+                            
                             <br>
-                            <button class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
+                            <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
                     </form>
                     <!--.login-form-->
                     <div class="help-text">
@@ -134,6 +141,7 @@
     <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
     <!-- ----------------------------------Personalizado--------------------------------- -->
     <script src="<?= base_url(); ?>libs/js/login.js"></script>
+    
 
 </body>
 
