@@ -47,8 +47,8 @@
       <a href="<?= base_url('guest') ?>" class="brand-link">
         <!-- <img src="<?= base_url() ?>home/images/subcategorias/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
         <a data-widget="pushmenu" href="#" class="brand-link">
-          <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">SUDOCS</span>
+          <!-- <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+          <span class="brand-text font-weight-light"><img src="<?= base_url() ?>libs/images/sudocs.png" alt="Logo" style="width:90px;height:25px; margin-left:25%; background:transparent !important;"></span>
         </a>
 
         <!-- Sidebar -->
