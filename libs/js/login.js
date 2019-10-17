@@ -141,7 +141,7 @@ $('#eye').on('click', function () {
 // 	}
 
 // })
-$(document).ready(function(){
+// $(document).ready(function(){
 	
 	$("#iniciar").click(function(){
 		event.preventDefault();
