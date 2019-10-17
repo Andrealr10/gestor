@@ -83,7 +83,7 @@ img {
 }
 
 .card {
-  background-color: #0000;
+  background: #f1eeee;
   border-radius: 0.30rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;

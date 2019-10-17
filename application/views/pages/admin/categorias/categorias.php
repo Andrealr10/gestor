@@ -1,41 +1,12 @@
 <?php foreach ($categorias as $categoria) { ?>
     <div class="card">
-<<<<<<< HEAD
-
         <div class="card-header" id="heading<?= $categoria->nombre ?>">
-
             <!--header-->
-
             <!-- <button class="btn-editar"><i class="fas fa-edit"></i></button> -->
             <i class="fas fa-edit"></i>
             <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-block btnhover" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
                 <?= $categoria->nombre ?>
             </button>
-
-=======
-        
-        <div class="card-header ca-menu" id="heading<?= $categoria->nombre ?>">
-        <div class="set">
-    <a href="#">
-    <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn  btn-block " data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
-                    <?= $categoria->nombre ?>
-                </button>
-            
-      <i class="fa fa-plus"></i>
-    </a>
-</div>
-          
-
-        
-            <!--header-->
-            
-                <!-- <button class="btn-editar"><i class="fas fa-edit"></i></button> -->
-                <!-- <i class="fas fa-laptop-code"></i>
-                <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-block btnhover" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
-                    <?= $categoria->nombre ?>
-                </button> -->
-            
->>>>>>> 0a6f7065e232685f562d6dc3829476baed7fa5ea
         </div>
         <!--header-->
         <div id="collapse<?= $categoria->nombre ?>" class="collapse" aria-labelledby="heading<?= $categoria->nombre ?>" data-parent="#accordion">
@@ -64,23 +35,10 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
-
                 <br>
-
-
-
             </div>
         </div>
         <!--cuerpo-->
     </div>
-<<<<<<< HEAD
 <?php } ?>
-<script>
-    
-</script>
-=======
-    
-<?php } ?>
->>>>>>> 0a6f7065e232685f562d6dc3829476baed7fa5ea

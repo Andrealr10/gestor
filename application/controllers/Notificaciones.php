@@ -7,13 +7,15 @@ class Notificaciones extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('notificacionModel');
+		$this->load->model('categoriaModel');
 	}
 
 	public function index()
 	{
-		$data = ['notificaciones' => $this->notificacionModel->getAll()];
-		$this->load->view('pages/admin/inicio/navbar'); // Menu
+		$data = ['notificaciones' => $this->notificacionModel->getAll(), 'categorias' => $this->categoriaModel->getAll()];
+		$this->load->view('pages/admin/inicio/header', $data); // Menu
 		$this->load->view('pages/admin/notificaciones/index', $data);
+		$this->load->view('pages/admin/inicio/footer');
 	}
 
 	public function load($tipo = null)
@@ -21,7 +23,6 @@ class Notificaciones extends CI_Controller
 		if ($tipo != 'null') {
 			$data = ['notificaciones' => $this->notificacionModel->getByTipo($tipo)];
 			$this->load->view('pages/admin/notificaciones/tabla', $data);
-			
 		} else {
 			$data = ['notificaciones' => $this->notificacionModel->getAll()];
 			$this->load->view('pages/admin/notificaciones/tabla', $data);

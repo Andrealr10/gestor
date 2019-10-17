@@ -18,7 +18,7 @@
   <link href="<?= base_url() ?>libs/upload/dist/css/jquery.dm-uploader.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="<?= base_url(); ?>libs/sweetalert/bootstrap-4.min.css">
-  
+
   <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
@@ -38,18 +38,18 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto iniciar">
-      <li><a href="<?= base_url('login') ?>/logout">
-      <span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
+        <li><a href="<?= base_url('login') ?>/logout">
+            <span class="mr-2 letra">Cerrar Sesi&oacute;n</span><i class="fas fa-sign-in-alt"></i></a></li>
       </ul>
-      </nav>
+    </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a data-widget="pushmenu" href="#" class="brand-link">
-      <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">SUDOCS</span>
+        <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">SUDOCS</span>
       </a>
 
       <!-- Sidebar -->
@@ -57,10 +57,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-          <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
+            <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
+            <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
           </div>
         </div>
 
@@ -72,23 +72,23 @@
             <li class="nav-header">CONFIGURACI&Oacute;N</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-circle"></i>
-              <p>Mi perfil</p>
+                <i class="nav-icon fas fa-user-circle"></i>
+                <p>Mi perfil</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?=base_url('categoria')?>" class="nav-link" onclick="sessionStorage.clear()">
-              <i class="nav-icon fas fa-bars"></i>
-              <p>Categorias</p>
+              <a href="<?= base_url('categoria') ?>" class="nav-link" onclick="sessionStorage.clear()">
+                <i class="nav-icon fas fa-bars"></i>
+                <p>Categorias</p>
               </a>
             </li>
             <li class="nav-header">CONTENIDO</li>
-           
+
             <li class="nav-item has-treeview" style="color: #ffff;">
               <a class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
-                <p >
-                Archivos
+                <p>
+                  Archivos
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -103,28 +103,28 @@
                       </p>
                     </a>
                     <ul class="nav nav-treeview" id="<?= $categoria->nombre ?>">
-                        <a href=""></a>
+                      <a href=""></a>
                     </ul>
                   </li>
-                  <?php } ?>
+                <?php } ?>
               </ul>
             </li>
             <li class="nav-header">INFORMACI&Oacute;N</li>
-          <li class="nav-item">
-          <a href="" class="nav-link">
-          <i class="nav-icon fas fa-info-circle"></i>
-          <p>Acerca de</p>
-            </a>
-          </li>
-    
-          <li class="nav-header">NOTIFICACIONES</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-comment-alt nav-icon"></i>
-              <p>Cont&aacute;ctanos</p>
-            </a>
-          </li>
-         
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-info-circle"></i>
+                <p>Acerca de</p>
+              </a>
+            </li>
+
+            <li class="nav-header">NOTIFICACIONES</li>
+            <li class="nav-item">
+              <a href="<?= base_url('notificaciones') ?>" class="nav-link">
+                <i class="fas fa-comment-alt nav-icon"></i>
+                <p>Notificaciones</p>
+              </a>
+            </li>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

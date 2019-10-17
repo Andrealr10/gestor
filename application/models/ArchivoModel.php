@@ -36,7 +36,7 @@ class ArchivoModel extends CI_Model
     {
         $this->db->from('archivo');
         $this->db->where('id_subcategoria', $subcategoria);
-        $this->db->where('estado', 1);
+        $this->db->where('estado_archivo', 1);
         return $this->db->count_all_results();
     }
 

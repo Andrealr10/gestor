@@ -10,22 +10,7 @@
 <div class="row">
     <ul class="cards">
         <?php foreach ($categorias as $categoria) { ?>
-            <!-- <div class="col-sm-3">
-                <a class="link" href="<?= base_url('subcategoria') ?>/load/<?= $categoria->nombre ?>/">
-                    <div class="card">
-                        <div class="card-img-container"><img src="<?= $categoria->imagen ?>" alt="" style="height: 200px; width: 300px"></div>
-                        por defecto, el div genera imagenes, eso se puede cambiar si se desea
-                        <div class="card-text-container">
-                            <h2 class="card-title"><?= $categoria->nombre ?> </i></h2>
-                            <p class="card-body"><?= $categoria->descripcion ?></p>
-                        </div>
-                        <div class="card-link-container">
-
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-            <li class="cards_item">
+                     <li class="cards_item">
                 <div class="card">
                     <div class="card_image"><img src="<?= base_url() . $categoria->imagen ?>" style="height: 200px; width: 100%"></div>
                     <div class="card_content">

@@ -142,9 +142,6 @@ function remove(id, categoria, subcategoria) {
             result.dismiss === Swal.DismissReason.cancel
         ) {
             swalWithBootstrapButtons.fire(
-                'Archivo eliminado',
-                'error',
-                '600',
                 $.ajax({
                     type: 'GET',
                     url: uri + 'archivo/eliminar/' + id,
@@ -161,8 +158,16 @@ function remove(id, categoria, subcategoria) {
             )
         }
     })
-
 }
 
+function loadNotificacion(tipo = null) {
+    $.ajax({
+      type: 'GET',
+      url: uri + 'notificaciones/load/' + tipo,
+      success: function(result) {
+        $('#tabla').html(result);
+      }
+    });
+}
 
 

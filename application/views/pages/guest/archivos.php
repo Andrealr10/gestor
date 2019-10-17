@@ -13,17 +13,17 @@
 <div class="row">
     <?php foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
-            <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
-            <div class="titulo">
-                <a target="blank" href="https://docs.google.com/viewer?url=<?= base_url() ?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+            <a target="blank" href="https://docs.google.com/viewer?url=<?= base_url() ?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+                <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
+                <div class="titulo">
                     <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
-                </a>
-                <hr>
-                <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
-                <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
-                <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
-                <div class="subtitulo text-truncate">Autor: <?= $archivo->username ?></div>
-            </div>
+                    <hr>
+                    <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
+                    <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
+                    <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
+                    <div class="subtitulo text-truncate">Autor: <?= $archivo->username ?></div>
+                </div>
+            </a>
             <div class="acciones mt-2">
                 <div class="rate">
                     <?php for ($i = 5; $i >= 1; $i--) {

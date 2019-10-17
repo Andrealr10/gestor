@@ -27,19 +27,21 @@
     </div>
     <?php foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
-            <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
             <button class="vistaPrevia" data-toggle="modal" data-target="#valora<?= $archivo->id_archivo ?>"><i class="fas fa-ellipsis-v  fa-lg"></i></button>
-            <div class="titulo">
-                <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
-                <!-- <br> -->
-                <div class="subtitulo"> </div>
-                <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
-                <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
-                <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
-                <div class="subtitulo">
-                    <p class="text-truncate">Autor: <?= $archivo->nombre ?> <?= $archivo->apellido ?></p>
+            <a target="blank" href="https://docs.google.com/viewer?url=<?= base_url() ?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+                <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
+                <div class="titulo">
+                    <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
+                    <hr>
+                    <div class="subtitulo"> </div>
+                    <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
+                    <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
+                    <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
+                    <div class="subtitulo">
+                        <p class="text-truncate">Autor: <?= $archivo->nombre ?> <?= $archivo->apellido ?></p>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="acciones mt-2">
                 <div class="rate">
                     <?php for ($i = 5; $i >= 1; $i--) {
