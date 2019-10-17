@@ -42,7 +42,9 @@
         </table>
     </div>
 <?php } else { ?>
-    <div class="alert alert-danger" role="alert">
-        Esta categoria no posee Subcategorías.
+    <div class="row">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Esta categoria no posee Subcategorías.
+        </div>
     </div>
 <?php } ?>

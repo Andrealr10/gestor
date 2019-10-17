@@ -6,7 +6,8 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <ol class="breadcrumb">
-                    <li class="active" id="ruta">Panel de Control</li>
+                    <i class="fa fa-bars" style="font-size: 20px; margin-right: 10px;"></i>
+                    <li class="active" id="ruta">SUDOCS / Panel de Control / Categorias</li>
                 </ol>
             </div>
         </div>

@@ -22,6 +22,38 @@ class ArchivoModel extends CI_Model
         WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 1";
         return $this->db->query($sql, [$id])->result();
     }
+    public function getPendientes($id)
+    {
+        if (isset($this->session->login) && $this->session->login->tipo_usuario == 1) {
+            $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+            FROM archivo
+            JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+            WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 0";
+            return $this->db->query($sql, [$id])->result();
+        } else {
+            $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+            FROM archivo
+            JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+            WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 0 and archivo.id_usuario = ".$this->session->login->id_usuario;
+            return $this->db->query($sql, [$id])->result();
+        }
+    }
+    public function getCancelados($id)
+    {
+        if (isset($this->session->login) && $this->session->login->tipo_usuario == 1) {
+            $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+            FROM archivo
+            JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+            WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 2";
+            return $this->db->query($sql, [$id])->result();
+        } else {
+            $sql = "SELECT *, (select AVG(valoracion) from valoracion WHERE valoracion.id_archivo = archivo.id_archivo) as valoracion
+            FROM archivo
+            JOIN usuario on(usuario.id_usuario = archivo.id_usuario)
+            WHERE archivo.id_subcategoria = ? AND archivo.estado_archivo = 2 and archivo.id_usuario = ".$this->session->login->id_usuario;
+            return $this->db->query($sql, [$id])->result();
+        }
+    }
 
     public function getByUsuario($subcategoria, $usuario)
     {
