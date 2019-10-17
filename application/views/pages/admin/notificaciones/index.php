@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/notificaciones.css">
-
 <div class="row">
   <div class="col-sm-12 text-center">
     <h2 class="text-center"><i class="fas fa-bell" style="font-size:25px;"></i>&nbsp&nbspNotificaciones</h2><br>

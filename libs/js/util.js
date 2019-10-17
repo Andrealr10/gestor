@@ -55,6 +55,31 @@ function loadArchivos(categoria, sub) {
         }
     });
 }
+function loadArchivosPendientes(categoria, sub) {
+    $.ajax({
+        type: 'GET',
+        url: uri + 'archivo/pendientes/' + categoria + '/' + sub,
+        success: function (result) {
+            $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            sessionStorage.setItem('cat', categoria)
+            sessionStorage.setItem('sub', sub)
+        }
+    });
+}
+function cancelados(categoria, sub) {
+    $.ajax({
+        type: 'GET',
+        url: uri + 'archivo/cancelados/' + categoria + '/' + sub,
+        success: function (result) {
+            $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            sessionStorage.setItem('cat', categoria)
+            sessionStorage.setItem('sub', sub)
+
+        }
+    });
+}
 
 
 function loadSubcat(categoria) {

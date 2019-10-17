@@ -76,7 +76,7 @@ $(function () {
     onFileSizeError: function (file) {
       Toast.fire({
         type: 'error',
-        title: 'Error al subir archivo',
+        title: 'Error al subir archivo tamaño exede al soportado',
         background: '#FFFF',
         padding: '10%'
       })

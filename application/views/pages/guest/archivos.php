@@ -11,7 +11,8 @@
     </div>
 </div>
 <div class="row">
-    <?php foreach ($archivos as $archivo) { ?>
+    <?php if (sizeof($archivos) > 0) {
+    foreach ($archivos as $archivo) { ?>
         <div class="tarjeta">
             <a target="blank" href="https://docs.google.com/viewer?url=<?= base_url() ?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
                 <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
@@ -63,6 +64,10 @@
                 </div>
             </div>
         </div>
+        <?php }
+        } else { ?>
+        <div class="alert alert-info col-md-12" role="alert">
+            Esta subcategoria no posee archivos disponibles.
+        </div>
     <?php } ?>
-    <!-- ******************************************************************* -->
 </div>

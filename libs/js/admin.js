@@ -41,8 +41,6 @@ function loadArchivos(categoria, sub) {
         url: uri + 'archivo/load/' + categoria + '/' + sub,
         success: function (result) {
             $('#contenido').html(result);
-           
-
         }
     });
 }
@@ -61,16 +59,126 @@ function crearsub(categoria) {
             loadsubs(categoria);
             Toast.fire({
                 type: 'success',
-                title: '¡Subc   ategoria creada con éxito!',
+                title: '¡Subcategoria creada con éxito!',
                 background: '#FFFF',
                 padding: '10%'
             })
         }
     });
 }
+function aprobar(id, categoria, sub) {
+    Swal.fire({
+        title: '¿Aprobar archivo?',
+        text: "Una vez aprobado sera visible por todos los usuarios",
+        type: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Aprobar'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                type: 'GET',
+                url: uri + 'archivo/aprobar/' + id,
+                success: function (result) {
+                    console.log(result);
+                    loadArchivosPendientes(categoria, sub);
+                    Toast.fire({
+                        type: 'success',
+                        title: 'Archivo aprobado con éxito!',
+                        background: '#FFFF',
+                        padding: '10%'
+                    })
+                }
+            })
+        }
+    })
+
+}
+function cancelar(id, categoria, sub) {
+    Swal.fire({
+        title: '¿Rechazar archivo?',
+        text: "Escriba el motivo por el cual desea rechazar:",
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Rechazar',
+        showLoaderOnConfirm: true,
+        preConfirm: (login) => {
+            return $.ajax({
+                type: 'POST',
+                url: uri + 'archivo/cancelar/' + id,
+                data: {
+                    'comentario': login
+                },
+                success: function (result) {
+                    if (result == 0) {
+                        Swal.showValidationMessage(
+                            'Por favor ingrese un motivo'
+                        )
+                    } else {
+                        // loadArchivosPendientes(categoria, sub);
+                        // Toast.fire({
+                        //     type: 'success',
+                        //     title: 'Archivo rechazado con éxito!',
+                        //     background: '#FFFF',
+                        //     padding: '10%'
+                        // })
+                    }
+                }
+
+            })
+        },
+        // allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+        if (result.value) {
+            Toast.fire({
+                type: 'success',
+                title: 'Archivo rechazado con éxito!',
+                background: '#FFFF',
+                padding: '10%'
+            })
+            loadArchivosPendientes(categoria, sub);
+        }
+    })
+
+
+
+    // Swal.fire({
+    //     title: '¿Rechazar archivo?',
+    //     text: "Una vez realizada esta accion no se puede deshacer",
+    //     type: 'question',
+    //     showCancelButton: true,
+    //     confirmButtonColor: '#3085d6',
+    //     cancelButtonColor: '#d33',
+    //     cancelButtonText: 'Cancelar',
+    //     confirmButtonText: 'Rechazar'
+    // }).then((result) => {
+    //     if (result.value) {
+    //         $.ajax({
+    //             type: 'GET',
+    //             url: uri + 'archivo/cancelar/' + id,
+    //             success: function (result) {
+    //                 console.log(result);
+    //                 loadArchivosPendientes(categoria, sub);
+    //                 Toast.fire({
+    //                     type: 'success',
+    //                     title: 'Archivo rechazado con éxito!',
+    //                     background: '#FFFF',
+    //                     padding: '10%'
+    //                 })
+    //             }
+    //         })
+    //     }
+    // })
+
+}
 
 function load() {
-    $('#ruta').html('Panel de Control / Tecnologías')
+
     $.ajax({
         type: 'GET',
         url: uri + 'categoria/load/',
@@ -108,6 +216,28 @@ function subir(categoria, sub) {
         url: uri + 'archivo/vista/' + categoria + '/' + sub,
         success: function (result) {
             $('#contenido').html(result);
+
+        }
+    });
+}
+function loadArchivosPendientes(categoria, sub) {
+    $.ajax({
+        type: 'GET',
+        url: uri + 'archivo/pendientes/' + categoria + '/' + sub,
+        success: function (result) {
+            $('#contenido').html(result);
+            sessionStorage.setItem('location', result)
+            sessionStorage.setItem('cat', categoria)
+            sessionStorage.setItem('sub', sub)
+        }
+    });
+}
+function cancelados(categoria, sub) {
+    $.ajax({
+        type: 'GET',
+        url: uri + 'archivo/cancelados/' + categoria + '/' + sub,
+        success: function (result) {
+            $('#contenido').html(result);
             sessionStorage.setItem('location', result)
             sessionStorage.setItem('cat', categoria)
             sessionStorage.setItem('sub', sub)
@@ -116,57 +246,52 @@ function subir(categoria, sub) {
 }
 
 
-function remove(id, categoria, subcategoria) {
+function remove(id, categoria, subcategoria, location) {
 
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-    })
-
-    swalWithBootstrapButtons.fire({
-        title: '¿Esta seguro de eliminar el archivo?',
-        text: "Esta acción no se puede deshacer",
-        type: 'question',
+    Swal.fire({
+        title: '¿Eliminar archivo?',
+        text: "Esta accion no se puede revertir",
+        type: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Cancelar',
-        cancelButtonText: 'Eliminar',
-        reverseButtons: true
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Eliminar'
     }).then((result) => {
         if (result.value) {
-
-        } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-        ) {
-            swalWithBootstrapButtons.fire(
-                $.ajax({
-                    type: 'GET',
-                    url: uri + 'archivo/eliminar/' + id,
-                    success: function (result) {
-                        Toast.fire({
-                            type: 'error',
-                            title: 'Archivo eliminado con éxito.',
-                            background: '#FFFF',
-                            padding: '10%'
-                        })
+            $.ajax({
+                type: 'GET',
+                url: uri + 'archivo/eliminar/' + id,
+                success: function (result) {
+                    Toast.fire({
+                        type: 'error',
+                        title: 'Archivo eliminado con éxito.',
+                        background: '#FFFF',
+                        padding: '10%'
+                    })
+                    $(".modal-backdrop").modal('hide');//ocultamos el modal
+                    $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+                    $('.modal-backdrop').remove();//eliminamos el backdrop del modal
+                    if (location == 1) {
+                        loadArchivos(categoria, subcategoria)
+                    } else if (location == 2) {
+                        loadArchivosPendientes(categoria, subcategoria)
+                    } else {
                         subir(categoria, subcategoria)
                     }
-                })
-            )
+                }
+            })
         }
     })
 }
 
 function loadNotificacion(tipo = null) {
     $.ajax({
-      type: 'GET',
-      url: uri + 'notificaciones/load/' + tipo,
-      success: function(result) {
-        $('#tabla').html(result);
-      }
+        type: 'GET',
+        url: uri + 'notificaciones/load/' + tipo,
+        success: function (result) {
+            $('#tabla').html(result);
+        }
     });
 }
 
