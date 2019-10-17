@@ -16,12 +16,8 @@ class Login extends CI_Controller
 		if (isset($this->session->login)) {
 			redirect(base_url('categoria'));
 		} else {
-			if (isset($_POST['nombre'])) {
-				$this->registrar();
-			} else {
-				$this->load->view('pages/login/login');
-				$this->login();
-			}
+
+			$this->load->view('pages/login/login');
 		}
 	}
 
