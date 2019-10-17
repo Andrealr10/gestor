@@ -127,16 +127,37 @@ $('#eye').on('click', function () {
 })
 
 // validando campos de login 
-$('#iniciar').on('click', function () {
-	event.preventDefault();
+
+// $('#iniciar').on('click', function () {
+// 	event.preventDefault();
 	// var username = document.getElementById('#user').value;
 	// var pass = document.getElementById('#pass').value;
-	if ($(("user").val()).lenght < 1){
+	// if ($(("user").val()).lenght < 1){
 		// $(this).css("border", "2px solid #A83D32");
-		$('#msm1').removeClass('d-lg-none');
+// 		$('#msm1').removeClass('d-lg-none');
 		
-	}else{
-		$(this).css("border", "2px solid #086d8b");
-	}
+// 	}else{
+// 		$(this).css("border", "2px solid #086d8b");
+// 	}
 
-})
+// })
+$(document).ready(function(){
+	
+	$("#iniciar").click(function(){
+		event.preventDefault();
+		var user = $("#user").val();
+		var pass = $("#pass").val();
+		if(user.length == ""){
+			$("#msm1").text("Complete el siguiente campo");
+			$("#user").addClass('border-danger');
+			$("#user").focus();
+			return false;
+		}else if (pass.length == ""){
+			$("#msm2").text("Complete el siguiente campo");
+			$("#pass").addClass('border-danger');
+			$("#pass").focus();
+			return false;
+		}
+
+	})
+	})

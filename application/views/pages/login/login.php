@@ -66,18 +66,18 @@
                     <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
                             <div class="input-group mt-3 mb-2">
-                                <input type="text" class="form-control " name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
+                                <input type="text" class="form-control border " name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
                               
                             </div>
-                            <div id="msm1" class="small pt-0 pb-0 mb-0 mt-0 text-danger d-lg-none">Ingrese su nombre de usuario</div>
+                            <p id="msm1" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
         
                             <div class="input-group mt-3">
-                                <input type="password" class="form-control" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
+                                <input type="password" class="form-control border" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary" ><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
-                            <div id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger d-lg-none">Debe ingresar su contrase&ntilde;a</div>
+                            <p id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
                             
                             <br>
                             <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
