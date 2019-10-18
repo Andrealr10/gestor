@@ -41,7 +41,7 @@
   </form><!-- // End form -->
 </div><!-- // End #container -->
 
-<script>
+<!-- <script>
   $(document).ready(function() {
     $.ajax({
       type: 'GET',
@@ -53,4 +53,4 @@
       }
     });
   });
-</script>
+</script> -->

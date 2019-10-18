@@ -48,8 +48,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a data-widget="pushmenu" href="#" class="brand-link">
-        <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">SUDOCS</span>
+        <!-- <img src="<?= base_url() ?>libs/images/logocopy.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+        <span class="brand-text font-weight-light"><img src="<?= base_url() ?>libs/images/sudocs.png" alt="Logo" style="width:90px;height:25px; margin-left:25%; padding:0;"></span>
       </a>
 
       <!-- Sidebar -->
