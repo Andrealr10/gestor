@@ -135,13 +135,16 @@ h3 {
 }
 
 .text-danger {
-  color: #A83D32 !important;
+  color: #E74C3C  !important;
 }
 .container-fluid{
   padding-right: 15px !important;
   padding-left: 15px !important;
   margin-right: auto !important;
   margin-left: auto !important;
+}
+.border-danger{
+  border: 2px solid #E74C3C  !important;
 }
 
 

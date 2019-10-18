@@ -57,6 +57,7 @@ $('#registrar').on('click', function () {
 
 		}
 	});
+	
 
 })
 
@@ -126,27 +127,13 @@ $('#eye').on('click', function () {
 
 })
 
-// validando campos de login 
-
-// $('#iniciar').on('click', function () {
-// 	event.preventDefault();
-// var username = document.getElementById('#user').value;
-// var pass = document.getElementById('#pass').value;
-// if ($(("user").val()).lenght < 1){
-// $(this).css("border", "2px solid #A83D32");
-// 		$('#msm1').removeClass('d-lg-none');
-
-// 	}else{
-// 		$(this).css("border", "2px solid #086d8b");
-// 	}
-
-// })
 
 
 $('#user').on('keyup',function(){
 	if (($('#user').val()).length == 0){
-		$("#msm1").text("Complete el siguiente campo");
+		$("#msm1").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
+		// $("#user").css("border-bottom", "2px solid #A83D32");
 	}else{
 		$("#msm1").text("");
 		$("#user").removeClass('border-danger');
@@ -154,7 +141,7 @@ $('#user').on('keyup',function(){
 })
 $('#pass').on('keyup',function(){
 	if (($('#pass').val()).length == 0){
-		$("#msm2").text("Complete el siguiente campo");
+		$("#msm2").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
 	}else{
 		$("#msm2").text("");
