@@ -56,7 +56,7 @@
                     </div>
                     <div class="modal-body">
                         <h6 class="text-truncate"><?= $archivo->archivo ?></h6>
-                        <img src="<?= base_url('qr_gen') . '/archivo/' . $categoria->nombre . "/" . $subcategoria->nombre . "/" . $archivo->archivo ?>" alt="" style="height: 100%; width: 100%">
+                        <img src="<?= base_url('QR_gen') . '/archivo/' . $archivo->id_archivo . "/". $categoria->nombre . "/" . $subcategoria->nombre . "/" . $archivo->archivo ?>" alt="" style="height: 100%; width: 100%">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>

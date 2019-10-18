@@ -14,9 +14,9 @@ class QR_gen extends CI_Controller
         $this->qr(base_url() . 'zip/dir/' . $categoria . '/' . $subcategoria);
     }
 
-    public function archivo($categoria, $subcategoria, $nombre)
+    public function archivo($id, $categoria, $subcategoria, $nombre)
     {
-        $this->qr(base_url() . 'archivo/download/' . $categoria . "/" . $subcategoria . "/" . $nombre);
+        $this->qr(base_url() . 'archivo/download/' . $id . "/" . $categoria . "/" . $subcategoria . "/" . $nombre);
     }
 
     public function qr($data)
