@@ -79,7 +79,7 @@
             <li class="nav-header">CONTENIDO</li>
            
             <li class="nav-item has-treeview">
-              <a onclick="loadCategorias()" class="nav-link">
+              <a href="<?= base_url('categoria') ?>" class="nav-link" onclick="sessionStorage.clear()">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                 Tecnolog&iacute;as

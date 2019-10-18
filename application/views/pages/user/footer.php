@@ -30,7 +30,7 @@
   <script src="<?= base_url(); ?>libs/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
-  <script src="<?= base_url(); ?>libs/js/util.js"></script>
+  <script src="<?= base_url(); ?>libs/js/user.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
   <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
 
