@@ -18,14 +18,4 @@ class Notificaciones extends CI_Controller
 		$this->load->view('pages/admin/inicio/footer');
 	}
 
-	public function load($tipo = null)
-	{
-		if ($tipo != 'null') {
-			$data = ['notificaciones' => $this->notificacionModel->getByTipo($tipo)];
-			$this->load->view('pages/admin/notificaciones/tabla', $data);
-		} else {
-			$data = ['notificaciones' => $this->notificacionModel->getAll()];
-			$this->load->view('pages/admin/notificaciones/tabla', $data);
-		}
-	}
 }

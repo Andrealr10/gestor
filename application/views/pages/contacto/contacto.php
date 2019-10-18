@@ -1,4 +1,4 @@
-<link rel="stylesheet"  href="<?= base_url(); ?>libs/css/contacto.css">
+<link rel="stylesheet" href="<?= base_url(); ?>libs/css/contacto.css">
 <div id="container">
   <h1>&bull; Cont&aacute;ctanos &bull;</h1>
   <div class="underline">
@@ -40,3 +40,17 @@
     </div>
   </form><!-- // End form -->
 </div><!-- // End #container -->
+
+<script>
+  $(document).ready(function() {
+    $.ajax({
+      type: 'GET',
+      url: uri + 'contacto/load/',
+      success: function(result) {
+        $('#contenido').html(result);
+        sessionStorage.setItem('location', result)
+
+      }
+    });
+  });
+</script>
