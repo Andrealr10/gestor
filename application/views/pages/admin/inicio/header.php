@@ -96,7 +96,7 @@
                 <?php foreach ($categorias as $categoria) { ?>
                   <li class="nav-item has-treeview">
                     <a onclick="loadSubcat('<?= $categoria->nombre ?>')" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
+                      <i class="far fa-circle nav-icon text-info"></i>
                       <p id="nomb">
                         <?= $categoria->nombre ?>
                         <i class="right fas fa-angle-left"></i>

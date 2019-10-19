@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Archivo extends CI_Controller
+require APPPATH.'controllers/Utils.php';
+
+class Archivo extends Utils
 {
     public function __construct()
     {
@@ -57,6 +59,7 @@ class Archivo extends CI_Controller
             $this->load->view('pages/guest/archivos', $data);
         }
     }
+
     public function cancelados($categoria, $subcategoria)
     {
         $categoria = $this->categoriaModel->getByName($categoria);
@@ -151,7 +154,7 @@ class Archivo extends CI_Controller
                 } else {
                     $tipo = 'Documento';
                 }
-                $nombre = str_replace(' ', '_', $this->tildes($_FILES['file']['name']));
+                $nombre = $this->tildes($_FILES['file']['name']);
                 if ($this->session->login->tipo_usuario == 1) {
                     $config['upload_path'] = 'home/files/' . $categoria . '/' . $subcategoria;
                     $estado = 1;
@@ -182,13 +185,15 @@ class Archivo extends CI_Controller
                         'id_usuario' => $this->session->login->id_usuario,
                         'id_subcategoria' => $id
                     ]);
-                    $this->solicitudModel->insert([
-                        'descripcion' => 'Aprobar archivo',
-                        'estado' => 1,
-                        'fecha' =>  date("Y-m-d H:i:s"),
-                        'id_tipo_solicitud' => 1,
-                        'id_usuario' => $this->session->login->id_usuario
-                    ]);
+                    if ($this->session->login->tipo_usuario != 1) {
+                        $this->solicitudModel->insert([
+                            'descripcion' => 'Aprobar archivo',
+                            'estado' => 1,
+                            'fecha' =>  date("Y-m-d H:i:s"),
+                            'id_tipo_solicitud' => 1,
+                            'id_usuario' => $this->session->login->id_usuario
+                        ]);
+                    }
                 }
             }
         }
@@ -228,57 +233,5 @@ class Archivo extends CI_Controller
             }
             $this->archivoModel->delete($id);
         }
-    }
-
-    public function tildes($cadena)
-    {
-        //Reemplazamos la A y a
-        $cadena = str_replace(
-            array('Á', 'À', 'Â', 'Ä', 'á', 'à', 'ä', 'â', 'ª'),
-            array('A', 'A', 'A', 'A', 'a', 'a', 'a', 'a', 'a'),
-            $cadena
-        );
-
-        //Reemplazamos la E y e
-        $cadena = str_replace(
-            array('É', 'È', 'Ê', 'Ë', 'é', 'è', 'ë', 'ê'),
-            array('E', 'E', 'E', 'E', 'e', 'e', 'e', 'e'),
-            $cadena
-        );
-        $cadena = str_replace(
-            array('(', ')', '/', '=', ']', '[', '{', '}'),
-            array('', '', '', '', '', '', '', ''),
-            $cadena
-        );
-
-        //Reemplazamos la I y i
-        $cadena = str_replace(
-            array('Í', 'Ì', 'Ï', 'Î', 'í', 'ì', 'ï', 'î'),
-            array('I', 'I', 'I', 'I', 'i', 'i', 'i', 'i'),
-            $cadena
-        );
-
-        //Reemplazamos la O y o
-        $cadena = str_replace(
-            array('Ó', 'Ò', 'Ö', 'Ô', 'ó', 'ò', 'ö', 'ô'),
-            array('O', 'O', 'O', 'O', 'o', 'o', 'o', 'o'),
-            $cadena
-        );
-
-        //Reemplazamos la U y u
-        $cadena = str_replace(
-            array('Ú', 'Ù', 'Û', 'Ü', 'ú', 'ù', 'ü', 'û'),
-            array('U', 'U', 'U', 'U', 'u', 'u', 'u', 'u'),
-            $cadena
-        );
-
-        //Reemplazamos la N, n, C y c
-        $cadena = str_replace(
-            array('Ñ', 'ñ', 'Ç', 'ç'),
-            array('Ni', 'ni', 'C', 'c'),
-            $cadena
-        );
-
-        return $cadena;
     }
 }
