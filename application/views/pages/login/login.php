@@ -19,8 +19,8 @@
 
 <body class="">
     <div class="cont container-fluid">
-        <header id="header" class="bg-dark text-white" style="padding: 1px;;">
-            <h1><a href="<?= base_url() ?>"  style="text-decoration: none; color:#ffffff !important; margin-left:1.5%;"><i class="fa fa-home fa-sm"></i>  Inicio</a></h1>
+        <header id="header" class="bg-dark text-light pt-2" style="padding: 1px;">
+            <h1 class="text-light" style="font-size:22px; color:#FFF !important;"><a class="text-light" href="<?= base_url() ?>"  style="text-decoration: none;"><i class="fa fa-home fa-sm ml-4"></i>&nbsp;Inicio</a></h1>
         </header>
         
         <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
@@ -47,15 +47,21 @@
                     <form class="signup-form" method="POST" id="reg">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group ">
-                            <input type="text" class=" form-control mt-2 mb-2" name="nombre" id="name" autocomplete="off" maxlength="20" placeholder="Escriba su nombre*" title="Este campo es requerido"required>
-                            <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" maxlength="20" placeholder="Escriba su apellido*" title="Este campo es requerido" required>
+                            <input type="text" class=" form-control mt-2 mb-2" name="nombre" id="name" autocomplete="off" minlenght="4" maxlength="16" placeholder="Escriba su nombre*" title="Este campo es requerido"required pattern="[A-Za-z]{4-16}">
+                            <p style="font-size:14px"id="m1" class=" pt-0 pb-0 mt-n1 text-danger "></p>
+                            <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" minlenght="4"  maxlength="16" placeholder="Escriba su apellido*" title="Este campo es requerido" required pattern="[A-Za-z]{4-16}">
+                            <p style="font-size:14px"id="m2" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required onkeyup="validaruser()">
+                            <p style="font-size:14px"id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
+                            <p style="font-size:14px"id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="password" class=" form-control mt-2 mb-2" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a*" title="Letras y números, tamaño máximo: 16" title="Su contrase&ntilde;a no debe exeder de 16 caracteres" required>
+                            <p style="font-size:14px"id="m5" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="password" class=" form-control mt-2 mb-2" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a*" title="Debe confirmar su contrase&ntilde;a" required>
+                            <p style="font-size:14px"id="m6" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                         </div>
                         <button class="btn btn-secondary btn-block" id="registrar">Verificar datos</button>
-                        <input type="number" class=" form-control mt-3 mb-3" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar c&oacute;digo">
+                        <input type="number" class=" form-control mt-3 mb-3" name="codigo" id="codigo" autocomplete="off" placeholder="Confirmar c&oacute;digo" minlenght="4" maxlength="5">
                         <button class="btn btn-info btn-block" id="conf" type="button">Registrarme</button>
                     </form>
                     <!--.login-form-->
@@ -72,19 +78,19 @@
                     <form class="login-form " method="POST" action="<?= base_url('login') ?>/login">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
-                            <div class="input-group mt-3 mb-2">
-                                <input type="text" class="form-control border " name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
-
+                            <div class="input-group mt-2 mb-3">
+                                <input type="text" class="form-control border" name="user" id="user" autocomplete="off" placeholder="Nombre de usuario*" required>
+                               
                             </div>
-                            <p id="msm1" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
+                            <p style="font-size:14px"id="msm1" class=" pt-0 pb-0 mt-n1 text-danger "></p>
 
-                            <div class="input-group mt-3">
+                            <div class="input-group mt-2">
                                 <input type="password" class="form-control border" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary"><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
-                            <p id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
+                            <p style="font-size:14px" id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
 
                             <br>
                             <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
@@ -116,9 +122,11 @@
                                 <p class="text-light ">*Debe ingresar correo electr&oacute;nico valido, campo obligatorio.</p>
                                 <div class="input-group">
                                     <!-- <label for="correo">Ingrese su correo electr&oacute;nico</label> -->
-                                    <input type="text" class="form-control" name="correo" id="correo" placeholder="Confirmar correo electr&oacute;nico"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" title="Debe ingresar un correo electr&oacute;nico valido" required>
+                                 <input type="text" class="form-control" name="correo" id="correo" placeholder="Confirmar correo electr&oacute;nico"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" title="Debe ingresar un correo electr&oacute;nico valido" required>
+                                 
                                 </div>
-                                <div class="alert alert-danger mt-3" role="alert">
+                                <p style="font-size:14px"id="ms" class=" pt-0 pb-0 mt-2 text-light "></p>
+                                <div class="alert alert-info mt-3" role="alert">
                                     <p class="text-center">Al momento de presionar &quot;Enviar Informaci&oacute;n&quot;&#44; autom&aacute;ticamente se le estar&aacute; enviando un correo electr&oacute;nico, si no aparece en su bandeja de entrada, por favor revisar la bandeja de correos no deseados.</p>
                                 </div>
                             </form>
