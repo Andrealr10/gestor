@@ -54,7 +54,7 @@
                 </div>
                 <div class="card-body">
                   <div id="bar-chart" style="height: 100%;">
-                      <canvas id="graphCanvas"></canvas>
+                    <canvas id="graphCanvas"></canvas>
                   </div>
                 </div>
                 <!-- /.card-body-->
@@ -140,14 +140,31 @@
                 borderColor: '#46d5f1',
                 hoverBackgroundColor: '#CCCCCC',
                 hoverBorderColor: '#666666',
-                data: marks
+                data: marks,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
               }]
             };
 
             var graphTarget = $("#graphCanvas");
 
             var barGraph = new Chart(graphTarget, {
-              type: 'area',
+              type: 'horizontalBar',
               data: chartdata,
               options: {
                 scales: {

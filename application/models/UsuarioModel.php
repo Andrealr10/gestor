@@ -52,7 +52,8 @@ class UsuarioModel extends CI_Model
     public function login($username, $password)
     {
         $this->db->where('username', $username);
-        $this->db->where('password', $password);
+        $this->db->where('username', $username);
+        $this->db->where('estado', 1);
         return $this->db->get($this->tabla)->row();
     }
 
