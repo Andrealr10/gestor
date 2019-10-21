@@ -8,12 +8,12 @@ body{
   font-family:'Quicksand', serif !important;
 background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692)); 
 /* background-image: url(http://localhost/gestor/libs/images/fondo1.jpg); */
-/* background-size: cover;  */
-/* min-height: 100vh; */
-/* background-image: url(http://localhost/gestor/libs/images/fondo5.jpg); */
+/* background-size: cover; 
+min-height: 100vh;
+background-image: url(http://localhost/gestor/libs/images/fondo5.jpg);
 background-repeat: no-repeat;
 background-size: cover;
-background-position: center;
+background-position: center; */
 background-attachment: fixed;
 
 }
@@ -24,13 +24,13 @@ background-attachment: fixed;
   height: 100%;
   position:absolute;
   top:0;
-  left:0; */
-  /* background: linear-gradient(45deg,#1E1E20,#5799ad); */
-  /* background: #1a1919;
+  left:0;
+  background: linear-gradient(45deg,#1E1E20,#5799ad); 
+  background: #1a1919;
   opacity: 0.6;
   z-index: -1;
   background-attachment: fixed;
-} */
+}  */
 /* .cont:before{
   content:"";
   width: -100%;
@@ -153,7 +153,7 @@ h3 {
 .modal-content {
   margin-top: 30%;
   
-  background-color: #252930 !important;
+  background-color:  rgb(84, 92, 94) !important;
 }
 
 .fade {
@@ -161,10 +161,10 @@ h3 {
 }
 
 .modal-title {
-  color: #FFFFFF !important;
+  color: #000 !important;
 }
 .x{
-  color: #FFFFFF;
+  color: #000;
 }
 
 .text-log{
@@ -173,6 +173,12 @@ h3 {
 
 .text-log:hover{
 color:#ffffff;
+}
+#correo:invalid{
+  border: 2px solid #A83D32;
+}
+#correo:valid{
+  border: 2px solid #086d8b;
 }
 /* -------------- validacion----------------- */
 /* input:valid {

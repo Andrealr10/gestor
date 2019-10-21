@@ -17,7 +17,7 @@
                     <!-- Aqui va la tabla sin el form para agregar las subcategorias -->
                 </div>
                 <br>
-                <div class="border border-secondary pt-3 pb-3 pl-3 pr-3">
+                <div class="pt-3 pb-3 pl-3 pr-3">
                     <h4>Agregar Subcategoria</h4>
                     <form id="form<?= $categoria->nombre ?>">
                         <div class="row">

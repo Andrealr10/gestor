@@ -29,8 +29,9 @@ class Contenido extends CI_Controller
                 /**
                  * Para que cargue la vista del admin
                  */
-                $this->load->view('pages/admin/inicio/navbar');
+                $this->load->view('pages/admin/inicio/header', $data);
                 $this->load->view('pages/admin/categorias/index', $data);
+                $this->load->view('pages/admin/inicio/footer');
             } else {
                 /**
                  * Para que cargue la vista del user
@@ -64,7 +65,7 @@ class Contenido extends CI_Controller
     }
     public function subcategorias($nombre)
     {
-        
+
         if (isset($nombre)) {
             $categoria = $this->categoriaModel->getByName($nombre);
             $data = [

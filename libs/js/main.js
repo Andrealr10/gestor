@@ -97,21 +97,6 @@ function obtener(id) {
             $('#nombrea').val(datos['nombre']);
             $('#apellidoa').val(datos['apellido']);
             $('#usernamea').val(datos['username']);
-            $('#passworda').val(datos['password']);
-            if (datos['tipo'] == 1) {
-                $('#tipoa').val(datos['tipo']);
-                $('#tipoa').prop('hidden', 'disabled');
-            } else {
-                $('#tipoa').val(datos['tipo']);
-                $('#tipoa').prop('hidden', false);
-            }
-            if (datos['tipo'] == 2) {
-                $('#estadoa').val(datos['estado']);
-                $('#estadoa').prop('hidden', 'disabled');
-            } else {
-                $('#estadoa').val(datos['estado']);
-                $('#estadoa').prop('hidden', false);
-            }
         }
     })
 }
@@ -120,12 +105,9 @@ function actualizar() {
     var id = $('#id_usuario').val();
     var nombrea = $('#nombrea').val();
     var apellidoa = $('#apellidoa').val();
-    var usernamea = $('#usernamea').val();
-    var passworda = $('#passworda').val();
     var tipoa = $('#tipoa').val();
-    var estadoa = $('#estadoa').val();
     formu = $('#formua').serialize();
-    if (nombrea != "" && apellidoa != "" && usernamea != "" && passworda != "") {
+    if (nombrea != "" && apellidoa != "" ) {
         $.ajax({
             type: 'POST',
             url: 'Usuario/actualizar/' + id,

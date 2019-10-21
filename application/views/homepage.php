@@ -90,7 +90,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini-banner.jpeg" alt="" /></a>
                             <h2 style="color:#086d8b;">Acerca de SuDocs</h2>
                             <p>Su nombre proviene del ingl&eacute;s "Support  Documents" Documentos de soporte o ayuda para programadores.</p>
-                            <p>Cuenta con 2 niveles de usuarios, visitantes (todos los usuarios) y colaboradores (todos los usuarios registrados), estos últimos tienen en privilegio de aportar a la comunidad.</p>
+                            <p>Cuenta con 2 niveles de usuarios, visitantes (todos los usuarios) y colaboradores (todos los usuarios registrados), estos últimos tienen acceso a otras acciones, como aportar a la comunidad.</p>
                             <p>Los archivos están divididos por lenguaje o frameworks y sub divididos en diferentes categorías.</p>
   
                         </section>

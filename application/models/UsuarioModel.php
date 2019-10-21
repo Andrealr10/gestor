@@ -52,8 +52,18 @@ class UsuarioModel extends CI_Model
     public function login($username, $password)
     {
         $this->db->where('username', $username);
-        $this->db->where('password', $password);
+        $this->db->where('username', $username);
+        $this->db->where('estado', 1);
         return $this->db->get($this->tabla)->row();
+    }
+
+    public function top()
+    {
+        $sql = "SELECT DISTINCT a.id_usuario, u.username,(select count(id_usuario) from archivo where id_usuario = a.id_usuario and estado_archivo = 1) as cantidad 
+        FROM archivo a 
+        join usuario u on (a.id_usuario = u.id_usuario)
+        ORDER by cantidad DESC limit 5";
+        return $this->db->query($sql)->result();
     }
 
 }

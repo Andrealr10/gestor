@@ -17,7 +17,7 @@ class Mail extends CI_Controller
             $usuario = $this->usuarioModel->getByCorreo($correo);
             if ($usuario != null) {
                 $asunto = 'Cambio de contraseña';
-                $cuerpo = "Has clic en el siguiente enlace para cambiar la contraseña ".base_url()."usuario/reset/" . $usuario->hash;
+                $cuerpo = "Has clic en el siguiente enlace para cambiar la contraseña \n\n".base_url()."usuario/reset/" . $usuario->hash;
                 $this->send($correo, $asunto, $cuerpo);
             }
         }
@@ -30,8 +30,8 @@ class Mail extends CI_Controller
         if ($correo != null) {
             $usuario = $this->usuarioModel->getByCorreo($correo);
             if ($usuario != null) {
-                $asunto = 'Bienvenido a CloudCat';
-                $cuerpo = "Bienvenido a CloudCat " . $usuario->username . "! Ahora podras compartir archivos en la plataforma.\nTu codigo de verificacion es: " . $usuario->code;
+                $asunto = 'Bienvenido a SUDOCS';
+                $cuerpo = "Bienvenido a SUDOCS " . $usuario->username . "!\nAhora podras compartir archivos en la plataforma.\nTu codigo de verificacion es: " . $usuario->code;
                 $this->send($correo, $asunto, $cuerpo);
             }
         }
@@ -50,12 +50,12 @@ class Mail extends CI_Controller
         $mail->isSMTP();
         $mail->Host     = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'cloudcat.inc@gmail.com';
-        $mail->Password = 'ykrzrqwxzfixpibp';
+        $mail->Username = 'sudocs.inc@gmail.com';
+        $mail->Password = 'remfpmlvdnrxstjx';
         $mail->SMTPSecure = 'tls';
         $mail->Port     = 587;
 
-        $mail->setFrom('cloudcat.inc@gmail.com', 'CloudCat');
+        $mail->setFrom('sudocs.inc@gmail.com', 'SUDOCS');
 
         // Add a recipient
         $mail->addAddress($correo);

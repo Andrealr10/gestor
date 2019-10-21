@@ -60,7 +60,7 @@
           <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
+          <a class="d-block">&nbsp;&nbsp;&nbsp;<?=$this->session->login->username?></a>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
             <li class="nav-header">CONTENIDO</li>
            
             <li class="nav-item has-treeview">
-              <a onclick="loadCategorias()" class="nav-link">
+              <a href="<?= base_url('categoria') ?>" class="nav-link" onclick="sessionStorage.clear()">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                 Tecnolog&iacute;as
@@ -90,7 +90,7 @@
                 <?php foreach ($categorias as $categoria) { ?>
                   <li class="nav-item has-treeview">
                     <a onclick="loadSubcat('<?= $categoria->nombre ?>')" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
+                      <i class="far fa-circle nav-icon text-info"></i>
                       <p id="nomb">
                         <?= $categoria->nombre ?>
                         <i class="right fas fa-angle-left"></i>
