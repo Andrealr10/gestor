@@ -37,6 +37,7 @@
             <div id="drag-and-drop-zone" class="dm-uploader p-5">
                 <!-- <h3 class="mb-5 mt-5 text-muted">Drag &amp; drop files here</h3> -->
                 <h3 class="mb-5 mt-5 ">Arrastra los archivos aqu&iacute;</h3>
+                <label >Extensiones permitidas: pptx, docx, pdf, txt</label>
 
                 <div class="btn btn-subir btn-block mb-5">
                     <!-- <span>Open the file Browser</span> -->

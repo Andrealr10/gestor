@@ -185,15 +185,15 @@ class Archivo extends Utils
                         'id_usuario' => $this->session->login->id_usuario,
                         'id_subcategoria' => $id
                     ]);
-                    if ($this->session->login->tipo_usuario != 1) {
-                        $this->solicitudModel->insert([
-                            'descripcion' => 'Aprobar archivo',
-                            'estado' => 1,
-                            'fecha' =>  date("Y-m-d H:i:s"),
-                            'id_tipo_solicitud' => 1,
-                            'id_usuario' => $this->session->login->id_usuario
-                        ]);
-                    }
+                    // if ($this->session->login->tipo_usuario != 1) {
+                    //     $this->solicitudModel->insert([
+                    //         'descripcion' => 'Aprobar archivo',
+                    //         'estado' => 1,
+                    //         'fecha' =>  date("Y-m-d H:i:s"),
+                    //         'id_tipo_solicitud' => 1,
+                    //         'id_usuario' => $this->session->login->id_usuario
+                    //     ]);
+                    // }
                 }
             }
         }

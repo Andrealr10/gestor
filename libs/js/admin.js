@@ -144,37 +144,6 @@ function cancelar(id, categoria, sub) {
             loadArchivosPendientes(categoria, sub);
         }
     })
-
-
-
-    // Swal.fire({
-    //     title: '¿Rechazar archivo?',
-    //     text: "Una vez realizada esta accion no se puede deshacer",
-    //     type: 'question',
-    //     showCancelButton: true,
-    //     confirmButtonColor: '#3085d6',
-    //     cancelButtonColor: '#d33',
-    //     cancelButtonText: 'Cancelar',
-    //     confirmButtonText: 'Rechazar'
-    // }).then((result) => {
-    //     if (result.value) {
-    //         $.ajax({
-    //             type: 'GET',
-    //             url: uri + 'archivo/cancelar/' + id,
-    //             success: function (result) {
-    //                 console.log(result);
-    //                 loadArchivosPendientes(categoria, sub);
-    //                 Toast.fire({
-    //                     type: 'success',
-    //                     title: 'Archivo rechazado con éxito!',
-    //                     background: '#FFFF',
-    //                     padding: '10%'
-    //                 })
-    //             }
-    //         })
-    //     }
-    // })
-
 }
 
 function load() {
