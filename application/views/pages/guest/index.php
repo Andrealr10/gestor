@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?= base_url(); ?>libs/lte/css/adminlte.min.css">
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/nav.css">
   <link rel="stylesheet" href="<?= base_url(); ?>libs/css/contenido.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css">
 
 
 

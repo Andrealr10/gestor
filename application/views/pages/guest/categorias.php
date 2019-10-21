@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= base_url(); ?>libs/css/cards.css">
+
 <div class="row">
     <div class="col-md-12 text-center">
         <ol class="breadcrumb">
@@ -17,7 +17,7 @@
                         <h3 class="card_title"><?= $categoria->nombre ?></h3>
                         <p class="card_text"><?= $categoria->descripcion ?></p>
                         <!-- <button class="btn card_btn">Read More</button> -->
-                        <a onclick="loadSubcategorias('<?= $categoria->nombre ?>')" class="btnn card_btn">Ver contenido</a>
+                        <a onclick="loadSubcategorias('<?= $categoria->nombre ?>')" class="btn btnn card_btn">Ver contenido</a>
                     </div>
                 </div>
             </li>

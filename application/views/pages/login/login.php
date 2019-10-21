@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style-xlarge.css"> -->
     <!-- ----------------------------------FontAwesome--------------------------------- -->
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
+    <link href="<?= base_url() ?>libs/upload/styles.css" rel="stylesheet">
     <title>SUDOCS</title>
 </head>
 
@@ -25,6 +26,7 @@
         
         <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
             <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
+            
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
             <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
         </div>
@@ -157,6 +159,7 @@
     <!-- ----------------------------------Bootstrap--------------------------------- -->
     <script src="<?= base_url(); ?>libs/js/bootstrap.min.js"></script>
     <!-- ----------------------------------Personalizado--------------------------------- -->
+    <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
     <script src="<?= base_url(); ?>libs/js/login.js"></script>
 
 

@@ -28,7 +28,7 @@ class Login extends CI_Controller
 
 			if ($user != null && $user != '' && $pas != null && $pas != '') {
 
-				$usuario = $this->usuarioModel->login($user, $pas);
+				$usuario = $this->usuarioModel->login($user, password_hash($pas, PASSWORD_DEFAULT));
 				if ($usuario != null) {
 					$this->session->set_userdata('login', $usuario);
 				}
@@ -51,7 +51,7 @@ class Login extends CI_Controller
 			'nombre' => $_POST['nombre'],
 			'apellido' => $_POST['apellido'],
 			'username' => $_POST['username'],
-			'password ' => $_POST['password'],
+			'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 			'correo ' => $_POST['correo'],
 			'tipo_usuario' => 2,
 			'estado' => 0,

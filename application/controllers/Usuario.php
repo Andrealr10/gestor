@@ -12,11 +12,15 @@ class Usuario extends CI_Controller
 
   public function index()
   {
-    $data = ['usuarios' => $this->UsuarioModel->getAll('usuario'), 'categorias' => $this->categoriaModel->getAll()];
-    //renderizamos la vista
-    $this->load->view('pages/admin/inicio/header', $data);
-    $this->load->view('pages/admin/usuarios/index', $data);
-    $this->load->view('pages/admin/inicio/footer');
+    if (isset($this->session->login) && $this->session->login->tipo_usuario == 1) {
+      $data = ['usuarios' => $this->UsuarioModel->getAll('usuario'), 'categorias' => $this->categoriaModel->getAll()];
+      //renderizamos la vista
+      $this->load->view('pages/admin/inicio/header', $data);
+      $this->load->view('pages/admin/usuarios/index', $data);
+      $this->load->view('pages/admin/inicio/footer');
+    }else{
+      $this->load->view('errors/html/error_404');
+    }
   }
 
   public function cargar()

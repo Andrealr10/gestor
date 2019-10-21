@@ -14,11 +14,11 @@ class Archivo extends Utils
         $this->load->model('solicitudModel');
     }
 
-    public function index()
-    {
-        $this->load->view('pages/admin/inicio/navbar');
-        $this->load->view('pages/admin/archivos/archivo');
-    }
+    // public function index()
+    // {
+    //     $this->load->view('pages/admin/inicio/navbar');
+    //     $this->load->view('pages/admin/archivos/archivo');
+    // }
 
     public function vista($categoria, $subcategoria)
     {

@@ -12,11 +12,15 @@ class Notificaciones extends CI_Controller
 
 	public function index()
 	{
-		$data = ['notificaciones' => $this->notificacionModel->getAll(), 'categorias' => $this->categoriaModel->getAll()];
-		$this->load->view('pages/admin/inicio/header', $data); // Menu
-		$this->load->view('pages/admin/notificaciones/index', $data);
-		$this->load->view('pages/admin/notificaciones/timeline', $data);
-		$this->load->view('pages/admin/inicio/footer');
+		if (isset($this->session->login) && $this->session->login->tipo_usuario == 1) {
+			$data = ['notificaciones' => $this->notificacionModel->getAll(), 'categorias' => $this->categoriaModel->getAll()];
+			$this->load->view('pages/admin/inicio/header', $data); // Menu
+			$this->load->view('pages/admin/notificaciones/index', $data);
+			$this->load->view('pages/admin/notificaciones/timeline', $data);
+			$this->load->view('pages/admin/inicio/footer');
+		} else {
+			$this->load->view('errors/html/error_404');
+		}
 	}
 
 	public function load($estado)
