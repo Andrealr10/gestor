@@ -116,6 +116,29 @@ h3 {
   font-size: 1.4rem !important;
 }
 
+/* --------------------validacion de inputs registro-------------------------- */
+#name:invalid{
+  border: 2px solid #A83D32;
+}
+#lastname:invalid{
+  border: 2px solid #A83D32;
+}
+#username:invalid{
+  border: 2px solid #A83D32;
+}
+#useremail:invalid{
+  border: 2px solid #A83D32;
+}
+#userpass:invalid{
+  border: 2px solid #A83D32;
+}
+#userpass2:invalid{
+  border: 2px solid #A83D32;
+}
+#codigo:invalid{
+  border: 2px solid #A83D32;
+}
+
 
 /* --------------------bootstrap-------------------------- */
 
