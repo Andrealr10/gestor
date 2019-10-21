@@ -113,7 +113,7 @@
     
           <li class="nav-header">NOTIFICACIONES</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">
               <i class="fas fa-comment-alt nav-icon"></i>
               <p>Cont&aacute;ctanos</p>
             </a>
@@ -161,6 +161,41 @@
   </div>
   </div>
   </footer>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background:#1f1f1f;color:#ffffff !important;">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span style="color:#ffffff !important;" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background:#1f1f1f;color:#ffffff !important;">
+        <form>
+          <div class="form-group">
+          <label for="inputState">Asunto:</label>
+          <select id="inputState" class="form-control">
+        <option selected>Elige...</option>
+        <option>Nueva Categoría</option>
+        <option>Nueva SubCategoría</option>
+        <option>Comentario</option>
+        <option>Otro</option>
+          </select>   
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Mensaje:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center" style="background:#1f1f1f;color:#ffffff !important;">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> -->
+        <button type="button" style="background:#086d8b;color:#ffffff !important;" class="btn">Enviar Mensaje</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
