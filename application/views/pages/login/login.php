@@ -16,7 +16,7 @@
 
 <body class="">
     <div class="cont container-fluid">
-        <div style="border-bottom: 2px solid #000; width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
+        <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
             <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
             <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
