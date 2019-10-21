@@ -186,11 +186,9 @@
         <p class="text-justify" style="margin-left:3%;"><i class="fas fa-user-circle"></i>&nbsp&nbspCrear tu cuenta Personal.</p>
         <p class="text-justify" style="margin-left:3%;"><i class="fas fa-users"></i>&nbsp&nbspColaborar con la Comunidad.</p>
         <p class="text-justify" style="margin-left:3%;"><i class="fas fa-star"></i>&nbsp&nbspValorar Contenido.</p>
-        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-share-alt"></i>&nbsp&nbspCompartir Temática: Cuentas con la facultad de compartir el contenido mediante código QR o simplemente copiando el link de la descarga, y de esta manera difundir el material a aquellos que creas conveniente.</p>
-        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-user-edit"></i>&nbsp&nbspModificar Información: Puedes cambiar la información de tu perfil, es decir modificar la información que brindaste al momento de registrarte.</p>
-        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-envelope-open-text"></i>&nbsp&nbspContáctanos</p>
-        <p>Si necesitas contactarte con el administrador puedes hacerlo! ya sea que necesites una categoría o subcategoría nueva para subir tu material, o simplemente para dejar un comentario o sugerencia.</p>
-
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-share-alt"></i>&nbsp&nbspCompartir Material.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-user-edit"></i>&nbsp&nbspModificar tu perfil.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-envelope-open-text"></i>&nbsp&nbspContactarte con el administrador.</p>
       </div>
       <div class="modal-footer"style="background:#ffffff !important;" >
         <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Cerrar</button>
