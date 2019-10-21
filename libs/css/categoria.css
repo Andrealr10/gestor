@@ -63,4 +63,14 @@
  
 } */
 
+.btn-outline-info:hover{
+  background: #086d8b !important;
+  color: #fff !important;
+}
+
+.btn-outline-info{
+ border: 1px solid #0b4d58 !important;
+ color:#0b4d58 !important;
+}
+
 

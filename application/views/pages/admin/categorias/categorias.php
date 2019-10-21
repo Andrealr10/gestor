@@ -1,11 +1,11 @@
 <?php foreach ($categorias as $categoria) { ?>
-    <div class="card">
+    <div class="card mb-0">
         <div class="card-header" id="heading<?= $categoria->nombre ?>">
             <!--header-->
             <!-- <button class="btn-editar"><i class="fas fa-edit"></i></button> -->
-            <i class="fas fa-edit"></i>
-            <button onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-default btn-block btnhover" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
-                <?= $categoria->nombre ?>
+         
+            <button style="text-transform: uppercase;" onclick="loadsubs('<?= $categoria->nombre ?>')" class="btn btn-block text-left btn-outline-info" data-toggle="collapse" data-target="#collapse<?= $categoria->nombre ?>" aria-expanded="true" aria-controls="collapse<?= $categoria->nombre ?>">
+            <i class="fas fa-laptop p-1 "></i> <?= $categoria->nombre ?>
             </button>
         </div>
         <!--header-->
