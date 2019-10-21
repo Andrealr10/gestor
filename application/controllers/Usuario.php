@@ -106,7 +106,8 @@ class Usuario extends CI_Controller
       if ($user != null) {
         $this->load->view('pages/admin/usuarios/reset', $data);
       } else {
-        echo "este enlace ya no es valido :V";
+        // echo "este enlace ya no es valido :V";
+        $this->load->view('pages/admin/usuarios/error');
       }
     }
   }
