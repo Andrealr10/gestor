@@ -19,7 +19,7 @@
                 <!-- Widget: user widget style 2 -->
                 <div class="card card-widget widget-user-2">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
-                    <div class="widget-user-header bg-info">
+                    <div class="widget-user-header" style="background: #086d8b !important; sscolor: #fff !important;">
                         <div class="widget-user-image">
                             <img class="img-circle elevation-2" src="<?= base_url() ?>home/images/subcategorias/carpeta.png " alt="User Avatar">
                         </div>
