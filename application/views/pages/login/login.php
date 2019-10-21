@@ -20,7 +20,7 @@
 <body class="">
     <div class="cont container-fluid">
         <header id="header" class="bg-dark text-white" style="padding: 1px;;">
-            <h1><a href="<?= base_url() ?>"  style="text-decoration: none;"><i class="fa fa-home fa-sm"></i>  Inicio</a></h1>
+            <h1><a href="<?= base_url() ?>"  style="text-decoration: none; color:#ffffff !important; margin-left:1.5%;"><i class="fa fa-home fa-sm"></i>  Inicio</a></h1>
         </header>
         
         <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
