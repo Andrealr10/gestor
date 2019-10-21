@@ -38,16 +38,6 @@
     <div class="container">
         <div class="mx-auto col-sm-11 main-section"> -->
 <!-- <h2 class="text-center"><i class="fas fa-users" style="font-size:25px;"></i> Usuarios</h2> -->
-<!-- <ul class="nav nav-tabs justify-content-end">
-                    <li class="nav-item pesta bg-secundary">
-                        <a class="nav-link active bg-info text-light" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
-                    </li>
-                    <li class="nav-item pesta bg-secundary">
-                        <a class="nav-link bg-info text-light" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab"> -->
-<!--Lista-->
 <div class="row">
     <div class="col-md-12 text-center">
         <ol class="breadcrumb">
@@ -59,35 +49,88 @@
         </ol>
     </div>
 </div>
-<div class="card text-center">
-    <div class="card-header bg-fondo">
-        <h4 class="text-center "><i class="fas fa-list-alt mr-2" style="font-size:20px;"></i>Lista de Usuarios </h4>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
-                <thead class="thead text-center">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Nombre de Usuario</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center" id="cuerpo">
-                </tbody>
-            </table>
+<ul class="nav nav-tabs justify-content-end">
+    <li class="nav-item pesta bg-secundary">
+        <a class="nav-link active bg-info text-light" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">Lista de Usuarios</a>
+    </li>
+    <li class="nav-item pesta bg-secundary">
+        <a class="nav-link bg-info text-light" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Estadisticas</a>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <!--Lista-->
+
+        <div class="card text-center">
+            <div class="card-header bg-fondo">
+                <h4 class="text-center "><i class="fas fa-list-alt mr-2" style="font-size:20px;"></i>Lista de Usuarios </h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
+                        <thead class="thead text-center">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Nombre de Usuario</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" id="cuerpo">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<!-- </div> -->
-<!--Lista-->
-<!-- <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab"> -->
-<!--Formulario-->
-<!-- <div class="card">
+
+    <!-- </div> -->
+    <!--Lista-->
+    <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+        <!-- <div class="content-wrapper"> -->
+        <div class="card-header bg-fondo">
+                <h4 class="text-center "><i class="fas fa-chart-line mr-2" style="font-size:20px;"></i>Top de Usuarios</h4>
+            </div>
+            <br>
+        <!-- Main content -->
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Bar chart -->
+                <div class="card card-primary card-outline" >
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="far fa-chart-bar"></i>
+                            Usuarios con mas colaboraciones
+                        </h3>
+
+                        <div class="card-tools bg-light">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="card-body bg-light">
+                        <div id="bar-chart" style="height: 100%;">
+                            <canvas id="graphCanvas"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- /.content -->
+        <!-- </div> -->
+    </div>
+    <!-- <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab"> -->
+    <!--Formulario-->
+    <!-- <div class="card">
                         <div class="card-header">
                             <h4 class="text-center text-dark">Nuevo Usuario <i class="fas fa-user-plus" style="font-size:20px;"></i></h4>
                         </div>
@@ -142,15 +185,17 @@
                                     </div>
                                 </div>
                             </form> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!--Formulario-->
-<!-- </div> -->
-<!--Contenido Pestañas-->
-<!-- </div> -->
-<!--Div principal-->
-<!--Modal para editar-->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!--Formulario-->
+    <!-- </div> -->
+    <!--Contenido Pestañas-->
+    <!-- </div> -->
+    <!--Div principal-->
+    <!--Modal para editar-->
+
+</div>
 <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -190,6 +235,6 @@
         </div>
     </div>
 </div>
-<!-- </div>
-</body> -->
 <script src="<?= base_url(); ?>libs/js/main.js"></script>
+<script src="<?= base_url(); ?>libs/js/grafica.js"></script>
+<script src="<?= base_url(); ?>libs/graficas/chart.min.js"></script>

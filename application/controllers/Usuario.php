@@ -48,7 +48,7 @@ class Usuario extends CI_Controller
       'nombre' => $_POST['nombre'],
       'apellido' => $_POST['apellido'],
       'username' => $_POST['username'],
-      'password ' => $_POST['password'],
+      'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
       'correo ' => $_POST['correo'],
       'tipo_usuario' => 2,
       'estado' => 0,

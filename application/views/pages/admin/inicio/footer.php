@@ -35,6 +35,7 @@
   <script src="<?= base_url() ?>libs/upload/demo-ui.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
   <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
+  <script src="<?= base_url(); ?>libs/graficas/chart.min.js"></script>
 
 
 </body>
