@@ -31,10 +31,57 @@ $('#conf').on('click', function () {
 		}
 	});
 })
+// ----------------------validacion inputs de registro --------------------------
+$('#name').on('keyup',function(){
+	if (($('#name').val()).length == 0){
+		$("#m1").text("Complete el siguiente campo.");
+	
+	}else{
+		$("#m1").text("");
+
+	}
+})
+$('#lastname').on('keyup',function(){
+	if (($('#lastname').val()).length == 0){
+		$("#m2").text("Complete el siguiente campo.");
+	}else{
+		$("#m2").text("");
+	}
+})
+$('#username').on('keyup',function(){
+	if (($('#username').val()).length == 0){
+		$("#m3").text("Complete el siguiente campo.");
+	}else{
+		$("#m3").text("");
+	}
+})
+$('#useremail').on('keyup',function(){
+	if (($('#useremail').val()).length == 0){
+		$("#m4").text("Complete con un correo valido.");
+	}else{
+		$("#m4").text("");
+	}
+})
+$('#userpass').on('keyup',function(){
+	if (($('#userpass').val()).length == 0){
+		$("#m5").text("Complete el siguiente campo.");
+	}else{
+		$("#m5").text("");
+	}
+})
+$('#userpass2').on('keyup',function(){
+	if (($('#userpass2').val()).length == 0){
+		$("#m6").text("Las contraseñas no coinciden.");
+	}else{
+		$("#m6").text("");
+	}
+})
 
 $('#registrar').on('click', function () {
 	correo = document.getElementById('useremail').value;
 	form = new FormData(document.getElementById("reg"));
+
+	
 	$.ajax({
 		type: 'POST',
 		url: 'http://localhost/gestor/usuario/registrar',
@@ -57,7 +104,50 @@ $('#registrar').on('click', function () {
 
 		}
 	});
+	// --------validacion de inputs--------
+	var name = $("#name").val();
+	var lastname = $("#lastname").val();
+	var username = $("#username").val();
+	 var useremail = $("#useremail").val();
+	var userpass = $("#userpass").val();
+	var userpass2 = $("#userpass2").val();
+	if (name.length == "") {
+		$("#m1").text("Complete el siguiente campo.");
+		$("#name").focus();
+		return false;
+	} else if (lastname.length == "") {
+		$("#m2").text("Complete el siguiente campo.");
+		$("#lastname").focus();
+		return false;
+	} else if (username.length == "") {
+		$("#m3").text("Complete el siguiente campo.");
+		$("#username").focus();
+		return false;
+	} else if (useremail.length == "") {
+		$("#m4").text("Complete con un correo valido.");
+		$("#useremail").focus();
+		return false;
+	} else if (userpass.length == "") {
+		$("#m5").text("Complete el siguiente campo.");
+		$("#userpass").focus();
+		return false;
+	} else if ((userpass2.length == "")&&(userpass !== userpass2)) {
+		$("#m6").text("Las contraseñas no coinciden.");
+		$("#userpass2").focus();
+		return false;
+	} 
 
+})
+
+
+
+
+$('#correo').on('keyup',function(){
+	if (($('#correo').val()).length == 0){
+		$("#ms").text("Su correo debe ser valido");
+	}else{
+		$("#ms").text("");
+	}
 })
 
 $('#cambio').on('click', function () {
@@ -73,6 +163,12 @@ $('#cambio').on('click', function () {
 			// window.location.href = 'http://localhost/gestor';
 		}
 	});
+	var correo = $("#correo").val();
+	if (correo.length == "") {
+		$("#ms").text("Su correo debe ser valido");
+		$("#correo").focus();
+		return false;
+	}
 })
 
 
@@ -126,26 +222,13 @@ $('#eye').on('click', function () {
 
 })
 
-// validando campos de login 
 
-// $('#iniciar').on('click', function () {
-// 	event.preventDefault();
-// var username = document.getElementById('#user').value;
-// var pass = document.getElementById('#pass').value;
-// if ($(("user").val()).lenght < 1){
-// $(this).css("border", "2px solid #A83D32");
-// 		$('#msm1').removeClass('d-lg-none');
-
-// 	}else{
-// 		$(this).css("border", "2px solid #086d8b");
-// 	}
-
-// })
 
 $('#user').on('keyup',function(){
 	if (($('#user').val()).length == 0){
-		$("#msm1").text("Complete el siguiente campo");
+		$("#msm1").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
+		// $("#user").css("border-bottom", "2px solid #A83D32");
 	}else{
 		$("#msm1").text("");
 		$("#user").removeClass('border-danger');
@@ -153,7 +236,7 @@ $('#user').on('keyup',function(){
 })
 $('#pass').on('keyup',function(){
 	if (($('#pass').val()).length == 0){
-		$("#msm2").text("Complete el siguiente campo");
+		$("#msm2").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
 	}else{
 		$("#msm2").text("");
