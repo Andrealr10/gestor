@@ -71,7 +71,7 @@
                with font-awesome or any other icon font library -->
             <li class="nav-header">CONFIGURACI&Oacute;N</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#modaledit">
                 <i class="nav-icon fas fa-user-circle"></i>
                 <p>Mi perfil</p>
               </a>
@@ -161,6 +161,39 @@
       </div>
   </div>
   </footer>
+
+  <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark">
+              <h4 class="modal-title text-light "><i class="fas fa-user ml-5"></i>&nbsp;&nbsp;&nbsp; Actualizar Perfil</h4>
+              <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body ">
+              <form id="formuEd">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" placeholder="Username" class="form-control mt-2" id="username" name="username" disabled value="<?=$this->session->login->username?>">
+                <input type="hidden" name="id_usuario" id="id_usuario" value="<?=$this->session->login->id_usuario?>">
+                <br><label for="nombre">Nombre:</label>
+                <input type="text" placeholder="Nombre" class="form-control mt-2 " id="nombre" name="nombre" value="<?=$this->session->login->nombre?>">
+                <br><label for="apellido">Apellido:</label>
+                <input type="text" placeholder="Apellido" class="form-control mt-2 " id="apellido" name="apellido" value="<?=$this->session->login->apellido?>">
+                <br><label for="correo">Correo electrónico:</label>
+                <input type="text" placeholder="Username" class="form-control mt-2" id="correo" name="correo" value="<?=$this->session->login->correo?>">
+                <!-- <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo"> -->
+                <!-- <input type="password" placeholder="Contraseña" class="form-control mt-2" id="passworda" name="password"> -->
+                
+              </form>
+            </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary bg-fondo" id='aniadir_cancion' data-dismiss="modal" onclick="actualizar2()">Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

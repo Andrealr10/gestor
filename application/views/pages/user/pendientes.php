@@ -39,7 +39,7 @@
                         <div class="subtitulo">Fecha subido: <?= $archivo->fecha ?></div>
                         <div class="subtitulo">Tamaño: <?= ($archivo->tamanio / 1024) > 1024 ? round((($archivo->tamanio / 1024) / 1024), 2) . ' MB' : round(($archivo->tamanio / 1024), 2) . ' KB'  ?></div>
                         <br>
-                        <div class="subtitulo" style="color: blue;">
+                        <div class="subtitulo" style="color: #000000;">
                             El archivo pueder tardar en ser aprobado por el administrador.
                         </div>
                     </div>
