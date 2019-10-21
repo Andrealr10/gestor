@@ -14,9 +14,8 @@ class Login extends CI_Controller
 	public function index()
 	{
 		if (isset($this->session->login)) {
-			redirect(base_url('categoria'));
+			redirect(base_url('contenido'));
 		} else {
-
 			$this->load->view('pages/login/login');
 		}
 	}

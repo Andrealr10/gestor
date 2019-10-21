@@ -60,7 +60,7 @@
           <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
+          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;<?=$this->session->login->username?></a>
           </div>
         </div>
 
@@ -173,6 +173,7 @@
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
   <script src="<?= base_url(); ?>libs/js/util.js"></script>
+  <script src="<?= base_url(); ?>libs/js/copy.js"></script>
   <script src="<?= base_url(); ?>libs/js/popper.min.js"></script>
   <script src="<?= base_url(); ?>libs/sweetalert/sweetalert2.min.js"></script>
 

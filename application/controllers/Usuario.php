@@ -7,14 +7,16 @@ class Usuario extends CI_Controller
   {
     parent::__construct();
     $this->load->model('UsuarioModel');
+    $this->load->model('categoriaModel');
   }
 
   public function index()
   {
-    $data = ['usuarios' => $this->UsuarioModel->getAll('usuario')];
+    $data = ['usuarios' => $this->UsuarioModel->getAll('usuario'), 'categorias' => $this->categoriaModel->getAll()];
     //renderizamos la vista
-    $this->load->view('pages/admin/inicio/navbar');
+    $this->load->view('pages/admin/inicio/header',$data);
     $this->load->view('pages/admin/usuarios/index', $data);
+    $this->load->view('pages/admin/inicio/footer');
   }
 
   public function cargar()
@@ -88,11 +90,7 @@ class Usuario extends CI_Controller
       $data = [
         'nombre' => $_POST['nombre'],
         'apellido' => $_POST['apellido'],
-        'username' => $_POST['username'],
-        'password ' => $_POST['password'],
-        'correo ' => $_POST['correo'],
         'tipo_usuario' => $_POST['tipo'],
-        'estado' => $_POST['estado'],
       ];
     }
     $this->UsuarioModel->update($data, $id);

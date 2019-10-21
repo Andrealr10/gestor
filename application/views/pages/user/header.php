@@ -60,7 +60,7 @@
           <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-          <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
+          <a class="d-block">&nbsp;&nbsp;&nbsp;<?=$this->session->login->username?></a>
           </div>
         </div>
 

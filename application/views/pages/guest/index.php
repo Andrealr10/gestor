@@ -36,7 +36,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto iniciar">
-        <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesi&oacute;n</a>
+        <li><a href="<?= base_url('login') ?>" class="iniciar"><i class="fas fa-user-circle"></i>&nbsp&nbspIniciar Sesi&oacute;n / Registrar</a>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -102,19 +102,19 @@
                   <p>Acerca de</p>
                 </a>
               </li>
-              <li class="nav-header">NOTIFICACIONES</li>
+              <!-- <li class="nav-header">NOTIFICACIONES</li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-comment-alt nav-icon"></i>
                   <p>Cont&aacute;ctanos</p>
                 </a>
-              </li>
-              <li class="nav-item">
+              </li> -->
+              <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-user-friends nav-icon"></i>
                   <p>Desarrolladores</p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
@@ -177,6 +177,7 @@
   <!-- AdminLTE App -->
   <script src="<?= base_url(); ?>libs/lte/js/adminlte.js"></script>
   <script src="<?= base_url(); ?>libs/js/util.js"></script>
+  <script src="<?= base_url(); ?>libs/js/copy.js"></script>
 
 </body>
 

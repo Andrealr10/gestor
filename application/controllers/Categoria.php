@@ -25,7 +25,7 @@ class Categoria extends Utils
                  */
                 $this->load->view('pages/admin/inicio/header', $data);
                 $this->load->view('pages/admin/categorias/index', $data);
-                $this->load->view('pages/admin/inicio/footer', $data);
+                $this->load->view('pages/admin/inicio/footer');
             } else {
                 $this->load->view('pages/user/index', $data);
                 // $this->load->view('pages/user/header', $data);

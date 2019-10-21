@@ -1,5 +1,16 @@
 <link rel="stylesheet" href="<?= base_url(); ?>libs/css/notificaciones.css">
 <div class="row">
+  <div class="col-md-12 text-center">
+    <ol class="breadcrumb">
+      <li class="active">
+        <i class="fa fa-bars" style="font-size: 20px; margin-right: 10px;"></i>
+        <a href="<?= base_url('notificacion') ?>">SUDOCS / Notificaciones </a>
+
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="row">
   <div class="col-sm-12 text-center">
     <h2 class="text-center"><i class="fas fa-bell" style="font-size:25px;"></i>&nbsp&nbspNotificaciones</h2><br>
     <button class="nav-pills mb-3" onclick="loadNotificacion()"><a class="nav-link active">Solicitudes&nbsp<i class="fas fa-envelope"></i></a></button>

@@ -60,7 +60,7 @@
             <img src="<?= base_url() ?>libs/images/avatar.png" class="img-circle elevation-2" alt="img">
           </div>
           <div class="info">
-            <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;BIENVENIDO</a>
+            <a href="#" class="d-block">&nbsp;&nbsp;&nbsp;<?= $this->session->login->username ?></a>
           </div>
         </div>
 
@@ -77,12 +77,18 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url('usuario') ?>" class="nav-link" onclick="sessionStorage.clear()">
+                <i class="nav-icon fas fa-user-friends"></i>
+                <p>Usuarios</p>
+              </a>
+            </li>
+            <li class="nav-header">CONTENIDO</li>
+            <li class="nav-item">
               <a href="<?= base_url('categoria') ?>" class="nav-link" onclick="sessionStorage.clear()">
                 <i class="nav-icon fas fa-bars"></i>
                 <p>Categorias</p>
               </a>
             </li>
-            <li class="nav-header">CONTENIDO</li>
 
             <li class="nav-item has-treeview" style="color: #ffff;">
               <a class="nav-link">

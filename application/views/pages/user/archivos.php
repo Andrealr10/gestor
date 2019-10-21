@@ -30,7 +30,7 @@
                 <a target="blank" href="https://docs.google.com/viewer?url=<?= base_url() ?>home/files/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
                     <img width="100px" src="<?= base_url() . '/' . $archivo->icono ?>">
                     <div class="titulo">
-                        <h2 class="text-truncate"><?= $archivo->archivo ?></h2>
+                        <h2 class="text-truncate" ><?= $archivo->archivo ?></h2>
                         <hr>
                         <div class="subtitulo"> </div>
                         <div class="subtitulo">Descargas: <?= $archivo->descargas ?></div>
@@ -45,9 +45,9 @@
                     <div class="rate">
                         <?php for ($i = 5; $i >= 1; $i--) {
                                     if ($i <= $archivo->valoracion) { ?>
-                                <label title="rate" style="color: #ffc700;">stars</label>
+                                <label style="color: #ffc700;">stars</label>
                             <?php } else { ?>
-                                <label title="rate" style="color: #ccc;">stars</label>
+                                <label style="color: #ccc;">stars</label>
                         <?php }
                                 } ?>
                     </div>
@@ -72,7 +72,12 @@
                         </div>
                         <div class="modal-body">
                             <h6 class="text-truncate"><?= $archivo->archivo ?></h6>
-                            <img src="<?= base_url('QR_gen') . '/archivo/' . $archivo->id_archivo . "/". $categoria->nombre . "/" . $subcategoria->nombre . "/" . $archivo->archivo ?>" alt="" style="height: 100%; width: 100%">
+                            <img src="<?= base_url('QR_gen') . '/archivo/' . $archivo->id_archivo . "/" . $categoria->nombre . "/" . $subcategoria->nombre . "/" . $archivo->archivo ?>" alt="" style="height: 100%; width: 100%">
+                            <br>
+                            <label for="shared">Copiar enlace de descarga</label>
+                            <input type="text" name="shared" id="shared<?= $archivo->id_archivo ?>" value="<?= base_url('archivo') ?>/download/<?= $archivo->id_archivo ?>/<?= $categoria->nombre ?>/<?= $subcategoria->nombre ?>/<?= $archivo->archivo ?>">
+                            <button onclick="copiar(<?= $archivo->id_archivo ?>)" class="btn btn-outline-secondary btn-sm">Copiar</button>
+                            <label for="algo" id="copiado<?= $archivo->id_archivo ?>" class="text-success"></label>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -103,11 +108,10 @@
                                     <label for="star1<?= $archivo->id_archivo ?>" title="1 Star">1 star</label>
                                     <label hidden> </label>
                                 </div>
-
                                 <!-- <input type="text" name="comentario" id="comentario"> -->
                                 <input type="text" name="id_usuario" id="id_usuario" value="1" hidden>
                                 <input type="text" name="id_archivo" id="id_archivo" value="<?= $archivo->id_archivo ?>" hidden>
-                                <button type="button" class="btn btn-success" onclick="valorar('<?= $archivo->id_archivo ?>')" data-dismiss="modal">Valorar</button>
+                                <button type="button" class="btn btn-outline-success" onclick="valorar('<?= $archivo->id_archivo ?>')" data-dismiss="modal" style="margin-left: 25px;">Valorar</button>
                             </form>
                         </div>
                         <div class="modal-footer">
