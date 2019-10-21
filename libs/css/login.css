@@ -150,7 +150,7 @@ h3 {
 .modal-content {
   margin-top: 30%;
   
-  background-color: #252930 !important;
+  background-color:  rgb(84, 92, 94) !important;
 }
 
 .fade {
@@ -158,10 +158,10 @@ h3 {
 }
 
 .modal-title {
-  color: #FFFFFF !important;
+  color: #000 !important;
 }
 .x{
-  color: #FFFFFF;
+  color: #000;
 }
 
 .text-log{
@@ -170,6 +170,12 @@ h3 {
 
 .text-log:hover{
 color:#ffffff;
+}
+#correo:invalid{
+  border: 2px solid #A83D32;
+}
+#correo:valid{
+  border: 2px solid #086d8b;
 }
 /* -------------- validacion----------------- */
 /* input:valid {
