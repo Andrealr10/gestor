@@ -189,7 +189,7 @@
             </div>
         </div>
     </div>
-    <!-- </div>
-    </div>
+</div>
+<!-- </div>
 </body> -->
-    <script src="<?= base_url(); ?>libs/js/main.js"></script>
+<script src="<?= base_url(); ?>libs/js/main.js"></script>

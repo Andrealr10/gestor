@@ -127,7 +127,9 @@
             <li class="nav-item">
               <a href="<?= base_url('notificaciones') ?>" class="nav-link">
                 <i class="fas fa-comment-alt nav-icon"></i>
-                <p>Notificaciones</p>
+                <p>Notificaciones
+                <span class="right badge badge-info"> + </span>
+                </p>
               </a>
             </li>
 

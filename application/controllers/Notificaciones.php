@@ -27,4 +27,16 @@ class Notificaciones extends CI_Controller
 		$data = ['notificaciones' => $this->notificacionModel->getByEstado($estado)];
 		$this->load->view('pages/admin/notificaciones/timeline', $data);
 	}
+
+	public function crear()
+	{
+		$this->notificacionModel->insert([
+			'descripcion' => $_POST['comentario'],
+			'estado' => 1,
+			'fecha' =>  date("Y-m-d H:i:s"),
+			'id_tipo_solicitud' => 1,
+			'id_usuario' => $this->session->login->id_usuario,
+			'titulo' => $_POST['titulo']
+		]);
+	}
 }

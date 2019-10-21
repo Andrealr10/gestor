@@ -13,7 +13,7 @@
                             <?=$not->descripcion?>
                         </div>
                         <div class="timeline-footer">
-                            <a class="btn btn-primary btn-sm">Ver mas</a>
+                            <a href="<?=base_url('categoria')?>" class="btn btn-primary btn-sm">Ir a Categorias</a>
                         </div>
                     </div>
                 </div>

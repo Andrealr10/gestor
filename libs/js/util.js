@@ -153,6 +153,8 @@ function remove(id, categoria, subcategoria) {
         }
     })
 
+
+
     // $.ajax({
     //     type: 'GET',
     //     url: uri + 'archivo/eliminar/' + id,
@@ -169,4 +171,34 @@ function remove(id, categoria, subcategoria) {
 }
 
 
-
+function solicitud() {
+    form = new FormData(document.getElementById("formSoli"));
+    com = document.getElementById('comentario').value
+    if (com.length > 0) {
+        $.ajax({
+            type: 'POST',
+            url: uri + 'notificaciones/crear',
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                console.log(result);
+                $('#formSoli').trigger("reset");
+                Toast.fire({
+                    type: 'success',
+                    title: 'Solicitud enviada con éxito!',
+                    background: '#FFFF',
+                    padding: '10%'
+                })
+                $('#exampleModal').modal('hide')
+            }
+        });
+    }else{
+        Toast.fire({
+            type: 'warning',
+            title: 'Por favor ingrese una descripcion',
+            background: '#FFFF',
+            padding: '10%'
+        })
+    }
+}

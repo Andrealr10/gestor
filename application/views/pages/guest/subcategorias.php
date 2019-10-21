@@ -23,8 +23,8 @@
                         <div class="widget-user-image">
                             <img class="img-circle elevation-2" src="<?= base_url() ?>home/images/subcategorias/carpeta.png " alt="User Avatar">
                         </div>
-                        <h3 class="widget-user-username"><?= $subcategoria->nombre ?></h3>
-                        <h5 class="widget-user-desc"><?= $categoria ?></h5>
+                        <h3 class="widget-user-username text-white"><?= $subcategoria->nombre ?></h3>
+                        <h5 class="widget-user-desc text-white"><?= $categoria ?></h5>
                     </div>
                     <div class="card-footer p-0">
                         <ul class="nav flex-column">

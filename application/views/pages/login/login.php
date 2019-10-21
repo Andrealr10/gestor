@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/login.css">
     <!-- -----------------------------------Bootstrap---------------------------------- -->
     <link rel="stylesheet" href="<?= base_url(); ?>libs/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/skel.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>libs/css/homepage/style-xlarge.css"> -->
     <!-- ----------------------------------FontAwesome--------------------------------- -->
     <link rel="stylesheet" href="<?= base_url(); ?>libs/fonts/css/all.css">
     <title>SUDOCS</title>
@@ -16,6 +19,10 @@
 
 <body class="">
     <div class="cont container-fluid">
+        <header id="header" class="bg-dark text-white" style="padding: 1px;;">
+            <h1><a href="<?= base_url() ?>"  style="text-decoration: none;"><i class="fa fa-home fa-sm"></i>  Inicio</a></h1>
+        </header>
+        
         <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
             <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
             <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
@@ -62,7 +69,7 @@
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form " method="POST" action="<?=base_url('login')?>/login">
+                    <form class="login-form " method="POST" action="<?= base_url('login') ?>/login">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
                             <div class="input-group mt-3 mb-2">

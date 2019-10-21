@@ -17,7 +17,7 @@ class NotificacionModel extends CI_Model
         $this->db->join('tipo_solicitud', 'tipo_solicitud.id_tipo_solicitud = solicitud.id_tipo_solicitud');
         $this->db->where("solicitud.id_tipo_solicitud = '1'");
         $this->db->where('solicitud.estado', 1);
-        $this->db->order_by('fecha', 'DESC');
+        $this->db->order_by('id_solicitud', 'DESC');
         return $this->db->get($this->tabla)->result();
     }
 
@@ -41,7 +41,7 @@ class NotificacionModel extends CI_Model
         $this->db->select('solicitud.*,usuario.username');
         $this->db->join('usuario', 'usuario.id_usuario = solicitud.id_usuario');
         $this->db->where('solicitud.estado', $estado);
-        $this->db->order_by('fecha', 'DESC');
+        $this->db->order_by('id_solicitud', 'DESC');
         return $this->db->get('solicitud')->result();
     }
 
