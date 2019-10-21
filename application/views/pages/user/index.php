@@ -105,7 +105,7 @@
             </li>
             <li class="nav-header">INFORMACI&Oacute;N</li>
           <li class="nav-item">
-          <a href="" class="nav-link">
+          <a href="" class="nav-link" data-toggle="modal" data-target="#exampleModalLong">
           <i class="nav-icon fas fa-info-circle"></i>
           <p>Acerca de</p>
             </a>
@@ -164,14 +164,14 @@
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="background:#1f1f1f;color:#ffffff !important;">
       <div class="modal-header" style="background:#1f1f1f;color:#ffffff !important;">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-envelope"></i>&nbsp&nbspNuevo Mensaje</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span style="color:#ffffff !important;" aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="background:#1f1f1f;color:#ffffff !important;">
+      <div class="modal-body" style="background:#ffffff !important;">
         <form>
           <div class="form-group">
           <label for="inputState">Asunto:</label>
@@ -189,9 +189,31 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer justify-content-center" style="background:#1f1f1f;color:#ffffff !important;">
+      <div class="modal-footer justify-content-center" style="background:#ffffff !important;">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> -->
         <button type="button" style="background:#086d8b;color:#ffffff !important;" class="btn">Enviar Mensaje</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Acerca De -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background:#1f1f1f;color:#ffffff !important;">
+      <div class="modal-header" style="background:#1f1f1f;color:#ffffff !important;">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-info-circle"></i>&nbsp&nbspAcerca de</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span style="color:#ffffff !important;" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background:#ffffff !important;">
+        <h5>SUDOCS</h5>
+      </div>
+      <div class="modal-footer"style="background:#ffffff !important;" >
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
