@@ -199,9 +199,9 @@
 
 
 <!-- Acerca De -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="background:#1f1f1f;color:#ffffff !important;">
+<div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="background:#1f1f1f;">
       <div class="modal-header" style="background:#1f1f1f;color:#ffffff !important;">
         <h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-info-circle"></i>&nbsp&nbspAcerca de</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -209,11 +209,23 @@
         </button>
       </div>
       <div class="modal-body" style="background:#ffffff !important;">
-        <h5>SUDOCS</h5>
+        <h5 class="text-center">SUDOCS</h5>
+        <p><i class="fas fa-question-circle"></i>&nbsp&nbsp¿Qué es Sudocs?</p>
+        <p class="text-justify">Es un espacio de soporte y ayuda en el mundo de la programación, en el cual puedes encontrar documetación sobre diferentes lenguajes de programación, así como frameworks que resulten ser de interés.</p>
+        <p><i class="fas fa-user"></i>&nbsp&nbspNivel: Usuario</p>
+        <p class="text-justify">Al poseer una cuenta, tienes el acceso a:</p>
+        <p class="text-justify"><i class="fas fa-cloud-download-alt"></i>&nbspExplorar Archivos: Puedes examinar las diferentes categorías existentes, asi como sus subcategorias y los archivos que contiene, con la posibilidad de dar un vistazo mediante la vista previa y descargar el que más te genere interés.</p>
+        <p class="text-justify"><i class="fas fa-users"></i>&nbsp&nbspColaborar con la Comunidad: Tienes la libertad de compartir tus archivos con la comunidad, si tienes material que pueda ser de ayuda a otros, bienvenido sea! una vez el contenido sea aprobado por el administrador, estará al alcance de todos.</p>
+        <p class="text-justify"><i class="fas fa-star"></i>&nbsp&nbspValorar Contenido: Puedes aportar tu opinión respecto a los archivos que has descargado mediante tu valoración a cada uno de ellos.</p>
+        <p class="text-justify"><i class="fas fa-share-alt"></i>&nbsp&nbspCompartir Temática: Cuentas con la facultad de compartir el contenido mediante código QR o simplemente copiando el link de la descarga, y de esta manera difundir el material a aquellos que creas conveniente.</p>
+        <p class="text-justify"><i class="fas fa-user-edit"></i>&nbsp&nbspModificar Información: Puedes cambiar la información de tu perfil, es decir modificar la información que brindaste al momento de registrarte.</p>
+        <p><i class="fas fa-envelope-open-text"></i>&nbsp&nbspContáctanos</p>
+        <p>Si necesitas contactarte con el administrador puedes hacerlo! ya sea que necesites una categoría o subcategoría nueva para subir tu material, o simplemente para dejar un comentario o sugerencia.</p>
+
       </div>
       <div class="modal-footer"style="background:#ffffff !important;" >
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
+        <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
