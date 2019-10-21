@@ -183,12 +183,12 @@
         <p class="text-justify">Al no poseer una cuenta, únicamente podrás</p>
         <p class="text-justify"><i class="fas fa-cloud-download-alt"></i>&nbspExplorar Archivos: Puedes examinar las diferentes categorías existentes, asi como sus subcategorias y los archivos que contiene, con la posibilidad de dar un vistazo mediante la vista previa y descargar el que más te genere interés.</p>
         <p>Crea tu Cuenta ahora mismo y contarás con acceso a:</p>
-        <p class="text-justify"><i class="fas fa-user-circle"></i>&nbsp&nbspCrear Tu cuenta Personal</p>
-        <p class="text-justify"><i class="fas fa-users"></i>&nbsp&nbspColaborar con la Comunidad: Tienes la libertad de compartir tus archivos con la comunidad, si tienes material que pueda ser de ayuda a otros, bienvenido sea! una vez el contenido sea aprobado por el administrador, estará al alcance de todos.</p>
-        <p class="text-justify"><i class="fas fa-star"></i>&nbsp&nbspValorar Contenido: Puedes aportar tu opinión respecto a los archivos que has descargado mediante tu valoración a cada uno de ellos.</p>
-        <p class="text-justify"><i class="fas fa-share-alt"></i>&nbsp&nbspCompartir Temática: Cuentas con la facultad de compartir el contenido mediante código QR o simplemente copiando el link de la descarga, y de esta manera difundir el material a aquellos que creas conveniente.</p>
-        <p class="text-justify"><i class="fas fa-user-edit"></i>&nbsp&nbspModificar Información: Puedes cambiar la información de tu perfil, es decir modificar la información que brindaste al momento de registrarte.</p>
-        <p><i class="fas fa-envelope-open-text"></i>&nbsp&nbspContáctanos</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-user-circle"></i>&nbsp&nbspCrear tu cuenta Personal.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-users"></i>&nbsp&nbspColaborar con la Comunidad.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-star"></i>&nbsp&nbspValorar Contenido.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-share-alt"></i>&nbsp&nbspCompartir Temática: Cuentas con la facultad de compartir el contenido mediante código QR o simplemente copiando el link de la descarga, y de esta manera difundir el material a aquellos que creas conveniente.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-user-edit"></i>&nbsp&nbspModificar Información: Puedes cambiar la información de tu perfil, es decir modificar la información que brindaste al momento de registrarte.</p>
+        <p class="text-justify" style="margin-left:3%;"><i class="fas fa-envelope-open-text"></i>&nbsp&nbspContáctanos</p>
         <p>Si necesitas contactarte con el administrador puedes hacerlo! ya sea que necesites una categoría o subcategoría nueva para subir tu material, o simplemente para dejar un comentario o sugerencia.</p>
 
       </div>
