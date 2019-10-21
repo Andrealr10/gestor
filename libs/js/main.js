@@ -80,7 +80,7 @@ function eliminar(id) {
                     cargar();
                 }
             });
-            alertify.success('Registro Desactivado');
+            alertify.error('Usuario Desactivado');
         } else {
             alertify.error('Cancel');
         }
@@ -101,28 +101,7 @@ function obtener(id) {
     })
 }
 
-function actualizar() {
-    var id = $('#id_usuario').val();
-    var nombrea = $('#nombrea').val();
-    var apellidoa = $('#apellidoa').val();
-    var tipoa = $('#tipoa').val();
-    formu = $('#formua').serialize();
-    if (nombrea != "" && apellidoa != "" ) {
-        $.ajax({
-            type: 'POST',
-            url: 'Usuario/actualizar/' + id,
-            data: formu,
-            success: function (result) {
-                console.log(result);
-                cargar();
-            }
-        });
-    } else {
-        alert('Debe Agregar Registros');
-    }
 
-
-}
 
 function activar(id) {
     $.ajax({
@@ -130,6 +109,7 @@ function activar(id) {
         url: 'Usuario/activar/' + id,
         success: function (result) {
             console.log(result);
+            alertify.success('Usuario Activado');
             cargar();
         }
     });

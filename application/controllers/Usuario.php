@@ -14,7 +14,7 @@ class Usuario extends CI_Controller
   {
     $data = ['usuarios' => $this->UsuarioModel->getAll('usuario'), 'categorias' => $this->categoriaModel->getAll()];
     //renderizamos la vista
-    $this->load->view('pages/admin/inicio/header',$data);
+    $this->load->view('pages/admin/inicio/header', $data);
     $this->load->view('pages/admin/usuarios/index', $data);
     $this->load->view('pages/admin/inicio/footer');
   }
@@ -91,9 +91,20 @@ class Usuario extends CI_Controller
         'nombre' => $_POST['nombre'],
         'apellido' => $_POST['apellido'],
         'tipo_usuario' => $_POST['tipo'],
+        'correo' => $_POST['correo'],
       ];
     }
     $this->UsuarioModel->update($data, $id);
+  }
+  public function actualizar2($id)
+  {
+    $data = [
+      'nombre' => $_POST['nombre'],
+      'apellido' => $_POST['apellido'],
+      'correo' => $_POST['correo'],
+    ];
+    $this->UsuarioModel->update($data, $id);
+    $this->session->login = $this->UsuarioModel->getById($id);
   }
 
   public function reset($hash = null)
