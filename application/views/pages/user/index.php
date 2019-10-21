@@ -165,13 +165,13 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-info" style="color:#ffffff !important;">
+      <div class="modal-header" style="background:#1f1f1f;color:#ffffff !important;">
         <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span style="color:#ffffff !important;" aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background:#1f1f1f;color:#ffffff !important;">
         <form>
           <div class="form-group">
           <label for="inputState">Asunto:</label>
@@ -189,9 +189,9 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Enviar Mensaje</button>
+      <div class="modal-footer justify-content-center" style="background:#1f1f1f;color:#ffffff !important;">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> -->
+        <button type="button" style="background:#086d8b;color:#ffffff !important;" class="btn">Enviar Mensaje</button>
       </div>
     </div>
   </div>
