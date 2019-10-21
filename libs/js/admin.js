@@ -264,4 +264,32 @@ function loadNotificacion(tipo = null) {
     });
 }
 
+function actualizar2() {
+    var id = $('#id_usuario').val();
+    var nombrea = $('#nombre').val();
+    var apellidoa = $('#apellido').val();
+    var tipoa = $('#tipo').val();
+    formu = $('#formuEd').serialize();
+    if (nombrea != "" && apellidoa != "") {
+        $.ajax({
+            type: 'POST',
+            url: 'Usuario/actualizar2/' + id,
+            data: formu,
+            success: function (result) {
+                console.log(result);
+                Toast.fire({
+                    type: 'success',
+                    title: 'Perfil editado con éxito!',
+                    background: '#FFFF',
+                    padding: '10%'
+                })
+                $('#exampleModal').modal('hide')
+                cargar();
+            }
+        });
+    } else {
+        alert('Debe Agregar Registros');
+    }
 
+
+}

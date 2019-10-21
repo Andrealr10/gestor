@@ -202,3 +202,32 @@ function solicitud() {
         })
     }
 }
+
+function actualizar2() {
+    var id = $('#id_usuario').val();
+    var nombrea = $('#nombre').val();
+    var apellidoa = $('#apellidoa').val();
+    formu = $('#formuEd').serialize();
+    if (nombrea != "" && apellidoa != "" ) {
+        $.ajax({
+            type: 'POST',
+            url: 'Usuario/actualizar2/' + id,
+            data: formu,
+            success: function (result) {
+                console.log(result);
+                $('#formuEd').trigger("reset");
+                Toast.fire({
+                    type: 'success',
+                    title: 'Perfil editado con éxito!',
+                    background: '#FFFF',
+                    padding: '10%'
+                })
+                $('#exampleModal').modal('hide')
+            }
+        });
+    } else {
+        alert('Debe Agregar Registros');
+    }
+
+
+}

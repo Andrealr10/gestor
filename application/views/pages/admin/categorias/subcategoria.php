@@ -8,7 +8,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php foreach ($subcategorias as $subcategoria) { ?>
                     <tr>
                         <td class="text-left d-flex align-items-center"><a style="color:black;" href="#" onclick="loadArchivos('<?= $categoria ?>','<?= $subcategoria->nombre ?>')"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></a></td>

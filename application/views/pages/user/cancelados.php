@@ -38,9 +38,9 @@
                         <div class="subtitulo">
                             <p class="text-truncate">Autor: <?= $archivo->nombre ?> <?= $archivo->apellido ?></p>
                         </div>
-                        <br>
                         <div class="subtitulo">
-                            <p style="color: red;"> <?= $archivo->comentario_archivo ?></p>
+                            <p style="color: #000000;">Motivo:</p>
+                            <p style="color: #000000;"> <?= $archivo->comentario_archivo ?></p>
                         </div>
 
                     </div>
