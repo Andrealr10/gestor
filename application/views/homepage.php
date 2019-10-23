@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <h2 style="color:#086d8b;" >Desarrolladores</h2>
                             <p>Este proyecto,</p>
                             <ul class="actions">
-                                <li><a href="#" class="button alt">Leer mas</a></li>
+                                <li><a href="<?= base_url(); ?>Developer" class="button alt">Leer mas</a></li>
                             </ul>
                         </section>
                     </div>

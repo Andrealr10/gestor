@@ -18,16 +18,15 @@
 </head>
 
 <body class="">
+<nav class="navbar text-center" style=" ">
+  <a class="text-info" style="margin:auto;color: #086d8b !important;" href="<?= base_url() ?>"><i style="font-size:45px !important; color: #086d8b !important;" class="fa fa-arrow-left  mr-3 mt-3 text-info"></i>
+  <img id="logo" src="<?= base_url(); ?>libs/images/sudocs.png" width="250" class=" align-top" style="">
+</a>
+  
+</nav>
     <div class="cont container-fluid">
-        <header id="header" class="bg-dark text-light pt-2" style="padding: 1px;">
-            <h1 class="text-light" style="font-size:22px; color:#FFF !important;"><a class="text-light" href="<?= base_url() ?>"  style="text-decoration: none;"><i class="fa fa-home fa-sm ml-4"></i>&nbsp;Inicio</a></h1>
-        </header>
-        
-        <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
-            <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
-            <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-            <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
-        </div>
+
+<br><br>
         <!--title-box-->
 
         <div class="form-wrap">

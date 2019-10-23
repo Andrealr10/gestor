@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+body{
+    font-family:'Quicksand', serif !important;
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(144, 150, 153), rgba(84, 92, 94, 0.692)); 
+}
