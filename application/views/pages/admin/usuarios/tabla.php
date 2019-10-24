@@ -2,8 +2,8 @@
 foreach ($usuarios as $usuario) {
     ?>
 <tr>
-    <td><?= $usuario->nombre ?></td>
-    <td><?= $usuario->apellido ?></td>
+    <!-- <td><?= $usuario->nombre ?></td>
+    <td><?= $usuario->apellido ?></td> -->
     <td><?= $usuario->username ?></td>
     <td><?= $usuario->correo ?></td>
     <td><?php if ($usuario->tipo_usuario == '1') {

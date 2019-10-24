@@ -61,4 +61,3 @@
         </div>
     <?php } ?>
 </div>
-<script src="<?= base_url() ?>libs/js/valoraciones.js"></script>

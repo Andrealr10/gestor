@@ -31,11 +31,12 @@ class Login extends CI_Controller
 				$usuario = $this->usuarioModel->login($user, password_hash($pas, PASSWORD_DEFAULT));
 				if ($usuario != null) {
 					$this->session->set_userdata('login', $usuario);
+					echo 1;
 				}
 			} else {
-				$error = ['<div class="alert alert-danger row" role="alert">Ingrese un usuario y contraseña</div>', ''];
+				// return;
 			}
-			$this->index();
+			// $this->index();
 		}
 	}
 
@@ -45,6 +46,7 @@ class Login extends CI_Controller
 		redirect(base_url());
 	}
 
+<<<<<<< HEAD
 	public function registrar()
 	{
 		$data = [
@@ -60,6 +62,23 @@ class Login extends CI_Controller
 		];
 		$this->usuarioModel->insert($data);
 	}
+=======
+	// public function registrar()
+	// {
+	// 	$data = [
+	// 		'nombre' => $_POST['nombre'],
+	// 		'apellido' => $_POST['apellido'],
+	// 		'username' => $_POST['username'],
+	// 		'password ' => $_POST['password'],
+	// 		'correo ' => $_POST['correo'],
+	// 		'tipo_usuario' => 2,
+	// 		'estado' => 0,
+	// 		'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
+	// 		'code' => rand(10000, 99999)
+	// 	];
+	// 	$this->usuarioModel->insert($data);
+	// }
+>>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
 }
 
 // $this->session->sess_destroy();

@@ -19,8 +19,15 @@
 </head>
 
 <body class="">
+<nav class="navbar text-center" style=" ">
+  <a class="text-info" style="margin:auto;color: #086d8b !important;" href="<?= base_url() ?>"><i style="font-size:45px !important; color: #086d8b !important;" class="fa fa-arrow-left  mr-3 mt-3 text-info"></i>
+  <img id="logo" src="<?= base_url(); ?>libs/images/sudocs.png" width="250" class=" align-top" style="">
+</a>
+  
+</nav>
     <div class="cont container-fluid">
 
+<<<<<<< HEAD
         <div class="row">
 
             <div class="col-md-1">
@@ -40,6 +47,9 @@
                 </div>
             </div>
         </div>
+=======
+<br><br>
+>>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
         <!--title-box-->
 
         <div class="form-wrap">
@@ -54,7 +64,7 @@
             <!--.tabs-->
 
             <!-- Contenedor de formularios -->
-            <div class="tabs-content ">
+            <div class="tabs-content">
                 <div id="signup-tab-content" class="">
                     <form class="signup-form" method="POST" id="reg">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
@@ -63,10 +73,17 @@
                             <p style="font-size:14px"id="m1" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" minlenght="4"  maxlength="16" placeholder="Escriba su apellido*" title="Este campo es requerido" required pattern="[A-Za-z]{4-16}">
                             <p style="font-size:14px"id="m2" class=" pt-0 pb-0 mt-n1 text-danger "></p> -->
+<<<<<<< HEAD
                             <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required onkeyup="validaruser()">
                             <p style="font-size:14px" id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
                             <p style="font-size:14px" id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
+=======
+                            <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required maxlength="16" onkeyup="validaruser()">
+                            <p style="font-size:14px"id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
+                            <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
+                            <p style="font-size:14px"id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
+>>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
                             <input type="password" class=" form-control mt-2 mb-2" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a*" title="Letras y números, tamaño máximo: 16" title="Su contrase&ntilde;a no debe exeder de 16 caracteres" required>
                             <p style="font-size:14px" id="m5" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="password" class=" form-control mt-2 mb-2" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a*" title="Debe confirmar su contrase&ntilde;a" required>
@@ -87,7 +104,7 @@
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form " method="POST" action="<?= base_url('login') ?>/login">
+                    <form class="login-form " method="POST" id="loginform">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
                             <div class="input-group mt-2 mb-3">
@@ -99,13 +116,13 @@
                             <div class="input-group mt-2">
                                 <input type="password" class="form-control border" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary"><i class=" far fa-eye" id="eye"></i></button>
+                                    <button class="btn btn-secondary" type="button"><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
                             <p style="font-size:14px" id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
 
                             <br>
-                            <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
+                            <button type="button" class="btn btn-info btn-block" id="iniciar" onclick="login()">Iniciar sesi&oacute;n</button>
                     </form>
                     <!--.login-form-->
                     <div class="help-text">

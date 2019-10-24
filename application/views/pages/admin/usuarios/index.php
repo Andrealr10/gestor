@@ -85,6 +85,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <!-- </div> -->
     <!--Lista-->
@@ -122,6 +123,25 @@
                 <!-- /.card -->
             </div>
             <!-- /.col -->
+=======
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
+                <thead class="thead text-center">
+                    <tr>
+                        <!-- <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th> -->
+                        <th scope="col">Nombre de Usuario</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center" id="cuerpo">
+                </tbody>
+            </table>
+>>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
         </div>
         <!-- /.row -->
 

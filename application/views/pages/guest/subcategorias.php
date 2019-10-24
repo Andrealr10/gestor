@@ -56,7 +56,7 @@
                             </div>
                             <div class="modal-body">
                                 <h6><?= $subcategoria->nombre . '_' . $categoria . '.zip' ?></h6>
-                                <img src="<?= base_url('qr_gen') . '/generar/' . $categoria . '/' . $subcategoria->nombre ?>" alt="" style="height: 100%; width: 100%">
+                                <img src="<?= base_url('QR_gen') . '/generar/' . $categoria . '/' . $subcategoria->nombre ?>" alt="" style="height: 100%; width: 100%">
                                 <br>
                                 <label for="shared">Copiar enlace de descarga</label>
                                 <input type="text" name="shared" id="shared<?= $subcategoria->id_subcategoria ?>" value="<?= base_url('zip') ?>/dir/<?= $categoria ?>/<?= $subcategoria->nombre ?>">

@@ -169,6 +169,9 @@ h3 {
 .border-danger{
   border: 2px solid #E74C3C  !important;
 }
+.text-info{
+  color: #086d8b !important;
+}
 
 
 /* --------------------modal-------------------------- */
