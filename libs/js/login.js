@@ -1,3 +1,4 @@
+var uri = 'http://localhost/gestor/';
 jQuery(document).ready(function ($) {
 	tab = $('.tabs h3 a');
 
@@ -19,7 +20,7 @@ $('#conf').on('click', function () {
 	correo = document.getElementById('useremail').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validar',
+		url: uri + 'usuario/validar',
 		data: {
 			'codigo': codigo,
 			'correo': correo,
@@ -32,47 +33,47 @@ $('#conf').on('click', function () {
 	});
 })
 // ----------------------validacion inputs de registro --------------------------
-$('#name').on('keyup',function(){
-	if (($('#name').val()).length == 0){
+$('#name').on('keyup', function () {
+	if (($('#name').val()).length == 0) {
 		$("#m1").text("Complete el siguiente campo.");
-	
-	}else{
+
+	} else {
 		$("#m1").text("");
 
 	}
 })
-$('#lastname').on('keyup',function(){
-	if (($('#lastname').val()).length == 0){
+$('#lastname').on('keyup', function () {
+	if (($('#lastname').val()).length == 0) {
 		$("#m2").text("Complete el siguiente campo.");
-	}else{
+	} else {
 		$("#m2").text("");
 	}
 })
-$('#username').on('keyup',function(){
-	if (($('#username').val()).length == 0){
+$('#username').on('keyup', function () {
+	if (($('#username').val()).length == 0) {
 		$("#m3").text("Complete el siguiente campo.");
-	}else{
+	} else {
 		$("#m3").text("");
 	}
 })
-$('#useremail').on('keyup',function(){
-	if (($('#useremail').val()).length == 0){
+$('#useremail').on('keyup', function () {
+	if (($('#useremail').val()).length == 0) {
 		$("#m4").text("Complete con un correo valido.");
-	}else{
+	} else {
 		$("#m4").text("");
 	}
 })
-$('#userpass').on('keyup',function(){
-	if (($('#userpass').val()).length == 0){
+$('#userpass').on('keyup', function () {
+	if (($('#userpass').val()).length == 0) {
 		$("#m5").text("Complete el siguiente campo.");
-	}else{
+	} else {
 		$("#m5").text("");
 	}
 })
-$('#userpass2').on('keyup',function(){
-	if (($('#userpass2').val()).length == 0){
+$('#userpass2').on('keyup', function () {
+	if (($('#userpass2').val()).length == 0) {
 		$("#m6").text("Las contraseñas no coinciden.");
-	}else{
+	} else {
 		$("#m6").text("");
 	}
 })
@@ -81,10 +82,10 @@ $('#registrar').on('click', function () {
 	correo = document.getElementById('useremail').value;
 	form = new FormData(document.getElementById("reg"));
 
-	
+
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/registrar',
+		url: uri + 'usuario/registrar',
 		data: form,
 		processData: false,
 		contentType: false,
@@ -95,7 +96,7 @@ $('#registrar').on('click', function () {
 	});
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/mail/registro',
+		url: uri + 'mail/registro',
 		data: {
 			'correo': correo
 		},
@@ -108,7 +109,7 @@ $('#registrar').on('click', function () {
 	var name = $("#name").val();
 	var lastname = $("#lastname").val();
 	var username = $("#username").val();
-	 var useremail = $("#useremail").val();
+	var useremail = $("#useremail").val();
 	var userpass = $("#userpass").val();
 	var userpass2 = $("#userpass2").val();
 	if (name.length == "") {
@@ -131,21 +132,21 @@ $('#registrar').on('click', function () {
 		$("#m5").text("Complete el siguiente campo.");
 		$("#userpass").focus();
 		return false;
-	} else if ((userpass2.length == "")&&(userpass !== userpass2)) {
+	} else if ((userpass2.length == "") && (userpass !== userpass2)) {
 		$("#m6").text("Las contraseñas no coinciden.");
 		$("#userpass2").focus();
 		return false;
-	} 
+	}
 
 })
 
 
 
 
-$('#correo').on('keyup',function(){
-	if (($('#correo').val()).length == 0){
+$('#correo').on('keyup', function () {
+	if (($('#correo').val()).length == 0) {
 		$("#ms").text("Su correo debe ser valido");
-	}else{
+	} else {
 		$("#ms").text("");
 	}
 })
@@ -154,7 +155,7 @@ $('#cambio').on('click', function () {
 	form = new FormData(document.getElementById("form"));
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/mail/cambio',
+		url: uri + 'mail/cambio',
 		data: form,
 		processData: false,
 		contentType: false,
@@ -176,7 +177,7 @@ function validaruser() {
 	correo = document.getElementById('username').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarUser',
+		url: uri + 'usuario/validarUser',
 		data: {
 			'username': correo,
 		},
@@ -192,7 +193,7 @@ function validarmail() {
 	correo = document.getElementById('useremail').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarCorreo',
+		url: uri + 'usuario/validarCorreo',
 		data: {
 			'correo': correo,
 		},
@@ -224,21 +225,21 @@ $('#eye').on('click', function () {
 
 
 
-$('#user').on('keyup',function(){
-	if (($('#user').val()).length == 0){
+$('#user').on('keyup', function () {
+	if (($('#user').val()).length == 0) {
 		$("#msm1").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
 		// $("#user").css("border-bottom", "2px solid #A83D32");
-	}else{
+	} else {
 		$("#msm1").text("");
 		$("#user").removeClass('border-danger');
 	}
 })
-$('#pass').on('keyup',function(){
-	if (($('#pass').val()).length == 0){
+$('#pass').on('keyup', function () {
+	if (($('#pass').val()).length == 0) {
 		$("#msm2").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
-	}else{
+	} else {
 		$("#msm2").text("");
 		$("#pass").removeClass('border-danger');
 	}
