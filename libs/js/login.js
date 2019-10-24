@@ -1,3 +1,7 @@
+// var uri = 'https://sudocs1.000webhostapp.com/';
+var uri = 'http://localhost/gestor/';
+
+var Toast;
 jQuery(document).ready(function ($) {
 	tab = $('.tabs h3 a');
 
@@ -14,30 +18,82 @@ jQuery(document).ready(function ($) {
 sessionStorage.clear();
 
 
-$('#conf').on('click', function () {
+$('#conf').on('click', function (event) {
 	codigo = document.getElementById('codigo').value;
 	correo = document.getElementById('useremail').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validar',
+		url: uri + 'usuario/validar',
 		data: {
 			'codigo': codigo,
 			'correo': correo,
 		},
 		success: function (result) {
 			if (result) {
-				location.reload();
+				if (result == 1) {
+					alert('Registrado')
+					location.reload();
+				}
+			} else {
+				alert('El código no es válido')
 			}
 		}
 	});
 })
+// ----------------------validacion inputs de registro --------------------------
+$('#name').on('keyup', function () {
+	if (($('#name').val()).length == 0) {
+		$("#m1").text("Complete el siguiente campo.");
 
-$('#registrar').on('click', function () {
+	} else {
+		$("#m1").text("");
+
+	}
+})
+$('#lastname').on('keyup', function () {
+	if (($('#lastname').val()).length == 0) {
+		$("#m2").text("Complete el siguiente campo.");
+	} else {
+		$("#m2").text("");
+	}
+})
+$('#username').on('keyup', function () {
+	if (($('#username').val()).length == 0) {
+		$("#m3").text("Complete el siguiente campo.");
+	} else {
+		$("#m3").text("");
+	}
+})
+$('#useremail').on('keyup', function () {
+	if (($('#useremail').val()).length == 0) {
+		$("#m4").text("Complete con un correo valido.");
+	} else {
+		$("#m4").text("");
+	}
+})
+$('#userpass').on('keyup', function () {
+	if (($('#userpass').val()).length == 0) {
+		$("#m5").text("Complete el siguiente campo.");
+	} else {
+		$("#m5").text("");
+	}
+})
+$('#userpass2').on('keyup', function () {
+	if (($('#userpass2').val() != $('#userpass').val())) {
+		$("#m6").text("Las contraseñas no coinciden.");
+	} else {
+		$("#m6").text("");
+	}
+})
+
+$('#registrar').on('click', function (event) {
 	correo = document.getElementById('useremail').value;
 	form = new FormData(document.getElementById("reg"));
+
+	event.preventDefault();
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/registrar',
+		url: uri + 'usuario/registrar',
 		data: form,
 		processData: false,
 		contentType: false,
@@ -48,28 +104,81 @@ $('#registrar').on('click', function () {
 	});
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/mail/registro',
+		url: uri + 'mail/registro',
 		data: {
 			'correo': correo
 		},
 		success: function (result) {
 			console.log(result);
-
+			alert('El correo fue enviado\nPor favor revisa tu bandeja de entrada y confirma el codigo.')
 		}
 	});
+	// --------validacion de inputs--------
+	var name = $("#name").val();
+	var lastname = $("#lastname").val();
+	var username = $("#username").val();
+	var useremail = $("#useremail").val();
+	var userpass = $("#userpass").val();
+	var userpass2 = $("#userpass2").val();
+	if (name.length == 0) {
+		$("#m1").text("Complete el siguiente campo.");
+		$("#name").focus();
+		return false;
+	} else if (lastname.length == 0) {
+		$("#m2").text("Complete el siguiente campo.");
+		$("#lastname").focus();
+		return false;
+	} else if (username.length == 0) {
+		$("#m3").text("Complete el siguiente campo.");
+		$("#username").focus();
+		return false;
+	} else if (useremail.length == 0) {
+		$("#m4").text("Complete con un correo valido.");
+		$("#useremail").focus();
+		return false;
+	} else if (userpass.length == 0) {
+		$("#m5").text("Complete el siguiente campo.");
+		$("#userpass").focus();
+		return false;
+	} else if ((userpass2.length == 0) && (userpass !== userpass2)) {
+		$("#m6").text("Las contraseñas no coinciden.");
+		$("#userpass2").focus();
+		return false;
+	}
 
+})
+
+
+
+
+$('#correo').on('keyup', function () {
+	if (($('#correo').val()).length == 0) {
+		$("#ms").text("Su correo debe ser valido");
+	} else {
+		$("#ms").text("");
+	}
 })
 
 $('#cambio').on('click', function () {
 	form = new FormData(document.getElementById("form"));
+	var correo = $("#correo").val();
+	if (correo.length == 0) {
+		$("#ms").text("Su correo debe ser valido");
+		$("#correo").focus();
+		return false;
+	}
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/mail/cambio',
+		url: uri + 'mail/cambio',
 		data: form,
 		processData: false,
 		contentType: false,
 		success: function (result) {
 			console.log(result);
+			if (result){
+				$('#form').trigger("reset");
+				$('#recuperarPass').modal('hide');
+			}
 			// window.location.href = 'http://localhost/gestor';
 		}
 	});
@@ -80,13 +189,13 @@ function validaruser() {
 	correo = document.getElementById('username').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarUser',
+		url: uri + 'usuario/validarUser',
 		data: {
 			'username': correo,
 		},
 		success: function (result) {
 			if (result) {
-				alert("no valido")
+				alert('EL nombre de usuario ya esta en uso')
 			}
 		}
 	});
@@ -96,13 +205,13 @@ function validarmail() {
 	correo = document.getElementById('useremail').value;
 	$.ajax({
 		type: 'POST',
-		url: 'http://localhost/gestor/usuario/validarCorreo',
+		url: uri + 'usuario/validarCorreo',
 		data: {
 			'correo': correo,
 		},
 		success: function (result) {
 			if (result) {
-				alert("no valido")
+				alert('El correo ya esta en uso')
 			}
 		}
 	});
@@ -110,7 +219,7 @@ function validarmail() {
 
 // validando ojo
 
-$('#eye').on('click', function () {
+$('#eye').on('click', function (event) {
 	event.preventDefault();
 
 	if ($(this).hasClass('fa-eye-slash')) {
@@ -126,51 +235,38 @@ $('#eye').on('click', function () {
 
 })
 
-// validando campos de login 
 
-// $('#iniciar').on('click', function () {
-// 	event.preventDefault();
-// var username = document.getElementById('#user').value;
-// var pass = document.getElementById('#pass').value;
-// if ($(("user").val()).lenght < 1){
-// $(this).css("border", "2px solid #A83D32");
-// 		$('#msm1').removeClass('d-lg-none');
 
-// 	}else{
-// 		$(this).css("border", "2px solid #086d8b");
-// 	}
-
-// })
-
-$('#user').on('keyup',function(){
-	if (($('#user').val()).length == 0){
-		$("#msm1").text("Complete el siguiente campo");
+$('#user').on('keyup', function () {
+	if (($('#user').val()).length == 0) {
+		$("#msm1").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
-	}else{
+		// $("#user").css("border-bottom", "2px solid #A83D32");
+	} else {
 		$("#msm1").text("");
 		$("#user").removeClass('border-danger');
 	}
 })
-$('#pass').on('keyup',function(){
-	if (($('#pass').val()).length == 0){
-		$("#msm2").text("Complete el siguiente campo");
+$('#pass').on('keyup', function () {
+	if (($('#pass').val()).length == 0) {
+		$("#msm2").text("Complete el siguiente campo.");
 		$("#user").addClass('border-danger');
-	}else{
+	} else {
 		$("#msm2").text("");
 		$("#pass").removeClass('border-danger');
 	}
 })
 
-$("#iniciar").click(function () {
+$("#iniciar").click(function (event) {
 	event.preventDefault();
 	var user = $("#user").val();
 	var pass = $("#pass").val();
-	if (user.length == "") {
+	if (user.length == 0) {
 		$("#msm1").text("Complete el siguiente campo");
 		$("#user").addClass('border-danger');
 		$("#user").focus();
 		return false;
-	} else if (pass.length == "") {
+	} else if (pass.length == 0) {
 		$("#msm2").text("Complete el siguiente campo");
 		$("#pass").addClass('border-danger');
 		$("#pass").focus();
@@ -178,4 +274,20 @@ $("#iniciar").click(function () {
 	}
 
 })
+
+$('#reset').on('click', function () {
+	form = new FormData(document.getElementById("form"));
+	$.ajax({
+		type: 'POST',
+		url: uri + 'usuario/cambiar',
+		data: form,
+		processData: false,
+		contentType: false,
+		success: function (result) {
+			console.log(result);
+			window.location.href = uri;
+		}
+	});
+})
+
 

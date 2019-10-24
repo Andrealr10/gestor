@@ -152,22 +152,6 @@ function remove(id, categoria, subcategoria) {
             )
         }
     })
-
-
-
-    // $.ajax({
-    //     type: 'GET',
-    //     url: uri + 'archivo/eliminar/' + id,
-    //     success: function (result) {
-    //         Toast.fire({
-    //             type: 'error',
-    //             title: 'Archivo eliminado con éxito.',
-    //             background: '#FFFF',
-    //             padding: '10%'
-    //         })
-    //         subir(categoria, subcategoria)
-    //     }
-    // });
 }
 
 
