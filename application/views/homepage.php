@@ -99,10 +99,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <section class="special">
                             <a href="#" class="image fit"><img style="height:400px;" src="<?= base_url(); ?>libs/images/mini1-banner.jpeg" alt="" /></a>
                             <h2 style="color:#086d8b;" >Desarrolladores</h2>
-                            <p>Este proyecto,</p>
-                            <ul class="actions">
+                            <p>El equipo de trabajo, está conformado por 4 miembros, que se han formado durante de 9 meses como desarrolladores en lenguaje PHP.</p>
+                            <p>Cristian Yovany Ch&aacute;vez (Estudiante de Ing. De Sistemas Inform&aacute;ticos).</p>
+                            <p>Andrea Roxana Linares (Licda. En Mercadeo Internacional).</p>
+                            <p>Andrea Victoria Castro (Estudiante de Ing. De Sistemas Inform&aacute;ticos).</p>
+                            <p>Rodrigo Josu&eacute; Gonzales (Estudiante de Arquitectura).</p>
+                            <!-- <ul class="actions">
                                 <li><a href="<?= base_url(); ?>Developer" class="button alt">Leer mas</a></li>
-                            </ul>
+                            </ul> -->
                         </section>
                     </div>
                 </div>
