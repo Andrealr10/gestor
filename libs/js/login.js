@@ -159,6 +159,17 @@ $('#correo').on('keyup', function () {
 	}
 })
 
+
+
+
+$('#correo').on('keyup',function(){
+	if (($('#correo').val()).length == 0){
+		$("#ms").text("Su correo debe ser valido");
+	}else{
+		$("#ms").text("");
+	}
+})
+
 $('#cambio').on('click', function () {
 	form = new FormData(document.getElementById("form"));
 	var correo = $("#correo").val();
@@ -182,6 +193,12 @@ $('#cambio').on('click', function () {
 			// window.location.href = 'http://localhost/gestor';
 		}
 	});
+	var correo = $("#correo").val();
+	if (correo.length == "") {
+		$("#ms").text("Su correo debe ser valido");
+		$("#correo").focus();
+		return false;
+	}
 })
 
 

@@ -179,6 +179,7 @@ a.article:hover {
   .botton:before {
 	border-radius: 100px;
 	border: 2px solid #086d8b;
+	/* rgb(8, 109, 139) */
 	box-shadow: 0 0 15px rgba(0, 255, 204, 0.15), 0 0 15px rgba(0, 255, 204, 0.15) inset;
 	content: "";
 	display: block;

@@ -1,6 +1,6 @@
 <?php if (sizeof($subcategorias) > 0) { ?>
-    <div class="">
-        <table class="table">
+    <div class="bg-light">
+        <table class="table bg-light">
             <thead>
                 <tr>
                     <th scope="col" class="text-left">Subcategor&iacute;as</th>
@@ -8,7 +8,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php foreach ($subcategorias as $subcategoria) { ?>
                     <tr>
                         <td class="text-left d-flex align-items-center"><a style="color:black;" href="#" onclick="loadArchivos('<?= $categoria ?>','<?= $subcategoria->nombre ?>')"><img src="<?= base_url() . $subcategoria->imagen ?>" style="width: 35px; height: 35px;"> <?= $subcategoria->nombre ?></a></td>
@@ -27,7 +26,7 @@
                                     <h5 class="modal-title">Compartir Carpeta</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body bg-light">
                                     <h6><?= $subcategoria->nombre . '_' . $categoria . '.zip' ?></h6>
                                     <img src="<?= base_url('qr_gen') . '/generar/' . $categoria . '/' . $subcategoria->nombre ?>" alt="" style="height: 100%; width: 100%">
                                 </div>

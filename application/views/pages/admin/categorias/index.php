@@ -16,9 +16,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="container">
+    <div class="container ">
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-11 ">
                 <h2 class="text-center"><i class="fas fa-laptop-code" style="font-size:25px;"></i>&nbsp;&nbsp;Tecnolog&iacute;as</h2>
                 <div id="accordion">
                     <!-- Aqui van las card del acordion -->
@@ -35,9 +35,9 @@
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Nueva Categoría</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-light">Nueva Categoría</h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -62,14 +62,14 @@
                             <input type="file" style="display:none;" name="imagen" accept=".png,.jpg,.jpeg" id="imagen">
                             <input type="button" class="btn btn-primary" value="Cargar imágen" onclick="document.getElementById('imagen').click();"><br>
                             <!-- <label for="algo">Foto:</label> -->
-                            <img class="mt-3" src="" id="algo" style="width: 200px; height: 200px">
+                            <img class="text-center mt-3" src="" id="algo" style="width: 200px; height: 200px">
                             <br><br>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="crear" class="btn btn-danger" data-dismiss="modal" type="button">Crear</button>
-                    <button type="button" id="limpiar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button id="crear" class="btn btn-info col-sm-3" data-dismiss="modal" type="button">Crear</button>
+                    <button type="button" id="limpiar" class="btn btn-secondary col-sm-3" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
