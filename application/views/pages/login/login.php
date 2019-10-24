@@ -27,29 +27,7 @@
 </nav>
     <div class="cont container-fluid">
 
-<<<<<<< HEAD
-        <div class="row">
-
-            <div class="col-md-1">
-                <h1 class="text-light" style="font-size:22px; color:#086d8b !important;"><a class="text-light" href="<?= base_url() ?>" style="text-decoration: none; "><i class="fa fa-arrow-left fa-sm ml-4" style="color:#086d8b; font-size: 40px;"></i>&nbsp;</a></h1>
-
-            </div>
-            <div class="col-md-11 text-center">
-                <!-- <header id="header" class="" style="padding: 1px;"> -->
-                <!-- </header> -->
-
-                <div style=" width: 200px; margin: auto; " class=" text-center mt-3 mb-3">
-
-                    <img style="width: 200px;" src="<?= base_url(); ?>libs/images/sudocs.png" alt="">
-
-                    <!-- <h1 class="display-4 text-center font-weight-bold">Cloudcat <i class="fas fa-cat"></i> </h1> -->
-                    <!-- <h2 class="text-dark text-center pt-2"><i class="fas fa-copy pr-2"></i> SUDOCS</h2> -->
-                </div>
-            </div>
-        </div>
-=======
 <br><br>
->>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
         <!--title-box-->
 
         <div class="form-wrap">
@@ -73,17 +51,10 @@
                             <p style="font-size:14px"id="m1" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" minlenght="4"  maxlength="16" placeholder="Escriba su apellido*" title="Este campo es requerido" required pattern="[A-Za-z]{4-16}">
                             <p style="font-size:14px"id="m2" class=" pt-0 pb-0 mt-n1 text-danger "></p> -->
-<<<<<<< HEAD
-                            <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required onkeyup="validaruser()">
-                            <p style="font-size:14px" id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
-                            <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
-                            <p style="font-size:14px" id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
-=======
                             <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required maxlength="16" onkeyup="validaruser()">
                             <p style="font-size:14px"id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
                             <p style="font-size:14px"id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
->>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
                             <input type="password" class=" form-control mt-2 mb-2" name="password" id="userpass" autocomplete="off" placeholder="Contrase&ntilde;a*" title="Letras y números, tamaño máximo: 16" title="Su contrase&ntilde;a no debe exeder de 16 caracteres" required>
                             <p style="font-size:14px" id="m5" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="password" class=" form-control mt-2 mb-2" name="password2" id="userpass2" autocomplete="off" placeholder="Confirmar la contrase&ntilde;a*" title="Debe confirmar su contrase&ntilde;a" required>

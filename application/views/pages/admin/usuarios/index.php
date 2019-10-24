@@ -85,45 +85,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-    <!-- </div> -->
-    <!--Lista-->
-    <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
-        <!-- <div class="content-wrapper"> -->
-        <div class="card-header bg-fondo">
-                <h4 class="text-center "><i class="fas fa-chart-line mr-2" style="font-size:20px;"></i>Top de Usuarios</h4>
-            </div>
-            <br>
-        <!-- Main content -->
-        <div class="container">
-            <div class="col-md-12">
-                <!-- Bar chart -->
-                <div class="card card-primary card-outline" >
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="far fa-chart-bar"></i>
-                            Usuarios con mas colaboraciones
-                        </h3>
-
-                        <div class="card-tools bg-light">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="card-body bg-light">
-                        <div id="bar-chart" style="height: 100%;">
-                            <canvas id="graphCanvas"></canvas>
-                        </div>
-                    </div>
-                    <!-- /.card-body-->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col -->
-=======
     <div class="card-body">
         <div class="table-responsive">
             <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
@@ -141,7 +102,6 @@
                 <tbody class="text-center" id="cuerpo">
                 </tbody>
             </table>
->>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
         </div>
         <!-- /.row -->
 

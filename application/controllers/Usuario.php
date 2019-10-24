@@ -48,20 +48,6 @@ class Usuario extends CI_Controller
 
   public function registrar()
   {
-<<<<<<< HEAD
-    $data = [
-      'nombre' => $_POST['nombre'],
-      'apellido' => $_POST['apellido'],
-      'username' => $_POST['username'],
-      'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-      'correo ' => $_POST['correo'],
-      'tipo_usuario' => 2,
-      'estado' => 0,
-      'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
-      'code' => rand(10000, 99999)
-    ];
-    $this->UsuarioModel->insert($data);
-=======
     $correo = $_POST['correo'];
     $username = $_POST['username'];
     $usuario = $this->usuarioModel->getByCorreo($correo);
@@ -82,7 +68,6 @@ class Usuario extends CI_Controller
       ];
       $this->UsuarioModel->insert($data);
     }
->>>>>>> 83723a01b53d5c06f8cc789f06e56a0efcd56f91
   }
 
   public function delete($id)
