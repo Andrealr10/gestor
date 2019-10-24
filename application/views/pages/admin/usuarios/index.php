@@ -69,8 +69,8 @@
                     <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
                         <thead class="thead text-center">
                             <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
+                                <!-- <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th> -->
                                 <th scope="col">Nombre de Usuario</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Tipo</th>
@@ -85,32 +85,52 @@
             </div>
         </div>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
-                <thead class="thead text-center">
-                    <tr>
-                        <!-- <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th> -->
-                        <th scope="col">Nombre de Usuario</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center" id="cuerpo">
-                </tbody>
-            </table>
-        </div>
-        <!-- /.row -->
 
-        <!-- /.content -->
-        <!-- </div> -->
-    </div>
-    <!-- <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab"> -->
-    <!--Formulario-->
-    <!-- <div class="card">
+    <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+        <div class="card text-center">
+            <div class="card-header bg-fondo">
+                <h4 class="text-center "><i class="fas fa-list-alt mr-2" style="font-size:20px;"></i>Top de Usuarios </h4>
+            </div>
+        </div>
+
+
+
+        <!-- Main content -->
+        <section class="content text-center">
+            <div class="container text-center">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <!-- Bar chart -->
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="far fa-chart-bar"></i>
+                                    Usuarios con mas colaboraciones
+                                </h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <div class="card-body" style="background: #ffffff !important;">
+                                <div id="bar-chart" style="height: 100%;" class="bg-ligth">
+                                    <canvas id="graphCanvas" class="bg-ligth"></canvas>
+                                </div>
+                            </div>
+                            <!-- /.card-body-->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+
+            <!--Formulario-->
+            <!-- <div class="card">
                         <div class="card-header">
                             <h4 class="text-center text-dark">Nuevo Usuario <i class="fas fa-user-plus" style="font-size:20px;"></i></h4>
                         </div>
@@ -165,7 +185,7 @@
                                     </div>
                                 </div>
                             </form> -->
-    <!-- </div> -->
+    </div>
     <!-- </div> -->
     <!-- </div> -->
     <!--Formulario-->
@@ -184,6 +204,7 @@
                 <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                
             </div>
             <div class="modal-body ">
                 <form id="formua">

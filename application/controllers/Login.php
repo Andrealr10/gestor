@@ -24,7 +24,7 @@ class Login extends CI_Controller
 	{
 		if (isset($_POST['user']) && isset($_POST['pass'])) {
 			$user = $_POST['user'];
-			$pas = $_POST['pass'];
+			$pas =  password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
 			if ($user != null && $user != '' && $pas != null && $pas != '') {
 

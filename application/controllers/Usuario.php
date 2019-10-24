@@ -48,13 +48,13 @@ class Usuario extends CI_Controller
 
   public function registrar()
   {
-    $correo = $_POST['correo'];
-    $username = $_POST['username'];
-    $usuario = $this->usuarioModel->getByCorreo($correo);
-    $usuario1 = $this->usuarioModel->getByUsername($username);
-    if ($usuario != null && $usuario1 !=null) { 
-      return;
-    } else {
+    // $correo = $_POST['correo'];
+    // $username = $_POST['username'];
+    // $usuario = $this->usuarioModel->getByCorreo($correo);
+    // $usuario1 = $this->usuarioModel->getByUsername($username);
+    // if ($usuario != null && $usuario1 !=null) { 
+    //   return;
+    // } else {
       $data = [
         'nombre' => $_POST['username'],
         'apellido' => $_POST['username'],
@@ -67,7 +67,7 @@ class Usuario extends CI_Controller
         'code' => rand(10000, 99999)
       ];
       $this->UsuarioModel->insert($data);
-    }
+    // }
   }
 
   public function delete($id)

@@ -87,7 +87,7 @@ function eliminar(id) {
     }, "Default Value");
 }
 
-function obtener(id) {
+function obtener(id) {  
     $.ajax({
         type: 'GET',
         url: 'Usuario/getById/' + id,

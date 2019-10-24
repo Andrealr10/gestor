@@ -10,7 +10,7 @@
     <?php foreach ($categorias as $categoria) { ?>
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box " onclick="loadSubcategorias('<?= $categoria->nombre ?>')">
-                <span class="info-box-icon elevation-1"><img src="<?= $categoria->imagen ?>" alt="IMG"></span>
+                <span class="info-box-icon elevation-1"><img src="<?= $categoria->imagen ?>" alt="IMG" style="width:100%!important;"></span>
                 <div class="info-box-content">
                     <p> </p>
                     <span class="info-box-text"><?= $categoria->nombre ?></span>
