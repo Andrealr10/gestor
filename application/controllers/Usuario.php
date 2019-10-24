@@ -29,10 +29,10 @@ class Usuario extends CI_Controller
   public function insert()
   {
     $data = [
-      'nombre' => $_POST['nombre'],
-      'apellido' => $_POST['apellido'],
+      'nombre' => $_POST['username'],
+      'apellido' => $_POST['username'],
       'username' => $_POST['username'],
-      'password ' => $_POST['password'],
+      'password ' =>  password_hash($_POST['password'], PASSWORD_DEFAULT),
       'correo ' => $_POST['correo'],
       'tipo_usuario' => $_POST['tipo'],
       'estado' => 1,
@@ -44,18 +44,26 @@ class Usuario extends CI_Controller
 
   public function registrar()
   {
-    $data = [
-      'nombre' => $_POST['nombre'],
-      'apellido' => $_POST['apellido'],
-      'username' => $_POST['username'],
-      'password ' => $_POST['password'],
-      'correo ' => $_POST['correo'],
-      'tipo_usuario' => 2,
-      'estado' => 0,
-      'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
-      'code' => rand(10000, 99999)
-    ];
-    $this->UsuarioModel->insert($data);
+    $correo = $_POST['correo'];
+    $username = $_POST['username'];
+    $usuario = $this->usuarioModel->getByCorreo($correo);
+    $usuario1 = $this->usuarioModel->getByUsername($username);
+    if ($usuario != null && $usuario1 !=null) { 
+      return;
+    } else {
+      $data = [
+        'nombre' => $_POST['username'],
+        'apellido' => $_POST['username'],
+        'username' => $_POST['username'],
+        'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+        'correo ' => $_POST['correo'],
+        'tipo_usuario' => 2,
+        'estado' => 0,
+        'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false),
+        'code' => rand(10000, 99999)
+      ];
+      $this->UsuarioModel->insert($data);
+    }
   }
 
   public function delete($id)
@@ -88,8 +96,8 @@ class Usuario extends CI_Controller
       $data = [];
     } else {
       $data = [
-        'nombre' => $_POST['nombre'],
-        'apellido' => $_POST['apellido'],
+        // 'nombre' => $_POST['nombre'],
+        // 'apellido' => $_POST['apellido'],
         'tipo_usuario' => $_POST['tipo'],
         'correo' => $_POST['correo'],
       ];
@@ -99,8 +107,8 @@ class Usuario extends CI_Controller
   public function actualizar2($id)
   {
     $data = [
-      'nombre' => $_POST['nombre'],
-      'apellido' => $_POST['apellido'],
+      // 'nombre' => $_POST['nombre'],
+      // 'apellido' => $_POST['apellido'],
       'correo' => $_POST['correo'],
     ];
     $this->UsuarioModel->update($data, $id);
@@ -126,7 +134,7 @@ class Usuario extends CI_Controller
     $id = $_POST['id_usuario'];
     if ($id != null) {
       $data = [
-        'password ' => $_POST['password'],
+        'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
         'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false)
       ];
     } else { }
@@ -140,8 +148,9 @@ class Usuario extends CI_Controller
     if ($usuario->code == $_POST['codigo']) {
       $this->activar($usuario->id_usuario);
       echo 1;
+    } else {
+      echo 0;
     }
-    echo 0;
   }
 
   public function validarUser()

@@ -33,30 +33,30 @@ $('#conf').on('click', function (event) {
 				if (result == 1) {
 					alert('Registrado')
 					location.reload();
+				} else {
+					alert('El código no es válido')
 				}
-			} else {
-				alert('El código no es válido')
 			}
 		}
 	});
 })
 // ----------------------validacion inputs de registro --------------------------
-$('#name').on('keyup', function () {
-	if (($('#name').val()).length == 0) {
-		$("#m1").text("Complete el siguiente campo.");
+// $('#name').on('keyup', function () {
+// 	if (($('#name').val()).length == 0) {
+// 		$("#m1").text("Complete el siguiente campo.");
 
-	} else {
-		$("#m1").text("");
+// 	} else {
+// 		$("#m1").text("");
 
-	}
-})
-$('#lastname').on('keyup', function () {
-	if (($('#lastname').val()).length == 0) {
-		$("#m2").text("Complete el siguiente campo.");
-	} else {
-		$("#m2").text("");
-	}
-})
+// 	}
+// })
+// $('#lastname').on('keyup', function () {
+// 	if (($('#lastname').val()).length == 0) {
+// 		$("#m2").text("Complete el siguiente campo.");
+// 	} else {
+// 		$("#m2").text("");
+// 	}
+// })
 $('#username').on('keyup', function () {
 	if (($('#username').val()).length == 0) {
 		$("#m3").text("Complete el siguiente campo.");
@@ -114,21 +114,22 @@ $('#registrar').on('click', function (event) {
 		}
 	});
 	// --------validacion de inputs--------
-	var name = $("#name").val();
-	var lastname = $("#lastname").val();
+	// var name = $("#name").val();
+	// var lastname = $("#lastname").val();
 	var username = $("#username").val();
 	var useremail = $("#useremail").val();
 	var userpass = $("#userpass").val();
 	var userpass2 = $("#userpass2").val();
-	if (name.length == 0) {
-		$("#m1").text("Complete el siguiente campo.");
-		$("#name").focus();
-		return false;
-	} else if (lastname.length == 0) {
-		$("#m2").text("Complete el siguiente campo.");
-		$("#lastname").focus();
-		return false;
-	} else if (username.length == 0) {
+	// if (name.length == 0) {
+	// 	$("#m1").text("Complete el siguiente campo.");
+	// 	$("#name").focus();
+	// 	return false;
+	// } else if (lastname.length == 0) {
+	// 	$("#m2").text("Complete el siguiente campo.");
+	// 	$("#lastname").focus();
+	// 	return false;
+	// } else 
+	if (username.length == 0) {
 		$("#m3").text("Complete el siguiente campo.");
 		$("#username").focus();
 		return false;
@@ -162,10 +163,10 @@ $('#correo').on('keyup', function () {
 
 
 
-$('#correo').on('keyup',function(){
-	if (($('#correo').val()).length == 0){
+$('#correo').on('keyup', function () {
+	if (($('#correo').val()).length == 0) {
 		$("#ms").text("Su correo debe ser valido");
-	}else{
+	} else {
 		$("#ms").text("");
 	}
 })
@@ -186,7 +187,7 @@ $('#cambio').on('click', function () {
 		contentType: false,
 		success: function (result) {
 			console.log(result);
-			if (result){
+			if (result) {
 				$('#form').trigger("reset");
 				$('#recuperarPass').modal('hide');
 			}
@@ -289,7 +290,22 @@ $("#iniciar").click(function (event) {
 		$("#pass").focus();
 		return false;
 	}
-
+	form = new FormData(document.getElementById("loginform"));
+	$.ajax({
+		type: 'POST',
+		url: uri + 'login/login',
+		data: form,
+		processData: false,
+		contentType: false,
+		success: function (result) {
+			// console.log(result);
+			if (result== 1){
+				window.location.href = uri;
+			} else {
+				alert('usuario o contraseña incorrectos')
+			}
+		}
+	});
 })
 
 $('#reset').on('click', function () {

@@ -41,16 +41,16 @@
             <!--.tabs-->
 
             <!-- Contenedor de formularios -->
-            <div class="tabs-content ">
+            <div class="tabs-content">
                 <div id="signup-tab-content" class="">
                     <form class="signup-form" method="POST" id="reg">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group ">
-                            <input type="text" class=" form-control mt-2 mb-2" name="nombre" id="name" autocomplete="off" minlenght="4" maxlength="16" placeholder="Escriba su nombre*" title="Este campo es requerido"required pattern="[A-Za-z]{4-16}">
+                            <!-- <input type="text" class=" form-control mt-2 mb-2" name="nombre" id="name" autocomplete="off" minlenght="4" maxlength="16" placeholder="Escriba su nombre*" title="Este campo es requerido"required pattern="[A-Za-z]{4-16}">
                             <p style="font-size:14px"id="m1" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="text" class=" form-control mt-2 mb-2" name="apellido" id="lastname" autocomplete="off" minlenght="4"  maxlength="16" placeholder="Escriba su apellido*" title="Este campo es requerido" required pattern="[A-Za-z]{4-16}">
-                            <p style="font-size:14px"id="m2" class=" pt-0 pb-0 mt-n1 text-danger "></p>
-                            <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required onkeyup="validaruser()">
+                            <p style="font-size:14px"id="m2" class=" pt-0 pb-0 mt-n1 text-danger "></p> -->
+                            <input type="text" class=" form-control mt-2 mb-2" name="username" id="username" autocomplete="off" placeholder="Escriba un nombre de usuario*" required pattern="[A-Za-z0-9]{5,16}" title="Letras y números. Tamaño máximo: 16" required maxlength="16" onkeyup="validaruser()">
                             <p style="font-size:14px"id="m3" class=" pt-0 pb-0 mt-n1 text-danger "></p>
                             <input type="email" class="form-control mt-2 mb-2" name="correo" id="useremail" autocomplete="off" placeholder="Correo electr&oacute;nico*" title="Escriba un correo valido" required  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" onkeyup="validarmail()">
                             <p style="font-size:14px"id="m4" class=" pt-0 pb-0 mt-n1 text-danger "></p>
@@ -74,7 +74,7 @@
                 <!--.signup-tab-content-->
 
                 <div id="login-tab-content" class="active">
-                    <form class="login-form " method="POST" action="<?= base_url('login') ?>/login">
+                    <form class="login-form " method="POST" id="loginform">
                         <p class="text-light small pt-0 mt-0"> * Todos los campos son obligatorios.</p>
                         <div class="form-group">
                             <div class="input-group mt-2 mb-3">
@@ -92,7 +92,7 @@
                             <p style="font-size:14px" id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>
 
                             <br>
-                            <button type="button" class="btn btn-info btn-block" id="iniciar">Iniciar sesi&oacute;n</button>
+                            <button type="button" class="btn btn-info btn-block" id="iniciar" onclick="login()">Iniciar sesi&oacute;n</button>
                     </form>
                     <!--.login-form-->
                     <div class="help-text">

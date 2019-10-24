@@ -68,8 +68,8 @@
             <table id="lista" class="table table-bordered table-hover table-striped" style="background:rgb(228, 226, 226);">
                 <thead class="thead text-center">
                     <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
+                        <!-- <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th> -->
                         <th scope="col">Nombre de Usuario</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Tipo</th>

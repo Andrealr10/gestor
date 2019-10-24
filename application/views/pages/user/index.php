@@ -176,10 +176,10 @@
                 <label for="username">Nombre de usuario:</label>
                 <input type="text" placeholder="Username" class="form-control mt-2" id="username" name="username" disabled value="<?=$this->session->login->username?>">
                 <input type="hidden" name="id_usuario" id="id_usuario" value="<?=$this->session->login->id_usuario?>">
-                <br><label for="nombre">Nombre:</label>
+                <!-- <br><label for="nombre">Nombre:</label>
                 <input type="text" placeholder="Nombre" class="form-control mt-2 " id="nombre" name="nombre" value="<?=$this->session->login->nombre?>">
                 <br><label for="apellido">Apellido:</label>
-                <input type="text" placeholder="Apellido" class="form-control mt-2 " id="apellido" name="apellido" value="<?=$this->session->login->apellido?>">
+                <input type="text" placeholder="Apellido" class="form-control mt-2 " id="apellido" name="apellido" value="<?=$this->session->login->apellido?>"> -->
                 <br><label for="correo">Correo electrónico:</label>
                 <input type="text" placeholder="Username" class="form-control mt-2" id="correo" name="correo" value="<?=$this->session->login->correo?>">
                 <!-- <input type="mail" placeholder="corrreo@ejemplo.com" class="form-control mt-2" id="correoa" name="correo"> -->
