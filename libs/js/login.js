@@ -299,7 +299,7 @@ $("#iniciar").click(function (event) {
 		contentType: false,
 		success: function (result) {
 			// console.log(result);
-			if (result== 1){
+			if (result == 1) {
 				window.location.href = uri;
 			} else {
 				alert('usuario o contraseña incorrectos')
@@ -318,7 +318,9 @@ $('#reset').on('click', function () {
 		contentType: false,
 		success: function (result) {
 			console.log(result);
-			window.location.href = uri;
+			if (result == 1) {
+				window.location.href = uri;
+			}
 		}
 	});
 })

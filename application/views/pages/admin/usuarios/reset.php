@@ -42,24 +42,9 @@
         </form>
     </div>
     <script src="<?= base_url(); ?>libs/js/jquery-3.4.1.min.js"></script>
-    <script src="<?= base_url() ?>libs/js/popper.min.js"></script>
     <script src="<?= base_url() ?>libs/js/bootstrap.min.js"></script>
-    <script>
-        $('#reset').on('click', function() {
-            form = new FormData(document.getElementById("form"));
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost/gestor/usuario/cambiar',
-                data: form,
-                processData: false,
-                contentType: false,
-                success: function(result) {
-                    console.log(result);
-                    window.location.href='http://localhost/gestor';
-                }
-            });
-        })
-    </script>
+    <script src="<?= base_url() ?>libs/js/login.js"></script>
+
 </body>
 
 </html>

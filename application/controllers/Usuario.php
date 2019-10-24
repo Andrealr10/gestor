@@ -132,13 +132,16 @@ class Usuario extends CI_Controller
   public function cambiar()
   {
     $id = $_POST['id_usuario'];
-    if ($id != null) {
+    if ($id != null && $_POST['password'] != null && $_POST['password'] != '') {
       $data = [
         'password ' => password_hash($_POST['password'], PASSWORD_DEFAULT),
         'hash' => hash('sha256', $_POST['username'] . date("Y-m-d H:i:s"), false)
       ];
-    } else { }
-    $this->UsuarioModel->update($data, $id);
+      $this->UsuarioModel->update($data, $id);
+      echo 1;
+    } else { 
+      return;
+    }
   }
 
   public function validar()
