@@ -36,7 +36,7 @@ class Login extends CI_Controller
 			} else {
 				// return;
 			}
-			$this->index();
+			// $this->index();
 		}
 	}
 

@@ -86,7 +86,7 @@
                             <div class="input-group mt-2">
                                 <input type="password" class="form-control border" name="pass" id="pass" autocomplete="off" placeholder="Contrase&ntilde;a*" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary"><i class=" far fa-eye" id="eye"></i></button>
+                                    <button class="btn btn-secondary" type="button"><i class=" far fa-eye" id="eye"></i></button>
                                 </div>
                             </div>
                             <p style="font-size:14px" id="msm2" class="small pt-0 pb-0 mb-0 mt-0 text-danger "></p>

@@ -298,9 +298,9 @@ $("#iniciar").click(function (event) {
 		processData: false,
 		contentType: false,
 		success: function (result) {
-			// console.log(result);
+			console.log(result);
 			if (result == 1) {
-				window.location.href = uri;
+				window.location.href = uri + 'contenido';
 			} else {
 				alert('usuario o contraseña incorrectos')
 			}
