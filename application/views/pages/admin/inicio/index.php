@@ -109,13 +109,13 @@
                   <?php } ?>
               </ul>
             </li>
-            <!-- <li class="nav-header">INFORMACI&Oacute;N</li>
+            <li class="nav-header">INFORMACI&Oacute;N</li>
           <li class="nav-item">
           <a href="" class="nav-link">
           <i class="nav-icon fas fa-info-circle"></i>
           <p>Acerca de</p>
             </a>
-          </li> -->
+          </li>
     
           <li class="nav-header">NOTIFICACIONES</li>
           <li class="nav-item">
